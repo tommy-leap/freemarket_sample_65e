@@ -32,13 +32,13 @@ Things you may want to cover:
 |image|text||
 |evaluation|integer||
 ### Association
-- belongs_to :user-detatile
+- belongs_to :user-detail
 - has_many :buy_datas
 - has_many :products, through: :buy_datas
 - has_many :likes
 - has_many :messages
 
-# user_detatilsテーブル
+# user_detailsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|string|null: false|
@@ -70,16 +70,16 @@ Things you may want to cover:
 |postage|text|null: false|
 |shipping|text|null: false|
 |from|string|null: false|
-|days|string|null: false|
+|day|string|null: false|
 |brand_id|integer|foreign_key: true|
-|caterory_id|integer|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :category
 - belongs_to :brand
 - has_many :images
 - has_many :messages
 - has_many :likes
-- has_many :buy_detas
+- has_many :buy_datas
 - has_many :users, through: :buy_datas
 
 ## categoriesテーブル
@@ -88,12 +88,12 @@ Things you may want to cover:
 |name|string|null: false|
 |ancestry|string|null: false|
 ### Association
-- has_many : ancestry
+- has_ancestry
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|massage|text||
+|message|text||
 |user_id|integer|null: false, foreign_key: true|
 |products_id|integer|null: false, foreign_key: true|
 ### Association

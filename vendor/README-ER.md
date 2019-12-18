@@ -1,6 +1,15 @@
 ```puml
+
 @startuml
+entity "users" {
+  nickname:string
+  image:text
+  evaluation:integer
+}
+
 entity "products" {
+  + id [PK]
+    ==
  title:text
  price:integer
  info:text
@@ -8,60 +17,85 @@ entity "products" {
  postage:text
  shipping:text
  from:string
- days:string
+ day:string
+ #brand_id:[FK(brands,id)]
+ #category_id:[FK(categories,id)]
 }
-@enduml
 
-@startuml
 entity "messages" {
+  + id [PK]
+    ==
   massage:text
-  #user_id:integer
-  #product_id:integer
+  # user_id:[FK(users,id)]
+  # product_id:[FK(products,id)]
 }
-@enduml
 
-@startuml
 entity "categories" {
   name:string
   ancesrty:string
 }
-@enduml
 
-@startuml
 entity "images" {
-  #product_id:integer
+  + id [PK]
+    ==
+  # product_id:[FK(products,id)]
   images:text
 }
-@enduml
 
-@startuml
+
 entity "buy_datas" {
-  #user_id:integer
-  #product_id:integer
+  + id [PK]
+    ==
+  # user_id:i[FK(users,id)]
+  # product_id:[FK(products,id)]
 }
-@enduml
 
-@startuml
-entity "buy_datas" {
-  #user_id:integer
-  #product_id:integer
-}
-@enduml
 
-@startuml
 entity "brands" {
   brand:text
-  product_id:integer
 }
-@enduml
 
-@startuml
-entity "brands" {
-  brand:text
-  #product_id:[FK(,id)]
+entity "likes" {
+  + id [PK]
+    ==
+  nice:integer
+  # user_id:[FK(users,id)]
+  # product_id:[FK(products,id)]
 }
-@enduml
 
+entity "user_details" {
+  + id [PK]
+    ==
+ # user_id:[FK(users,id)]
+ * email:string
+ password:string
+ first_name:string
+ first_kana:string
+ last_name:string
+ last_kana:string
+ year:integer
+ month:integer
+ post_num:integer
+ municipalities:string
+ from:string
+ day:string
+ build_name:string
+ comment:text
+ crdit_num:integer
+ }
+
+products --|{ images
+products --|{ messgaes
+products --|{ likes
+products --|{ buy_datas
+users --|{ messgaes
+users --|{ likes
+users --|{ buy_datas
+users||--||user_details
+categories --|{ products
+brands --|{ products
+
+@enduml
 
 ```
 
