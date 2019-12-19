@@ -65,7 +65,7 @@ Things you may want to cover:
 |title|string|null: false|
 |price|integer|null: false|
 |info|text||
-|status|string|null: false|
+|status|integer|null: false|
 |postage|text|null: false|
 |shipping|text|null: false|
 |from|string|null: false|
