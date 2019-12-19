@@ -33,8 +33,7 @@ Things you may want to cover:
 |evaluation|integer||
 ### Association
 - has_one :user_detail
-- has_many :buy_datas
-- has_many :products, through: :buy_datas
+- has_many :products
 - has_many :likes
 - has_many :messages
 
@@ -77,11 +76,11 @@ Things you may want to cover:
 ### Association
 - belongs_to :category
 - belongs_to :brand
-- has_many :users, through: :buy_datas
+- belongs_to :user
 - has_many :images
 - has_many :messages
 - has_many :likes
-- has_many :buy_datas
+
 
 
 ## categoriesテーブル
@@ -117,14 +116,6 @@ Things you may want to cover:
 ### Association
 - has_many :products
 
-## buy_datasテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|product_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :product
 
 ## likesテーブル
 |Column|Type|Options|
