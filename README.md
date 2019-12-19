@@ -76,7 +76,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :category
 - belongs_to :brand
-- belongs_to :users, through: :buy_datas
+- has_many :users, through: :buy_datas
 - has_many :images
 - has_many :messages
 - has_many :likes
