@@ -32,7 +32,7 @@ Things you may want to cover:
 |image|text||
 |evaluation|integer||
 ### Association
-- belongs_to :user-detail
+- has_one :user_detail
 - has_many :buy_datas
 - has_many :products, through: :buy_datas
 - has_many :likes
@@ -63,7 +63,7 @@ Things you may want to cover:
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|title|text|null: false|
+|title|string|null: false|
 |price|integer|null: false|
 |info|text||
 |status|string|null: false|
@@ -73,6 +73,7 @@ Things you may want to cover:
 |day|string|null: false|
 |brand_id|integer|foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :category
 - belongs_to :brand
