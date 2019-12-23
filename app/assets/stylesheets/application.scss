@@ -1,0 +1,563 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "header";
+ @import "reset";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+//  リセットcss
+/*
+	TODO will need to remove settings on HTML since we can't namespace it.
+	TODO with the prefix, should I group by selector or property for weight savings?
+*/
+html{
+	color:#000;
+	background:#FFF;
+}
+/*
+	TODO remove settings on BODY since we can't namespace it.
+*/
+/*
+	TODO test putting a class on HEAD.
+		- Fails on FF.
+*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,
+img {
+	border:0;
+}
+/*
+	TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+	font-style:normal;
+	font-weight:normal;
+}
+
+ol,
+ul {
+	list-style:none;
+}
+
+caption,
+th {
+	text-align:left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,
+q:after {
+	content:'';
+}
+abbr,
+acronym {
+	border:0;
+	font-variant:normal;
+}
+/* to preserve line-height and selector appearance */
+sup {
+	vertical-align:text-top;
+}
+sub {
+	vertical-align:text-bottom;
+}
+input,
+textarea,
+select {
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit;
+	*font-size:100%; /*to enable resizing for IE*/
+}
+/*because legend doesn't inherit in IE */
+legend {
+	color:#000;
+}
+// リセットcss
+
+// プロフィールscss
+ .profile {
+  width: 600px;
+  height: 460px;
+  background-color: gray;
+  // border: solid 1px black;
+  &__logo {
+    font-weight: bold;
+    font-size: 24px;
+    height: 50px;
+    background-color: white;
+    line-height: 50px;
+    text-align: center;
+  }
+  .name-groud {
+    height: 110px;
+    background-image: url(https://i0.wp.com/rich-rice.com/wp-content/uploads/2018/04/ciecle2P-kawaii-pink.jpg?resize=640%2C423&ssl=1);
+    position: relative;
+    
+    &__image {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: gray;
+      position: absolute;
+      bottom: 20px;
+      left: 150px;
+    }
+    &__input {
+      height: 30px;
+      width: 200px;
+      position: absolute;
+      bottom: 25px;
+      left: 200px;
+      background-color: white;
+    }
+  }
+  .comment {
+    height: 225px;
+    background-color: white;
+    position: relative;
+    &__form {
+      height: 175px;
+      width: 550px;
+      background-color: white;
+      border: solid 1px gray;
+      position: absolute;
+      left: 25px;
+      top: 25px;
+    }
+  }
+  .form-area {
+    background-color: white;
+    height: 75px;
+    position: relative;
+    &__btn {
+      height: 50px;
+      width:550px;
+      background-color: red;
+      position: absolute;
+      left: 25px;
+      .form-area__title {
+        font-size: 14px;
+        color: white;
+        line-height: 50px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// ヘッダーscss
+
+.header {
+  height: 100px;
+  background-color: white;
+  &__inner {
+    height: 90px;
+    width:1020px;
+    background-color: white;
+    margin: 0 auto;
+    padding-top: 8px;
+    &__top {
+      display: flex;
+      &__logo {
+        padding: 0;
+      }
+      &__input {
+        height: 40px;
+        width: 823px;
+        padding: 0 10px 0 10px;
+        margin-left: 25px;
+        background-color: #EEEEEE;
+        border: solid 1px gray;
+        border-radius: 5px 5px 5px 5px /5px 5px 5px 5px;
+        &__icon {
+          color: black;
+          line-height: 40px;
+          float: right;
+        }
+      }
+    }
+    &__nav {
+      height: 40px;
+      margin-top: 8px;
+      display: flex;
+      position: relative;
+      &__category {
+        width: 150px;
+        height: 40px;
+        padding-right: 11px;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 40px;
+        text-align: right;
+        &:hover {
+          ul {
+            border: ridge 1px #EEEEEE;
+            border-bottom: ridge 2px #EEEEEE;
+            border-top: none;
+            width: 214px;
+            height: 520px;
+            li {
+              border-top: solid 1px #ffffff;
+              display: block;
+              width: 199px;
+              height: 40px;
+              background-color: white;
+              text-align: left;
+              padding-left: 15px;
+              border-right: ridge 1px #EEEEEE;
+              ul {
+                display: none;
+              }
+              &:hover {
+                background-color: #CC3300;
+                width: 200px;
+                .big {
+                  color:white;
+                }
+                ul {
+                  display: block;
+                  border: ridge 1px #EEEEEE;
+                  border-bottom: ridge 2px #EEEEEE;
+                  border-top: none;
+                  width: 214px;
+                  margin-left: 200px;
+                  margin-top: -41px;
+                  height: 520px;
+                  li {
+                    border-top: solid 1px #ffffff;
+                    display: block;
+                    width: 199px;
+                    height: 30px;
+                    line-height: 30px;
+                    background-color: white;
+                    text-align: left;
+                    padding-left: 15px;
+                    .big {
+                      color:black;
+                    }
+                    ul {
+                      display: none;
+                    }
+                    &:hover {
+                      background-color: #EEEEEE;
+                      width: 200px;
+                      .big {
+                        color:black;
+                      }
+                      ul {
+                        display: block;
+                        border: ridge 1px #EEEEEE;
+                        border-bottom: ridge 2px #EEEEEE;
+                        border-top: none;
+                        width: 314px;
+                        margin-left: 200px;
+                        margin-top: -31px;
+                        height: 520px;
+                        li {
+                          border-top: solid 1px #ffffff;
+                          display: block;
+                          width: 299px;
+                          height: 30px;
+                          line-height: 30px;
+                          background-color: white;
+                          text-align: left;
+                          padding-left: 15px;
+                          &:hover {
+                            background-color: #EEEEEE;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+          
+        ul {
+          li {
+            display: none;
+            .big {
+              text-decoration: none;
+              color: black;
+              font-weight: lighter;
+            }
+          }
+        }
+        &__icon {
+          color: red;
+          text-decoration: none;
+          &--name {
+            text-decoration: none;
+            color: black;
+          }
+          &--name:hover {
+            color: skyblue;
+          }
+        }
+      }
+
+      &__brand {
+        width: 150px;
+        height: 40px;
+        padding-right: 180px;
+        padding-left: 11px;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 40px;
+        text-align: right;
+        ul {
+          li {
+            display: none;
+          }
+        }
+        &:hover {
+          ul {
+            border: ridge 1px #EEEEEE;
+            border-right: ridge 1px #EEEEEE;
+            border-top: none;
+            width: 214px;
+            li {
+              border-top: solid 1px #ffffff;
+              display: block;
+              width: 200px;
+              height: 40px;
+              background-color: white;
+              text-align: left;
+              padding-left: 15px;
+              .big {
+                text-decoration: none;
+                color: black;
+                font-weight: lighter;
+              }
+              &:hover {
+                background-color: #CC3300;
+                width: 200px;
+                .big {
+                  color:white;
+                }
+              }
+            }
+          }
+        }
+        &__icon {
+          color: red;
+          text-decoration: none;
+          &--name {
+            text-decoration: none;
+            color: black;
+            &:hover {
+              color: skyblue;
+            }
+          }
+        }
+      }
+
+      // ログイン状態
+      // &__right {
+      //   &__menu {
+      //     height: 40px;
+      //     // width: 150px;
+      //     line-height: 40px;
+      //     padding: 0 14px;
+      //     font-weight: lighter;
+      //     font-size: 14px;
+      //     display: block;
+      //     &--mypage {
+      //       padding-left: 14px;
+      //       display: block;
+      //     }
+      //     ul {
+      //       display: none;
+      //     }
+      //     &:hover {
+      //       span {
+      //         color: skyblue;
+      //       }
+      //       .icon {
+      //         color: skyblue;
+      //       }
+      //       ul {
+      //         position: absolute;
+      //         display: block;
+      //         display: flex;
+      //         flex-direction: column;
+      //         .news {
+      //           display: block;
+      //           width: 300px;
+      //           height: 100px;
+      //           display: flex;
+      //           border: ridge 1px #EEEEEE;
+      //           border-top: none;
+      //           .mylist {
+      //             display: flex;
+      //             text-decoration: none;
+      //             color: black;
+      //             position: absolute;
+      //             .top-logo {
+      //               padding: 10px 10px 40px 10px;
+      //               width: 50px;
+      //             }
+      //             .text {
+      //               width: 200px;
+      //               &__title {
+      //                 height: 60px;
+      //                 width: 170px;
+      //                 overflow: hidden;
+      //                 padding-top: 10px;
+      //                 padding-right: 30px;
+      //                 line-height: 1.45;
+      //                 flex-direction: column;
+      //                 display: block;
+      //               }
+      //               &__time {
+      //                 height: 30px;
+      //                 width: 200px;
+      //                 bottom: 0;
+      //                 font-size: 14px;
+      //                 display: block;
+      //                 color: #aaa;
+      //                 overflow: hidden;
+      //                 line-height: 0;
+      //               }
+      //             }
+      //             .icon {
+      //               width: 30px;
+      //               text-align: center;
+      //               line-height: 100px;
+      //               color: #aaa;
+      //             }
+      //           }
+      //           &:hover {
+      //             background-color: #f0f0f0;
+      //           }
+      //         }
+      //       }
+      //     }
+        
+      //     &__icon {
+      //       color: #DDDDDD;
+      //       text-decoration: none;
+      //       &--title {
+      //         color: black;
+      //       }
+      //     }
+      //     &__title {
+      //       color: black;
+      //       text-decoration: none;
+      //     }
+      //     &__title:hover {
+      //       color: skyblue;
+      //     }
+      //   }
+        // ログイン状態
+
+        // ログアウト状態
+      &__right {
+        // width: 520px;
+        height: 40px;
+        position: absolute;
+        right: 0;
+        display: flex;
+        &__menu {
+          display: inline-block;
+          line-height: 40px;
+          padding-left: 10px;
+          font-weight: lighter;
+          font-size: 14px;
+          // float: right;
+          &__signup {
+            display: inline-block;
+            height: 25px;
+            line-height: 25px;
+            color: white;
+            background-color: red;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px 5px 5px 5px /5px 5px 5px 5px;
+          }
+          &__login {
+            height: 30px;
+            color: skyblue;
+            border: solid 1px skyblue;
+            text-decoration: none;
+            padding: 10px 13px;
+            border-radius: 5px 5px 5px 5px /5px 5px 5px 5px;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+          }
+          &__login:hover {
+            background-color: skyblue;
+            color: white;
+          }
+        }
+        // ログアウト状態
+
+      }
+    }
+  }
+}
