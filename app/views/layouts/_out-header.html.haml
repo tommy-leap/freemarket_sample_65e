@@ -1,0 +1,77 @@
+%header
+.header__inner
+  .header__inner__top
+    .header__inner__top__logo
+      = link_to "#" do
+        = image_tag 'fmarket_logo_red.svg', alt: '', height: '36px', width: '150px', class: 'top-logo'
+    .header__inner__top__input
+      = link_to "#", class: "header__inner__top__input__icon" do
+        = icon('fas', 'search')
+  %ul.header__inner__nav
+    %li.header__inner__nav__category
+      = link_to "#", class: "header__inner__nav__category__icon" do
+        = icon('fas', 'list-ul')
+        %span.header__inner__nav__category__icon--name
+          カテゴリーから探す
+      %ul.header__inner__nav__category__title
+        %li
+          = link_to "#", class: "big" do
+            レディース
+          %ul.header__inner__nav__category__title
+            %li
+              = link_to "#", class: "big" do
+                トップス
+              %ul.header__inner__nav__category__title
+                %li
+                  = link_to "#", class: "big" do
+                    ポロシャツ
+                %li
+                  = link_to "#", class: "big" do
+                    キャミソール
+                %li
+                  = link_to "#", class: "big" do
+                    タンクトップ
+                
+
+            %li
+              = link_to "#", class: "big" do
+                アウター/ジャケット
+            %li
+              = link_to "#", class: "big" do
+                パンツ
+        %li
+          = link_to "#", class: "big" do
+            メンズ
+        %li
+          = link_to "#", class: "big" do
+            ベビー・キッズ
+        
+                
+              
+                
+    %li.header__inner__nav__brand
+      = link_to "#", class: "header__inner__nav__brand__icon" do
+        = icon('fab', 'searchengin')
+        %span.header__inner__nav__brand__icon--name
+          ブランドから探す
+      %ul
+        %li
+          = link_to "#", class: "big" do
+            ナイキ
+        %li
+          = link_to "#", class: "big" do
+            シャネル
+        %li
+          = link_to "#", class: "big" do
+            ルイ ヴィトン
+          
+          -# ログアウト状態
+    %li.header__inner__nav__right
+      %ul.header__inner__nav__right__menu
+        %li.header__inner__nav__right__menu
+          = link_to "#", class: "header__inner__nav__right__menu__signup" do
+            新規会員登録
+        %li.header__inner__nav__right__menu
+          = link_to "#", class: "header__inner__nav__right__menu__login" do
+            ログイン
+          -# ログアウト状態
