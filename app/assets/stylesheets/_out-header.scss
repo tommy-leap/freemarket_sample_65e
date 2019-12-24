@@ -1,0 +1,256 @@
+
+// ヘッダーscss
+
+.header {
+  height: 100px;
+  background-color: white;
+  &__inner {
+    height: 90px;
+    width:1020px;
+    background-color: white;
+    margin: 0 auto;
+    padding-top: 8px;
+    &__top {
+      display: flex;
+      &__logo {
+        padding: 0;
+      }
+      &__input {
+        height: 40px;
+        width: 823px;
+        padding: 0 10px 0 10px;
+        margin-left: 25px;
+        background-color: #EEEEEE;
+        border: solid 1px gray;
+        border-radius: 5px 5px 5px 5px /5px 5px 5px 5px;
+        &__icon {
+          color: black;
+          line-height: 40px;
+          float: right;
+        }
+      }
+    }
+    &__nav {
+      height: 40px;
+      margin-top: 8px;
+      display: flex;
+      position: relative;
+      &__category {
+        width: 150px;
+        height: 40px;
+        padding-right: 11px;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 40px;
+        text-align: right;
+        &:hover {
+          ul {
+            border: ridge 1px #EEEEEE;
+            border-bottom: ridge 2px #EEEEEE;
+            border-top: none;
+            width: 214px;
+            height: 520px;
+            li {
+              border-top: solid 1px #ffffff;
+              display: block;
+              width: 199px;
+              height: 40px;
+              background-color: white;
+              text-align: left;
+              padding-left: 15px;
+              border-right: ridge 1px #EEEEEE;
+              ul {
+                display: none;
+              }
+              &:hover {
+                background-color: #CC3300;
+                width: 200px;
+                .big {
+                  color:white;
+                }
+                ul {
+                  display: block;
+                  border: ridge 1px #EEEEEE;
+                  border-bottom: ridge 2px #EEEEEE;
+                  border-top: none;
+                  width: 214px;
+                  margin-left: 200px;
+                  margin-top: -41px;
+                  height: 520px;
+                  li {
+                    border-top: solid 1px #ffffff;
+                    display: block;
+                    width: 199px;
+                    height: 30px;
+                    line-height: 30px;
+                    background-color: white;
+                    text-align: left;
+                    padding-left: 15px;
+                    .big {
+                      color:black;
+                    }
+                    ul {
+                      display: none;
+                    }
+                    &:hover {
+                      background-color: #EEEEEE;
+                      width: 200px;
+                      .big {
+                        color:black;
+                      }
+                      ul {
+                        display: block;
+                        border: ridge 1px #EEEEEE;
+                        border-bottom: ridge 2px #EEEEEE;
+                        border-top: none;
+                        width: 314px;
+                        margin-left: 200px;
+                        margin-top: -31px;
+                        height: 520px;
+                        li {
+                          border-top: solid 1px #ffffff;
+                          display: block;
+                          width: 299px;
+                          height: 30px;
+                          line-height: 30px;
+                          background-color: white;
+                          text-align: left;
+                          padding-left: 15px;
+                          &:hover {
+                            background-color: #EEEEEE;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+          
+        ul {
+          li {
+            display: none;
+            .big {
+              text-decoration: none;
+              color: black;
+              font-weight: lighter;
+            }
+          }
+        }
+        &__icon {
+          color: red;
+          text-decoration: none;
+          &--name {
+            text-decoration: none;
+            color: black;
+          }
+          &--name:hover {
+            color: skyblue;
+          }
+        }
+      }
+
+      &__brand {
+        width: 150px;
+        height: 40px;
+        padding-right: 180px;
+        padding-left: 11px;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 40px;
+        text-align: right;
+        ul {
+          li {
+            display: none;
+          }
+        }
+        &:hover {
+          ul {
+            border: ridge 1px #EEEEEE;
+            border-right: ridge 1px #EEEEEE;
+            border-top: none;
+            width: 214px;
+            li {
+              border-top: solid 1px #ffffff;
+              display: block;
+              width: 200px;
+              height: 40px;
+              background-color: white;
+              text-align: left;
+              padding-left: 15px;
+              .big {
+                text-decoration: none;
+                color: black;
+                font-weight: lighter;
+              }
+              &:hover {
+                background-color: #CC3300;
+                width: 200px;
+                .big {
+                  color:white;
+                }
+              }
+            }
+          }
+        }
+        &__icon {
+          color: red;
+          text-decoration: none;
+          &--name {
+            text-decoration: none;
+            color: black;
+            &:hover {
+              color: skyblue;
+            }
+          }
+        }
+      }
+        // ログアウト状態
+      &__right {
+        // width: 520px;
+        height: 40px;
+        position: absolute;
+        right: 0;
+        display: flex;
+        &__menu {
+          display: inline-block;
+          line-height: 40px;
+          padding-left: 10px;
+          font-weight: lighter;
+          font-size: 14px;
+          // float: right;
+          &__signup {
+            display: inline-block;
+            height: 25px;
+            line-height: 25px;
+            color: white;
+            background-color: red;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px 5px 5px 5px /5px 5px 5px 5px;
+          }
+          &__login {
+            height: 30px;
+            color: skyblue;
+            border: solid 1px skyblue;
+            text-decoration: none;
+            padding: 10px 13px;
+            border-radius: 5px 5px 5px 5px /5px 5px 5px 5px;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+          }
+          &__login:hover {
+            background-color: skyblue;
+            color: white;
+          }
+        }
+        // ログアウト状態
+
+      }
+    }
+  }
+}

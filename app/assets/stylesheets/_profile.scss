@@ -1,0 +1,70 @@
+// プロフィールscss
+.profile {
+  width: 600px;
+  height: 460px;
+  background-color: gray;
+  // border: solid 1px black;
+  &__logo {
+    font-weight: bold;
+    font-size: 24px;
+    height: 50px;
+    background-color: white;
+    line-height: 50px;
+    text-align: center;
+  }
+  .name-groud {
+    height: 110px;
+    background-image: url(https://i0.wp.com/rich-rice.com/wp-content/uploads/2018/04/ciecle2P-kawaii-pink.jpg?resize=640%2C423&ssl=1);
+    position: relative;
+    
+    &__image {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: gray;
+      position: absolute;
+      bottom: 20px;
+      left: 150px;
+    }
+    &__input {
+      height: 30px;
+      width: 200px;
+      position: absolute;
+      bottom: 25px;
+      left: 200px;
+      background-color: white;
+    }
+  }
+  .comment {
+    height: 225px;
+    background-color: white;
+    position: relative;
+    &__form {
+      height: 175px;
+      width: 550px;
+      background-color: white;
+      border: solid 1px gray;
+      position: absolute;
+      left: 25px;
+      top: 25px;
+    }
+  }
+  .form-area {
+    background-color: white;
+    height: 75px;
+    position: relative;
+    &__btn {
+      height: 50px;
+      width:550px;
+      background-color: red;
+      position: absolute;
+      left: 25px;
+      .form-area__title {
+        font-size: 14px;
+        color: white;
+        line-height: 50px;
+        text-align: center;
+      }
+    }
+  }
+}
