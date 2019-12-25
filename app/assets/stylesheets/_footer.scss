@@ -1,3 +1,52 @@
+aside{
+  height: 260px;
+  width: 100%;
+  position: relative;
+  .fmarket-banner-easy{
+    position: absolute;
+    color: white;
+    top: 40px;
+    left: 355px;
+    z-index: 1;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .fmarket-banner-download{
+    position: absolute;
+    color: white;
+    top: 80px;
+    left: 355px;
+    z-index: 1;
+    font-weight: bold;
+    font-size: 36px;
+  }
+  // .mobilephone{
+  //   height: 260px;
+  //   width: 300px;
+  //   z-index: 1;
+  //   position: absolute;
+  //   left: 850px;
+  //   opacity: 0.9;
+  // }
+  .fmarket-picture{
+    opacity: 0.7;
+  }
+  .logo-red{
+    position: absolute;
+    top: 155px;
+    left: 355px;
+  }
+  #sample_apple{
+    position: absolute;
+    top: 160px;
+    left: 437px;
+  }
+  #sample_google{
+    position: absolute;
+    top: 160px;
+    left: 586px;
+  }
+}
 footer{
     height: 390px;
     width: 100%;
