@@ -1,0 +1,157 @@
+.regist-body{
+  position: relative;
+  min-height: 100%;
+  background: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+}
+
+.regist-container{
+  padding: 0 0 250px;
+}
+
+.regist-header{
+  text-align: center;
+}
+
+.top-logo {
+  display: inline-block;
+  width: 120px;
+  height: 33px;
+  margin: 0 8px 0 0;
+  line-height: 33px;
+}
+
+.contents-sns {
+  display: block;
+  background: #fff;
+}
+
+.contents-sns__main{
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.contents-sns__main__title {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  padding: 16px;
+}
+
+.contents-sns__main__btn  {
+  padding: 24px 16px 40px;
+  border-top: 1px solid #f5f5f5;
+  margin: 0 auto;
+}
+.contents-sns__main__btn__link {
+  max-width: 343px;
+}
+
+.contents__btn--email {
+  color: #fff;
+  background-color: #ea352d;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  border-radius: 4px;
+}
+.icon-mail {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translate(0, -50%);
+  // color: #ccc;
+  font-size: 16px;
+}
+
+.contents__btn--facebook {
+  margin: 16px 0 0;
+  background: #385185;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  border-radius: 4px;
+}
+.icon-fbook {
+  display: inline-block;
+  // font-family: 'icon-font';
+  // speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.contents__btn--google {
+margin: 16px 0 0;
+background: #fff;
+border: #979797;
+color: #333;
+display: block;
+width: 100%;
+line-height: 48px;
+font-size: 14px;
+border: 1px solid transparent;
+-webkit-transition: all ease-out .3s;
+transition: all ease-out .3s;
+cursor: pointer;
+text-align: center;
+position: relative;
+border-radius: 4px;
+}
+
+.regist__footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 250px;
+  padding: 40px 0;
+  text-align: center;
+
+  &__rules {
+
+    &__list {
+      list-style: none;
+
+      &__first {
+        margin: 0;
+      }
+      &__second {
+        margin: 16px 0 0;
+        font-size: 12px;
+      }
+      &__third {
+        font-size: 12px;
+      }
+    }
+  }
+  
+  &__footer-logo {
+    width: 80px;
+    height: 65px;
+    margin: 40px auto 0;
+  }
+
+  
+}
