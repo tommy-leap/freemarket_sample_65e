@@ -60,9 +60,8 @@
 }
 
 .section_header{
-  height: 171px;
   width: 100vw;
-  padding: 56px 0 30px;
+  padding: 46px 0 30px;
   background-color: #FFFFFF;
 .section_title{
   height: 39px;
@@ -70,12 +69,13 @@
   background-color: #FFFFFF;
   h2{
     color: black;
-    font-size: 24px;
+    font-size: 28px;
     text-align: center;
     font-family:  YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    font-weight: 600;
     white-space: nowrap;
   }
-  }
+}
   .section_btn{
     height: 40px;
     background-color: white;
@@ -126,6 +126,7 @@
               position: absolute;
               display: flex;
               white-space: nowrap;
+              font-weight: bold;
             }
             &__more{
               a{
@@ -153,11 +154,11 @@
               display: flex;
               flex-wrap: wrap;
               overflow: hidden;
-              &__image{
+              .contents_box__image{
+                width: 188px;
                 padding: 10px;
                 position: relative;
-              }
-              &__price{
+              .contents_box__price{
                 width: auto;
                 height: 28px;
                 background-color: rgba(0,0,0,0.4);
@@ -174,11 +175,10 @@
                 box-sizing: border-box;
                 display:inline-block;
               }
-              &__comment{
-                width: 188px;
+              .contents_box__comment{
+                width: auto;
                 height: 64px;
                 padding: 0 12px;
-                bottom: 0;
                 background-color: white;
                 box-shadow: 0 2px 4px rgba(0,0,0,.18);
                 overflow: hidden;
@@ -188,18 +188,16 @@
                 line-height: 20px;
                 span{
                   padding-top: 10px;
-                  overflow: hidden;
                   display: inline-block;
                   position: relative;
                 }
               }
             }
           }
+        }
       }
     }
   }
   .contents_span{
     margin-top: 60px;
   }
-
-*{margin: 0; padding: 0;}
