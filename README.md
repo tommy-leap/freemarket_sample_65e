@@ -96,7 +96,7 @@ Things you may want to cover:
 |------|----|-------|
 |message|text||
 |user_id|integer|null: false, foreign_key: true|
-|products_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :product
