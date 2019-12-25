@@ -1,317 +1,319 @@
 
-// ヘッダーscss
+// // ヘッダーscss
 
-.header {
-  height: 100px;
-  background-color: white;
-  &__inner {
-    height: 90px;
-    width:1020px;
-    background-color: white;
-    margin: 0 auto;
-    padding-top: 8px;
-    &__top {
-      display: flex;
-      &__logo {
-        padding: 0;
-      }
-      &__input {
-        height: 40px;
-        width: 823px;
-        padding: 0 10px 0 10px;
-        margin-left: 25px;
-        background-color: #EEEEEE;
-        border: solid 1px gray;
-        border-radius: 5px 5px 5px 5px /5px 5px 5px 5px;
-        &__icon {
-          color: black;
-          line-height: 40px;
-          float: right;
-        }
-      }
-    }
-    &__nav {
-      height: 40px;
-      margin-top: 8px;
-      display: flex;
-      position: relative;
-      &__category {
-        width: 150px;
-        height: 40px;
-        padding-right: 11px;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 40px;
-        text-align: right;
-        z-index: 1000;
-        &:hover {
-          ul {
-            border: ridge 1px #EEEEEE;
-            border-bottom: ridge 2px #EEEEEE;
-            border-top: none;
-            width: 214px;
-            height: 520px;
-            background-color: white;
-            li {
-              border-top: solid 1px #ffffff;
-              display: block;
-              width: 199px;
-              height: 40px;
-              background-color: white;
-              text-align: left;
-              padding-left: 15px;
-              border-right: ridge 1px #EEEEEE;
-              ul {
-                display: none;
-              }
-              &:hover {
-                background-color: #CC3300;
-                width: 200px;
-                .big {
-                  color:white;
-                }
-                ul {
-                  background-color: white;
-                  display: block;
-                  border: ridge 1px #EEEEEE;
-                  border-bottom: ridge 2px #EEEEEE;
-                  border-top: none;
-                  width: 214px;
-                  margin-left: 200px;
-                  margin-top: -41px;
-                  height: 520px;
-                  li {
-                    border-top: solid 1px #ffffff;
-                    display: block;
-                    width: 199px;
-                    height: 30px;
-                    line-height: 30px;
-                    background-color: white;
-                    text-align: left;
-                    padding-left: 15px;
-                    .big {
-                      color:black;
-                    }
-                    ul {
-                      display: none;
-                    }
-                    &:hover {
-                      background-color: #EEEEEE;
-                      width: 200px;
-                      .big {
-                        color:black;
-                      }
-                      ul {
-                        background-color: white;
-                        display: block;
-                        border: ridge 1px #EEEEEE;
-                        border-bottom: ridge 2px #EEEEEE;
-                        border-top: none;
-                        width: 314px;
-                        margin-left: 200px;
-                        margin-top: -31px;
-                        height: 520px;
-                        li {
-                          border-top: solid 1px #ffffff;
-                          display: block;
-                          width: 299px;
-                          height: 30px;
-                          line-height: 30px;
-                          background-color: white;
-                          text-align: left;
-                          padding-left: 15px;
-                          &:hover {
-                            background-color: #EEEEEE;
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+// .header {
+//   height: 100px;
+//   background-color: white;
+//   &__inner {
+//     height: 90px;
+//     width:1020px;
+//     background-color: white;
+//     margin: 0 auto;
+//     padding-top: 8px;
+//     &__top {
+//       display: flex;
+//       &__logo {
+//         padding: 0;
+//       }
+//       &__input {
+//         height: 40px;
+//         width: 823px;
+//         padding: 0 10px 0 10px;
+//         margin-left: 25px;
+//         background-color: #EEEEEE;
+//         border: solid 1px gray;
+//         border-radius: 5px 5px 5px 5px /5px 5px 5px 5px;
+//         &__icon {
+//           color: black;
+//           line-height: 40px;
+//           float: right;
+//         }
+//       }
+//     }
+//     &__nav {
+//       height: 40px;
+//       margin-top: 8px;
+//       display: flex;
+//       position: relative;
+//       &__category {
+//         width: 150px;
+//         height: 40px;
+//         padding-right: 11px;
+//         font-weight: bold;
+//         font-size: 14px;
+//         line-height: 40px;
+//         text-align: right;
+//         z-index: 1000;
+//         &:hover {
+//           ul {
+//             border: ridge 1px #EEEEEE;
+//             border-bottom: ridge 2px #EEEEEE;
+//             border-top: none;
+//             width: 214px;
+//             height: 520px;
+//             background-color: white;
+//             li {
+//               border-top: solid 1px #ffffff;
+//               display: block;
+//               width: 199px;
+//               height: 40px;
+//               background-color: white;
+//               text-align: left;
+//               padding-left: 15px;
+//               border-right: ridge 1px #EEEEEE;
+//               ul {
+//                 display: none;
+//               }
+//               &:hover {
+//                 background-color: #CC3300;
+//                 width: 200px;
+//                 .big {
+//                   color:white;
+//                 }
+//                 ul {
+//                   background-color: white;
+//                   display: block;
+//                   border: ridge 1px #EEEEEE;
+//                   border-bottom: ridge 2px #EEEEEE;
+//                   border-top: none;
+//                   width: 214px;
+//                   margin-left: 200px;
+//                   margin-top: -41px;
+//                   height: 520px;
+//                   li {
+//                     border-top: solid 1px #ffffff;
+//                     display: block;
+//                     width: 199px;
+//                     height: 30px;
+//                     line-height: 30px;
+//                     background-color: white;
+//                     text-align: left;
+//                     padding-left: 15px;
+//                     .big {
+//                       color:black;
+//                     }
+//                     ul {
+//                       display: none;
+//                     }
+//                     &:hover {
+//                       background-color: #EEEEEE;
+//                       width: 200px;
+//                       .big {
+//                         color:black;
+//                       }
+//                       ul {
+//                         background-color: white;
+//                         display: block;
+//                         border: ridge 1px #EEEEEE;
+//                         border-bottom: ridge 2px #EEEEEE;
+//                         border-top: none;
+//                         width: 314px;
+//                         margin-left: 200px;
+//                         margin-top: -31px;
+//                         height: 520px;
+//                         li {
+//                           border-top: solid 1px #ffffff;
+//                           display: block;
+//                           width: 299px;
+//                           height: 30px;
+//                           line-height: 30px;
+//                           background-color: white;
+//                           text-align: left;
+//                           padding-left: 15px;
+//                           &:hover {
+//                             background-color: #EEEEEE;
+//                           }
+//                         }
+//                       }
+//                     }
+//                   }
+//                 }
+//               }
+//             }
+//           }
+//         }
           
-        ul {
-          li {
-            display: none;
-            .big {
-              text-decoration: none;
-              color: black;
-              font-weight: lighter;
-            }
-          }
-        }
-        &__icon {
-          color: red;
-          text-decoration: none;
-          &--name {
-            text-decoration: none;
-            color: black;
-          }
-          &--name:hover {
-            color: skyblue;
-          }
-        }
-      }
+//         ul {
+//           li {
+//             display: none;
+//             .big {
+//               text-decoration: none;
+//               color: black;
+//               font-weight: lighter;
+//             }
+//           }
+//         }
+//         &__icon {
+//           color: red;
+//           text-decoration: none;
+//           &--name {
+//             text-decoration: none;
+//             color: black;
+//           }
+//           &--name:hover {
+//             color: skyblue;
+//           }
+//         }
+//       }
 
-      &__brand {
-        width: 150px;
-        height: 40px;
-        padding-right: 180px;
-        padding-left: 11px;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 40px;
-        text-align: right;
-        z-index: 1000;
-        ul {
-          li {
-            display: none;
-          }
-        }
-        &:hover {
-          ul {
-            border: ridge 1px #EEEEEE;
-            border-right: ridge 1px #EEEEEE;
-            border-top: none;
-            width: 214px;
-            li {
-              border-top: solid 1px #ffffff;
-              display: block;
-              width: 200px;
-              height: 40px;
-              background-color: white;
-              text-align: left;
-              padding-left: 15px;
-              .big {
-                text-decoration: none;
-                color: black;
-                font-weight: lighter;
-              }
-              &:hover {
-                background-color: #CC3300;
-                width: 200px;
-                .big {
-                  color:white;
-                }
-              }
-            }
-          }
-        }
-        &__icon {
-          color: red;
-          text-decoration: none;
-          &--name {
-            text-decoration: none;
-            color: black;
-            &:hover {
-              color: skyblue;
-            }
-          }
-        }
-      }
+//       &__brand {
+//         width: 150px;
+//         height: 40px;
+//         padding-right: 180px;
+//         padding-left: 11px;
+//         font-weight: bold;
+//         font-size: 14px;
+//         line-height: 40px;
+//         text-align: right;
+//         z-index: 1000;
+//         ul {
+//           li {
+//             display: none;
+//           }
+//         }
+//         &:hover {
+//           ul {
+//             border: ridge 1px #EEEEEE;
+//             border-right: ridge 1px #EEEEEE;
+//             border-top: none;
+//             width: 214px;
+//             li {
+//               border-top: solid 1px #ffffff;
+//               display: block;
+//               width: 200px;
+//               height: 40px;
+//               background-color: white;
+//               text-align: left;
+//               padding-left: 15px;
+//               .big {
+//                 text-decoration: none;
+//                 color: black;
+//                 font-weight: lighter;
+//               }
+//               &:hover {
+//                 background-color: #CC3300;
+//                 width: 200px;
+//                 .big {
+//                   color:white;
+//                 }
+//               }
+//             }
+//           }
+//         }
+//         &__icon {
+//           color: red;
+//           text-decoration: none;
+//           &--name {
+//             text-decoration: none;
+//             color: black;
+//             &:hover {
+//               color: skyblue;
+//             }
+//           }
+//         }
+//       }
 
-      // ログイン状態
-      &__right {
-        &__menu {
-          height: 40px;
-          // width: 150px;
-          line-height: 40px;
-          padding: 0 14px;
-          font-weight: lighter;
-          font-size: 14px;
-          display: block;
-          &--mypage {
-            padding-left: 14px;
-            display: block;
-          }
-          ul {
-            display: none;
-          }
-          &:hover {
-            span {
-              color: skyblue;
-            }
-            .icon {
-              color: skyblue;
-            }
-            ul {
-              position: absolute;
-              display: block;
-              display: flex;
-              flex-direction: column;
-              .news {
-                display: block;
-                width: 300px;
-                height: 100px;
-                display: flex;
-                border: ridge 1px #EEEEEE;
-                border-top: none;
-                .mylist {
-                  display: flex;
-                  text-decoration: none;
-                  color: black;
-                  position: absolute;
-                  .top-logo {
-                    padding: 10px 10px 40px 10px;
-                    width: 50px;
-                  }
-                  .text {
-                    width: 200px;
-                    &__title {
-                      height: 60px;
-                      width: 170px;
-                      overflow: hidden;
-                      padding-top: 10px;
-                      padding-right: 30px;
-                      line-height: 1.45;
-                      flex-direction: column;
-                      display: block;
-                    }
-                    &__time {
-                      height: 30px;
-                      width: 200px;
-                      bottom: 0;
-                      font-size: 14px;
-                      display: block;
-                      color: #aaa;
-                      overflow: hidden;
-                      line-height: 0;
-                    }
-                  }
-                  .icon {
-                    width: 30px;
-                    text-align: center;
-                    line-height: 100px;
-                    color: #aaa;
-                  }
-                }
-                &:hover {
-                  background-color: #f0f0f0;
-                }
-              }
-            }
-          }
+//       // ログイン状態
+//       &__right {
+//         &__menu {
+//           height: 40px;
+//           // width: 150px;
+//           line-height: 40px;
+//           padding: 0 14px;
+//           font-weight: lighter;
+//           font-size: 14px;
+//           display: block;
+//           z-index: 1000;
+//           &--mypage {
+//             padding-left: 14px;
+//             display: block;
+//           }
+//           ul {
+//             display: none;
+//           }
+//           &:hover {
+//             span {
+//               color: skyblue;
+//             }
+//             .icon {
+//               color: skyblue;
+//             }
+//             ul {
+//               position: absolute;
+//               display: block;
+//               display: flex;
+//               flex-direction: column;
+//               background-color: white;
+//               .news {
+//                 display: block;
+//                 width: 300px;
+//                 height: 100px;
+//                 display: flex;
+//                 border: ridge 1px #EEEEEE;
+//                 border-top: none;
+//                 .mylist {
+//                   display: flex;
+//                   text-decoration: none;
+//                   color: black;
+//                   position: absolute;
+//                   .top-logo {
+//                     padding: 10px 10px 40px 10px;
+//                     width: 50px;
+//                   }
+//                   .text {
+//                     width: 200px;
+//                     &__title {
+//                       height: 60px;
+//                       width: 170px;
+//                       overflow: hidden;
+//                       padding-top: 10px;
+//                       padding-right: 30px;
+//                       line-height: 1.45;
+//                       flex-direction: column;
+//                       display: block;
+//                     }
+//                     &__time {
+//                       height: 30px;
+//                       width: 200px;
+//                       bottom: 0;
+//                       font-size: 14px;
+//                       display: block;
+//                       color: #aaa;
+//                       overflow: hidden;
+//                       line-height: 0;
+//                     }
+//                   }
+//                   .icon {
+//                     width: 30px;
+//                     text-align: center;
+//                     line-height: 100px;
+//                     color: #aaa;
+//                   }
+//                 }
+//                 &:hover {
+//                   background-color: #f0f0f0;
+//                 }
+//               }
+//             }
+//           }
         
-          &__icon {
-            color: #DDDDDD;
-            text-decoration: none;
-            &--title {
-              color: black;
-            }
-          }
-          &__title {
-            color: black;
-            text-decoration: none;
-          }
-          &__title:hover {
-            color: skyblue;
-          }
-        }
-      }
-    }
-  }
-}
-        // ログイン状態
+//           &__icon {
+//             color: #DDDDDD;
+//             text-decoration: none;
+//             &--title {
+//               color: black;
+//             }
+//           }
+//           &__title {
+//             color: black;
+//             text-decoration: none;
+//           }
+//           &__title:hover {
+//             color: skyblue;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+//         // ログイン状態
