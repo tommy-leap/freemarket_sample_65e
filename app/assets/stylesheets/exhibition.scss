@@ -1,13 +1,13 @@
 .exhibition {
   width: 700px;
   height: 2016px;
-  background-color: wheat;  
+  background-color: white;  
 }
 .exhibition-head {
   padding: 32px 16px; 
   width: 668px;
   height: 33px;
-  background-color: yellow;
+  background-color:white;
   h2 {
     text-align: center;
     line-height: 1.5;
@@ -17,20 +17,25 @@
 .exhibition-form {
   width: 700px;
   height: 1919px;
-  background-color: darkkhaki;
+  background-color: white;
 }
 
 .exhibition-form-image {
+  border-top: solid 1px #f5f5f5;
   width: 620px;
   height: 223px;
-  background-color: darkorange;
+  background-color: white;
   padding: 40px;
+  p {
+    font-size: 14px;
+  }
 }
 .exhibition-form-image-box {
+  cursor: pointer;
   padding: 40px;
   width: 538px;
   height: 83px;
-  background-color: darkred;
+  background-color: #ccc;
   border: dotted 1px;
   text-align: center;
   &__file {
@@ -38,15 +43,24 @@
   }
 }
 .product-text-form {
+  border-top: solid 1px #f5f5f5;
   width: 620px;
   height: 275px;
-  background-color: orange;
+  background-color:white;
   padding: 40px;
-  
+  &__box {
+    padding-bottom: 25px;
+  }
 }
-.textarea-default {
-  width: 620px;
-  height: 142px;
+// .product-text-form__box {
+//   padding-bottom: 22px;
+// }
+
+.product-textarea {
+  padding: 10px;
+  width: 598px;
+  height: 122px;
+  font-size: 16px;
 }
 
 .input-form-product-name {
@@ -60,26 +74,145 @@
 }
 
 .product-details-form {
+  border-top: solid 1px #f5f5f5;
   width: 620px;
-  height: 142px;
-  background-color: palegreen;
+  height: 181px;
+  background-color: white;
   padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  select {
+  outline: 0;
+  -webkit-appearance: none;
+  width: 400px;
+  height: 48px;
+  border: solid 1px #ccc;
+  border-radius: 3px;
+  background-color: white;
+  margin-top: 8px;
+  padding-left: 13px;
+  font-size: 16px;
+  }
+  &__info__low {
+    margin-top: 22px;
+  }
+
 }
 .product-delivery-form {
+  border-top: solid 1px #f5f5f5;
+  justify-content: space-between;
+  display: flex;
   width: 620px;
   height: 291px;
-  background-color: palevioletred;
+  background-color: white;
   padding: 40px;
+  select {
+    outline: 0;
+    -webkit-appearance: none;
+    width: 400px;
+    height: 48px;
+    border: solid 1px #ccc;
+    border-radius: 3px;
+    background-color: white;
+    margin-top: 8px;
+    padding-left: 13px;
+    font-size: 16px;
+    }
 }
 .product-price-form {
+  border-top: solid 1px #f5f5f5;
   width: 620px;
   height: 219px;
   padding: 40px;
-  background-color: springgreen;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  &__box-text-low {
+    ul {
+      list-style: none;
+      width: 400px;
+      li {
+        display: flex;
+        label {
+          margin-right: 133px;
+        }
+      }
+      input {
+        width: 126px;
+        text-align: end;
+      }
+    } 
+  }
 }
+.input-form-product-price {
+  margin-left: 15px;
+  border: solid 1px #ccc;
+  border-radius: 3px;
+  margin-top: 8px;
+  padding: 10px 16px;
+  width: 586px;
+  height: 26px;
+  font-size: 16px;
+}
+.product-text-form__box-price {
+  width: 190px;
+}
+
+.product-text-form__box-center {
+  height: 13px;
+  padding: 24px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  
+  &__commission {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+.product-form-line {
+  display: block;
+}
+.product-text-form__box-profit {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+.product-text-form__box-low {
+  height: 35px;
+  padding: 24px 0;
+}
+
 .product-btn-form {
+  border-top: solid 1px #f5f5f5;
   width: 620px;
   height: 249px;
   padding: 40px;
-  background-color: tomato;
+  background-color: white;
+  font-size: 14px;
+}
+.product-back-btn {
+  margin-top: 20px;
+  text-align: center;
+  button {
+    width: 277px;
+    height: 48px;
+    background-color: #aaa;
+    border: 1px solid #aaa;
+    cursor: pointer;
+  }
+}
+.form-product__btn--red {
+  text-decoration: none;
+    color: white;
+    width: 620px;
+    height: 50px;
+    background: #ea352d;
+    cursor: pointer;
+    border: solid 1px;
+    border: 1px solid #ea352d;
+    font-size: 16px;
 }
