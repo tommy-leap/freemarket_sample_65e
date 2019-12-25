@@ -6,10 +6,10 @@ crumb :users do
   link "マイページ", product_path
 end
 
-crumb :user do |user|
-  link user.name, project_path(project)
-  parent :users
-end
+# crumb :user do |user|
+#   link user.name, project_path(project)
+#   parent :users
+# end
 
 # crumb :project_issues do |project|
 #   link "Issues", project_issues_path(project)
