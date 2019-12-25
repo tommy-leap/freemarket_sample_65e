@@ -1,0 +1,82 @@
+.contents__btn--facebook {
+  margin: 16px 0 0;
+  background: #385185;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  border-radius: 4px;
+}
+
+.icon-fbook {
+  display: inline-block;
+  // font-family: 'icon-font';
+  // speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.contents__btn--google {
+margin: 16px 0 0;
+background: #fff;
+border: #979797;
+color: #333;
+display: block;
+width: 100%;
+line-height: 48px;
+font-size: 14px;
+border: 1px solid transparent;
+-webkit-transition: all ease-out .3s;
+transition: all ease-out .3s;
+cursor: pointer;
+text-align: center;
+position: relative;
+border-radius: 4px;
+}
+
+.regist__footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 250px;
+  padding: 40px 0;
+  text-align: center;
+
+  &__rules {
+
+    &__list {
+      list-style: none;
+
+      &__first {
+        margin: 0;
+      }
+      &__second {
+        margin: 16px 0 0;
+        font-size: 12px;
+      }
+      &__third {
+        font-size: 12px;
+      }
+    }
+  }
+  
+  &__footer-logo {
+    width: 80px;
+    height: 65px;
+    margin: 40px auto 0;
+  }
+
+  
+}
