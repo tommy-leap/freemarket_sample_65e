@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.breadcrumbs {
+  height: 40px;
+  width: 1010px;
+  background-color: white;
+  margin-left: 210px;
+  padding-left: 10px;
+  border-top: solid 1px #eeeeee;
+  line-height: 40px;
+  a {
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+  }
+}
+
 .buy-result {
   background-color: #eeeeee;
   &__header {
