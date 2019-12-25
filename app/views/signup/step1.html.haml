@@ -1,9 +1,11 @@
+
 .regist-body  
   .regist-container
     .regist-header
       = link_to "#" do
         = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '36px', width: '150px', class:'top-logo'
 
+      
       %nav.signup-bar  
         %ol.step-bar
           %li.step.current 
@@ -25,7 +27,9 @@
           %li.step.current 
             完了
             .progress-status 
-      
+
+    -# = form_for @user, url: "#" do |f|
+    -#   = hidden_field_tag :current_step, 'step1'  
     .regist-mainform
       .l-regist-wholeform
         .l-regist-wholeform__head
