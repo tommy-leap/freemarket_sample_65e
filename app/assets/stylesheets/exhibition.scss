@@ -1,0 +1,85 @@
+.exhibition {
+  width: 700px;
+  height: 2016px;
+  background-color: wheat;  
+}
+.exhibition-head {
+  padding: 32px 16px; 
+  width: 668px;
+  height: 33px;
+  background-color: yellow;
+  h2 {
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+
+.exhibition-form {
+  width: 700px;
+  height: 1919px;
+  background-color: darkkhaki;
+}
+
+.exhibition-form-image {
+  width: 620px;
+  height: 223px;
+  background-color: darkorange;
+  padding: 40px;
+}
+.exhibition-form-image-box {
+  padding: 40px;
+  width: 538px;
+  height: 83px;
+  background-color: darkred;
+  border: dotted 1px;
+  text-align: center;
+  &__file {
+    display: none;
+  }
+}
+.product-text-form {
+  width: 620px;
+  height: 275px;
+  background-color: orange;
+  padding: 40px;
+  
+}
+.textarea-default {
+  width: 620px;
+  height: 142px;
+}
+
+.input-form-product-name {
+  border: solid 1px #ccc;
+    border-radius: 3px;
+    margin-top: 8px;
+    padding: 10px 16px;
+    width: 586px;
+    height: 26px;
+    font-size: 16px;
+}
+
+.product-details-form {
+  width: 620px;
+  height: 142px;
+  background-color: palegreen;
+  padding: 40px;
+}
+.product-delivery-form {
+  width: 620px;
+  height: 291px;
+  background-color: palevioletred;
+  padding: 40px;
+}
+.product-price-form {
+  width: 620px;
+  height: 219px;
+  padding: 40px;
+  background-color: springgreen;
+}
+.product-btn-form {
+  width: 620px;
+  height: 249px;
+  padding: 40px;
+  background-color: tomato;
+}
