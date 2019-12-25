@@ -43,6 +43,7 @@
         font-size: 14px;
         line-height: 40px;
         text-align: right;
+        z-index: 1000;
         &:hover {
           ul {
             border: ridge 1px #EEEEEE;
@@ -50,6 +51,7 @@
             border-top: none;
             width: 214px;
             height: 520px;
+            background-color: white;
             li {
               border-top: solid 1px #ffffff;
               display: block;
@@ -77,6 +79,7 @@
                   margin-left: 200px;
                   margin-top: -41px;
                   height: 520px;
+                  background-color: white;
                   li {
                     border-top: solid 1px #ffffff;
                     display: block;
@@ -107,6 +110,7 @@
                         margin-left: 200px;
                         margin-top: -31px;
                         height: 520px;
+                        background-color: white;
                         li {
                           border-top: solid 1px #ffffff;
                           display: block;
@@ -161,6 +165,7 @@
         font-size: 14px;
         line-height: 40px;
         text-align: right;
+        z-index: 1000;
         ul {
           li {
             display: none;
