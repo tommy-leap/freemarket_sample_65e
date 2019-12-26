@@ -4,8 +4,11 @@ class ProductsController < ApplicationController
   end
   def create
     Product.create(product_params)
+    redirect_to products_error_path
   end
   def show
+  end
+  def error
   end
 
   private
