@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
 
+
+  # devise_for :users
+
   root 'users#index'
   get "signup", to: "signup#index"
-  resources :products, only: [:show]
-  resources :users
+  resources :products, only: [:index, :new, :create, :show]
+  resources :users, only: [:index, :show, :edit, :update]
   resources :signup, only: [:new]do
     collection do
       get 'step1'
