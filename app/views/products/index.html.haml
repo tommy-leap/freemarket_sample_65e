@@ -1,0 +1,742 @@
+.wrapper
+#exhibit-btn
+  = link_to "#" do
+    =image_tag 'exhibit.png', size: "160x160", alt: "exhibit"
+.main_slider
+  .slider
+    =image_tag 'slide1.jpg', alt: "slide1"
+    =image_tag 'slide2.jpg', alt: "slide2"
+    =image_tag 'slide3.jpg', alt: "slide3"
+
+.section_header
+  .section_title
+    %h2 人気のカテゴリー
+  .section_btn
+    .section_btn__box
+      = link_to "レディース", '#'
+    .section_btn__box
+      = link_to "メンズ", '#'
+    .section_btn__box
+      = link_to "家電・スマホ・カメラ", '#'
+    .section_btn__box 
+      = link_to "おもちゃ・ホビー・グッズ", '#'
+.main_contents 
+  .contents_entire
+    .contents
+      .contents_title
+        %h3 レディース新着アイテム
+        .contents_title__more
+          = link_to "もっと見る ＞", '#'
+      .contents_continer
+        %ul.contents_box
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag @image.image, size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 
+                  = @product.title
+              .contents_box__price
+                %span  ¥
+                %span
+                  = @product.price
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 美品☆トラックブルゾン
+              .contents_box__price
+                %span  ¥
+                %span 3,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 美品☆トラックブルゾン
+              .contents_box__price
+                %span  ¥
+                %span 3,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 美品☆トラックブルゾン
+              .contents_box__price
+                %span  ¥
+                %span 3,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 美品☆トラックブルゾン
+              .contents_box__price
+                %span  ¥
+                %span 3,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 美品☆トラックブルゾン
+              .contents_box__price
+                %span  ¥
+                %span 3,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 美品☆トラックブルゾン
+              .contents_box__price
+                %span  ¥
+                %span 3,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 美品☆トラックブルゾン
+              .contents_box__price
+                %span  ¥
+                %span 3,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 美品☆トラックブルゾン
+              .contents_box__price
+                %span  ¥
+                %span 3,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 美品☆トラックブルゾン
+              .contents_box__price
+                %span  ¥
+                %span 3,200
+    .contents_span
+      .contents
+        .contents_title
+          %h3 メンズ新着アイテム
+          .contents_title__more
+            = link_to "もっと見る ＞", '#'
+        .contents_continer
+          %ul.contents_box
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+    .contents_span
+      .contents
+        .contents_title
+          %h3 家電・スマホ・カメラ新着アイテム
+          .contents_title__more
+            = link_to "もっと見る ＞", '#'
+        .contents_continer
+          %ul.contents_box
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+    .contents_span
+      .contents
+        .contents_title
+          %h3 おもちゃ・ホビー・グッズ新着アイテム
+          .contents_title__more
+            = link_to "もっと見る ＞", '#'
+        .contents_continer
+          %ul.contents_box
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 美品☆トラックブルゾン
+                .contents_box__price
+                  %span  ¥
+                  %span 3,200
+.section_header
+  .section_title
+    %h2 人気のブランド
+  .section_btn
+    .section_btn__box
+      = link_to "シャネル", '#'
+    .section_btn__box
+      = link_to "ルイヴィトン", '#'
+    .section_btn__box
+      = link_to "シュプリーム", '#'
+    .section_btn__box 
+      = link_to "ナイキ", '#'
+.main_contents 
+  .contents_entire
+    .contents
+      .contents_title
+        %h3 シャネル新着アイテム
+        .contents_title__more
+          = link_to "もっと見る ＞", '#'
+      .contents_continer
+        %ul.contents_box
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 新品未使用 CHANEL ノベルティ コインケース
+              .contents_box__price
+                %span  ¥
+                %span 23,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 新品未使用 CHANEL ノベルティ コインケース
+              .contents_box__price
+                %span  ¥
+                %span 23,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 新品未使用 CHANEL ノベルティ コインケース
+              .contents_box__price
+                %span  ¥
+                %span 23,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 新品未使用 CHANEL ノベルティ コインケース
+              .contents_box__price
+                %span  ¥
+                %span 23,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 新品未使用 CHANEL ノベルティ コインケース
+              .contents_box__price
+                %span  ¥
+                %span 23,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 新品未使用 CHANEL ノベルティ コインケース
+              .contents_box__price
+                %span  ¥
+                %span 23,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 新品未使用 CHANEL ノベルティ コインケース
+              .contents_box__price
+                %span  ¥
+                %span 23,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 新品未使用 CHANEL ノベルティ コインケース
+              .contents_box__price
+                %span  ¥
+                %span 23,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 新品未使用 CHANEL ノベルティ コインケース
+              .contents_box__price
+                %span  ¥
+                %span 23,200
+          %li.contents_box__image
+            = link_to "#" do
+              =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+              .contents_box__comment
+                %span 新品未使用 CHANEL ノベルティ コインケース
+              .contents_box__price
+                %span  ¥
+                %span 23,200
+    .contents_span
+      .contents
+        .contents_title
+          %h3 ルイヴィトン新着アイテム
+          .contents_title__more
+            = link_to "もっと見る ＞", '#'
+        .contents_continer
+          %ul.contents_box
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+    .contents_span
+      .contents
+        .contents_title
+          %h3 シュプリーム新着アイテム
+          .contents_title__more
+            = link_to "もっと見る ＞", '#'
+        .contents_continer
+          %ul.contents_box
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+    .contents_span
+      .contents
+        .contents_title
+          %h3 ナイキ新着アイテム
+          .contents_title__more
+            = link_to "もっと見る ＞", '#'
+        .contents_continer
+          %ul.contents_box
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
+            %li.contents_box__image
+              = link_to "#" do
+                =image_tag 'chanel.jpg', size: "188x188", alt: "image"
+                .contents_box__comment
+                  %span 新品未使用 CHANEL ノベルティ コインケース
+                .contents_box__price
+                  %span  ¥
+                  %span 23,200
