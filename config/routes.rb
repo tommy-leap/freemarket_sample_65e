@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "signup", to: "signup#index"
   resources :products, only: [:show]
   resources :users, only: [:index, :edit, :update]
-  resources :signup do
+  resources :signup, only: [:new]do
     collection do
       get 'step1'
       post 'step2'

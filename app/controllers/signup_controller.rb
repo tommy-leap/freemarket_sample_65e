@@ -1,4 +1,8 @@
 class SignupController < ApplicationController
+  def new
+    @signup =Signup.new
+  end
+  
   def step1
     @user = User.new
     # @user.build_user_details
@@ -8,10 +12,10 @@ class SignupController < ApplicationController
   def user_params
     params.require(:user).permit(
       :nickname,
-      :email, 
+      :email,
       :encrypted_password,
-      :image
-      :evaluation
+      :image,
+      :evaluation,
     )
-  
+  end
 end
