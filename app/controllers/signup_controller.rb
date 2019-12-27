@@ -1,6 +1,6 @@
 class SignupController < ApplicationController
   
-  def step1
+  def new
   end
   
   private
