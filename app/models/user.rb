@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_one :user_detail
+  has_one :step1
+  has_one :step2
+
+  
 end
