@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end  
   root 'users#index'
   get "signup", to: "signup#index"
+  get "users/index", to: "users#index"
   get 'products/error'
   resources :products, only: [:index, :new, :create, :show]
   resources :users, only: [:index, :show, :edit, :update]

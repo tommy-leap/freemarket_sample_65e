@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_27_043558) do
+ActiveRecord::Schema.define(version: 2019_12_27_120057) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "brand"
@@ -85,6 +85,14 @@ ActiveRecord::Schema.define(version: 2019_12_27_043558) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "step4s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "card_num", null: false
+    t.integer "expiration_date", null: false
+    t.integer "security_code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_id", null: false
     t.string "first_name", null: false
@@ -94,7 +102,6 @@ ActiveRecord::Schema.define(version: 2019_12_27_043558) do
     t.integer "year", null: false
     t.integer "month", null: false
     t.integer "day", null: false
-    t.integer "phone_num", null: false
     t.integer "post_num", null: false
     t.string "from", null: false
     t.string "municipalities", null: false
