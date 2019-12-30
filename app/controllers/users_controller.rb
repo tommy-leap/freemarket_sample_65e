@@ -7,4 +7,8 @@ class UsersController < ApplicationController
   
   def profile
   end
+
+  def new
+  end
+
 end
