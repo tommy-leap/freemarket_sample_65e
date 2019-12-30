@@ -5,20 +5,20 @@
       美品☆トラックブルゾン
     .item-status
       .thumbnail
-        %img.mainImage{alt: "", height: "300", src: "https://static.mercdn.net/item/detail/orig/photos/m74988235969_1.jpg?1573955136", width: "300"}/
+        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m74988235969_1.jpg?1573955136', size: "300x300", alt: "image", class: "mainImage"
       .thumbnail-thumb
-        %img.thumb{alt: "", height: "60", src: "https://static.mercdn.net/item/detail/orig/photos/m74988235969_1.jpg?1573955136", width: "60"}/
-        %img.thumb{alt: "", height: "60", src: "https://static.mercdn.net/item/detail/orig/photos/m60743030705_1.jpg?1570714986", width: "60"}/
-        %img.thumb{alt: "", height: "60", src: "https://static.mercdn.net/item/detail/orig/photos/m64027879172_1.jpg?1549124096", width: "60"}/
-        %img.thumb{alt: "", height: "60", src: "https://static.mercdn.net/item/detail/orig/photos/m37646039727_1.jpg?1575463668", width: "60"}/
-        %img.thumb{alt: "", height: "60", src: "https://static.mercdn.net/item/detail/orig/photos/m42582829655_1.jpg?1576851227", width: "60"}/
+        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m74988235969_1.jpg?1573955136', size: "60x60", alt: "image", class: "thumb"
+        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m60743030705_1.jpg?1570714986', size: "60x60", alt: "image", class: "thumb"
+        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m64027879172_1.jpg?1549124096', size: "60x60", alt: "image", class: "thumb"
+        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m37646039727_1.jpg?1575463668', size: "60x60", alt: "image", class: "thumb"
+        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m42582829655_1.jpg?1576851227', size: "60x60", alt: "image", class: "thumb"
 
       .item-teble
         %table
           %tr
             %th 出品者
             %td.user-name
-              %a{href: "#"} user
+              = link_to "user", '#'
               .evaluation
                 .evaluation__good
                   = icon('fas', 'laugh', class: "icon")
@@ -34,16 +34,16 @@
             %td
               .category
                 .category__1
-                  %a{href: "#"} メンズ
+                  = link_to "メンズ", '#'
                 .category__2
-                  %a{href: "#"} ＞ジャケット/アウター
+                  = link_to "＞ジャケット/アウター", '#' 
                 .category__3
-                %a{href: "#"} ＞ナイロンジャケット
+                  = link_to "＞ナイロンジャケット", '#' 
 
           %tr
             %th ブランド
             %td 
-              %a{href: "#"} ザ ノースフェイス
+              = link_to " ザ ノースフェイス", '#' 
           %tr
             %th 商品のサイズ
             %td M
@@ -59,7 +59,7 @@
           %tr
             %th 配送元地域
             %td 
-              %a{href: "#"} 大阪
+              = link_to " 大阪", '#'
           %tr
             %th 発送日の目安
             %td 1~2日で発送
@@ -94,7 +94,7 @@
           %a 不適切商品の報告
       .right-container
         = icon('fas', 'lock', class: "icon")
-        %a{href: "#"} あんしん・あんぜんへの取り組み   
+        = link_to " あんしん・あんぜんへの取り組み", '#'    
 
   .comment-container
     %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
@@ -104,33 +104,30 @@
         %span コメントする
   %ul.link-item
     %li.link-item__back
-      %a{href: "#"} ＜NIKE AIRMAX
+      = link_to "＜NIKE AIRMAX", '#'
     %li.link-item__next
-      %a{href: "#"} adidas superstar＞
+      = link_to "adidas superstar＞", '#'
   .item-sns-container
     .item-sns-container-box
       %ul.sns-list
         %li.sns-list__fecebook
-          %a{href: "#"} 
+          =link_to "https://www.facebook.com/" do
             = icon('fab', 'facebook-square', class: "icon")
         %li.sns-list__twitter
-          %a{href: "#"} 
+          =link_to "https://twitter.com/login?lang=ja" do
             = icon('fab', 'twitter', class: "icon")
-        %li.sns-list__line
-          %a{href: "#"} 
-            = icon('fab', 'line', class: "icon")
         %li.sns-list__pinterest
-          %a{href: "#"} 
+          =link_to "https://www.pinterest.jp/" do
             = icon('fab', 'pinterest', class: "icon")
 
   %h2.etc-item 
-    %a{href: "#"} 
+    = link_to '#' do
       %span user
       %span さんのその他の出品
   .item-list
     %ul.item-box
       %li.item-box__image
-        %a{href: "#"}
+        = link_to '#' do
           =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
           .item-box__comment
             .item-title
@@ -144,7 +141,7 @@
                 %span 10
 
       %li.item-box__image
-        %a{href: "#"}
+        = link_to '#' do
           =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
           .item-box__comment
             .item-title
@@ -158,7 +155,7 @@
                 %span 10
 
       %li.item-box__image
-        %a{href: "#"}
+        = link_to '#' do
           =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
           .item-box__comment
             .item-title
@@ -172,7 +169,7 @@
                 %span 10
 
       %li.item-box__image
-        %a{href: "#"}
+        = link_to '#' do
           =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
           .item-box__comment
             .item-title
@@ -186,7 +183,7 @@
                 %span 10 
 
       %li.item-box__image
-        %a{href: "#"}
+        = link_to '#' do
           =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
           .item-box__comment
             .item-title
@@ -200,7 +197,7 @@
                 %span 10 
 
       %li.item-box__image
-        %a{href: "#"}
+        = link_to '#' do
           =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
           .item-box__comment
             .item-title
@@ -214,12 +211,12 @@
                 %span 10  
 
     %h2.etc-item 
-      %a{href: "#"} 
-        %span user
-        %span さんのその他の出品  
+      = link_to '#' do 
+        %span ザ ノースフェイス
+        %span その他の出品  
     .item-list__category
       %li.item-box__image
-        %a{href: "#"}
+        = link_to '#' do
           =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
           .item-box__comment
             .item-title
@@ -233,7 +230,7 @@
                 %span 10
 
       %li.item-box__image
-        %a{href: "#"}
+        = link_to '#' do
           =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
           .item-box__comment
             .item-title
@@ -247,7 +244,7 @@
                 %span 10
 
       %li.item-box__image
-        %a{href: "#"}
+        = link_to '#' do
           =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
           .item-box__comment
             .item-title
@@ -261,7 +258,7 @@
                 %span 10
 
       %li.item-box__image
-        %a{href: "#"}
+        = link_to '#' do
           =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
           .item-box__comment
             .item-title
@@ -275,7 +272,7 @@
                 %span 10 
 
       %li.item-box__image
-        %a{href: "#"}
+        = link_to '#' do
           =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
           .item-box__comment
             .item-title
@@ -289,7 +286,7 @@
                 %span 10 
 
       %li.item-box__image
-        %a{href: "#"}
+        = link_to '#' do
           =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
           .item-box__comment
             .item-title
