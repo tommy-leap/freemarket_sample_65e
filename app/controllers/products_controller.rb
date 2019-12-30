@@ -9,8 +9,8 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @product = Product.all
-    @image = Image.find(2)
+    @product = Product.find_by(title:"ベルト")
+    @image = Image.find(1)
   end
   
   def show
