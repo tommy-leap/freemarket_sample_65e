@@ -1,0 +1,305 @@
+%body
+%main
+  .item-area
+    .item-area__title
+      美品☆トラックブルゾン
+    .item-status
+      .thumbnail
+        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m74988235969_1.jpg?1573955136', size: "300x300", alt: "image", class: "mainImage"
+      .thumbnail-thumb
+        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m74988235969_1.jpg?1573955136', size: "60x60", alt: "image", class: "thumb"
+        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m60743030705_1.jpg?1570714986', size: "60x60", alt: "image", class: "thumb"
+        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m64027879172_1.jpg?1549124096', size: "60x60", alt: "image", class: "thumb"
+        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m37646039727_1.jpg?1575463668', size: "60x60", alt: "image", class: "thumb"
+        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m42582829655_1.jpg?1576851227', size: "60x60", alt: "image", class: "thumb"
+
+      .item-teble
+        %table
+          %tr
+            %th 出品者
+            %td.user-name
+              = link_to "user", '#'
+              .evaluation
+                .evaluation__good
+                  = icon('fas', 'laugh', class: "icon")
+                  %span 0
+                .evaluation__usually
+                  = icon('fas', 'meh', class: "icon")
+                  %span 0
+                .evaluation__bad
+                  = icon('fas', 'frown', class: "icon")
+                  %span 0
+          %tr
+            %th カテゴリー
+            %td
+              .category
+                .category__1
+                  = link_to "メンズ", '#'
+                .category__2
+                  = link_to "＞ジャケット/アウター", '#' 
+                .category__3
+                  = link_to "＞ナイロンジャケット", '#' 
+
+          %tr
+            %th ブランド
+            %td 
+              = link_to " ザ ノースフェイス", '#' 
+          %tr
+            %th 商品のサイズ
+            %td M
+          %tr
+            %th 商品の状態
+            %td 未使用に近い
+          %tr
+            %th 配送料の負担
+            %td 送料込み(出品者負担)
+          %tr
+            %th 配送の方法
+            %td ゆうゆうメルカリ便
+          %tr
+            %th 配送元地域
+            %td 
+              = link_to " 大阪", '#'
+          %tr
+            %th 発送日の目安
+            %td 1~2日で発送
+    .price-box
+      %span.price-box__price
+        ¥
+        13,000
+      %sapn.price-box__tax
+        (税込)
+      %span.price-box__posteger
+        送料込み
+    .buy-btn
+      %button.buy-btn--submit{type:"button"}
+        %span 購入画面に進む
+    .attention-message
+      ザ ノースフェイスのトラックジャケットです。
+      毛足の長いニットにチェックが
+      マッチしてとても可愛いです。
+      ブルゾンタイプですので
+      インナーとしてもアウターとしても
+      ご利用いただける商品です。
+      タグ付きの未使用品になります。
+      肩幅42cm,身幅49cm,袖丈63cm,着丈62cm
+    .btn-container
+      .left-container
+        %button.left-container__like{type:"button"}
+          = icon('far', 'heart fa-lg', class: "icon")
+          %a いいね！
+          %span 42
+        %button.left-container__report{type:"button"}
+          = icon('far', 'flag', class: "icon")
+          %a 不適切商品の報告
+      .right-container
+        = icon('fas', 'lock', class: "icon")
+        = link_to " あんしん・あんぜんへの取り組み", '#'    
+
+  .comment-container
+    %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    %textarea.comment-container__box
+    .comment-container__btn 
+      %button.comment-container__btn--submit{type:"button"}
+        %span コメントする
+  %ul.link-item
+    %li.link-item__back
+      = link_to "＜NIKE AIRMAX", '#'
+    %li.link-item__next
+      = link_to "adidas superstar＞", '#'
+  .item-sns-container
+    .item-sns-container-box
+      %ul.sns-list
+        %li.sns-list__fecebook
+          =link_to "https://www.facebook.com/" do
+            = icon('fab', 'facebook-square', class: "icon")
+        %li.sns-list__twitter
+          =link_to "https://twitter.com/login?lang=ja" do
+            = icon('fab', 'twitter', class: "icon")
+        %li.sns-list__pinterest
+          =link_to "https://www.pinterest.jp/" do
+            = icon('fab', 'pinterest', class: "icon")
+
+  %h2.etc-item 
+    = link_to '#' do
+      %span user
+      %span さんのその他の出品
+  .item-list
+    %ul.item-box
+      %li.item-box__image
+        = link_to '#' do
+          =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
+          .item-box__comment
+            .item-title
+              %span トラックジャケット
+            .item-pofile
+              .item-pofile__price
+                %span ¥
+                %span 13,000
+              .item-pofile__evaluation
+                = icon('far', 'heart fa-lg', class: "icon")
+                %span 10
+
+      %li.item-box__image
+        = link_to '#' do
+          =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
+          .item-box__comment
+            .item-title
+              %span トラックジャケット
+            .item-pofile
+              .item-pofile__price
+                %span ¥
+                %span 13,000
+              .item-pofile__evaluation
+                = icon('far', 'heart fa-lg', class: "icon")
+                %span 10
+
+      %li.item-box__image
+        = link_to '#' do
+          =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
+          .item-box__comment
+            .item-title
+              %span トラックジャケット
+            .item-pofile
+              .item-pofile__price
+                %span ¥
+                %span 13,000
+              .item-pofile__evaluation
+                = icon('far', 'heart fa-lg', class: "icon")
+                %span 10
+
+      %li.item-box__image
+        = link_to '#' do
+          =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
+          .item-box__comment
+            .item-title
+              %span トラックジャケット
+            .item-pofile
+              .item-pofile__price
+                %span ¥
+                %span 13,000
+              .item-pofile__evaluation
+                = icon('far', 'heart fa-lg', class: "icon")
+                %span 10 
+
+      %li.item-box__image
+        = link_to '#' do
+          =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
+          .item-box__comment
+            .item-title
+              %span トラックジャケット
+            .item-pofile
+              .item-pofile__price
+                %span ¥
+                %span 13,000
+              .item-pofile__evaluation
+                = icon('far', 'heart fa-lg', class: "icon")
+                %span 10 
+
+      %li.item-box__image
+        = link_to '#' do
+          =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
+          .item-box__comment
+            .item-title
+              %span トラックジャケット
+            .item-pofile
+              .item-pofile__price
+                %span ¥
+                %span 13,000
+              .item-pofile__evaluation
+                = icon('far', 'heart fa-lg', class: "icon")
+                %span 10  
+
+    %h2.etc-item 
+      = link_to '#' do 
+        %span ザ ノースフェイス
+        %span その他の出品  
+    .item-list__category
+      %li.item-box__image
+        = link_to '#' do
+          =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
+          .item-box__comment
+            .item-title
+              %span トラックジャケット
+            .item-pofile
+              .item-pofile__price
+                %span ¥
+                %span 13,000
+              .item-pofile__evaluation
+                = icon('far', 'heart fa-lg', class: "icon")
+                %span 10
+
+      %li.item-box__image
+        = link_to '#' do
+          =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
+          .item-box__comment
+            .item-title
+              %span トラックジャケット
+            .item-pofile
+              .item-pofile__price
+                %span ¥
+                %span 13,000
+              .item-pofile__evaluation
+                = icon('far', 'heart fa-lg', class: "icon")
+                %span 10
+
+      %li.item-box__image
+        = link_to '#' do
+          =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
+          .item-box__comment
+            .item-title
+              %span トラックジャケット
+            .item-pofile
+              .item-pofile__price
+                %span ¥
+                %span 13,000
+              .item-pofile__evaluation
+                = icon('far', 'heart fa-lg', class: "icon")
+                %span 10
+
+      %li.item-box__image
+        = link_to '#' do
+          =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
+          .item-box__comment
+            .item-title
+              %span トラックジャケット
+            .item-pofile
+              .item-pofile__price
+                %span ¥
+                %span 13,000
+              .item-pofile__evaluation
+                = icon('far', 'heart fa-lg', class: "icon")
+                %span 10 
+
+      %li.item-box__image
+        = link_to '#' do
+          =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
+          .item-box__comment
+            .item-title
+              %span トラックジャケット
+            .item-pofile
+              .item-pofile__price
+                %span ¥
+                %span 13,000
+              .item-pofile__evaluation
+                = icon('far', 'heart fa-lg', class: "icon")
+                %span 10 
+
+      %li.item-box__image
+        = link_to '#' do
+          =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
+          .item-box__comment
+            .item-title
+              %span トラックジャケット
+            .item-pofile
+              .item-pofile__price
+                %span ¥
+                %span 13,000
+              .item-pofile__evaluation
+                = icon('far', 'heart fa-lg', class: "icon")
+                %span 10
+
+  %nav.link-bottom
+    %ul.change-page
+      %li.goto__top メルカリ＞
+      %li.goto__nowpage new balance
