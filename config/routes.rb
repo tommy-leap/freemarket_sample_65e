@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  # devise_for :users, controllers: {
-  #   sessions: 'users/sessions',
-  #   registrations: 'users/registrations',
-  # }
-  # devise_scope :user do
-  #   get 'step1', to: 'users/registrations#new_step1'
-  #   post 'step1',  to: 'users/registrations#create_step1'
-  # end  
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations',
+  }
+  devise_scope :user do
+    get 'step1', to: 'users/registrations#new_step1'
+    post 'step1',  to: 'users/registrations#create_step1'
+  end
   root 'users#index'
   get "users/profile", to: "users#profile"
   get "users/edit", to: "users#edit"
