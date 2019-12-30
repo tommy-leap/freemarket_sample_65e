@@ -3,6 +3,9 @@
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
   %body
+    %header
+      mercari_header
+    %nav mercari_navbar
     %main
       .content
         .content__left
@@ -22,6 +25,15 @@
                   .user__detail__exhibit
                     出品数
                     %span.bold 10
+                  .tab-wrap
+                    %input#TAB-01.tab-switch{checked: "checked", name: "TAB", type: "radio"}/
+                    %label.tab-label{for: "TAB-01"} お知らせ
+                    .tab-content
+                      コンテンツ 1
+                    %input#TAB-02.tab-switch{:name => "TAB", :type => "radio"}/
+                    %label.tab-label{for: "TAB-02"} やることリスト
+                    .tab-content
+                      コンテンツ 2
           .mydata-information
             %ul.mydata-information__tab
               %li.mydata-information__tab__notification
