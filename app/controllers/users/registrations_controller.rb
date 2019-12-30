@@ -18,6 +18,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def step2
     super
   end
+
+  def step3
+    super
+  end
+
+  def step4
+    Payjp.api_key = "sk_test_4223b676224ef9a3df7b49c9"
+    Payjp::Charge.create(
+      amount: 809, # 決済する値段
+      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+      currency: 'jpy'
+    )
+  end
+
   # GET /resource/edit
   # def edit
   #   super
