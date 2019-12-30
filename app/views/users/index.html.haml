@@ -1,100 +1,99 @@
-!!!
-%html
-  %head
-    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-  %body
-    %main
-      .content
-        .content__left
-          content__left
-        .content__right
-          .mydata-detail
-            %a{href: "https://www.mercari.com/jp/u/364151343/"}
-              .user
-                .user__icon
-                  %img{src: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}/
-                .user__name
-                  chelsea
-                .user__detail
-                  .user__detail__evaluation
-                    評価
-                    %span.bold 30
-                  .user__detail__exhibit
-                    出品数
-                    %span.bold 10
-          .mydata-information
-            %ul.mydata-information__tab
-              %li.mydata-information__tab__notification
-                お知らせ
-              %li.mydata-information__tab__todo
-                やることリスト
-            %ul.mydata-information__content
-              %li
-                %a.mydata-item-link{href: "#"}
-                  %figure
-                    = image_tag "logo_red.svg", class: "logo-red", height: "48px", width: "48px"
-                  .mydata-item-body
-                    .mydata-item-body__text
-                      事務局から個別メッセージ「ログイン通知」
-                    %time
-                      %i.far.fa-clock
-                      %span 2日前
-                  %i.fas.fa-chevron-right
-              %li
-                %a.mydata-item-link{href: "#"}
-                  %figure
-                    = image_tag "logo_red.svg", class: "logo-red", height: "48px", width: "48px"
-                  .mydata-item-body
-                    .mydata-item-body__text
-                      《CMもやってる！》最大P3,000もらえる買うシカないキャンペーンを今すぐチェックしよう！
-                    %time
-                      %i.far.fa-clock
-                      %span 4日前
-                  %i.fas.fa-chevron-right
-              %li
-                %a.mydata-item-link{href: "#"}
-                  %figure
-                    = image_tag "logo_red.svg", class: "logo-red", height: "48px", width: "48px"
-                  .mydata-item-body
-                    .mydata-item-body__text
-                      《もう招待コードをシェアしましたか？》友達・家族を誘ってP1,000ゲットしよう
-                    %time
-                      %i.far.fa-clock
-                      %span 5日前
-                  %i.fas.fa-chevron-right
-              %li
-                %a.mydata-item-link{href: "#"}
-                  %figure
-                    = image_tag "logo_red.svg", class: "logo-red", height: "48px", width: "48px"
-                  .mydata-item-body
-                    .mydata-item-body__text
-                      事務局から個別メッセージ「【ご意見をお聞かせください】メルカリのご利用に関するアンケート」
-                    %time
-                      %i.far.fa-clock
-                      %span 6日前
-                  %i.fas.fa-chevron-right
-              %li
-                %a.mydata-item-link{href: "#"}
-                  %figure
-                    = image_tag "logo_red.svg", class: "logo-red", height: "48px", width: "48px"
-                  .mydata-item-body
-                    .mydata-item-body__text
-                      《ネットショッピングもメルペイで！》1,000ポイントプレゼントや10%ポイント還元など限定キャンペーン開催中！
-                    %time
-                      %i.far.fa-clock
-                      %span 9日前
-                  %i.fas.fa-chevron-right
-              %li.mydata-go-list
-                %a{href: "https://www.mercari.com/jp/mypage/notification/"}
-                  一覧を見る
-          .mydata-product
-            .mydata-product__head
-              %p 購入した商品
-            %ul.mydata-product__tab
-              %li.mydata-product__tab__now
-                取引中
-              %li.mydata-product__tab__past
-                過去の取引
-            %ul.mydata-product__content
-              = image_tag "logo_gray.svg", class: "image-box", height: "150px", width: "150px"
-              %li.mydata-product__content__not-found 取引中の商品がありません
+%body
+  .container
+  = render "top"
+  -# %body
+  -#   %main
+  -#     .content
+  -#       .content__left
+  -#         content__left
+  -#       .content__right
+  -#         .mydata-detail
+  -#           %a{href: "https://www.mercari.com/jp/u/364151343/"}
+  -#             .user
+  -#               .user__icon
+  -#                 %img{src: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}/
+  -#               .user__name
+  -#                 chelsea
+  -#               .user__detail
+  -#                 .user__detail__evaluation
+  -#                   評価
+  -#                   %span.bold 30
+  -#                 .user__detail__exhibit
+  -#                   出品数
+  -#                   %span.bold 10
+  -#         .mydata-information
+  -#           %ul.mydata-information__tab
+  -#             %li.mydata-information__tab__notification
+  -#               お知らせ
+  -#             %li.mydata-information__tab__todo
+  -#               やることリスト
+  -#           %ul.mydata-information__content
+  -#             %li
+  -#               %a.mydata-item-link{href: "#"}
+  -#                 %figure
+  -#                   = image_tag "logo_red.svg", class: "logo-red", height: "48px", width: "48px"
+  -#                 .mydata-item-body
+  -#                   .mydata-item-body__text
+  -#                     事務局から個別メッセージ「ログイン通知」
+  -#                   %time
+  -#                     %i.far.fa-clock
+  -#                     %span 2日前
+  -#                 %i.fas.fa-chevron-right
+  -#             %li
+  -#               %a.mydata-item-link{href: "#"}
+  -#                 %figure
+  -#                   = image_tag "logo_red.svg", class: "logo-red", height: "48px", width: "48px"
+  -#                 .mydata-item-body
+  -#                   .mydata-item-body__text
+  -#                     《CMもやってる！》最大P3,000もらえる買うシカないキャンペーンを今すぐチェックしよう！
+  -#                   %time
+  -#                     %i.far.fa-clock
+  -#                     %span 4日前
+  -#                 %i.fas.fa-chevron-right
+  -#             %li
+  -#               %a.mydata-item-link{href: "#"}
+  -#                 %figure
+  -#                   = image_tag "logo_red.svg", class: "logo-red", height: "48px", width: "48px"
+  -#                 .mydata-item-body
+  -#                   .mydata-item-body__text
+  -#                     《もう招待コードをシェアしましたか？》友達・家族を誘ってP1,000ゲットしよう
+  -#                   %time
+  -#                     %i.far.fa-clock
+  -#                     %span 5日前
+  -#                 %i.fas.fa-chevron-right
+  -#             %li
+  -#               %a.mydata-item-link{href: "#"}
+  -#                 %figure
+  -#                   = image_tag "logo_red.svg", class: "logo-red", height: "48px", width: "48px"
+  -#                 .mydata-item-body
+  -#                   .mydata-item-body__text
+  -#                     事務局から個別メッセージ「【ご意見をお聞かせください】メルカリのご利用に関するアンケート」
+  -#                   %time
+  -#                     %i.far.fa-clock
+  -#                     %span 6日前
+  -#                 %i.fas.fa-chevron-right
+  -#             %li
+  -#               %a.mydata-item-link{href: "#"}
+  -#                 %figure
+  -#                   = image_tag "logo_red.svg", class: "logo-red", height: "48px", width: "48px"
+  -#                 .mydata-item-body
+  -#                   .mydata-item-body__text
+  -#                     《ネットショッピングもメルペイで！》1,000ポイントプレゼントや10%ポイント還元など限定キャンペーン開催中！
+  -#                   %time
+  -#                     %i.far.fa-clock
+  -#                     %span 9日前
+  -#                 %i.fas.fa-chevron-right
+  -#             %li.mydata-go-list
+  -#               %a{href: "https://www.mercari.com/jp/mypage/notification/"}
+  -#                 一覧を見る
+  -#         .mydata-product
+  -#           .mydata-product__head
+  -#             %p 購入した商品
+  -#           %ul.mydata-product__tab
+  -#             %li.mydata-product__tab__now
+  -#               取引中
+  -#             %li.mydata-product__tab__past
+  -#               過去の取引
+  -#           %ul.mydata-product__content
+  -#             = image_tag "logo_gray.svg", class: "image-box", height: "150px", width: "150px"
+  -#             %li.mydata-product__content__not-found 取引中の商品がありません
