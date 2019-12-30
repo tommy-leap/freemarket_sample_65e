@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_one :user_detail
   has_one :step1
   has_one :step2
-
+  has_many :step4
   
 end
