@@ -29,7 +29,7 @@
           = link_to "もっと見る ＞", '#'
       .contents_continer
         %ul.contents_box
-          - @product.each do |product| 
+          - @product.each do |product|
             - product.images.each do |image|
               %li.contents_box__image
                 = link_to "#" do
