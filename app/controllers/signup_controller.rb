@@ -2,6 +2,9 @@ class SignupController < ApplicationController
   
   def new
   end
+
+  def index
+  end
   
   private
   def user_params

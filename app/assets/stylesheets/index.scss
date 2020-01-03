@@ -1,0 +1,271 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  border-style: solid;
+  border-width: 0;
+  position: relative;
+  min-height: 100%;
+  background: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+}
+
+.regist-container {
+  padding: 0 0 220px;
+}
+
+.h1 {
+  margin: 40px 0 0;
+  display: inline-block;
+}
+
+.regist-header{
+  text-align: center;
+  height: 128px;
+
+  &__top-logo {
+    display: inline-block;
+    width: 185px;
+    height: 49px;
+    margin: 40px 8px 0 0;
+    line-height: 49px;
+  }
+}
+
+
+.signup-var{
+  padding: 16px 0;
+  border-top: 1px solid #eee;
+}
+
+.step-bar {
+  list-style: none;
+  font-size: 0;
+  text-align: center;
+}
+
+
+.step  {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  min-width: 40px;
+  margin: 0 5% 0 0;
+  font-size: 12px;
+}
+
+
+.progress-status {
+  width: 12px;
+  height: 12px;
+  margin: 8px auto 0;
+  background-color:gray;
+  border-radius: 50%;
+  display:flex;
+}
+.progress-status:active {
+  background-color:red;
+}
+
+
+.l-regist-wholeform {
+  background: #fff;
+
+  &__mainform {
+    width: 700px;
+    margin: 0 auto;
+
+    &__head{
+      font-size: 22px;
+      padding: 32px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    &__input {
+      padding: 24px 16px 40px;
+      border-top: 1px solid #f5f5f5;
+
+      &__info {
+        max-width: 343px;
+        margin: 0 auto;
+
+        &__nickname {
+          margin: 0;
+          .form-require {
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            background-color: red;
+          }
+          .input-default {
+            width: 100%;
+            margin: 8px 0 0;
+            height: 28px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+        }
+        &__address {
+          margin: 24px 0 0;
+
+          .form-require {
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            background-color: red;
+          }
+          .input-default {
+            width: 100%;
+            margin: 8px 0 0;
+            height: 28px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+        }
+        &__password {
+          margin: 24px 0 0;
+
+          .form-require {
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            background-color: red;
+          }
+          .input-default {
+            width: 100%;
+            margin: 8px 0 0;
+            height: 28px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+          &__text {
+            margin: 8px 0 0;
+            line-height: 1.5;
+          }
+          &__error {
+            list-style: none;
+          }
+          &__confirm {
+            .checkbox-default {
+              margin: 16px 0 0;
+              position: relative;
+
+              .icon-check {
+                position: absolute;
+                font-size: 0;
+                top: 50%;
+                left: 0;
+                z-index: 1;
+                border-radius: 2px;
+                background: #fff;
+                border: 1px solid #ccc;
+                font-size: 10px;
+                line-height: 17px;
+                text-align: center;
+                color: #fff;
+                vertical-align: middle;
+              }
+            &__show {
+              display: none;
+              line-height: 1.5;
+              font-size: 16px;
+              font-weight: 500;
+              font-family: monospace;
+              margin: 14px 0;
+              word-break: break-all;
+              overflow-wrap: break-word;
+              
+              .form-password-revelation-revealed-password {
+              background-color: #f5f5f5;
+              padding: 4px 8px;
+              display: none;
+              }
+            }
+          }
+        }
+      }  
+        &__text {
+          margin: 24px 0 0;
+          .l-confirm-letter {
+            font-size: 16px;
+          }
+          .l-conform-text {
+            margin: 8px 0 0;
+            padding: 0;
+          }
+        }
+        &__kanji {
+          margin: 24px 0 0;
+
+          .form-require {
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            background-color: red;
+          }
+          .input-default {
+            width: calc(50% - 6px);
+            margin: 8px 0 0;
+            height: 28px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+          .half-left {
+            margin-right: 8px;
+          }
+          .half-right {
+
+          }
+        }
+        &__kana {
+          margin: 24px 0 0;
+
+          .form-require {
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            background-color: red;
+          }
+        }
+    }
+  }
+  }
+}
