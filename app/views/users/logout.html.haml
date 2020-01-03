@@ -1,0 +1,10 @@
+%body
+  %main
+    .content
+      =render 'shared/side_bar'
+      .lcontent
+        .lcontent__wrapper
+          %form.lbox{novalidate: 'novalidate'}
+            .lbox__content
+              %button.lbox__content__btn{type: 'submit'} ログアウト
+              /%input.lbox__content__logout{name: logout}

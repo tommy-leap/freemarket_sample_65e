@@ -8,6 +8,9 @@ class UsersController < ApplicationController
   def profile
   end
 
+  def logout
+  end
+
   def new
   end
 
