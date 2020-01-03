@@ -2,19 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.breadcrumbs {
-  height: 40px;
-  width: 1010px;
-  background-color: white;
-  margin-left: 210px;
-  padding-left: 10px;
-  border-top: solid 1px #eeeeee;
-  line-height: 40px;
-  a {
-    text-decoration: none;
-    color: black;
-    font-weight: lighter;
-  }
+html body {
+  height: 100%;
+  width: 100%;
 }
 
 .buy-result {
@@ -24,7 +14,6 @@
     &__logo {
       height: 50px;
       width: 190px;
-      padding-top: 40px;
       margin: 0 auto;
     }
   }
@@ -124,7 +113,7 @@
           }
         }
         &__user-info {
-          padding: 27px 0;
+          padding: 40px 0;
           background-color: white;
           border-top: solid 1px #eeeeee;
           font-size: 14px;
@@ -137,7 +126,6 @@
           }
           &__inner {
             &__address {
-              height: 100%;
               width: 100%;
               background-color: white;
               padding: 0;
