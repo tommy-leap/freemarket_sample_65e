@@ -30,88 +30,27 @@
       .contents_continer
         %ul.contents_box
           - @product.each do |product| 
-            %li.contents_box__image
-              = link_to "#" do
-                =image_tag @image.image, size: "188x188", alt: "image"
-                .contents_box__comment
-                  %span 
-                    = product.title
-                .contents_box__price
-                  %span  ¥
-                  %span
-                    = product.price
-          %li.contents_box__image
-            = link_to "#" do
-              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
-              .contents_box__comment
-                %span 美品☆トラックブルゾン
-              .contents_box__price
-                %span  ¥
-                %span 3,200
-          %li.contents_box__image
-            = link_to "#" do
-              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
-              .contents_box__comment
-                %span 美品☆トラックブルゾン
-              .contents_box__price
-                %span  ¥
-                %span 3,200
-          %li.contents_box__image
-            = link_to "#" do
-              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
-              .contents_box__comment
-                %span 美品☆トラックブルゾン
-              .contents_box__price
-                %span  ¥
-                %span 3,200
-          %li.contents_box__image
-            = link_to "#" do
-              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
-              .contents_box__comment
-                %span 美品☆トラックブルゾン
-              .contents_box__price
-                %span  ¥
-                %span 3,200
-          %li.contents_box__image
-            = link_to "#" do
-              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
-              .contents_box__comment
-                %span 美品☆トラックブルゾン
-              .contents_box__price
-                %span  ¥
-                %span 3,200
-          %li.contents_box__image
-            = link_to "#" do
-              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
-              .contents_box__comment
-                %span 美品☆トラックブルゾン
-              .contents_box__price
-                %span  ¥
-                %span 3,200
-          %li.contents_box__image
-            = link_to "#" do
-              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
-              .contents_box__comment
-                %span 美品☆トラックブルゾン
-              .contents_box__price
-                %span  ¥
-                %span 3,200
-          %li.contents_box__image
-            = link_to "#" do
-              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
-              .contents_box__comment
-                %span 美品☆トラックブルゾン
-              .contents_box__price
-                %span  ¥
-                %span 3,200
-          %li.contents_box__image
-            = link_to "#" do
-              =image_tag 'm92425895119_1.jpg', size: "188x188", alt: "image"
-              .contents_box__comment
-                %span 美品☆トラックブルゾン
-              .contents_box__price
-                %span  ¥
-                %span 3,200
+            - product.images.each do |image|
+              %li.contents_box__image
+                = link_to "#" do
+                  - if image.image.empty?
+                    =image_tag "no-image.png", size: "188x188", alt: "image"
+                    .contents_box__comment
+                      %span 
+                        = product.title
+                    .contents_box__price
+                      %span  ¥
+                      %span
+                        = product.price
+                  - else
+                    =image_tag image.image, size: "188x188", alt: "image"
+                    .contents_box__comment
+                      %span 
+                        = product.title
+                    .contents_box__price
+                      %span  ¥
+                      %span
+                        = product.price
     .contents_span
       .contents
         .contents_title
