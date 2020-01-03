@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     post 'step1',  to: 'users/registrations#create_step1'
   end
   root 'users#index'
+  get "users/logout", to: "users#logout"
   get "users/profile", to: "users#profile"
   get "users/edit", to: "users#edit"
   get "signup", to: "signup#index"
