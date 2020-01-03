@@ -3,10 +3,11 @@
 
 // .header {
 //   height: 100px;
+//   width: 100vw;
 //   background-color: white;
 //   &__inner {
 //     height: 90px;
-//     width:1020px;
+//     width: calc(100vw - 420px);
 //     background-color: white;
 //     margin: 0 auto;
 //     padding-top: 8px;
