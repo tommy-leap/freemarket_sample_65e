@@ -1,3 +1,27 @@
+.breadcrumbs {
+  height: 50px;
+  width: 100%;
+  background-color: white;
+  border-top: solid 1px #eee;
+  line-height: 50px;
+  &__bar {
+    height: 50px;
+    width: 1020px;
+    margin: 0 auto;
+    background-color: white;
+    color: black;
+    letter-spacing: 0.1em;
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: lighter;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
 .lcontent {
   float: right;
   width: 700px;
