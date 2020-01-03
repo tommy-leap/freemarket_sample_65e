@@ -1,12 +1,19 @@
-.profile
-  .profile__logo
-    プロフィール
-  .name-groud
-    .name-groud__input
-    .name-groud__image
-  .comment
-    .comment__form
-  .form-area
-    .form-area__btn
-      .form-area__title
-        変更する
+%body
+  %main
+    .content
+      =render 'shared/side_bar'
+      = form_for users_url do |f|
+        .profile
+          .profile__logo
+            プロフィール
+          .name-groud
+            .name-groud__input
+              = f.text_field :name, placeholder:"例)yuki☆セール中", class:"name-groud__input__field"
+            .name-groud__image
+              = icon('far', 'user fa-2x')
+          .comment
+            .comment__form
+              = f.text_area :name, placeholder:"例) こんにちわ！ご覧いただきありがとうごうざいます！可愛いものや綺麗めオフィスカジュアル中心に出品しています。よろしくお願いします！", class:"comment__form__area"
+          .form-area
+            .form-area__edit
+              = f.submit :"変更する", class:"form-area__edit__btn"
