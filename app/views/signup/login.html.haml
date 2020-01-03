@@ -1,50 +1,52 @@
-.regist-body  
-  .regist-container
-    .regist-header
-      = link_to "#" do
-        = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '36px', width: '150px', class:'top-logo'
-    .log-in-main
-      .log-in-main__boxes
-        .log-in-main__boxes__forin
-          %p アカウントをお持ちでない方はこちら
-          %a{href: "https://www.mercari.com/jp/signup/?after_save_callback=%2Fjp%2F"} 新規会員登録
+%body
+.regist-header
+  %h1
+    = link_to "#" do
+      = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '49px', width: '185px', class:'top-logo'
 
-        .log-in-main__boxes__SNS
-          =link_to "https://www.facebook.com/", class: "contents__btn contents__btn--facebook" do
-            = icon('fab', 'fa-facebook-square')
-            %span<>
-              facebookでログインする
+.log-in-main
+  .log-in-main__boxes
+    .log-in-main__boxes__noaccount
+      %p アカウントをお持ちでない方はこちら
+      %a{href: "https://www.mercari.com/jp/signup/?after_save_callback=%2Fjp%2F"} 新規会員登録
 
-          =link_to "#", class: "contents__btn contents__btn--google" do
-            = icon('fab', 'fa-google')
-            %span<>
-              googleでログインする
+    .log-in-main__boxes__SNS
+      =link_to "https://www.facebook.com/", class: "log-in-main__boxes__SNS__facebook" do
+        = icon('fab', 'fa-facebook-square',class:"log-in-main__boxes__SNS__facebook__icon-fbook")
+        %span<>
+          Facebookでログインする
 
-        .log-in-main__boxes__info
-          .log-in-main__boxes__info__email
-            %input.login-input-text.input-default{name: "email", placeholder: "メールアドレス", type: "email", value: ""}/
-          .log-in-main__boxes__info__pass
-            %input.login-input-text.input-default{name: "password", placeholder: "パスワード", type: "password"}/
-          
-          =link_to "https://gyazo.com/d71451016edb3e7ec63c13f03c91000c" do
-            %img{alt: "Image from Gyazo", src: "https://i.gyazo.com/d71451016edb3e7ec63c13f03c91000c.png", :width => "242"}
+      =link_to "#", class: "log-in-main__boxes__SNS__google" do
+        = icon('fab', 'fa-google', class:"log-in-main__boxes__SNS__google__icon-google")
+        %span<>
+          Googleでログインする
 
-          .log-in-main__boxes__login
-            =link_to "#" do
-              %button{type: "button"} ログイン
+    .log-in-main__boxes__info
+      .log-in-main__boxes__info__email
+        %input.login-input-text.input-default{name: "email", placeholder: "メールアドレス", type: "email", value: ""}/
+      .log-in-main__boxes__info__pass
+        %input.login-input-text.input-default{name: "password", placeholder: "パスワード", type: "password"}/
+      
+      =link_to "https://gyazo.com/d71451016edb3e7ec63c13f03c91000c" do
+        %img{alt: "Image from Gyazo", src: "https://i.gyazo.com/d71451016edb3e7ec63c13f03c91000c.png", :width => "242"}
 
-          %a{href: "https://www.mercari.com/jp/password/reset/start/"} パスワードをお忘れの方
-    
-    .regist__footer
-      .regist__footer__rule
-        %ul.regist__footer__rule__list
-          %li.regist__footer__rule__list__first
-            %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
-          %li.regist__footer__rule__list__second
-            %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
-          %li.regist__footer__rule__list__third
-            %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
-      =link_to "#" do
-        =image_tag "fmarket_logo_white.svg" ,alt: '' , height: '36px', width: '150px',class:'footer-logo'
-      %p
-        %small © Mercari, Inc.
+      .log-in-main__boxes__login
+        =link_to "#" do
+          %button{type: "button"} ログイン
+
+      %a{href: "https://www.mercari.com/jp/password/reset/start/"} パスワードをお忘れの方
+
+
+.regist-footer
+  %nav
+    %ul
+      %li.regist-footer__rule__list__first
+        %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+      %li.regist-footer__rule__list__second
+        %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+      %li.regist-footer__rule__list__third
+        %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+  =link_to "#" do
+    =image_tag "fmarket_logo_white.svg" ,alt: '' , height: '36px', width: '150px',class:'footer-logo'
+  %p
+    %small © Mercari, Inc.
