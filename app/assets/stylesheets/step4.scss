@@ -21,7 +21,7 @@
   padding: 34px 40px 32px 32px;
 }
 
-.card-nomber-upper-form {
+.card-number-upper-form {
   max-width: 343px;
   margin: 0 auto;
   
@@ -37,7 +37,7 @@
   background-color: #EA352D;
   vertical-align: top;
 }
-.card-nomber-form {
+.card-number-form {
     display: block;
     width: 309px;
     height: 28px;
@@ -98,22 +98,32 @@
   }
 }
 
-.card-registration-form__btn--red  {
-  width: 343px;
-  height: 50px;
-  cursor: pointer;
-  background: #e62017;
-  color: white;
-  font-size: 14px;
-  margin-top: 32px;
-  
-}
+
 .signup-security-code-text__btn:hover {
   color: aqua;
   
 }
 
-.card-securit-nomber-form {
+.card-security-number-form {
   margin-top: 32px;
+}
 
+.card-registration-form__btn {
+margin-top: 32px;
+width: 343px;
+height: 50px;
+cursor: pointer;
+background: #e62017;
+color: white;
+font-size: 14px;
+margin-top: 32px;
+position: relative;
+  &__red  {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    top:20px;
+    right: 140px;
+  }
 }

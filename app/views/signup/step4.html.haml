@@ -2,12 +2,12 @@
   .card-registration-head
     %h2 支払い方法
   .card-registration-box
-    .card-nomber-upper-form
-      %label.card-nomber
+    .card-number-upper-form
+      %label.card-number
         カード番号
       %span.form-required
         必須
-      %input.card-nomber-form{placeholder:"半角数字のみ" }
+      %input.card-number-form{placeholder:"半角数字のみ" }
       %ul.available
         %li      
           = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1714804574", size: "49x20", class: "visa"
@@ -60,12 +60,12 @@
               %option{value: "29"} 29
             %span
               年
-        .card-securit-nomber-form
+        .card-security-number-form
           %label.card-security-code
             セキュリティーコード
           %span.form-required
             必須
-          %input.card-nomber-form{placeholder:"カード背面４桁もしくは３桁の番号"}
+          %input.card-number-form{placeholder:"カード背面４桁もしくは３桁の番号"}
           .signup-security-code
             .signup-security-code-text
               = link_to "#", class: "signup-security-code-text__btn" do
@@ -73,5 +73,5 @@
                   ？
                 カード裏面番号とは
           .card-registration-form__btn 
-            %button.card-registration-form__btn--red{type:"button"}
+            = link_to step5_signup_index_path, class: "card-registration-form__btn__red" do
               追加する

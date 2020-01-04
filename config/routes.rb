@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       get 'step2'
       get 'step3'  #入力が全て完了
       get 'step4'
-      get 'complete_signup'  #登録完了後
+      get 'step5'  #登録完了後
     end
   end
 end
