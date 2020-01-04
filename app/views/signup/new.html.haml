@@ -10,7 +10,7 @@
       新規会員登録
     .contents-sns__main__btn  
       .contents-sns__main__btn__link
-      = link_to "#", class: "contents-sns__main__btn__link__email" do
+      = link_to step1_signup_index_path, class: "contents-sns__main__btn__link__email" do
         = icon('far', 'envelope',class:"contents-sns__main__btn__link__email__icon-mail")
         %span
           メールアドレスで登録する
@@ -18,7 +18,7 @@
         = icon('fab', 'facebook-square',class:"contents-sns__main__btn__link__facebook__icon-fbook")
         %span
           facebookで登録する
-      = link_to "#", class: "contents-sns__main__btn__link__google" do
+      = link_to "https://accounts.google.com/signin", class: "contents-sns__main__btn__link__google" do
         = icon('fab', 'google',class:"contents-sns__main__btn__link__google__icon-google")
         %span
           googleで登録する

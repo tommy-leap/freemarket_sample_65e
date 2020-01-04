@@ -1,29 +1,29 @@
-.user-dateile
-  .user-dateile-head
+.user-datail
+  .user-datail-head
     %h2 住所入力
-  .user-dateile-text-address
-    .user-dateile-form
-      %label.form-user-name
-        お名前
-      %span.form-required
-        必須
-    %input.input-form{placeholder:"例）山田" }
-    %input.input-form{placeholder:"例）彩" }
-    .user-dateile-form
-      %label.form-user-kana
-        お名前 カナ
-      %span.form-required
-        必須
-    %input.input-form{placeholder:"例）ヤマダ" }
-    %input.input-form{placeholder:"例）アヤ" }
-    .user-dateile-form  
+  .user-datail-text-address
+    -# .user-dateile-form
+    -#   %label.form-user-name
+    -#     お名前
+    -#   %span.form-required
+    -#     必須
+    -# %input.input-form{placeholder:"例）山田" }
+    -# %input.input-form{placeholder:"例）彩" }
+    -# .user-dateile-form
+    -#   %label.form-user-kana
+    -#     お名前 カナ
+    -#   %span.form-required
+    -#     必須
+    -# %input.input-form{placeholder:"例）ヤマダ" }
+    -# %input.input-form{placeholder:"例）アヤ" }
+    .user-datail-form  
       %label.form-zip-code
         郵便番号 
       %span.form-required
         必須
     %input.input-form{placeholder:"例）１２３４５６７" }
 
-    .user-dateile-form 
+    .user-datail-form 
       %label.form-prefecture
         都道府県
       %span.form-required
@@ -78,34 +78,34 @@
       %option 鹿児島県
       %option 沖縄県
 
-    .user-dateile-form 
+    .user-datail-form 
       %label.form-city
         市区町村
       %span.form-required
         必須
     %input.input-form{placeholder:"例）横浜市緑区" }
-    .user-dateile-form 
+    .user-datail-form 
       %label.form-address
         番地
       %span.form-required
         必須
     %input.input-form{placeholder:"例）青山1−1−1" }
-    .user-dateile-form 
+    .user-datail-form 
       %label.form-building
         建物名
       %p.from-arbitrary
         任意
     %input.input-form{placeholder:"例）柳ビル１０３" }
-    .user-dateile-form 
+    .user-datail-form 
       %label.form-phone-number
         電話番号
       %p.from-arbitrary
         任意
     %input.input-form{placeholder:"例）09012345678" }
-    .user-dateile-form__btn
+    .user-datail-form__btn
       %button.form-registration__btn--red{type:"button"}
         次へ進む
-    .user-dateile-form-contents
+    .user-datail-form-contents
       = link_to "本人情報の登録について＞"
     
     

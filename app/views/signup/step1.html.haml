@@ -272,7 +272,9 @@
           「次へ進む」のボタンを押すことにより、
           %a{:href => "/jp/tos_list/", :target => "_blank"}> 利用規約
           に同意したものとみなします
-        %button.btn-default.btn-red{:type => "submit"} 次へ進む
+        = link_to step2_signup_index_path, class: "btn-default btn-red" do
+          次へ進む
+        -# %button.btn-default.btn-red{:type => "submit"} 次へ進む
         .l-regist-wholeform__mainform__input__info__next__gonext
           %p
             %a{:href => "/jp/help_center/article/423/", :target => "_blank"}
