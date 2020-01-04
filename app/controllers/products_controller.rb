@@ -19,6 +19,9 @@ class ProductsController < ApplicationController
   def error
   end
 
+  def detail
+  end
+
   private
   def product_params
     params.require(:product).permit(:title, :info)
