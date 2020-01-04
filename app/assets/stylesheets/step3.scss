@@ -1,0 +1,146 @@
+body {
+  background-color: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+}
+
+.user-datail {
+  width: 700px;
+  height: 1208px;
+  background-color: #f5f5f5;
+}
+.user-datail-head {
+  background-color: white;
+  margin-bottom: 5px;
+  h2 {
+    text-align: center;
+    padding: 8px 24px;
+  }
+}
+
+
+
+.user-datail-text {
+  padding: 64px;
+  width: 572px;
+  height: 1158px;
+  background-color: white;
+  font-size: 14px;
+}
+
+.user-datail-text__right {
+  text-align: end;
+  a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #0099e8
+  }
+}
+
+.user-datail-form {
+  display: flex;
+  margin: 40px 0 0;
+  ul {
+    list-style: none;
+    li {
+      margin-top: 8px;
+      label {
+        font-weight: 600;
+      }
+    }
+  }
+}
+.user-datail-form label {
+  font-weight: 600;
+}
+
+.input-form {
+  border: solid 1px #ccc;
+  border-radius: 3px;
+  margin-top: 8px;
+  padding: 10px 16px;
+  width: 538px;
+  height: 26px;
+  font-size: 16px;
+
+}
+
+.from-arbitrary {
+  margin-left: 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  background-color: #ccc;
+  vertical-align: top;
+}
+
+.user-datail-form__btn {
+  margin-top: 40px;
+  width: 572px;
+  height: 50px;
+  background: #ea352d;
+  cursor: pointer;
+  border: solid 1px;
+  border: 1px solid #ea352d;
+  position: relative;
+
+  &__red {
+    text-decoration: none;
+    color: white;
+    // width: 572px;
+    // height: 50px;
+    // background: #ea352d;
+    // cursor: pointer;
+    // border: solid 1px;
+    // border: 1px solid #ea352d;
+    font-size: 16px;
+    position: absolute;
+    top:20px;
+    right: 260px;
+  }
+}
+
+
+
+
+.user-datail-form-contents {
+  text-align: end;
+  margin-top: 40px;
+  a {
+  color: #0099e8;
+  text-decoration: none;
+  }
+}
+.select-default {
+  outline: 0;
+  -webkit-appearance: none;
+  width: 572px;
+  height: 43px;
+  border: solid 1px #ccc;
+  border-radius: 3px;
+  background-color: white;
+  margin-top: 8px;
+  padding-left: 13px;
+  font-size: 16px;
+}
+.card-month {
+    width: 131.5px;
+    height: 48px;
+    font-size: 15px;
+}
+.card-year {
+    width: 131.5px;
+    height: 48px;
+    font-size: 15px;
+}
+.user-datail-text-address {
+  padding: 5px 64px 64px 64px;
+  width: 572px;
+  height: 1158px;
+  background-color: white;
+  font-size: 14px;
+
+}
+
+
+* {margin: 0; padding: 0;}
