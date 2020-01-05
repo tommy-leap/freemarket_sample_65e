@@ -20,6 +20,7 @@ class ProductsController < ApplicationController
   end
 
   def detail
+    @product = Product.find_by(id: params[:id])
   end
 
   private
