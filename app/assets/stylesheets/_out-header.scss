@@ -25,7 +25,7 @@
         position: relative;
         #field {
           height: 40px;
-          width: 845px;
+          width: 100%;
           background-color: #EEEEEE;
           border-radius: 5px;
           padding-right: 40px;
@@ -56,6 +56,7 @@
         line-height: 40px;
         text-align: right;
         z-index: 1000;
+        white-space: nowrap;
         &:hover {
           ul {
             border: ridge 1px #EEEEEE;
@@ -178,6 +179,7 @@
         line-height: 40px;
         text-align: right;
         z-index: 1000;
+        white-space: nowrap;
         ul {
           li {
             display: none;
