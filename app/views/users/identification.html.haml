@@ -1,35 +1,37 @@
 %body
+  -breadcrumb :profile
+  =render 'layouts/breadcrumbs'
   %main
     =render 'shared/side_bar'
-    .user-dateile
-      .user-dateile-head
+    .user-detail
+      .user-detail-head
         %h2 本人情報の登録
-      .user-dateile-text
-        %p.user-dateile-text__box
+      .user-detail-text
+        %p.user-detail-text__box
           お客様の本人情報をご登録ください。
           %br 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
-        %p.user-dateile-text__right
+        %p.user-detail-text__right
           =link_to "本人確認書類のアップロードについて＞"
-        .user-dateile-form
+        .user-detail-form
           %ul
             %label お名前
             %li  成田 崚
-        .user-dateile-form
+        .user-detail-form
           %ul
             %label お名前 カナ
             %li  ナリタ リョウ
-        .user-dateile-form  
+        .user-detail-form  
           %ul
             %label  生年月日
             %li   1992/03/11
-        .user-dateile-form  
+        .user-detail-form  
           %label.form-zip-code
             郵便番号 
           %p.from-arbitrary
             任意
         %input.input-form{placeholder:"例）１２３４５６７" }
 
-        .user-dateile-form 
+        .user-detail-form 
           %label.form-prefecture
             都道府県
           %p.from-arbitrary
@@ -84,28 +86,28 @@
           %option 鹿児島県
           %option 沖縄県
 
-        .user-dateile-form 
+        .user-detail-form 
           %label.form-city
             市区町村
           %p.from-arbitrary
             任意
         %input.input-form{placeholder:"例）横浜市緑区" }
-        .user-dateile-form 
+        .user-detail-form 
           %label.form-address
             番地
           %p.from-arbitrary
             任意
         %input.input-form{placeholder:"例）青山1−1−1" }
-        .user-dateile-form 
+        .user-detail-form 
           %label.form-building
             建物名
           %p.from-arbitrary
             任意
         %input.input-form{placeholder:"例）柳ビル１０３" }
-        .user-dateile-form__btn
+        .user-detail-form__btn
           %button.form-registration__btn--red{type:"button"}
             登録する
-        .user-dateile-form-contents
+        .user-detail-form-contents
           = link_to "本人情報の登録について＞"
         
         
