@@ -20,7 +20,7 @@ body {
   padding: 0 0 220px;
 }
 
-.h1 {
+.regist-header h1 {
   margin: 40px 0 0;
   display: inline-block;
 }
@@ -28,6 +28,7 @@ body {
 .regist-header{
   text-align: center;
   height: 128px;
+  display:flex;
 
   &__top-logo {
     display: inline-block;
@@ -39,12 +40,20 @@ body {
 }
 
 
-.signup-var{
+
+
+.regist-header nav {
   padding: 16px 0;
   border-top: 1px solid #eee;
+  padding: 40px 0 0 44px;
+  border: 0;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0;
+  text-align: center;
 }
 
-.step-bar {
+.signup-bar ol {
   list-style: none;
   font-size: 0;
   text-align: center;
@@ -98,6 +107,8 @@ body {
 
         &__nickname {
           margin: 0;
+          
+
           .form-require {
             margin: 0 0 0 8px;
             padding: 2px 4px;
@@ -108,7 +119,7 @@ body {
             background-color: red;
           }
           .input-default {
-            width: 100%;
+            width: 310px;
             margin: 8px 0 0;
             height: 28px;
             padding: 10px 16px 8px;
@@ -132,7 +143,7 @@ body {
             background-color: red;
           }
           .input-default {
-            width: 100%;
+            width: 310px;
             margin: 8px 0 0;
             height: 28px;
             padding: 10px 16px 8px;
@@ -156,7 +167,7 @@ body {
             background-color: red;
           }
           .input-default {
-            width: 100%;
+            width: 310px;
             margin: 8px 0 0;
             height: 28px;
             padding: 10px 16px 8px;
@@ -224,7 +235,7 @@ body {
         }
         &__kanji {
           margin: 24px 0 0;
-
+          
           .form-require {
             margin: 0 0 0 8px;
             padding: 2px 4px;
@@ -235,7 +246,7 @@ body {
             background-color: red;
           }
           .input-default {
-            width: calc(50% - 6px);
+            width: calc(50% - 40px);
             margin: 8px 0 0;
             height: 28px;
             padding: 10px 16px 8px;
@@ -249,7 +260,7 @@ body {
             margin-right: 8px;
           }
           .half-right {
-
+            margin: 8px 0 0;
           }
         }
         &__kana {
@@ -264,8 +275,168 @@ body {
             vertical-align: top;
             background-color: red;
           }
+          .input-default {
+            width: calc(50% - 40px);
+            margin: 8px 0 0;
+            height: 28px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+          .half-left {
+            margin-right: 8px;
+          }
+          .half-right {
+            margin: 8px 0 0;
+          }
         }
+        &__birthday {
+          margin: 24px 0 0;
+
+          .form-require {
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            background-color: red;
+          }
+
+          &__select {
+            height:85px;
+            width: 100%;
+
+            &__year {
+              margin: 8px 0 0;
+              display: inline-block;
+              position: relative;
+              background: #fff;
+              width: 76px;
+
+              .input-default {
+                padding: 0 10px;
+                position: relative;
+                z-index: 2;
+                height: 48px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                font-size: 16px;
+                line-height: 1.5;
+                cursor: pointer;
+              }
+              // &__i {
+              //   right: 12px;
+              //   position: absolute;
+              //   top: 50%;
+              //   z-index: 2;
+              //   color: #888;
+              //   font-size: 8px;
+              // }
+            }
+            &__month {
+              margin: 8px 0 0;
+              display: inline-block;
+              position: relative;
+              background: #fff;
+              width: 76px;
+
+              .input-default {
+                padding: 0 10px;
+                position: relative;
+                z-index: 2;
+                height: 48px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                font-size: 16px;
+                line-height: 1.5;
+                cursor: pointer;
+              }
+            }
+            &__day {
+              margin: 8px 0 0;
+              display: inline-block;
+              position: relative;
+              background: #fff;
+              width: 76px;
+
+              .input-default {
+                padding: 0 10px;
+                position: relative;
+                z-index: 2;
+                height: 48px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                font-size: 16px;
+                line-height: 1.5;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+      &__next {
+        max-width: 343px;
+        height:227px;
+        margin: 0 auto;
+
+        &__agree {
+          margin-top: 40px;
+        }
+
+        &__btn {
+          margin: 24px 0 0;
+          width: 343px;
+          height: 50px;
+          background: #ea352d;
+          cursor: pointer;
+          border: solid 1px;
+          border: 1px solid #ea352d;
+          position: relative;        
+          &__red {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            position: absolute;
+            top:20px;
+            right: 140px;
+          }
+        }
+        &__gonext {
+          margin: 24px 0 0;
+          text-align: right;
+
+          // &__icon-arrow-right{
+          //   color: #0099e8;
+          //   text-decoration: none;
+          // }
+        }
+        &__policy {
+          margin: 24px 0 0; 
+          background-color: #f5f5f5;
+          padding: 8px 16px;
+          font-size: 12px;
+        }
+      }
     }
   }
-  }
+}
+
+a {
+  color: #0099e8;
+  text-decoration: none;
+  
+}
+
+p {
+  color: #888888;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
 }

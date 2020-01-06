@@ -6,23 +6,23 @@
 
   %nav.signup-bar  
     %ol.step-bar
-      %li.step.current 
+      %li.step1-current 
         会員情報  
         .progress-status
           %hr{class: "progress-bar-li progress-bar-li-active", noshade: "noshade", size: "2", width: "100",align: "left"}/
-      %li.step.current 
+      %li.step2.current 
         電話番号認証
         .progress-status 
           %hr{class: "progress-bar-li progress-bar-li-active", noshade: "noshade", size: "2", width: "120",align: "left"}/
-      %li.step.current 
+      %li.step3.current 
         お届け先住所入力
         .progress-status 
           %hr{class: "progress-bar-li progress-bar-li-active", noshade: "noshade", size: "2", width: "123",align: "left"}/
-      %li.step.current 
+      %li.step4.current 
         お支払い住所
         .progress-status 
           %hr{class: "progress-bar-li progress-bar-li-active", noshade: "noshade", size: "2", width: "100",align: "left"}/
-      %li.step.current 
+      %li.step5.current 
         完了
         .progress-status 
 
@@ -76,17 +76,17 @@
           %div
             %label{:for => "family_name_kanji"} お名前カナ(全角)
             %span.form-require 必須
-          %input.input-default.half{name: "family_name_kana", placeholder: "例) ヤマダ", type: "text", value: ""}/
-          %input.input-default.half{name: "first_name_kana", placeholder: "例) アヤ", type: "text", value: ""}/
+          %input.input-default.half-left{name: "family_name_kana", placeholder: "例) ヤマダ", type: "text", value: ""}/
+          %input.input-default.half-right{name: "first_name_kana", placeholder: "例) アヤ", type: "text", value: ""}/
 
         .l-regist-wholeform__mainform__input__info__birthday
           %label{for: "birthday"} 生年月日
           %span.form-require 必須
           %br/
-          .birthday-select-wrap
-            .select-wrap__year
-              %i.icon-arrow-bottom
-              %select.select-default{name: "year"}
+          .l-regist-wholeform__mainform__input__info__birthday__select
+            .l-regist-wholeform__mainform__input__info__birthday__select__year
+              -# =icon('far','chevron-down', class: "icon-arrow")
+              %select.input-default{name: "year"}
                 %option{:value => ""} --
                 %option{:value => "2019"} 2019
                 %option{:value => "2018"} 2018
@@ -209,9 +209,9 @@
                 %option{:value => "1901"} 1901
                 %option{:value => "1900"} 1900
             %span 年
-            .select-wrap__month
-              %i.icon-arrow-bottom
-              %select.select-default{name: "month"}
+            .l-regist-wholeform__mainform__input__info__birthday__select__month
+              -# =icon('far','chevron-down', class: "icon-arrow")
+              %select.input-default{name: "month"}
                 %option{:value => ""} --
                 %option{:value => "1"} 1
                 %option{:value => "2"} 2
@@ -226,9 +226,9 @@
                 %option{:value => "11"} 11
                 %option{:value => "12"} 12
             %span 月
-            .select-wrap__day
-              %i.icon-arrow-bottom
-              %select.select-default{:name => "day"}
+            .l-regist-wholeform__mainform__input__info__birthday__select__day
+              -# =icon('far','chevron-down', class: "icon-arrow")
+              %select.input-default{name: "day"}
                 %option{:value => ""} --
                 %option{:value => "1"} 1
                 %option{:value => "2"} 2
@@ -265,22 +265,23 @@
           %input{:name => "birthday", :type => "hidden", :value => ""}/
           .clearfix
         %p.l-regist-wholeform__mainform__input__info__attention
-        ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 
-      .l-regist-wholeform__mainform__input__info__next
-        %p.l-regist-wholeform__mainform__input__info__next__agree
+      .l-regist-wholeform__mainform__input__next
+        %p.l-regist-wholeform__mainform__input__next__agree
           「次へ進む」のボタンを押すことにより、
           %a{:href => "/jp/tos_list/", :target => "_blank"}> 利用規約
           に同意したものとみなします
-        = link_to step2_signup_index_path, class: "btn-default btn-red" do
-          次へ進む
+        .l-regist-wholeform__mainform__input__next__btn
+          = link_to step2_signup_index_path, class: "l-regist-wholeform__mainform__input__next__btn__red" do
+            次へ進む
         -# %button.btn-default.btn-red{:type => "submit"} 次へ進む
-        .l-regist-wholeform__mainform__input__info__next__gonext
+        .l-regist-wholeform__mainform__input__next__gonext
           %p
             %a{:href => "/jp/help_center/article/423/", :target => "_blank"}
               本人情報の登録について
               %i.icon-arrow-right
-        .l-regist-wholeform__mainform__input__info__next__policy
+        .l-regist-wholeform__mainform__input__next__policy
           %p
             This site is protected by reCAPTCHA and the Google
             %a{:href => "https://policies.google.com/privacy", :target => "_blank"} Privacy Policy
