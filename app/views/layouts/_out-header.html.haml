@@ -4,9 +4,10 @@
     .header__inner__top__logo
       = link_to "#" do
         = image_tag 'fmarket_logo_red.svg', alt: '', height: '36px', width: '150px', class: 'top-logo'
-    .header__inner__top__input
-      = link_to "#", class: "header__inner__top__input__icon" do
-        = icon('fas', 'search')
+    = form_for to_s do |f|
+      = f.search_field :title, placeholder:"何かお探しですか？", id:"field"
+      = f.button icon("fa", "search", class:"icon"), class:"btn"
+
   %ul.header__inner__nav
     %li.header__inner__nav__category
       = link_to "#", class: "header__inner__nav__category__icon" do
