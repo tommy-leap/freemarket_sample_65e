@@ -9,84 +9,84 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
 
-%body
-  .buy-result
-    %header
-      .buy-result__header
-        %h1
-        .buy-result__header__logo
-          = link_to "#" do
-            = image_tag 'fmarket_logo_red.svg', alt: ''
+  %body
+    .buy-result
+      %header
+        .buy-result__header
+          %h1
+          .buy-result__header__logo
+            = link_to "#" do
+              = image_tag 'fmarket_logo_red.svg', alt: ''
 
-      .buy-result__main
-        .buy-result__main__title
-          購入内容の確認
-        %section
-        .buy-result__main__item
-          .buy-result__main__item__inner
-            .buy-result__main__item__inner__box
-              %h3
-              .buy-result__main__item__inner__box__image
-                = image_tag 'ciecle2P-kawaii-pink.jpg', height: '95px', width: '80px'
-              .buy-result__main__item__inner__box__detail
-                %p
-                  COACH ショルダーバッグ
-                %p
-                  %span
-                    ¥2,550
-                  %span
-                    (税込) 送料込み
-        .buy-result__main__data
-          %form
-          .buy-result__main__data__form
-            %ul.buy-result__main__data__form__price-table
-              %li.buy-result__main__data__form__price-table__list
-                %div.buy-result__main__data__form__price-table__list__title
-                  支払い金額
-                %div.buy-result__main__data__form__price-table__list__price
-                  ¥2,550
-            %ul.buy-result__main__data__form__point
-              %li.buy-result__main__data__form__point__have
-                ポイントを使用(所持ポイント:P0)
-            %section.buy-result__main__data__form__user-info
-              .buy-result__main__data__form__user-info__inner
+        .buy-result__main
+          .buy-result__main__title
+            購入内容の確認
+          %section
+          .buy-result__main__item
+            .buy-result__main__item__inner
+              .buy-result__main__item__inner__box
                 %h3
-                  支払い方法
-                = link_to "#", class: "pay-btn" do
-                  +登録してください
-            %section.buy-result__main__data__form__user-info
-              .buy-result__main__data__form__user-info__inner
-                .buy-result__main__data__form__user-info__inner__address
-                  配送先
-                  = link_to "#", class: "edit" do
-                    変更する
-                .buy-result__main__data__form__user-info__inner__text
-                  〒xxx-xxxx
+                .buy-result__main__item__inner__box__image
+                  = image_tag 'ciecle2P-kawaii-pink.jpg', height: '95px', width: '80px'
+                .buy-result__main__item__inner__box__detail
                   %p
-                    東京都〇〇区XXXXXXXX
+                    COACH ショルダーバッグ
                   %p
-                    長木 佑樹
-            %section.buy-result__main__data__form__btn
-              %span
-                購入する
+                    %span
+                      ¥2,550
+                    %span
+                      (税込) 送料込み
+          .buy-result__main__data
+            %form
+            .buy-result__main__data__form
+              %ul.buy-result__main__data__form__price-table
+                %li.buy-result__main__data__form__price-table__list
+                  %div.buy-result__main__data__form__price-table__list__title
+                    支払い金額
+                  %div.buy-result__main__data__form__price-table__list__price
+                    ¥2,550
+              %ul.buy-result__main__data__form__point
+                %li.buy-result__main__data__form__point__have
+                  ポイントを使用(所持ポイント:P0)
+              %section.buy-result__main__data__form__user-info
+                .buy-result__main__data__form__user-info__inner
+                  %h3
+                    支払い方法
+                  = link_to "#", class: "pay-btn" do
+                    +登録してください
+              %section.buy-result__main__data__form__user-info
+                .buy-result__main__data__form__user-info__inner
+                  .buy-result__main__data__form__user-info__inner__address
+                    配送先
+                    = link_to "#", class: "edit" do
+                      変更する
+                  .buy-result__main__data__form__user-info__inner__text
+                    〒xxx-xxxx
+                    %p
+                      東京都〇〇区XXXXXXXX
+                    %p
+                      長木 佑樹
+              %section.buy-result__main__data__form__btn
+                %span
+                  購入する
 
-      .buy-result__footer
-        %nav
-          %ul
-            %li
-              = link_to "#", class: "menu" do
-                プライバシーポリシー
-            %li
-              = link_to "#", class: "menu" do
-                メルカリ利用規約
-            %li
-              = link_to "#", class: "menu" do
-                特定商取引に関する表記
-        .buy-result__footer__logo
-          = link_to "#" do
-            = image_tag 'logo_gray.svg', alt: ''
-        %p
-          %span
-            ©︎ Fmarket,lnc.
+        .buy-result__footer
+          %nav
+            %ul
+              %li
+                = link_to "#", class: "menu" do
+                  プライバシーポリシー
+              %li
+                = link_to "#", class: "menu" do
+                  メルカリ利用規約
+              %li
+                = link_to "#", class: "menu" do
+                  特定商取引に関する表記
+          .buy-result__footer__logo
+            = link_to "#" do
+              = image_tag 'logo_gray.svg', alt: ''
+          %p
+            %span
+              ©︎ Fmarket,lnc.
 
 
