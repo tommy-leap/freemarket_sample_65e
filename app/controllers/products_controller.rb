@@ -19,6 +19,10 @@ class ProductsController < ApplicationController
   def error
   end
 
+  def detail
+    @product = Product.find_by(id: params[:id])
+  end
+
   private
   def product_params
     params.require(:product).permit(:title, :info)

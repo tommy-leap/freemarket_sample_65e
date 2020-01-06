@@ -16,6 +16,10 @@ crumb :logout do
   parent :mypage
 end
 
+crumb :detail do
+  link "商品詳細", products_detail_path
+end
+
 
 # crumb :project_issues do |project|
 #   link "Issues", project_issues_path(project)

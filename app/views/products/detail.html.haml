@@ -1,5 +1,4 @@
-%body.product
-%main
+.product
   .item-area
     .item-area__title
       美品☆トラックブルゾン
@@ -300,6 +299,5 @@
                 %span 10
 
   %nav.link-bottom
-    %ul.change-page
-      %li.goto__top メルカリ＞
-      %li.goto__nowpage new balance
+    -breadcrumb :detail
+  =render 'layouts/breadcrumbs'
