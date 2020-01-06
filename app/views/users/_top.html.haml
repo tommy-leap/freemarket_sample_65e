@@ -32,7 +32,7 @@
           - @product.each do |product|
             - product.images.each do |image|
               %li.contents_box__image
-                = link_to "#" do
+                = link_to products_detail_path do
                   - if image.image.empty?
                     =image_tag "no-image.png", size: "188x188", alt: "image"
                     .contents_box__comment
