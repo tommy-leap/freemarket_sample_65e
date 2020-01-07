@@ -32,7 +32,7 @@
           - @product.each do |product|
             - product.images.each do |image|
               %li.contents_box__image
-                = link_to products_detail_path do
+                = link_to products_detail_path(product.id) do
                   - if image.image.empty?
                     =image_tag "no-image.png", size: "188x188", alt: "image"
                     .contents_box__comment
@@ -41,7 +41,7 @@
                     .contents_box__price
                       %span  ¥
                       %span
-                        = product.price
+                        = product.price.to_s(:delimited)
                   - else
                     =image_tag image.image, size: "188x188", alt: "image"
                     .contents_box__comment
@@ -50,7 +50,7 @@
                     .contents_box__price
                       %span  ¥
                       %span
-                        = product.price
+                        = product.price.to_s(:delimited)
     .contents_span
       .contents
         .contents_title
