@@ -20,9 +20,9 @@ Rails.application.routes.draw do
   resources :signup, only: [:new ]do
     collection do
       get 'step1'
-      get 'step2'
-      get 'step3'  #入力が全て完了
-      get 'step4'
+      post 'step2'
+      post 'step3'  #入力が全て完了
+      post 'step4'
       get 'step5'  #登録完了後
     end
   end
