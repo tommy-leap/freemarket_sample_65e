@@ -29,6 +29,7 @@ body {
   text-align: center;
   height: 128px;
   display:flex;
+  padding-left: 320px;
 
   &__top-logo {
     display: inline-block;
@@ -41,46 +42,148 @@ body {
 
 
 
-
-.regist-header nav {
-  padding: 16px 0;
-  border-top: 1px solid #eee;
+.signup-bar {
   padding: 40px 0 0 44px;
   border: 0;
   display: inline-block;
   vertical-align: top;
   font-size: 0;
   text-align: center;
+  width:508px;
 }
 
-.signup-bar ol {
-  list-style: none;
+.progress-bar {
+  display: inline-block;
+  vertical-align: top;
   font-size: 0;
   text-align: center;
 }
 
+ol {
+  list-style: none;
+  margin:0;
+  font-size: 0;
+  text-align: center;
+  display:flex;
+}
 
-.step  {
+.step-bar li {
+  margin: 0 40px 0 0;
+  min-width: 60px;
   position: relative;
   z-index: 1;
   display: inline-block;
-  min-width: 40px;
-  margin: 0 5% 0 0;
   font-size: 12px;
 }
 
+.active {
+  font-weight: 600;
+  color: #ea352d;
+}
 
-.progress-status {
+.progress-status-step1 {
+  width: 12px;
+  height: 12px;
+  bottom:0;
+  left:20px;
+  margin: 8px auto 0;
+  background: #ccc;
+  border-radius: 50%;
+  background-color:red;
+  position:absolute;
+}
+
+.progress-status-step1:after {
+  left: 50%;
+  position: absolute;
+  bottom: 5px;
+  z-index: -1;
+  display: block;
+  content: '';
+  width: 100px;
+  height: 2px;
+  background: #ccc;
+}
+
+.progress-status-step2 {
   width: 12px;
   height: 12px;
   margin: 8px auto 0;
-  background-color:gray;
+  background: #ccc;
   border-radius: 50%;
-  display:flex;
+  // background-color:red;
 }
-.progress-status:active {
-  background-color:red;
+
+.progress-status-step2:after {
+  left: 50%;
+  position: absolute;
+  bottom: 5px;
+  z-index: -1;
+  display: block;
+  content: '';
+  width: 100px;
+  height: 2px;
+  background: #ccc;
+  // background-color:red;
 }
+
+.progress-status-step3 {
+  width: 12px;
+  height: 12px;
+  margin: 8px auto 0;
+  background: #ccc;
+  border-radius: 50%;
+  // background-color:red;
+}
+
+.progress-status-step3:after {
+  left: 50%;
+  position: absolute;
+  bottom: 5px;
+  z-index: -1;
+  display: block;
+  content: '';
+  width: 100px;
+  height: 2px;
+  background: #ccc;
+  // background-color:red;
+}
+.progress-status-step4 {
+  width: 12px;
+  height: 12px;
+  margin: 8px auto 0;
+  background: #ccc;
+  border-radius: 50%;
+  // background-color:red;
+}
+
+.progress-status-step4:after {
+  left: 50%;
+  position: absolute;
+  bottom: 5px;
+  z-index: -1;
+  display: block;
+  content: '';
+  width: 100px;
+  height: 2px;
+  background: #ccc;
+  // background-color:red;
+}
+
+.progress-status-step5 {
+  width: 12px;
+  height: 12px;
+  bottom: 0;
+  margin: 8px 24px 0;
+  background: #ccc;
+  border-radius: 50%;
+  // background-color:red;
+  position:absolute;
+}
+
+
+
+
 
 
 .l-regist-wholeform {
