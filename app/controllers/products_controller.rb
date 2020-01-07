@@ -9,8 +9,6 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @product = Product.find_by(title:"ベルト")
-    @image = Image.find(1)
   end
   
   def show
@@ -20,7 +18,7 @@ class ProductsController < ApplicationController
   end
 
   def detail
-    @product = Product.find_by(id: params[:id])
+    @product = Product.find(params[:id])
   end
 
   private

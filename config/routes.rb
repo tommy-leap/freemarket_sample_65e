@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root 'users#index'
   get "users/logout", to: "users#logout"
   get "users/identification", to: "users#identification"
-  get "products/detail", to: "products#detail"
+  get "products/detail/:id", to: "products#detail", as: :products_detail
   get "users/profile", to: "users#profile"
   get "users/edit", to: "users#edit"
   get "signup", to: "signup#index"
