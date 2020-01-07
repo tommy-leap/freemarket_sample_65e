@@ -19,6 +19,10 @@ class SignupController < ApplicationController
   end
 
   def step3
+    session[:user_detail_attributes_after_step2] = user_params[:user_detail_attributes]
+    session[:user_detail_attributes_after_step2].merge!(session[:user_detail_attributes_after_step1])
+    @user = User.new
+    @user.build_user_detail
   end
 
   def step4
