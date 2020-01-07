@@ -4,27 +4,24 @@
     = link_to "#" do
       = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '49px', width: '185px', class:'top-logo'
 
-  %nav.signup-bar  
+  %nav.signup-bar.progress-bar
     %ol.step-bar
-      %li.step1-current 
+      %li.active
         会員情報  
-        .progress-status
-          %hr{class: "progress-bar-li progress-bar-li-active", noshade: "noshade", size: "2", width: "100",align: "left"}/
-      %li.step2.current 
+        .progress-status-step1.active
+      %li
         電話番号認証
-        .progress-status 
-          %hr{class: "progress-bar-li progress-bar-li-active", noshade: "noshade", size: "2", width: "120",align: "left"}/
-      %li.step3.current 
+        .progress-status-step2
+      %li
         お届け先住所入力
-        .progress-status 
-          %hr{class: "progress-bar-li progress-bar-li-active", noshade: "noshade", size: "2", width: "123",align: "left"}/
-      %li.step4.current 
+        .progress-status-step3
+      %li
         お支払い住所
-        .progress-status 
-          %hr{class: "progress-bar-li progress-bar-li-active", noshade: "noshade", size: "2", width: "100",align: "left"}/
-      %li.step5.current 
+        .progress-status-step4
+      %li
         完了
-        .progress-status 
+        .progress-status-step5
+
 
 .l-regist-wholeform
   .l-regist-wholeform__mainform
