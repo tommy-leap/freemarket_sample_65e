@@ -2,6 +2,9 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    
+    %script{src: "https://js.pay.jp/", type: "text/javascript"}
+
     %title FreemarketSample65e
     = csrf_meta_tags
     = csp_meta_tag
@@ -12,8 +15,7 @@
   %body
     = render 'layouts/out-header'
     -# = render 'layouts/in-header'
-    
-    = breadcrumbs pretext: "", separator: " &rsaquo; "
+
 
     = yield
 

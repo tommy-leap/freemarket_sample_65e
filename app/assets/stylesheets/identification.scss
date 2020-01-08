@@ -3,23 +3,26 @@ body {
   font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
 }
 
-.user-dateile {
-  width: 700px;
-  height: 1208px;
+.user-detail {
   background-color: #f5f5f5;
+  float: right;
 }
-.user-dateile-head {
+.user-detail-head {
   background-color: white;
-  margin-bottom: 5px;
+  font-size: 24px;
+  padding: 8px 24px;
+  border-bottom: 1px solid #f5f5f5;
   h2 {
     text-align: center;
     padding: 8px 24px;
+    font-weight: bold;
+    
   }
 }
 
 
 
-.user-dateile-text {
+.user-detail-text {
   padding: 64px;
   width: 572px;
   height: 1158px;
@@ -27,7 +30,7 @@ body {
   font-size: 14px;
 }
 
-.user-dateile-text__right {
+.user-detail-text__right {
   text-align: end;
   a {
   font-size: 14px;
@@ -36,7 +39,7 @@ body {
   }
 }
 
-.user-dateile-form {
+.user-detail-form {
   display: flex;
   margin: 40px 0 0;
   ul {
@@ -49,7 +52,7 @@ body {
     }
   }
 }
-.user-dateile-form label {
+.user-detail-form label {
   font-weight: 600;
 }
 
@@ -86,13 +89,13 @@ body {
   border: 1px solid #ea352d;
   font-size: 16px;
 }
-.user-dateile-form__btn {
+.user-detail-form__btn {
   margin-top: 40px;
 }
 
 
 
-.user-dateile-form-contents {
+.user-detail-form-contents {
   text-align: end;
   margin-top: 40px;
   a {
@@ -122,7 +125,7 @@ body {
     height: 48px;
     font-size: 15px;
 }
-.user-dateile-text-address {
+.user-detail-text-address {
   padding: 5px 64px 64px 64px;
   width: 572px;
   height: 1158px;

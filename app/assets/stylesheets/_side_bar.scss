@@ -1,0 +1,46 @@
+.mypage-side {
+  font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+  width: 280px;
+  margin: 0 40px 0 0;
+  float: left;
+  &__nav{
+    display: block;
+    padding-bottom: 40px;
+    &__list {
+      &__name {
+        box-sizing: border-box;
+        display: block;
+        min-height: 48px;
+        padding: 16px;
+        background: #fff;
+        font-size: 14px;
+        color: #333;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        position: relative;
+        display: list-item;
+        text-align: -webkit-match-parent;
+        margin-bottom: 1px;
+        &__icon {
+          float: right;
+          color: #ccc;
+          font-size: 20px;
+          font-family: 'icon-font';
+          transition: all ease-out .2s;
+        }
+        &__icon:hover {
+          color: #333;
+          transform: translate(5px);
+        }
+      }
+      &__name:hover { 
+        background: #f2f2f2;
+      }
+    }
+    &__head {
+      margin: 40px 0 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}
