@@ -68,13 +68,13 @@ ActiveRecord::Schema.define(version: 2020_01_08_031258) do
     t.integer "price", null: false
     t.text "info"
     t.integer "status", null: false
-    t.text "postage", null: false
-    t.text "shipping", null: false
-    t.string "from", null: false
-    t.string "day", null: false
+    t.integer "postage", null: false
+    t.integer "shipping", null: false
+    t.string "from"
+    t.integer "day", null: false
     t.integer "brand_id"
-    t.integer "category_id", null: false
-    t.integer "user_id", null: false
+    t.integer "category_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -119,13 +119,11 @@ ActiveRecord::Schema.define(version: 2020_01_08_031258) do
     t.integer "day", null: false
     t.integer "phone_num", null: false
     t.integer "post_num", null: false
-    t.string "prefecture", null: false
+    t.string "from", null: false
     t.string "municipalities", null: false
-    t.integer "address", null: false
     t.string "bulid_name"
     t.text "comment"
     t.integer "credit_num"
-    t.integer "payjp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
