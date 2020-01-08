@@ -77,9 +77,7 @@
     height: 48px;
   }
 }
-// .product-text-form__box {
-//   padding-bottom: 22px;
-// }
+
 
 .product-textarea {
   padding: 10px;
@@ -253,57 +251,6 @@
     }
   }
 }
-//       label {
-//         margin-right: 133px;
-//       }
-//     }
-//     input {
-//       width: 126px;
-//       text-align: end;
-//     }
-//   } 
-// }
-// .input-form-product-price {
-//   margin-left: 15px;
-//   border: solid 1px #ccc;
-//   border-radius: 3px;
-//   margin-top: 8px;
-//   padding: 10px 16px;
-//   width: 586px;
-//   height: 26px;
-//   font-size: 16px;
-// }
-// .product-text-form__box-price {
-//   width: 190px;
-// }
-
-// .product-text-form__box-center {
-//   height: 13px;
-//   padding: 24px 0;
-//   border-top: 1px solid #ccc;
-//   border-bottom: 1px solid #ccc;
-  
-//   &__commission {
-//     font-size: 14px;
-//     display: flex;
-//     justify-content: space-between;
-//     width: 100%;
-//   }
-// }
-// .product-form-line {
-//   display: block;
-// }
-// .product-text-form__box-profit {
-//   display: flex;
-//   justify-content: space-between;
-//   width: 100%;
-// }
-
-
-// .product-text-form__box-low {
-//   height: 35px;
-//   padding: 24px 0;
-// }
 
 .product-btn-form {
   border-top: solid 1px #f5f5f5;
@@ -387,7 +334,6 @@
   display: inline-block;
 }
 .field_with_errors {
-  // display: contents;
   diplay: inline;
 }
 *{
