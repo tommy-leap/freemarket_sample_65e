@@ -67,7 +67,7 @@
                 %span.form-required
                   必須            
                 .select-categories-form
-               .actions
+              .actions
                 %select#parent_category
                   - @parent_categories.each do |c|
                     %option{:value => "#{c.id}"}= c.name
@@ -221,7 +221,6 @@
                 =link_to "加盟店規約"
                 に同意したことになります。
             .user-detail-form__btn
-              -# = f.text_field:title, class:"input-form-product-name", placeholder:"商品名（必須40文字まで)"
               = f.submit '出品する', class:"form-product__btn--red" 
             .product-back-btn
               %button.form-registration__btn--gray{type:"button"}

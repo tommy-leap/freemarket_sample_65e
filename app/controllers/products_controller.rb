@@ -4,12 +4,9 @@ class ProductsController < ApplicationController
   before_action :set_categories, only: %w[edit new]
   def new
     @product = Product.new
-    # @category = Category.all
   end
   def create
-    # binding.pry
     @product = Product.new(product_params)
-    # redirect_to root_path
     if @product.save
       redirect_to root_path
     else
