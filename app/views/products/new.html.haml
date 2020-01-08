@@ -1,212 +1,238 @@
-= form_for(@product) do |f|
-  .exhibition
-    .exhibition-head
-      %h2 商品の情報を入力
-    .exhibition-form
-      .exhibition-form-image
-        %label.exhibition-image
-          出品画像
-        %span.form-required
-          必須
-        %P
-          最大１０枚までアップロードできます
-        %label.image-box
-          .exhibition-form-image-box
-            %input.exhibition-form-image-box__file{multiple: "", type: "file"}
-              %p.exhibition-form-image-box__comment
-              %p
-              ドラッグアンドドロップ
-              %p
-              またはクリックしてファイルをアップロード  
-      .product-text-form
-        .product-text-form__box
-          %label.form-user-kana
-            商品名
-          %span.form-required
-            必須
-          = f.text_field:title, class:"input-form-product-name", placeholder:"商品名（必須40文字まで)"
-        .product-text-form__info
-          %label.form-user-kana
-            商品の説明
-          %span.form-required
-            必須
-          = f.text_area:info, class:"product-textarea",placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
-      .product-details-form
-        .product-details-form__info
-          %p
-            商品の詳細
-        .product-details-form__info    
-          .product-text-form__info-box
-            %label.form-user-kana
-              カテゴリー
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title FreemarketSample65e
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
+
+  %body.body-products-new
+    %header.header-products-new
+      %h1
+        %a(href="https://prog-8.com/languages/rails5")
+          = image_tag "fmarket_logo_red.svg", class: "logo-red", height: "49px", width: "185px"
+
+    = form_for(@product) do |f|
+      .exhibition
+        .exhibition-head
+          %h2 商品の情報を入力
+        .exhibition-form
+          .exhibition-form-image
+            %label.exhibition-image
+              出品画像
             %span.form-required
-              必須            
-            .select-categories-form
-              %select.select-default
-                %option ---
-                %option レディース
-                %option メンズ
-                %option ベビー・キッズ
-                %option インテリア・住まい・小物
-                %option 本・音楽・ゲーム
-                %option おもちゃ・ホビー・グッズ
-                %option コスメ・香水・美容
-                %option 家電・スマホ・カメラ
-                %option スポーツ・レジャー
-                %option ハンドメイド
-                %option チケット
-                %option 自動車・オートバイ
-                %option その他
-          .product-details-form__info__low
-            %label.form-user-kana
-              商品の状態
-            %span.form-required
-              必須              
-            .select-year-month-form
-              %select.select-default   
-                %option ---
-                %option 新品、未使用
-                %option 目立った傷や汚れなし
-                %option やや傷や汚れあり
-                %option 傷や汚れあり
-                %option 全体的に状態悪い
-      .product-delivery-form
-        .product-delivery-form__info
-          %p
-            配送について
-        .product-delivery-form__info-box
-          .product-text-form__box
-            %label.form-user-kana
-              送料の負担
-            %span.form-required
-              必須        
-            .select-year-month-form
-              %select.select-default   
-                %option ---
-                %option 送料込み（出品者負担）
-                %option 着払い（購入者負担）
-          .product-text-form__box
-            %label.form-user-kana
-              発想の方法
-            %span.form-required
-              必須        
-            .select-year-month-form
-              %select.select-default   
-                %option ---
-                %option らくらくメルカリ便
-                %option ゆうメール
-          .product-text-form__box
-            %label.form-user-kana
-              発送元の地域
-            %span.form-required
-              必須    
-            .select-year-month-form       
-              %select.select-default{name: "prefecture"}
-                %option ---
-                %option 北海道
-                %option 青森県
-                %option 岩手県
-                %option 宮城県
-                %option 秋田県
-                %option 山形県
-                %option 福島県
-                %option 東京都
-                %option 神奈川県
-                %option 埼玉県
-                %option 千葉県
-                %option 茨城県
-                %option 栃木県
-                %option 群馬県
-                %option 山梨県
-                %option 新潟県
-                %option 長野県
-                %option 富山県
-                %option 石川県
-                %option 福井県
-                %option 愛知県
-                %option 岐阜県
-                %option 静岡県
-                %option 三重県
-                %option 大阪府
-                %option 兵庫県
-                %option 京都府
-                %option 滋賀県
-                %option 奈良県
-                %option 和歌山県
-                %option 鳥取県
-                %option 島根県
-                %option 岡山県
-                %option 広島県
-                %option 山口県
-                %option 徳島県
-                %option 香川県
-                %option 愛媛県
-                %option 高知県
-                %option 福岡県
-                %option 佐賀県
-                %option 長崎県
-                %option 熊本県
-                %option 大分県
-                %option 宮崎県
-                %option 鹿児島県
-                %option 沖縄県
-          .product-text-form__box
-            %label.form-user-kana
-              発送までの日数
-            %span.form-required
-              必須        
-            .select-year-month-form
-              %select.select-default   
-                %option ---
-                %option １〜２日で発送
-                %option ２〜３日で発送
-                %option ４〜７日で発送
-      .product-price-form
-        .product-price-form__box-text
-          %p
-            販売価格（300~9,999,999）
-        .product-price-form__box-text-low
-          %ul
-            %li.product-text-form__box
+              必須
+            %P
+              最大１０枚までアップロードできます
+            %label.image-box
+              .exhibition-form-image-box
+              = f.fields_for :images do |i|
+                = i.file_field :image, class:"exhibition-form-image-box__file"
+                - if @product.errors.messages[:images].any?
+                  %span.error= @product.errors.messages[:images][0]
+                %p.exhibition-form-image-box__comment
+                %p
+                ドラッグアンドドロップ
+                %p
+                またはクリックしてファイルをアップロード  
+          .product-text-form
+            .product-text-form__box
               %label.form-user-kana
-                価格
+                商品名
+              %span.form-required
+                必須
+              = f.text_field:title, class:"input-form-product-name", placeholder:"商品名（必須40文字まで)"
+              - if @product.errors.messages[:title].any?
+                %span.error= @product.errors.messages[:title][0]
+            .product-text-form__info
+              %label.form-user-kana
+                商品の説明
+              %span.form-required
+                必須
+              = f.text_area:info, class:"product-textarea",placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
+              - if @product.errors.messages[:info].any?
+                %span.error= @product.errors.messages[:info][0]
+          .product-details-form
+            .product-details-form__info
+              %p
+                商品の詳細
+            .product-details-form__info    
+              .product-text-form__info-box
+                %label.form-user-kana
+                  カテゴリー
                 %span.form-required
-                  必須       
-              .product-text-form__box-price
-                ¥
-                %input.input-form-product-price{placeholder:"例）300" }
-            %li.product-text-form__box-center
-              .product-text-form__box-center__commission
-                販売手数料（１０％）
-                %span.product-form-line
-                  ー
-                
-            %li.product-text-form__box-low
-              .product-text-form__box-profit
+                  必須            
+                .select-categories-form
+                  %select.select-default
+                    %option ---
+                    %option レディース
+                    %option メンズ
+                    %option ベビー・キッズ
+                    %option インテリア・住まい・小物
+                    %option 本・音楽・ゲーム
+                    %option おもちゃ・ホビー・グッズ
+                    %option コスメ・香水・美容
+                    %option 家電・スマホ・カメラ
+                    %option スポーツ・レジャー
+                    %option ハンドメイド
+                    %option チケット
+                    %option 自動車・オートバイ
+                    %option その他
+              .product-details-form__info__low
+                %label.form-user-kana
+                  商品の状態
+                %span.form-required
+                  必須              
+                .select-year-month-form
+                = f.select :status, [["---",1], ["新品、未使用",2], ["目立った傷や汚れなし",3], ["やや傷や汚れあり",4], ["傷や汚れあり",5], ["全体的に状態悪い",6]]
+                - if @product.errors.messages[:status].any?
+                  %p.error= @product.errors.messages[:status][0]
+          .product-delivery-form
+            .product-delivery-form__info
+              %p
+                配送について
+            .product-delivery-form__info-box
+              .product-text-form__box
+                %label.form-user-kana
+                  送料の負担
+                %span.form-required
+                  必須        
+                .select-year-month-form
+                  = f.select :postage, [["---",1], ["送料込み(出品者負担)",2], ["着払い(購入者負担)",3]]
+                  - if @product.errors.messages[:postage].any?
+                    %span.error= @product.errors.messages[:postage][0]
+              .product-text-form__box
+                %label.form-user-kana
+                  発送の方法
+                %span.form-required
+                  必須        
+                .select-year-month-form
+                  = f.select :shipping, [["---",1], ["らくらくメルカリ便",2], ["ゆうメール",3]]
+                  - if @product.errors.messages[:shipping].any?
+                    %span.error= @product.errors.messages[:shipping][0]
+              .product-text-form__box
+                %label.form-user-kana
+                  発送元の地域
+                %span.form-required
+                  必須    
+                .select-year-month-form       
+                  %select.select-default{name: "prefecture"}
+                    %option ---
+                    %option 北海道
+                    %option 青森県
+                    %option 岩手県
+                    %option 宮城県
+                    %option 秋田県
+                    %option 山形県
+                    %option 福島県
+                    %option 東京都
+                    %option 神奈川県
+                    %option 埼玉県
+                    %option 千葉県
+                    %option 茨城県
+                    %option 栃木県
+                    %option 群馬県
+                    %option 山梨県
+                    %option 新潟県
+                    %option 長野県
+                    %option 富山県
+                    %option 石川県
+                    %option 福井県
+                    %option 愛知県
+                    %option 岐阜県
+                    %option 静岡県
+                    %option 三重県
+                    %option 大阪府
+                    %option 兵庫県
+                    %option 京都府
+                    %option 滋賀県
+                    %option 奈良県
+                    %option 和歌山県
+                    %option 鳥取県
+                    %option 島根県
+                    %option 岡山県
+                    %option 広島県
+                    %option 山口県
+                    %option 徳島県
+                    %option 香川県
+                    %option 愛媛県
+                    %option 高知県
+                    %option 福岡県
+                    %option 佐賀県
+                    %option 長崎県
+                    %option 熊本県
+                    %option 大分県
+                    %option 宮崎県
+                    %option 鹿児島県
+                    %option 沖縄県
+              .product-text-form__box
+                %label.form-user-kana
+                  発送までの日数
+                %span.form-required
+                  必須        
+                .select-year-month-form
+                  = f.select :day, [["---",1], ["１〜２日で発送",2], ["２〜３日で発送",3], ["４〜７日で発送",4]]
+                  - if @product.errors.messages[:day].any?
+                    %span.error= @product.errors.messages[:day][0]
+          .product-price
+            %h3.sell-sub-head 販売価格(300~9,999,999)
+            .product-price__group
+              .product-price-about
+                .product_price-form__left
+                  .product_header
+                    価格
+                  .product_require
+                    必須 
+                .product_price-form__right
+                  .money-mark ¥
+                  =f.number_field :price, placeholder: "例) 300", type: "number", id: "price_calc", class:"price_form-box"
+                  - if @product.errors.messages[:price].any?
+                    %span.error= @product.errors.messages[:price][0]
+              .product_price-fee
+                .text-commission
+                販売手数料(10%)
+                .right_bar
+              .product_profit
+                .text-profit
                 販売利益
-                %span.product-form-line
-                  ー
-      .product-btn-form
-        .product-btn-form__box
-          %p 
-            =link_to "禁止されている出品"
-            ,
-            =link_to "行為"
-            を必ずご確認ください。
-          %p
-            またブランド品でシリアルナンバー等がある場合はご記載ください。
-            =link_to "偽ブランドの販売"
-            は犯罪であり処罰される可能性があります。
-          %p
-            また、出品を持ちまして
-            =link_to "加盟店規約"
-            に同意したことになります。
-        .user-dateile-form__btn
-          -# = f.text_field:title, class:"input-form-product-name", placeholder:"商品名（必須40文字まで)"
-          = f.submit do
-            出品する
-        .product-back-btn
-          %button.form-registration__btn--gray{type:"button"}
-            戻る
+                %input#price{style: "display: none"}/
+                .right_bar_2
+          
+          .product-btn-form
+            .product-btn-form__box
+              %p 
+                =link_to "禁止されている出品"
+                ,
+                =link_to "行為"
+                を必ずご確認ください。
+              %p
+                またブランド品でシリアルナンバー等がある場合はご記載ください。
+                =link_to "偽ブランドの販売"
+                は犯罪であり処罰される可能性があります。
+              %p
+                また、出品を持ちまして
+                =link_to "加盟店規約"
+                に同意したことになります。
+            .user-detail-form__btn
+              -# = f.text_field:title, class:"input-form-product-name", placeholder:"商品名（必須40文字まで)"
+              = f.submit '出品する', class:"form-product__btn--red" 
+            .product-back-btn
+              %button.form-registration__btn--gray{type:"button"}
+                戻る
+    %footer.footer-products-new
+      %nav.nav-products-new
+        %ul
+          %li 
+            %a(href="#") プライバシーポリシー
+          %li 
+            %a(href="#") メルカリ利用規約
+          %li 
+            %a(href="#") 取引商取引に関する表記
+      %a(href="#" class="goto-top")
+        = image_tag "logo_gray.svg", class: "footer-logo", height: "65px", width: "80px"
+      %p
 
 

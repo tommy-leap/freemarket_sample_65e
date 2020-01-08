@@ -31,7 +31,8 @@
         %ul.contents_box
           %li.contents_box__image
             = link_to "#" do
-              =image_tag @image.image, size: "188x188", alt: "image"
+              - @product.images.each do |image|
+                =image_tag image.src.url
               .contents_box__comment
                 %span 
                   = @product.title

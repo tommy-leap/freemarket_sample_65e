@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "users/profile", to: "users#profile"
   get "users/edit", to: "users#edit"
   get "signup", to: "signup#index"
-  get 'products/error'
+  # get 'products/error'
   resources :products, only: [:index, :new, :create, :show]
   resources :users, only: [:index, :show, :edit, :update, :new]
   resources :signup, only: [:new ]do
