@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations',
   }
+  
   devise_scope :user do
     get 'step1', to: 'users/registrations#new_step1'
     post 'step1',  to: 'users/registrations#create_step1'
@@ -15,7 +16,13 @@ Rails.application.routes.draw do
   get "users/edit", to: "users#edit"
   get "signup", to: "signup#index"
   get 'products/error'
-  resources :products, only: [:index, :new, :create, :show]
+  resources :products, only: [:index, :new, :create, :show] do
+  collection do
+    get 'get_category_children', defaults: { format: 'json' }
+    get 'get_category_grandchildren', defaults: { format: 'json' }
+  end
+end
+get :dynamic_select_category, to: 'products#dynamic_select_category'
   resources :users, only: [:index, :show, :edit, :update, :new]
   resources :signup, only: [:new ]do
     collection do
