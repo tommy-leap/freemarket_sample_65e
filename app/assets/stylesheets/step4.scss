@@ -1,7 +1,7 @@
 .card-registration {
   height: 562px;
   width: 700px;
-  // background-color: black;
+  margin: 0 auto;
 }
 
 .card-registration-head {
@@ -24,8 +24,9 @@
 .card-number-upper-form {
   max-width: 343px;
   margin: 0 auto;
-  
-  
+  #user_user_detail_attributes_credit_num {
+    width: 90%;
+  }
 }
 
 .form-required {
@@ -61,11 +62,15 @@
 .select-year-month {
   margin-top: 8px;
   display: flex;
+  .select-year-month-form {
+    width: 100%;
+  }
   .card-year{
     margin-left: 14px; 
   }
   span {
-    margin-left: 12px;
+    margin: 0 12px;
+    line-height: 56px;
   }
   select {
     border: 1px solid #ccc;
