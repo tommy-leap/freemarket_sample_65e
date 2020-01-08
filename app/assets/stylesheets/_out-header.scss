@@ -3,10 +3,11 @@
 
 .header {
   height: 100px;
+  width: 100vw;
   background-color: white;
   &__inner {
     height: 90px;
-    width:1020px;
+    width: calc(100vw - 420px);
     background-color: white;
     padding: 0 210px;
     padding-top: 8px;
@@ -15,18 +16,29 @@
       &__logo {
         padding: 0;
       }
-      &__input {
+      form {
         height: 40px;
-        width: 823px;
-        padding: 0 10px 0 10px;
+        width: 100%;
         margin-left: 25px;
-        background-color: #EEEEEE;
-        border: solid 1px gray;
-        border-radius: 5px 5px 5px 5px /5px 5px 5px 5px;
-        &__icon {
-          color: black;
+        border-radius: 5px;
+        display: flex;
+        position: relative;
+        #field {
+          height: 40px;
+          width: 100%;
+          background-color: #EEEEEE;
+          border-radius: 5px;
+          padding-right: 40px;
+          padding-left: 10px;
+          position: absolute;
+        }
+        .btn {
+          position: absolute;
+          right: 15px;
+          background-color: #EEEEEE;
           line-height: 40px;
-          float: right;
+          height: 0;
+          font-size: 16px;
         }
       }
     }
@@ -44,6 +56,7 @@
         line-height: 40px;
         text-align: right;
         z-index: 1000;
+        white-space: nowrap;
         &:hover {
           ul {
             border: ridge 1px #EEEEEE;
@@ -166,6 +179,7 @@
         line-height: 40px;
         text-align: right;
         z-index: 1000;
+        white-space: nowrap;
         ul {
           li {
             display: none;

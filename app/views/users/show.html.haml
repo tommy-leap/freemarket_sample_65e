@@ -1,8 +1,9 @@
 %body
+  -breadcrumb :mypage
+  =render 'layouts/breadcrumbs'
   %main
     .content
-      .content__left
-        content__left
+      =render 'shared/side_bar'
       .content__right
         .mydata-detail
           %a{href: "https://www.mercari.com/jp/u/364151343/"}

@@ -11,11 +11,14 @@ class CreateUserDetails < ActiveRecord::Migration[5.2]
       t.integer :day, null: false
       t.integer :phone_num, null: false
       t.integer :post_num, null: false
-      t.string :from, null: false
+      t.string :prefecture, null: false
       t.string :municipalities, null: false
+      t.integer :address, null: false
       t.string :bulid_name
       t.text :comment
       t.integer :credit_num
+      t.integer :payjp_id, foreign_key: true  # 仮設定 
+      t.integer :phone_num, null: false
       t.timestamps
     end
   end

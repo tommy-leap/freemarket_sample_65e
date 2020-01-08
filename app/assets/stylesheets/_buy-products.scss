@@ -2,218 +2,212 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.breadcrumbs {
-  height: 40px;
-  width: 1010px;
-  background-color: white;
-  margin-left: 210px;
-  padding-left: 10px;
-  border-top: solid 1px #eeeeee;
-  line-height: 40px;
-  a {
-    text-decoration: none;
-    color: black;
-    font-weight: lighter;
-  }
-}
-
-.buy-result {
-  background-color: #eeeeee;
-  &__header {
-    height: 128px;
-    &__logo {
-      height: 50px;
-      width: 190px;
-      padding-top: 40px;
-      margin: 0 auto;
-    }
-  }
-  
-  &__main {
-    height: 760px;
-    width:700px;
-    margin: 0 auto;
-    &__title {
-      height: 37px;
-      padding: 30px;
-      background-color: white;
-      text-align: center;
-      font-weight: bold;
-      font-size: 22px;
-      line-height: 37px;
-    }
-    &__item {
-      margin-top: 1px;
-      padding: 25px 10px;
-      height: 95px;
-      background-color: white;
-      &__inner {
-        height: 95px;
-        width: 340px;
-        margin: 0 auto;
-        background-color: white;
-        &__box {
-          height: 100%;
-          width: 100%;
-          display: flex;
-          &__image {
-            height: 80px;
-            width: 80px;
-          }
-          &__detail {
-            padding-left: 16px;
-            p {
-              font-size: 12px;
-              padding-bottom: 5px;
-              span {
-                font-weight: bold;
-              }
-            }
-          }
+html {
+  height: 100%;
+  width: 100%;
+  body {
+    height: 100%;
+    width: 100%;
+    .buy-result {
+      background-color: #eeeeee;
+      // height: 100%;
+      width: 100%;
+      &__header {
+        height: 128px;
+        &__logo {
+          height: 50px;
+          width: 190px;
+          margin: 0 auto;
+          padding-top: 35px;
         }
       }
-    }
-    &__data {
-      padding: 32px 16px 48px;
-      margin-top: 1px;
-      background-color: white;
-      height: calc(100vh - 352px);
-      &__form {
-        height: 100%;
-        width: 340px;
+      
+      &__main {
+        height: 760px;
+        width:700px;
         margin: 0 auto;
-        background-color: white;
-        &__price-table {
-          height: 30px;
-          width: 100%;
-          margin-bottom: 1px;
+        &__title {
+          height: 37px;
+          padding: 30px;
           background-color: white;
-          &__list {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-              &__title {
-                height: 20px;
-                padding: 8px 0 2px;
-                width: 170px;
-                font-size: 18px;
-                font-weight: bold;
-                letter-spacing: 2px
-                
-              }
-              &__price {
-                height: 30px;
-                width: 170px;
-                font-size: 24px;
-                text-align: right;
-                font-weight: bold;
-              }
-          }
+          text-align: center;
+          font-weight: bold;
+          font-size: 22px;
+          line-height: 37px;
         }
-        &__point {
-          height: 13px;
-          margin: 25px 0 35px 0;
+        &__item {
+          margin-top: 1px;
+          padding: 25px 10px;
+          height: 95px;
           background-color: white;
-          &__have {
-            height: 14px;
-            width: 100%;
-            font-size: 14px;
-            line-height: 14px;
-            color: #aaa;
-            letter-spacing: 2px
-          }
-        }
-        &__user-info {
-          padding: 27px 0;
-          background-color: white;
-          border-top: solid 1px #eeeeee;
-          font-size: 14px;
           &__inner {
-            .pay-btn {
-              text-decoration: none;
-              color: skyblue;
-              font-size: 14px;
-            }
-          }
-          &__inner {
-            &__address {
+            height: 95px;
+            width: 340px;
+            margin: 0 auto;
+            background-color: white;
+            &__box {
               height: 100%;
               width: 100%;
-              background-color: white;
-              padding: 0;
-                display: flex;
-                justify-content: space-between;
-              .edit {
-                color: skyblue;
-                text-decoration: none;
-                font-size: 14px;
+              display: flex;
+              &__image {
+                height: 80px;
+                width: 80px;
+              }
+              &__detail {
+                padding-left: 16px;
+                p {
+                  font-size: 12px;
+                  padding-bottom: 5px;
+                  span {
+                    font-weight: bold;
+                  }
+                }
               }
             }
-            &__text {
-              padding-top: 10px;
-              color: #222;
+          }
+        }
+        &__data {
+          padding: 32px 16px 48px;
+          margin-top: 1px;
+          background-color: white;
+          height: calc(100% - 352px);
+          &__form {
+            height: 100%;
+            width: 340px;
+            margin: 0 auto;
+            background-color: white;
+            &__price-table {
+              height: 30px;
+              width: 100%;
+              margin-bottom: 1px;
+              background-color: white;
+              &__list {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                  &__title {
+                    height: 20px;
+                    padding: 8px 0 2px;
+                    width: 170px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    letter-spacing: 2px
+                    
+                  }
+                  &__price {
+                    height: 30px;
+                    width: 170px;
+                    font-size: 24px;
+                    text-align: right;
+                    font-weight: bold;
+                  }
+              }
+            }
+            &__point {
+              height: 13px;
+              margin: 25px 0 35px 0;
+              background-color: white;
+              &__have {
+                height: 14px;
+                width: 100%;
+                font-size: 14px;
+                line-height: 14px;
+                color: #aaa;
+                letter-spacing: 2px
+              }
+            }
+            &__user-info {
+              padding: 40px 0;
+              background-color: white;
+              border-top: solid 1px #eeeeee;
               font-size: 14px;
+              &__inner {
+                .pay-btn {
+                  text-decoration: none;
+                  color: skyblue;
+                  font-size: 14px;
+                }
+              }
+              &__inner {
+                &__address {
+                  width: 100%;
+                  background-color: white;
+                  padding: 0;
+                    display: flex;
+                    justify-content: space-between;
+                  .edit {
+                    color: skyblue;
+                    text-decoration: none;
+                    font-size: 14px;
+                  }
+                }
+                &__text {
+                  padding-top: 10px;
+                  color: #222;
+                  font-size: 14px;
+                }
+              }
+            }
+            &__btn {
+              border-top: solid 1px #eeeeee;
+              padding-top: 27px;
+              background-color: white;
+              height: 50px;
+              text-align: center;
+              span {
+                display: block;
+                height: 50px;
+                width: 100%;
+                color: white;
+                background-color: gray;
+                line-height: 50px;
+              }
             }
           }
         }
-        &__btn {
-          border-top: solid 1px #eeeeee;
-          padding-top: 27px;
-          background-color: white;
-          height: 50px;
+      }
+      &__footer {
+        height: 140px;
+        width: 456px;
+        margin: 0 auto;
+        padding: 40px 0;
+        background-color: #eeeeee;
+        nav {
+          height: 12px;
+          width: 456px;
+          ul {
+            height: 100%;
+            width: 456px;
+            display: flex;
+            justify-content: center;
+            li {
+              line-height: 12px;
+              padding: 0 9px;
+              .menu {
+                text-decoration: none;
+                font-size: 12px;
+                color: black;
+              }
+            }
+          }
+        }
+        &__logo {
+          width: 80px;
+          height: 65px;
+          margin: 35px auto 0;
+        }
+        p {
+          height: 14px;
+          width: 100%;
+          padding-top: 8px;
+          line-height: 14px;
           text-align: center;
           span {
-            display: block;
-            height: 50px;
-            width: 100%;
-            color: white;
-            background-color: gray;
-            line-height: 50px;
+            font-size: 14px;
+            text-align: center;
+            font-weight: lighter;
           }
         }
-      }
-    }
-  }
-  &__footer {
-    height: 140px;
-    width: 456px;
-    margin: 0 auto;
-    padding: 40px 0;
-    background-color: #eeeeee;
-    nav {
-      height: 12px;
-      width: 456px;
-      ul {
-        height: 100%;
-        width: 456px;
-        display: flex;
-        justify-content: center;
-        li {
-          line-height: 12px;
-          padding: 0 9px;
-          .menu {
-            text-decoration: none;
-            font-size: 12px;
-            color: black;
-          }
-        }
-      }
-    }
-    &__logo {
-      width: 80px;
-      height: 65px;
-      margin: 35px auto 0;
-    }
-    p {
-      height: 14px;
-      width: 100%;
-      padding-top: 8px;
-      line-height: 14px;
-      text-align: center;
-      span {
-        font-size: 14px;
-        text-align: center;
-        font-weight: lighter;
       }
     }
   }

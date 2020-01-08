@@ -2,14 +2,24 @@ crumb :root do
   link "Fmarket", root_path
 end
 
-crumb :users do
-  link "マイページ", product_path
+crumb :mypage do
+  link "マイページ", users_edit_path
 end
 
-# crumb :user do |user|
-#   link user.name, project_path(project)
-#   parent :users
-# end
+crumb :profile do
+  link "プロフィール", users_profile_path
+  parent :mypage
+end
+
+crumb :logout do
+  link "ログアウト", users_logout_path
+  parent :mypage
+end
+
+crumb :detail do
+  link "商品詳細", products_detail_path
+end
+
 
 # crumb :project_issues do |project|
 #   link "Issues", project_issues_path(project)
