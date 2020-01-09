@@ -292,7 +292,8 @@ Devise.setup do |config|
   # end
 
   # ==> Configuration for :registerable
-
+  require "omniauth-facebook"
+  config.omniauth :facebook, "841616256259988", "668fbd16e16898921295c1c2cd14e69a", scope: 'email', info_fields: 'email,name'
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
