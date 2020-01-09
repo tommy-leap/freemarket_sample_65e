@@ -7,6 +7,12 @@
     display: block;
     padding-bottom: 40px;
     &__list {
+      a{
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        color: #333333;
+      }
       &__name {
         box-sizing: border-box;
         display: block;
