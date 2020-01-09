@@ -5,8 +5,9 @@ class User < ApplicationRecord
         :recoverable, :rememberable, :validatable,
         :omniauthable
   has_one :user_detail
-  has_one :step1
-  has_one :step2
-  has_many :step4
-  
+  has_one :card
+  # has_one :step1
+  # has_one :step2
+  # has_many :step4
+  accepts_nested_attributes_for :user_detail, :card
 end

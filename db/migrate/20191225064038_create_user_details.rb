@@ -17,6 +17,8 @@ class CreateUserDetails < ActiveRecord::Migration[5.2]
       t.string :bulid_name
       t.text :comment
       t.integer :credit_num
+      t.integer :payjp_id, foreign_key: true  # 仮設定 
+      t.integer :phone_num, null: false
       t.timestamps
     end
   end

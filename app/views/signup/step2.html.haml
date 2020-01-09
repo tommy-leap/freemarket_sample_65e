@@ -4,15 +4,16 @@
       %h2 電話番号の確認
 
     .form
-      %h4 携帯電話の番号
-      %input.fome__num{name: "telNumbe", size: "17", placeholder: "携帯電話番号を入力", type: "tel", value: ""}/
-      .form__comment
-        %span 本人確認のため、携帯電話のSMS（ショートメッセージサービス）を利用して認証を行います。
-        %button.form__submit-btn{type: "button"} 
-          SMSを送信する
-      .form__attention
-        %span ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
-      .form__reason
-        = link_to "電話番号の確認が必要な理由>", '#'
+      = form_for @user, url: step3_signup_index_path do |f|
+        = f.fields_for :user_detail do |p|
+          = p.label :phone_num, "携帯電話の番号"
+          = p.text_field :phone_num, placeholder: "携帯電話番号を入力"
+          .form__comment
+            %span 本人確認のため、携帯電話のSMS（ショートメッセージサービス）を利用して認証を行います。
+            = f.submit 'SMSを送信する', class:"submit"
+          .form__attention
+            %span ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+          .form__reason
+            = link_to "電話番号の確認が必要な理由>", '#'
 
         
