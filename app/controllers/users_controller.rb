@@ -20,4 +20,8 @@ class UsersController < ApplicationController
   def new
   end
 
+  def cardlist_first
+    @cardnew
+  end
+
 end
