@@ -3,36 +3,57 @@ class SignupController < ApplicationController
   def new
   end
 
-  def index
-  end
+  # def index
+  # end
+  before_action :save_step1_to_session, only: :step2
+  before_action :save_step2_to_session, only: :step3
 
   def step1
     @user = User.new
     @user.build_user_detail
   end
 
-  def step2
+  def save_step1_to_session
     session[:user_params] = user_params
     session[:user_detail_attributes_after_step1] = user_params[:user_detail_attributes]
+    @user = User.new(session[:user_params])
+    @user.build_user_detail(session[:user_detail_attributes_after_step1])
+    render '/signup/step1e' unless @user.valid?
+  end
+  
+  def step2
     @user = User.new
     @user.build_user_detail
   end
 
-  def step3
+  def save_step2_to_session
     session[:user_detail_attributes_after_step2] = user_params[:user_detail_attributes]
     session[:user_detail_attributes_after_step2].merge!(session[:user_detail_attributes_after_step1])
+    @user = User.new
+    @user.build_user_detail(session[:user_detail_attributes_after_step2])
+    # render '/signup/step2' unless @user.build_user_detail.valid?
+  end
+
+  
+  def step3
     @user = User.new
     @user.build_user_detail
   end
 
   def step4
-    session[:user_detail_attributes_after_step3] = user_params[:user_detail_attributes]
-    session[:user_detail_attributes_after_step3].merge!(session[:user_detail_attributes_after_step2])
-    @user = User.new
-    @user.build_user_detail
   end
 
-  def step5
+  def create
+    @user = User.new(session[:user_params])
+    @user.build_user_detail(user_params[:user_detail_attributes])
+    @user.build_user_detail(session[:user_detail_attributes_after_step2])
+
+    if @user.save
+      session[:id] = @user.id
+      redirect_to step4_signup_index_path
+    else
+      render '/signup/step1'
+    end
   end
 
   
@@ -41,10 +62,12 @@ class SignupController < ApplicationController
     params.require(:user).permit(
       :nickname,
       :email,
-      :encrypted_password,
+      :password,
       :image,
       :evaluation,
-      user_detail_attributes: [:id, :user_id, :first_name, :first_kana, :last_name, :last_kana, :year, :month, :day, :post_num, :prefecture, :municipalities, :address, :build_name, :comment, :credit_num]
+      user_detail_attributes: [:id, :user_id, :first_name, :first_kana, :last_name, :last_kana, :year, :month, :day, :post_num, :prefecture, :municipalities, :address, :bulid_name, :phone_num, :comment, :credit_num, :payjp_id]
     )
   end
 end
+
+
