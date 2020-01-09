@@ -1,114 +1,74 @@
-%body
-  -breadcrumb :profile
-  =render 'layouts/breadcrumbs'
-  %main
-    =render 'shared/side_bar'
-    .user-detail
-      .user-detail-head
-        %h2 本人情報の登録
-      .user-detail-text
-        %p.user-detail-text__box
+-breadcrumb :profile
+=render 'layouts/breadcrumbs'
+%main.identification
+  =render 'shared/side_bar'
+  .identification__user
+    .identification__user__head
+      %h2 本人情報の登録
+    .identification__user__text
+      = form_for "" do |f|
+        .identification__user__text__box
           お客様の本人情報をご登録ください。
           %br 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
-        %p.user-detail-text__right
+        %p.identification__user__text__right
           =link_to "本人確認書類のアップロードについて＞"
-        .user-detail-form
-          %ul
-            %label お名前
-            %li  成田 崚
-        .user-detail-form
-          %ul
-            %label お名前 カナ
-            %li  ナリタ リョウ
-        .user-detail-form  
-          %ul
-            %label  生年月日
-            %li   1992/03/11
-        .user-detail-form  
+        .identification__user__text__form
           %label.form-zip-code
-            郵便番号 
-          %p.from-arbitrary
+            お名前
+          %p.identification__user__text__form__arbitrary-red
+            必須
+        %input.identification__user__text__input{placeholder:"例）山田" }
+        %input.identification__user__text__input{placeholder:"例）彩" }
+        .identification__user__text__form
+          %label.form-zip-code
+            お名前 カナ
+          %p.identification__user__text__form__arbitrary-red
+            必須
+        %input.identification__user__text__input{placeholder:"例）ヤマダ" }
+        %input.identification__user__text__input{placeholder:"例）アヤ" }
+        .identification__user__text__form
+          %label.form-zip-code
+            生年月日
+          %p.identification__user__text__form__arbitrary-red
+            必須  
+        .birthday
+          != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'birthday', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+        %p.identification__user__text__info
+          ※出品されたことがある、本人情報未登録のお客さまもご対象となります。
+        .identification__user__text__form
+          %label.form-zip-code
+            郵便番号
+          %p.identification__user__text__form__arbitrary
             任意
-        %input.input-form{placeholder:"例）１２３４５６７" }
-
-        .user-detail-form 
-          %label.form-prefecture
-            都道府県
-          %p.from-arbitrary
-            任意
-        %select.select-default{name: "prefecture"}
-          %option --
-          %option 北海道
-          %option 青森県
-          %option 岩手県
-          %option 宮城県
-          %option 秋田県
-          %option 山形県
-          %option 福島県
-          %option 東京都
-          %option 神奈川県
-          %option 埼玉県
-          %option 千葉県
-          %option 茨城県
-          %option 栃木県
-          %option 群馬県
-          %option 山梨県
-          %option 新潟県
-          %option 長野県
-          %option 富山県
-          %option 石川県
-          %option 福井県
-          %option 愛知県
-          %option 岐阜県
-          %option 静岡県
-          %option 三重県
-          %option 大阪府
-          %option 兵庫県
-          %option 京都府
-          %option 滋賀県
-          %option 奈良県
-          %option 和歌山県
-          %option 鳥取県
-          %option 島根県
-          %option 岡山県
-          %option 広島県
-          %option 山口県
-          %option 徳島県
-          %option 香川県
-          %option 愛媛県
-          %option 高知県
-          %option 福岡県
-          %option 佐賀県
-          %option 長崎県
-          %option 熊本県
-          %option 大分県
-          %option 宮崎県
-          %option 鹿児島県
-          %option 沖縄県
-
-        .user-detail-form 
+        %input.identification__user__text__input{placeholder:"例）1234567" }
+        .identification__user__text__form
+          %label.form-zip-code 都道府県 
+          %span.identification__user__text__form__arbitrary 任意
+        .name-box-name-box
+          %select.name-address-input
+            - @address.each do |address| 
+              %option{:value=> ""} 
+                = address.name
+        .identification__user__text__form
           %label.form-city
             市区町村
-          %p.from-arbitrary
+          %p.identification__user__text__form__arbitrary
             任意
-        %input.input-form{placeholder:"例）横浜市緑区" }
-        .user-detail-form 
+        %input.identification__user__text__input{placeholder:"例）横浜市緑区" }
+        .identification__user__text__form
           %label.form-address
             番地
-          %p.from-arbitrary
+          %p.identification__user__text__form__arbitrary
             任意
-        %input.input-form{placeholder:"例）青山1−1−1" }
-        .user-detail-form 
+        %input.identification__user__text__input{placeholder:"例）青山1−1−1" }
+        .identification__user__text__form
           %label.form-building
             建物名
-          %p.from-arbitrary
+          %p.identification__user__text__form__arbitrary
             任意
-        %input.input-form{placeholder:"例）柳ビル１０３" }
-        .user-detail-form__btn
-          %button.form-registration__btn--red{type:"button"}
+        %input.identification__user__text__input{placeholder:"例）柳ビル１０３" }
+        .identification__user__text__btn
+          %button.identification__user__text__btn__red{type:"button"}
             登録する
-        .user-detail-form-contents
+        .identification__user__text__contents
           = link_to "本人情報の登録について＞"
-        
-        
-

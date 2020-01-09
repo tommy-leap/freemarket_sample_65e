@@ -1,142 +1,112 @@
-body {
-  background-color: #f5f5f5;
-  font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
-}
-
-.user-detail {
-  background-color: #f5f5f5;
-  float: right;
-}
-.user-detail-head {
-  background-color: white;
-  font-size: 24px;
-  padding: 8px 24px;
-  border-bottom: 1px solid #f5f5f5;
-  h2 {
-    text-align: center;
-    padding: 8px 24px;
-    font-weight: bold;
-    
-  }
-}
-
-
-
-.user-detail-text {
-  padding: 64px;
-  width: 572px;
-  height: 1158px;
-  background-color: white;
-  font-size: 14px;
-}
-
-.user-detail-text__right {
-  text-align: end;
-  a {
-  font-size: 14px;
-  text-decoration: none;
-  color: #0099e8
-  }
-}
-
-.user-detail-form {
-  display: flex;
-  margin: 40px 0 0;
-  ul {
-    list-style: none;
-    li {
-      margin-top: 8px;
-      label {
+.identification {
+  height: 100vw;
+  background: #f5f5f5;
+  padding: 0 210px 180px;
+  &__user {
+    background-color: #f5f5f5;
+    float: right;
+    &__head {
+      background-color: white;
+      font-size: 24px;
+      padding: 8px 24px;
+      border-bottom: 1px solid #f5f5f5;
+      h2 {
+        text-align: center;
+        padding: 8px 24px;
+        font-weight: bold;
+      }
+    }
+    &__text {
+      padding: 64px;
+      width: 572px;
+      height: 1395px;
+      background-color: white;
+      font-size: 14px;
+      &__box {
+        color: #333;
+        line-height: 1.5;
+      }
+      &__right {
+        text-align: end;
+        margin: 8px 0 0;
+        font-size: 14px;
+        a {
+        font-size: 14px;
+        text-decoration: none;
+        color: #0099e8
+        }
+      }
+      &__form {
+        display: flex;
+        margin: 40px 0 0;
         font-weight: 600;
+        ul {
+          list-style: none;
+          li {
+            margin-top: 8px;
+            label {
+              font-weight: 600;
+            }
+          }
+        }
+        &__arbitrary-red {
+          margin-left: 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          background-color: #ea352d;
+          vertical-align: top;
+        }
+        &__arbitrary {
+          margin-left: 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          background-color: #ccc;
+          vertical-align: top;
+        }
+      }
+      &__input {
+        border: solid 1px #ccc;
+        border-radius: 3px;
+        margin-top: 8px;
+        padding: 10px 16px;
+        width: 538px;
+        height: 26px;
+        font-size: 16px;
+      }
+      .birthday {
+        width: 70px;
+      }
+      &__info {
+        margin: 8px 0 0;
+        color: #888;
+        line-height: 1.5;
+      }
+      &__btn {
+        margin-top: 40px;
+        &__red {
+          text-decoration: none;
+          color: white;
+          width: 572px;
+          height: 50px;
+          background: #ea352d;
+          cursor: pointer;
+          border: solid 1px;
+          border: 1px solid #ea352d;
+          font-size: 16px;
+        }
+      }
+      &__contents {
+        text-align: end;
+        margin-top: 40px;
+        a {
+        color: #0099e8;
+        text-decoration: none;
+        }
       }
     }
   }
 }
-.user-detail-form label {
-  font-weight: 600;
-}
-
-.input-form {
-  border: solid 1px #ccc;
-  border-radius: 3px;
-  margin-top: 8px;
-  padding: 10px 16px;
-  width: 538px;
-  height: 26px;
-  font-size: 16px;
-
-}
-
-.from-arbitrary {
-  margin-left: 8px;
-  padding: 2px 4px;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 12px;
-  background-color: #ccc;
-  vertical-align: top;
-}
-
-
-.form-registration__btn--red {
-  text-decoration: none;
-  color: white;
-  width: 572px;
-  height: 50px;
-  background: #ea352d;
-  cursor: pointer;
-  border: solid 1px;
-  border: 1px solid #ea352d;
-  font-size: 16px;
-}
-.user-detail-form__btn {
-  margin-top: 40px;
-}
-
-
-
-.user-detail-form-contents {
-  text-align: end;
-  margin-top: 40px;
-  a {
-  color: #0099e8;
-  text-decoration: none;
-  }
-}
-.select-default {
-  outline: 0;
-  -webkit-appearance: none;
-  width: 572px;
-  height: 43px;
-  border: solid 1px #ccc;
-  border-radius: 3px;
-  background-color: white;
-  margin-top: 8px;
-  padding-left: 13px;
-  font-size: 16px;
-}
-.card-month {
-    width: 131.5px;
-    height: 48px;
-    font-size: 15px;
-}
-.card-year {
-    width: 131.5px;
-    height: 48px;
-    font-size: 15px;
-}
-.user-detail-text-address {
-  padding: 5px 64px 64px 64px;
-  width: 572px;
-  height: 1158px;
-  background-color: white;
-  font-size: 14px;
-
-}
-
-
-* {margin: 0; padding: 0;}
-
-// Place all the styles related to the homes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
