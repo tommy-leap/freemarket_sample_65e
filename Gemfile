@@ -85,6 +85,8 @@ gem "gretel"
 gem 'ancestry'
 gem 'active_hash'
 gem 'payjp'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 gem 'rails-i18n'
 gem 'dotenv-rails'
-
