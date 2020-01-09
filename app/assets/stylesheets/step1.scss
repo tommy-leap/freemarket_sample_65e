@@ -198,6 +198,10 @@ ol {
       padding: 32px;
       line-height: 1.5;
       text-align: center;
+      .error_message {
+        color: red;
+        font-size: 20px;
+      }
     }
 
     &__input {
@@ -210,6 +214,12 @@ ol {
 
         &__nickname {
           margin: 0;
+          .field_with_errors {
+            display: contents;
+            input {
+              width: 90%;
+            }
+          }
           
 
           .form-require {
@@ -248,6 +258,12 @@ ol {
         }
         &__address {
           margin: 24px 0 0;
+          .field_with_errors {
+            display: contents;
+            input {
+              width: 90%;
+            }
+          }
 
           .form-require {
             margin: 0 0 0 8px;
@@ -377,7 +393,12 @@ ol {
         }
         &__kanji {
           margin: 24px 0 0;
-          
+          .field_with_errors {
+            display: contents;
+            input {
+              width: 90%;
+            }
+          }
           .form-require {
             margin: 0 0 0 8px;
             padding: 2px 4px;
@@ -409,6 +430,7 @@ ol {
             line-height: 1.5;
             font-size: 16px;
             margin-right: 8px;
+            display: inline;
           }
           #right {
             width: calc(50% - 40px);
@@ -421,11 +443,17 @@ ol {
             line-height: 1.5;
             font-size: 16px;
             margin: 8px 0 0;
+            display: inline;
           }
         }
         &__kana {
           margin: 24px 0 0;
-
+          .field_with_errors {
+            display: contents;
+            input {
+              width: 90%;
+            }
+          }
           .form-require {
             margin: 0 0 0 8px;
             padding: 2px 4px;
@@ -463,6 +491,7 @@ ol {
             line-height: 1.5;
             font-size: 16px;
             margin-right: 8px;
+            display: inline;
           }
           #right {
             width: calc(50% - 40px);
@@ -475,11 +504,17 @@ ol {
             line-height: 1.5;
             font-size: 16px;
             margin: 8px 0 0;
+            display: inline;
           }
         }
         &__birthday {
           margin: 24px 0 0;
-
+          .field_with_errors {
+            display: contents;
+            input {
+              width: 90%;
+            }
+          }
           .form-require {
             margin: 0 0 0 8px;
             padding: 2px 4px;

@@ -13,10 +13,13 @@ class UsersController < ApplicationController
   end
 
   def identification
+    @address = Prefecture.all
+    @user = User.new
   end
 
   def new
   end
+
 
   def listing
   end
@@ -25,6 +28,9 @@ class UsersController < ApplicationController
   end
 
   def completed
+    
+  def cardlist_first
+    @cardnew
   end
 
 end
