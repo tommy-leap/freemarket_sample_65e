@@ -1,89 +1,141 @@
-.user-datail
-  = form_for @user, url: step3_signup_index_path do |f|
-    = f.fields_for :user_detail do |p|
-      .user-datail-head
-        %h2 住所入力
-      .user-datail-text-address
-        .user-datail-form  
-          = p.label :post_num, "郵便番号"
-          %span.form-required
-            必須
-        = p.text_field :post_num, placeholder:"例）１２３４５６７"
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title FreemarketSample65e
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
 
-        .user-datail-form 
-          = p.label :prefecture, "都道府県"
-          %span.form-required
-            必須
-        = p.select :prefecture,[["--", ""],
-                                ["北海道", "北海道"],
-                                ["青森県", "青森県"],
-                                ["岩手県", "岩手県"],
-                                ["宮城県", "宮城県"],
-                                ["秋田県", "秋田県"],
-                                ["山形県", "山形県"],
-                                ["福島県", "福島県"],
-                                ["東京都", "東京都"],
-                                ["神奈川県", "神奈川県"],
-                                ["埼玉県", "埼玉県"],
-                                ["千葉県", "千葉県"],
-                                ["茨城県", "茨城県"],
-                                ["栃木県", "栃木県"],
-                                ["群馬県", "群馬県"],
-                                ["山梨県", "山梨県"],
-                                ["新潟県", "新潟県"],
-                                ["長野県", "長野県"],
-                                ["富山県", "富山県"],
-                                ["石川県", "石川県"],
-                                ["福井県", "福井県"],
-                                ["愛知県", "愛知県"],
-                                ["岐阜県", "岐阜県"],
-                                ["静岡県", "静岡県"],
-                                ["三重県", "三重県"],
-                                ["大阪府", "大阪府"],
-                                ["兵庫県", "兵庫県"],
-                                ["京都府", "京都府"],
-                                ["滋賀県", "滋賀県"],
-                                ["奈良県", "奈良県"],
-                                ["和歌山県", "和歌山県"],
-                                ["鳥取県", "鳥取県"],
-                                ["島根県", "島根県"],
-                                ["岡山県", "岡山県"],
-                                ["広島県", "広島県"],
-                                ["山口県", "山口県"],
-                                ["徳島県", "徳島県"],
-                                ["香川県", "香川県"],
-                                ["愛媛県", "愛媛県"],
-                                ["高知県", "高知県"],
-                                ["福岡県", "福岡県"],
-                                ["佐賀県", "佐賀県"],
-                                ["長崎県", "長崎県"],
-                                ["熊本県", "熊本県"],
-                                ["大分県", "大分県"],
-                                ["宮崎県", "宮崎県"],
-                                ["鹿児島県", "鹿児島県"],
-                                ["沖縄県", "沖縄県"],
-                                ]
-          
-        .user-datail-form 
-          = p.label :municipalities, "市区町村"
-          %span.form-required
-            必須
-        = p.text_field :municipalities, placeholder:"例）横浜市緑区"
-        .user-datail-form 
-          = p.label :address, "番地"
-          %span.form-required
-            必須
-        = p.text_field :address, placeholder:"例）青山1-1-1"
-        .user-datail-form 
-          = p.label :bulid_name, "建物名"
-          %p.from-arbitrary
-            任意
-        = p.text_field :bulid_name, placeholder:"例）柳ビル103"
-        .user-datail-form 
-          = p.label :phone_num, "携帯電話の番号"
-          %p.from-arbitrary
-            任意
-        = p.text_field :phone_num, placeholder:"携帯電話番号を入力"
+  %body
+    .regist-header
+      %h1
+        = link_to "#" do
+          = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '49px', width: '185px', class:'top-logo'
 
-        = f.submit '次へ進む', class:"user-datail-form__btn"
+      %nav.signup-bar.progress-bar
+        %ol.step-bar
+          %li.active
+            会員情報  
+            .progress-status-step1.active
+          %li.step2
+            住所入力
+            .progress-status-step2
+          %li.step3
+            お支払い方法
+            .progress-status-step3
+          %li.step4
+            完了
+            .progress-status-step4
+
+
+    .user-datail
+      = form_for @user, url: step3_signup_index_path do |f|
+        = f.fields_for :user_detail do |p|
+          .user-datail-head
+            %h2 住所入力
+          .user-datail-text-address
+            .user-datail-form  
+              = p.label :post_num, "郵便番号"
+              %span.form-required
+                必須
+            = p.text_field :post_num, placeholder:"例）１２３４５６７"
+
+            .user-datail-form 
+              = p.label :prefecture, "都道府県"
+              %span.form-required
+                必須
+            = p.select :prefecture,[["--", ""],
+                                    ["北海道", "北海道"],
+                                    ["青森県", "青森県"],
+                                    ["岩手県", "岩手県"],
+                                    ["宮城県", "宮城県"],
+                                    ["秋田県", "秋田県"],
+                                    ["山形県", "山形県"],
+                                    ["福島県", "福島県"],
+                                    ["東京都", "東京都"],
+                                    ["神奈川県", "神奈川県"],
+                                    ["埼玉県", "埼玉県"],
+                                    ["千葉県", "千葉県"],
+                                    ["茨城県", "茨城県"],
+                                    ["栃木県", "栃木県"],
+                                    ["群馬県", "群馬県"],
+                                    ["山梨県", "山梨県"],
+                                    ["新潟県", "新潟県"],
+                                    ["長野県", "長野県"],
+                                    ["富山県", "富山県"],
+                                    ["石川県", "石川県"],
+                                    ["福井県", "福井県"],
+                                    ["愛知県", "愛知県"],
+                                    ["岐阜県", "岐阜県"],
+                                    ["静岡県", "静岡県"],
+                                    ["三重県", "三重県"],
+                                    ["大阪府", "大阪府"],
+                                    ["兵庫県", "兵庫県"],
+                                    ["京都府", "京都府"],
+                                    ["滋賀県", "滋賀県"],
+                                    ["奈良県", "奈良県"],
+                                    ["和歌山県", "和歌山県"],
+                                    ["鳥取県", "鳥取県"],
+                                    ["島根県", "島根県"],
+                                    ["岡山県", "岡山県"],
+                                    ["広島県", "広島県"],
+                                    ["山口県", "山口県"],
+                                    ["徳島県", "徳島県"],
+                                    ["香川県", "香川県"],
+                                    ["愛媛県", "愛媛県"],
+                                    ["高知県", "高知県"],
+                                    ["福岡県", "福岡県"],
+                                    ["佐賀県", "佐賀県"],
+                                    ["長崎県", "長崎県"],
+                                    ["熊本県", "熊本県"],
+                                    ["大分県", "大分県"],
+                                    ["宮崎県", "宮崎県"],
+                                    ["鹿児島県", "鹿児島県"],
+                                    ["沖縄県", "沖縄県"],
+                                    ]
+              
+            .user-datail-form 
+              = p.label :municipalities, "市区町村"
+              %span.form-required
+                必須
+            = p.text_field :municipalities, placeholder:"例）横浜市緑区"
+            .user-datail-form 
+              = p.label :address, "番地"
+              %span.form-required
+                必須
+            = p.text_field :address, placeholder:"例）青山1-1-1"
+            .user-datail-form 
+              = p.label :bulid_name, "建物名"
+              %p.from-arbitrary
+                任意
+            = p.text_field :bulid_name, placeholder:"例）柳ビル103"
+            .user-datail-form 
+              = p.label :phone_num, "携帯電話の番号"
+              %p.from-arbitrary
+                任意
+            = p.text_field :phone_num, placeholder:"携帯電話番号を入力"
+
+            = f.submit '次へ進む', class:"user-datail-form__btn"
+
+    .buy-result__footer
+      %nav
+        %ul
+          %li
+            = link_to "#", class: "menu" do
+              プライバシーポリシー
+          %li
+            = link_to "#", class: "menu" do
+              メルカリ利用規約
+          %li
+            = link_to "#", class: "menu" do
+              特定商取引に関する表記
+      .buy-result__footer__logo
+        = link_to "#" do
+          = image_tag 'logo_gray.svg', alt: ''
+      %p
+        %span
+          ©︎ Fmarket,lnc.
           

@@ -1,39 +1,50 @@
-%body
-.regist-header
-  %h1
-    = link_to "#" do
-      = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '49px', width: '185px', class:'top-logo'
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title FreemarketSample65e
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
 
-.contents-sns
-  .contents-sns__main
-    .contents-sns__main__title
-      新規会員登録
-    .contents-sns__main__btn  
-      .contents-sns__main__btn__link
-      = link_to step1_signup_index_path, class: "contents-sns__main__btn__link__email" do
-        = icon('far', 'envelope',class:"contents-sns__main__btn__link__email__icon-mail")
-        %span
-          メールアドレスで登録する
-      = link_to "https://www.facebook.com/", class: "contents-sns__main__btn__link__facebook" do
-        = icon('fab', 'facebook-square',class:"contents-sns__main__btn__link__facebook__icon-fbook")
-        %span
-          facebookで登録する
-      = link_to "https://accounts.google.com/signin", class: "contents-sns__main__btn__link__google" do
-        = icon('fab', 'google',class:"contents-sns__main__btn__link__google__icon-google")
-        %span
-          googleで登録する
+  %body
+  .regist-header
+    %h1
+      = link_to "#" do
+        = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '49px', width: '185px', class:'top-logo'
+
+  .contents-sns
+    .contents-sns__main
+      .contents-sns__main__title
+        新規会員登録
+      .contents-sns__main__btn  
+        .contents-sns__main__btn__link
+        = link_to step1_signup_index_path, class: "contents-sns__main__btn__link__email" do
+          = icon('far', 'envelope',class:"contents-sns__main__btn__link__email__icon-mail")
+          %span
+            メールアドレスで登録する
+        = link_to "https://www.facebook.com/", class: "contents-sns__main__btn__link__facebook" do
+          = icon('fab', 'facebook-square',class:"contents-sns__main__btn__link__facebook__icon-fbook")
+          %span
+            facebookで登録する
+        = link_to "https://accounts.google.com/signin", class: "contents-sns__main__btn__link__google" do
+          = icon('fab', 'google',class:"contents-sns__main__btn__link__google__icon-google")
+          %span
+            googleで登録する
 
 
-.regist-footer
-  %nav
-    %ul
-      %li.regist-footer__rule__list__first
-        %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
-      %li.regist-footer__rule__list__second
-        %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
-      %li.regist-footer__rule__list__third
-        %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
-  =link_to "#" do
-    =image_tag "fmarket_logo_white.svg" ,alt: '' , height: '36px', width: '150px',class:'footer-logo'
-  %p
-    %small © Mercari, Inc.
+  .regist-footer
+    %nav
+      %ul
+        %li.regist-footer__rule__list__first
+          %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+        %li.regist-footer__rule__list__second
+          %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+        %li.regist-footer__rule__list__third
+          %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+    =link_to "#" do
+      =image_tag "fmarket_logo_white.svg" ,alt: '' , height: '36px', width: '150px',class:'footer-logo'
+    %p
+      %small © Mercari, Inc.

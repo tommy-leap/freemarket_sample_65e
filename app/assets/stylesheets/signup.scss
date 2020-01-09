@@ -12,19 +12,22 @@ body {
   font-size: 14px;
   color: #333;
   line-height: 1;
-}
+
 
 .regist-container {
   padding: 0 0 250px;
 }
 
-.h1 {
-  margin: 40px 0 0;
-}
+
 
 .regist-header{
   text-align: center;
   height: 128px;
+  padding: 0;
+  h1 {
+    margin: 40px auto 0 auto;
+    // margin: 0 auto;
+  }
 
   &__top-logo {
     display: inline-block;
@@ -39,7 +42,7 @@ body {
 
 .contents-sns {
   display: block;
-  background: #fff;
+  background: #f5f5f5;
 
   &__main{
     width: 700px;
@@ -187,4 +190,5 @@ body {
 .regist-footer p {
   margin: 8px 0 0;
   font-size: 13px;
+}
 }
