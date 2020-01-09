@@ -13,6 +13,8 @@ class UsersController < ApplicationController
   end
 
   def identification
+    @address = Prefecture.all
+    @user = User.new
   end
 
   def new
