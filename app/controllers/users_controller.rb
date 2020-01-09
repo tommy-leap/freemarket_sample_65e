@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def completed
-    
+  end
   def cardlist_first
     @cardnew
   end

@@ -10,15 +10,15 @@
           %ul.listing-tabs
             %li
               %h3
-                %a{href: "listing"}
+                = link_to "listing" do
                   出品中
             %li
               %h3
-                %a{href: "progress"}
+                = link_to "progress" do
                   取引中
             %li.listing-completed
               %h3
-                %a{href: "completed"}
+                = link_to "completed" do
                   売却済み
           .tab-content
             %ul.mydata-completed-content
