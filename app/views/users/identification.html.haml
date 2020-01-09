@@ -17,20 +17,20 @@
             お名前
           %p.identification__user__text__form__arbitrary-red
             必須
-        %input.identification__user__text__input{placeholder:"例）山田" }
-        %input.identification__user__text__input{placeholder:"例）彩" }
+        = f.text_field :first_name, class: "identification__user__text__input", placeholder: "例）山田"
+        = f.text_field :first_name, class: "identification__user__text__input", placeholder: "例）彩"
         .identification__user__text__form
           %label.form-zip-code
             お名前 カナ
           %p.identification__user__text__form__arbitrary-red
             必須
-        %input.identification__user__text__input{placeholder:"例）ヤマダ" }
-        %input.identification__user__text__input{placeholder:"例）アヤ" }
+        = f.text_field :first_name, class: "identification__user__text__input", placeholder: "例）ヤマダ"
+        = f.text_field :first_name, class: "identification__user__text__input", placeholder: "例）アヤ"
         .identification__user__text__form
           %label.form-zip-code
             生年月日
           %p.identification__user__text__form__arbitrary-red
-            必須  
+            必須
         .birthday
           != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'birthday', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
         %p.identification__user__text__info
@@ -40,7 +40,7 @@
             郵便番号
           %p.identification__user__text__form__arbitrary
             任意
-        %input.identification__user__text__input{placeholder:"例）1234567" }
+        = f.text_field :first_name, class: "identification__user__text__input", placeholder: "例）1234567"
         .identification__user__text__form
           %label.form-zip-code 都道府県 
           %span.identification__user__text__form__arbitrary 任意
@@ -54,19 +54,19 @@
             市区町村
           %p.identification__user__text__form__arbitrary
             任意
-        %input.identification__user__text__input{placeholder:"例）横浜市緑区" }
+        = f.text_field :first_name, class: "identification__user__text__input", placeholder: "例）横浜市緑区"
         .identification__user__text__form
           %label.form-address
             番地
           %p.identification__user__text__form__arbitrary
             任意
-        %input.identification__user__text__input{placeholder:"例）青山1−1−1" }
+        = f.text_field :first_name, class: "identification__user__text__input", placeholder: "例）青山1−1−1"
         .identification__user__text__form
           %label.form-building
             建物名
           %p.identification__user__text__form__arbitrary
             任意
-        %input.identification__user__text__input{placeholder:"例）柳ビル１０３" }
+        = f.text_field :first_name, class: "identification__user__text__input", placeholder: "例）柳ビル１０３"
         .identification__user__text__btn
           %button.identification__user__text__btn__red{type:"button"}
             登録する
