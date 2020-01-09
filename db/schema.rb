@@ -121,7 +121,7 @@ ActiveRecord::Schema.define(version: 2020_01_08_031258) do
     t.integer "year", null: false
     t.integer "month", null: false
     t.integer "day", null: false
-    t.integer "phone_num", null: false
+    t.string "phone_num", null: false
     t.integer "post_num", null: false
     t.string "prefecture", null: false
     t.string "municipalities", null: false

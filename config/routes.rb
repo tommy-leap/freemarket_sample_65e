@@ -25,13 +25,12 @@ Rails.application.routes.draw do
 end
 get :dynamic_select_category, to: 'products#dynamic_select_category'
   resources :users, only: [:index, :show, :edit, :update, :new]
-  resources :signup, only: [:new ]do
+  resources :signup do
     collection do
       get 'step1'
       post 'step2'
       post 'step3'  #入力が全て完了
-      post 'step4'
-      get 'step5'  #登録完了後
+      get 'step4'  #登録完了後
     end
   end
 end

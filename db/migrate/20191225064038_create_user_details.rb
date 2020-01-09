@@ -9,7 +9,7 @@ class CreateUserDetails < ActiveRecord::Migration[5.2]
       t.integer :year, null: false
       t.integer :month, null: false
       t.integer :day, null: false
-      t.integer :phone_num, null: false
+      t.string :phone_num, null: false
       t.integer :post_num, null: false
       t.string :prefecture, null: false
       t.string :municipalities, null: false
@@ -18,7 +18,6 @@ class CreateUserDetails < ActiveRecord::Migration[5.2]
       t.text :comment
       t.integer :credit_num
       t.integer :payjp_id, foreign_key: true  # 仮設定 
-      t.integer :phone_num, null: false
       t.timestamps
     end
   end

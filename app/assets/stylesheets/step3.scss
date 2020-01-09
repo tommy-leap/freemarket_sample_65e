@@ -1,15 +1,12 @@
-body {
-  background-color: #f5f5f5;
-  font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
-
-
-.user-datail {
+.card-registration {
+  height: 562px;
   width: 700px;
-  // height: 100%;
-  background-color: #f5f5f5;
   margin: 0 auto;
 }
-.user-datail-head {
+
+.card-registration-head {
+  width: 700px;
+  height: 50px;
   background-color: white;
   margin-bottom: 5px;
   h2 {
@@ -17,129 +14,121 @@ body {
     padding: 8px 24px;
   }
 }
-select {
-  display: inline-block;
-  width: 100%;
-  height: 48px;
-  margin-top: 8px;
+.card-registration-box {
+  width: 628px;
+  height: 446px;
   background-color: white;
-  border: solid 1px  rgb(216, 214, 214);
+  padding: 34px 40px 32px 32px;
 }
 
-
-
-.user-datail-text {
-  padding: 64px;
-  width: 572px;
-  // height: 100%;
-  background-color: white;
-  font-size: 14px;
-}
-
-.user-datail-text__right {
-  text-align: end;
-  a {
-  font-size: 14px;
-  text-decoration: none;
-  color: #0099e8
+.card-number-upper-form {
+  max-width: 343px;
+  margin: 0 auto;
+  #user_user_detail_attributes_credit_num {
+    width: 90%;
   }
 }
 
-.user-datail-form {
-  width: 100%;
-  margin: 40px 0 0;
-}
-input {
-  display: block;
-  width: 94%;
-  height: 24px;
-  margin-top: 8px;
-  padding: 10px 16px;
-  border-radius: 4px;
-  border: solid 1px  rgb(216, 214, 214);
-}
-.user-datail-form label {
-  font-weight: 600;
-}
-
-.input-form {
-  border: solid 1px #ccc;
-  border-radius: 3px;
-  margin-top: 8px;
-  padding: 10px 16px;
-  width: 538px;
-  height: 26px;
-  font-size: 16px;
-
-}
-
-.from-arbitrary {
+.form-required {
   margin-left: 8px;
   padding: 2px 4px;
   border-radius: 2px;
   color: #fff;
   font-size: 12px;
-  background-color: #ccc;
+  background-color: #EA352D;
   vertical-align: top;
-  display: inline-block;
 }
-
-.user-datail-form__btn {
-  margin-top: 40px;
-  width: 572px;
-  height: 50px;
-  background: #ea352d;
-  cursor: pointer;
-  border: solid 1px;
-  border: 1px solid #ea352d;
-  position: relative;
-  color: white;
+.card-number-form {
+    display: block;
+    width: 309px;
+    height: 28px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+    margin-top: 8px;
 }
-
-
-
-
-.user-datail-form-contents {
-  text-align: end;
-  margin-top: 40px;
-  a {
-  color: #0099e8;
-  text-decoration: none;
+.available {
+  margin-top: 8px;
+  display: flex;
+  list-style: none;
+  li {
+    margin-right: 10px;
   }
 }
-.select-default {
-  outline: 0;
-  -webkit-appearance: none;
-  width: 572px;
-  height: 43px;
-  border: solid 1px #ccc;
-  border-radius: 3px;
-  background-color: white;
+
+.select-year-month {
   margin-top: 8px;
-  padding-left: 13px;
-  font-size: 16px;
+  display: flex;
+  .select-year-month-form {
+    width: 100%;
+  }
+  .card-year{
+    margin-left: 14px; 
+  }
+  span {
+    margin: 0 12px;
+    line-height: 56px;
+  }
+  select {
+    border: 1px solid #ccc;
+    background-color: white;
+  }
 }
-.card-month {
-    width: 131.5px;
-    height: 48px;
-    font-size: 15px;
+
+.card-expiration-form {
+  margin-top: 32px;
 }
-.card-year {
-    width: 131.5px;
-    height: 48px;
-    font-size: 15px;
-}
-.user-datail-text-address {
-  padding: 5px 64px 64px 64px;
-  width: 572px;
-  // height: 100%;
-  background-color: white;
+.signup-security-code-text {
+  margin-top: 8px;
+  text-align: end;
+  &__btn {
+  color: #0099e8;
   font-size: 14px;
+  text-decoration: none;
 
+  .question {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #0099e8;
+    color: #fff;
+    line-height: 14px;
+    font-size: 12px;
+    text-align: center;
+    }
+  }
 }
 
-.r{
-color:#888;
+
+.signup-security-code-text__btn:hover {
+  color: aqua;
+  
 }
-* {margin: 0; padding: 0;}
+
+.card-security-number-form {
+  margin-top: 32px;
+}
+
+.card-registration-form__btn {
+margin-top: 32px;
+width: 343px;
+height: 50px;
+cursor: pointer;
+background: #e62017;
+color: white;
+font-size: 14px;
+margin-top: 32px;
+position: relative;
+  &__red  {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    top:20px;
+    right: 140px;
+  }
 }
