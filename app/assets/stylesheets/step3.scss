@@ -104,6 +104,33 @@
     }
   }
 }
+.select-default {
+  outline: 0;
+  -webkit-appearance: none;
+  height: 43px;
+  border: solid 1px #ccc;
+  border-radius: 3px;
+  background-color: white;
+  margin-top: 8px;
+  padding-left: 13px;
+  font-size: 16px;
+}
+.card-month {
+    width: 131.5px;
+    height: 48px;
+    font-size: 15px;
+}
+.card-year {
+    width: 131.5px;
+    height: 48px;
+    font-size: 15px;
+}
+.user-datail-text-address {
+  padding: 5px 64px 64px 64px;
+  width: 572px;
+  // height: 100%;
+  background-color: white;
+  font-size: 14px;
 
 
 .signup-security-code-text__btn:hover {

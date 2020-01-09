@@ -1,0 +1,150 @@
+%body
+  -breadcrumb :mypage
+  =render 'layouts/breadcrumbs'
+  %main
+    .content
+      =render 'shared/side_bar'
+      .listing
+        %section.listing-contents
+          %h2.mypage-tab-head 出品した商品
+          %ul.listing-tabs
+            %li.listing-exhibiting
+              %h3
+                = link_to "listing" do
+                  出品中
+            %li
+              %h3
+                = link_to "progress" do
+                  取引中
+            %li
+              %h3
+                = link_to "completed" do
+                  売却済み
+          .tab-content
+            %ul.mypage-products
+              %li.mypage-products-list
+                %a.mypage-item-link{href: "#"}
+                  %figure
+                    =image_tag '//static.mercdn.net/thumb/photos/m43884616145_1.jpg?1505896363', size: "48x48", alt: "image"
+                  .mypage-item-about
+                    .mypage-item-text
+                      ロングコート
+                    %div
+                      %span.listing-like-count
+                        %i.far.fa-heart
+                        %span 2
+                      %span.listing-message-count
+                        %i.far.fa-comment-alt
+                        %span 0
+                      .mypage-item-status
+                        出品中
+                  %i.fas.fa-chevron-right
+              %li
+                %a.mypage-item-link{href: "#"}
+                  %figure
+                    =image_tag '//static.mercdn.net/thumb/photos/m43884616145_1.jpg?1505896363', size: "48x48", alt: "image"
+                  .mypage-item-about
+                    .mypage-item-text
+                      ロングコート
+                    %div
+                      %span.listing-like-count
+                        %i.far.fa-heart
+                        %span 2
+                      %span.listing-message-count
+                        %i.far.fa-comment-alt
+                        %span 0
+                      .mypage-item-status
+                        出品中
+                  %i.fas.fa-chevron-right
+              %li
+                %a.mypage-item-link{href: "#"}
+                  %figure
+                    =image_tag '//static.mercdn.net/thumb/photos/m43884616145_1.jpg?1505896363', size: "48x48", alt: "image"
+                  .mypage-item-about
+                    .mypage-item-text
+                      ロングコート
+                    %div
+                      %span.listing-like-count
+                        %i.far.fa-heart
+                        %span 2
+                      %span.listing-message-count
+                        %i.far.fa-comment-alt
+                        %span 0
+                      .mypage-item-status
+                        出品中
+                  %i.fas.fa-chevron-right
+              %li
+                %a.mypage-item-link{href: "#"}
+                  %figure
+                    =image_tag '//static.mercdn.net/thumb/photos/m43884616145_1.jpg?1505896363', size: "48x48", alt: "image"
+                  .mypage-item-about
+                    .mypage-item-text
+                      ロングコート
+                    %div
+                      %span.listing-like-count
+                        %i.far.fa-heart
+                        %span 2
+                      %span.listing-message-count
+                        %i.far.fa-comment-alt
+                        %span 0
+                      .mypage-item-status
+                        出品中
+                  %i.fas.fa-chevron-right
+              %li
+                %a.mypage-item-link{href: "#"}
+                  %figure
+                    =image_tag '//static.mercdn.net/thumb/photos/m43884616145_1.jpg?1505896363', size: "48x48", alt: "image"
+                  .mypage-item-about
+                    .mypage-item-text
+                      ロングコート
+                    %div
+                      %span.listing-like-count
+                        %i.far.fa-heart
+                        %span 2
+                      %span.listing-message-count
+                        %i.far.fa-comment-alt
+                        %span 0
+                      .mypage-item-status
+                        出品中
+                  %i.fas.fa-chevron-right
+              %li
+                %a.mypage-item-link{href: "#"}
+                  %figure
+                    =image_tag '//static.mercdn.net/thumb/photos/m43884616145_1.jpg?1505896363', size: "48x48", alt: "image"
+                  .mypage-item-about
+                    .mypage-item-text
+                      ロングコート
+                    %div
+                      %span.listing-like-count
+                        %i.far.fa-heart
+                        %span 2
+                      %span.listing-message-count
+                        %i.far.fa-comment-alt
+                        %span 0
+                      .mypage-item-status
+                        出品中
+                  %i.fas.fa-chevron-right
+              %li
+                %a.mypage-item-link{href: "#"}
+                  %figure
+                    =image_tag '//static.mercdn.net/thumb/photos/m43884616145_1.jpg?1505896363', size: "48x48", alt: "image"
+                  .mypage-item-about
+                    .mypage-item-text
+                      ロングコート
+                    %div
+                      %span.listing-like-count
+                        %i.far.fa-heart
+                        %span 2
+                      %span.listing-message-count
+                        %i.far.fa-comment-alt
+                        %span 0
+                      .mypage-item-status
+                        出品中
+                  %i.fas.fa-chevron-right
+        %ul.mypage-history.pager
+          %li.pager-prev.pager-cell
+            %a{href: "/jp/mypage/listings/listing/?min_pager_id=4938155072"}
+              %i.icon-arrow-left
+          %li.pager-next.pager-cell
+            %a{href: "/jp/mypage/listings/listing/?max_pager_id=4902970754"}
+              %i.icon-arrow-right

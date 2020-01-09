@@ -17,8 +17,14 @@ Rails.application.routes.draw do
   get "users/edit", to: "users#edit"
   get "signup", to: "signup#index"
   get 'products/error'
+
+  get 'users/listing', to: "users#listing"
+  get 'users/progress', to: "users#progress"
+  get 'users/completed', to: "users#completed"
+
   get 'users/cardlist_first', to: "users#cardlist_first"
   get 'users/cardlist', to: "users#cardlist"
+
   resources :products, only: [:index, :new, :create, :show] do
   collection do
     get 'get_category_children', defaults: { format: 'json' }
