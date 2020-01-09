@@ -18,4 +18,13 @@ class UsersController < ApplicationController
   def new
   end
 
+  def listing
+  end
+
+  def progress
+  end
+
+  def completed
+  end
+
 end

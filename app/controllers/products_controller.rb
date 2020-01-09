@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   layout false  
-  before_action :set_categories, only: %w[edit new]
+  before_action :set_categories, only: %w[edit new create index ]
   def new
     @product = Product.new
   end
@@ -16,14 +16,14 @@ class ProductsController < ApplicationController
 
   def index
 
-    @products = Product.includes(:images).order('created_at DESC')
-    @product = Product.find_by(title:"ベルト")
+    @products = Product.includes(:images)
+    @product = Product.find[:id]
     @image = Image.all
-    render layout: false
+
   end
   
   def show
-    render layout: false
+
   end
 
   def detail
@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
   private
   def product_params
 
-    params.require(:product).permit( :title, :info, :status, :postage, :shipping, :day, :price, images_attributes: [:image])
+    params.require(:product).permit( :title, :info, :status, :postage, :shipping, :day, :price, images_attributes: [:image]).merge(category_id: params[:category_id])
 
   end
 

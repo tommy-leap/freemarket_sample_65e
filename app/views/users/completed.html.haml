@@ -1,0 +1,26 @@
+%body
+  -breadcrumb :mypage
+  =render 'layouts/breadcrumbs'
+  %main
+    .content
+      =render 'shared/side_bar'
+      .listing
+        %section.listing-contents
+          %h2.mypage-tab-head 出品した商品
+          %ul.listing-tabs
+            %li
+              %h3
+                %a{href: "listing"}
+                  出品中
+            %li
+              %h3
+                %a{href: "progress"}
+                  取引中
+            %li.listing-completed
+              %h3
+                %a{href: "completed"}
+                  売却済み
+          .tab-content
+            %ul.mydata-completed-content
+              = image_tag "logo_gray.svg", class: "image-box", height: "150px", width: "150px"
+              %li.mydata-product__content__not-found 取引中の商品がありません
