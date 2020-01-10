@@ -90,7 +90,7 @@
                 %span.form-required
                   必須              
                 .select-year-month-form
-                = f.select :status, [["---",1], ["新品、未使用",2], ["目立った傷や汚れなし",3], ["やや傷や汚れあり",4], ["傷や汚れあり",5], ["全体的に状態悪い",6]]
+                = f.select :status, [["---"], ["新品、未使用"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態悪い"]]
                 - if @product.errors.messages[:status].any?
                   %p.error= @product.errors.messages[:status][0]
           .product-delivery-form
@@ -104,7 +104,7 @@
                 %span.form-required
                   必須        
                 .select-year-month-form
-                  = f.select :postage, [["---",1], ["送料込み(出品者負担)",2], ["着払い(購入者負担)",3]]
+                  = f.select :postage, [["---"], ["送料込み(出品者負担)"], ["着払い(購入者負担)"]]
                   - if @product.errors.messages[:postage].any?
                     %span.error= @product.errors.messages[:postage][0]
               .product-text-form__box
@@ -113,7 +113,7 @@
                 %span.form-required
                   必須        
                 .select-year-month-form
-                  = f.select :shipping, [["---",1], ["らくらくメルカリ便",2], ["ゆうメール",3]]
+                  = f.select :shipping, [["---"], ["らくらくメルカリ便"], ["ゆうメール"]]
                   - if @product.errors.messages[:shipping].any?
                     %span.error= @product.errors.messages[:shipping][0]
               .product-text-form__box
@@ -131,7 +131,7 @@
                 %span.form-required
                   必須        
                 .select-year-month-form
-                  = f.select :day, [["---",1], ["１〜２日で発送",2], ["２〜３日で発送",3], ["４〜７日で発送",4]]
+                  = f.select :day, [["---"], ["１〜２日で発送"], ["２〜３日で発送"], ["４〜７日で発送"]]
                   - if @product.errors.messages[:day].any?
                     %span.error= @product.errors.messages[:day][0]
           .product-price
