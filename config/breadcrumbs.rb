@@ -25,6 +25,11 @@ crumb :cardlist_first do
   parent :mypage
 end
 
+crumb :cardlist do
+  link "支払い方法", users_cardlist_first_path
+  parent :mypage
+end
+
 crumb :identification do
   link "本人情報", users_identification_path
   parent :mypage
