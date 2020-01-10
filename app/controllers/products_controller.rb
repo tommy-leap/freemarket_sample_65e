@@ -4,9 +4,10 @@ class ProductsController < ApplicationController
   before_action :set_categories, only: %w[edit new create index ]
   def new
     @product = Product.new
+    @address = Prefecture.all
   end
   def create
-    @product = Product.new(product_params)
+    @product = Product.create(product_params)
     if @product.save
       redirect_to root_path
     else
@@ -34,10 +35,12 @@ class ProductsController < ApplicationController
   end
 
 
+
+
   private
   def product_params
 
-    params.require(:product).permit( :title, :info, :status, :postage, :shipping, :day, :price, images_attributes: [:image]).merge(category_id: params[:category_id])
+    params.require(:product).permit( :title, :info, :status, :postage, :prefecture, :shipping, :day, :price, images_attributes: [:image]).merge(category_id: params[:category_id])
 
   end
 

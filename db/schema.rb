@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_01_09_070750) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
-    t.string "municipalities", null: false
+    t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -70,11 +70,11 @@ ActiveRecord::Schema.define(version: 2020_01_09_070750) do
     t.integer "status", null: false
     t.text "postage", null: false
     t.text "shipping", null: false
-    t.string "from", null: false
+    t.string "prefecture", null: false
     t.string "day", null: false
     t.integer "brand_id"
-    t.integer "category_id", null: false
-    t.integer "user_id", null: false
+    t.integer "category_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
