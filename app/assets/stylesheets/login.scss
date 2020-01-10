@@ -2,45 +2,37 @@
 body {
   margin: 0;
   padding: 0;
-  font-size: inherit;
-  line-height: inherit;
-  border-style: solid;
-  border-width: 0;
+  width: 100%;
+  font-size: 0;
   position: relative;
   min-height: 100%;
   background: #f5f5f5;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-  font-size: 14px;
-  color: #333;
-  line-height: 1;
 }
 
-.regist-container {
-  padding: 0 0 250px;
-}
 
-.h1 {
-  margin: 40px 0 0;
-}
-
-.regist-header{
-  text-align: center;
+#regist-header-login{
+  width: 100%;
   height: 128px;
-
+  display: block;
+  text-align: center;
+  h1{
+  display: inline-block;
+  margin-top: 40px;
   &__top-logo {
     display: inline-block;
-    width: 185px;
     height: 49px;
-    margin: 40px 8px 0 0;
-    line-height: 49px;
+    line-height: 128px;
+    }
   }
 }
 
-.log-in-main__boxes__noaccount p {
+
+#log-in-main__boxes__noaccount p {
   font: 14px;
 }
 
-.log-in-main__boxes__noaccount a {
+#log-in-main__boxes__noaccount a {
   display: block;
   margin: 8px 0 0;
   border: 1px solid #0099e8;
@@ -50,8 +42,9 @@ body {
   text-decoration: none;
 }
 
-.log-in-main {
+#log-in-main {
   &__boxes {
+    width: 456px;
     &__SNS {
       display: block;
       width: 100%;
@@ -98,41 +91,7 @@ body {
   }  
 }
 
-
-
-// .icon-fbook {
-//   height: 26px;
-//   width:26px;
-//   display: inline-block;
-//   font-family: 'icon-font';
-//   // speak: none;
-//   font-style: normal;
-//   font-weight: 400;
-//   font-variant: normal;
-//   text-transform: none;
-//   line-height: 1;
-//   position: absolute;
-//   top: 50%;
-//   left: 16px;
-//   color: #385185;
-//   background: #fff;
-//   content: '\e014';
-//   text-decoration: inherit;
-//   vertical-align: inherit;
-//   border-style: solid;
-//   border-width: 0;
-// }
-
-// .contents-btn--google {
-//   border: #979797 solid 1px;
-//   color: #333;
-//   margin: 16px 0 0;
-//   background: #fff;
-//   text-decoration: none;
-// }
-
-
-.log-in-main {
+#log-in-main {
   display: block;
 
   &__boxes {
@@ -155,22 +114,13 @@ body {
       padding: 24px 64px 32px;
       border: 0;
 
-      &__email {
 
-      }
-
-      &__pass {
-
-      }
-
-      &__login {
-
-      }
+      
     }
   }
 }
 
-.log-in-main__boxes__login button {
+#log-in-main__boxes__login button {
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;
@@ -183,18 +133,14 @@ body {
   margin: 24px 0 0;
 }
 
-.log-in-main__boxes__info a {
+#log-in-main__boxes__info a {
   color: #0099e8;
   text-decoration: none;
   display: block;
   margin: 40px 0 0;
 }
 
-.login-input-text {
-
-}
-
-.input-default {
+#input-default {
   height: 28px;
   padding: 10px 16px 8px;
   border-radius: 4px;
@@ -208,7 +154,7 @@ body {
 
 
 
-.regist-footer {
+#regist-footer {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -227,29 +173,25 @@ body {
   }
 }
 
-.regist-footer_nav {
-
-}
-
-.regist-footer ul {
+#regist-footer ul {
   list-style: none;
 }
 
-.regist-footer li {
+#regist-footer li {
   margin: 0;
   display: inline-block;
   font-size: 12px;
 
 }
 
-.regist-footer a {
+#regist-footer a {
   text-decoration: none;
   touch-action: manipulation;
   display: block;
   color: #333;
 }
 
-.regist-footer p {
+#regist-footer p {
   margin: 8px 0 0;
   font-size: 13px;
 }
