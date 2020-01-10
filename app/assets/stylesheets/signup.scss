@@ -21,12 +21,10 @@ body {
 
 
 .regist-header{
-  text-align: center;
+  // text-align: center;
   height: 128px;
-  padding: 0;
-  h1 {
-    margin: 40px auto 0 auto;
-    // margin: 0 auto;
+  .signup {
+    margin: 40px auto 0 270px;
   }
 
   &__top-logo {
@@ -42,7 +40,7 @@ body {
 
 .contents-sns {
   display: block;
-  background: #f5f5f5;
+  background: #eee;
 
   &__main{
     width: 700px;

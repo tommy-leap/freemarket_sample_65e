@@ -686,3 +686,46 @@ p {
   margin: 8px 0 0;
   font-size: 13px;
 }
+.buy-result__footer3-3 {
+  height: 140px;
+  width: 456px;
+  margin: 50px auto;
+  padding: 40px 0;
+  background-color: #eeeeee;
+  nav {
+    height: 12px;
+    width: 456px;
+    ul {
+      height: 100%;
+      width: 456px;
+      display: flex;
+      justify-content: center;
+      li {
+        line-height: 12px;
+        padding: 0 9px;
+        .menu {
+          text-decoration: none;
+          font-size: 12px;
+          color: black;
+        }
+      }
+    }
+  }
+  &__logo {
+    width: 80px;
+    height: 65px;
+    margin: 35px auto 0;
+  }
+  p {
+    height: 14px;
+    width: 100%;
+    padding-top: 8px;
+    line-height: 14px;
+    text-align: center;
+    span {
+      font-size: 14px;
+      text-align: center;
+      font-weight: lighter;
+    }
+  }
+}
