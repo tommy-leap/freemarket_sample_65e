@@ -10,13 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2020_01_09_070750) do
-
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
-    t.string "city"
+    t.string "municipalities", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -68,21 +66,15 @@ ActiveRecord::Schema.define(version: 2020_01_09_070750) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.integer "price", null: false
-    t.text "info"
-    t.integer "status", null: false
-
-
-    t.string "municipalities", null: false
-    
-
-    t.integer "postage", null: false
-    t.integer "shipping", null: false
+    t.text "info", null: false
+    t.string "status", null: false
+    t.string "postage", null: false
+    t.string "shipping", null: false
     t.string "prefecture", null: false
-    t.integer "day", null: false
-
+    t.string "day", null: false
     t.integer "brand_id"
-    t.integer "category_id", null: false
-    t.integer "user_id", null: false
+    t.integer "category_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -134,10 +126,7 @@ ActiveRecord::Schema.define(version: 2020_01_09_070750) do
     t.integer "year", null: false
     t.integer "month", null: false
     t.integer "day", null: false
-
-
     t.string "phone_num", null: false
-
     t.integer "post_num", null: false
     t.string "prefecture", null: false
     t.string "municipalities", null: false
