@@ -20,6 +20,21 @@ crumb :detail do
   link "商品詳細", products_detail_path
 end
 
+crumb :cardlist_first do
+  link "支払い方法", users_cardlist_first_path
+  parent :mypage
+end
+
+crumb :cardlist do
+  link "支払い方法", users_cardlist_first_path
+  parent :mypage
+end
+
+crumb :identification do
+  link "本人情報", users_identification_path
+  parent :mypage
+end
+
 
 # crumb :project_issues do |project|
 #   link "Issues", project_issues_path(project)

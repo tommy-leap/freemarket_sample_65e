@@ -1,16 +1,17 @@
 class SignupController < ApplicationController
   
   def new
+    render layout: false
   end
 
-  # def index
-  # end
+
   before_action :save_step1_to_session, only: :step2
   before_action :save_step2_to_session, only: :step3
 
   def step1
     @user = User.new
     @user.build_user_detail
+    render layout: false
   end
 
   def save_step1_to_session
@@ -24,6 +25,7 @@ class SignupController < ApplicationController
   def step2
     @user = User.new
     @user.build_user_detail
+    render layout: false
   end
 
   def save_step2_to_session
@@ -38,9 +40,11 @@ class SignupController < ApplicationController
   def step3
     @user = User.new
     @user.build_user_detail
+    render layout: false
   end
 
   def step4
+    render layout: false
   end
 
   def create
