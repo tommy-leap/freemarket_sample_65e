@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2020_01_08_031258) do
     t.integer "status", null: false
     t.integer "postage", null: false
     t.integer "shipping", null: false
-    t.string "from"
+    t.string "prefecture", null: false
     t.integer "day", null: false
     t.integer "brand_id"
     t.integer "category_id"
@@ -117,13 +117,15 @@ ActiveRecord::Schema.define(version: 2020_01_08_031258) do
     t.integer "year", null: false
     t.integer "month", null: false
     t.integer "day", null: false
-    t.integer "phone_num", null: false
+    t.string "phone_num", null: false
     t.integer "post_num", null: false
-    t.string "from", null: false
+    t.string "prefecture", null: false
     t.string "municipalities", null: false
+    t.integer "address", null: false
     t.string "bulid_name"
     t.text "comment"
     t.integer "credit_num"
+    t.integer "payjp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
