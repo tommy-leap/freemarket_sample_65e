@@ -4,8 +4,7 @@ class SignupController < ApplicationController
     render layout: false
   end
 
-  # def index
-  # end
+
   before_action :save_step1_to_session, only: :step2
   before_action :save_step2_to_session, only: :step3
 
