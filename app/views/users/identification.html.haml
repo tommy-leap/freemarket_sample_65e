@@ -1,4 +1,4 @@
--breadcrumb :identification
+-breadcrumb :profile
 =render 'layouts/breadcrumbs'
 %main.identification
   =render 'shared/side_bar'
@@ -45,10 +45,7 @@
           %label.form-zip-code 都道府県 
           %span.identification__user__text__form__arbitrary 任意
         .name-box-name-box
-          %select.name-address-input
-            - @address.each do |address| 
-              %option{:value=> ""} 
-                = address.name
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: 'input'
         .identification__user__text__form
           %label.form-city
             市区町村
