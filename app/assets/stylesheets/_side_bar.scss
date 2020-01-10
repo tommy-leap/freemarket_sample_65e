@@ -7,6 +7,12 @@
     display: block;
     padding-bottom: 40px;
     &__list {
+      a{
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        color: #333333;
+      }
       &__name {
         box-sizing: border-box;
         display: block;
@@ -21,6 +27,7 @@
         display: list-item;
         text-align: -webkit-match-parent;
         margin-bottom: 1px;
+        display: flex;
         &__icon {
           float: right;
           color: #ccc;

@@ -2,37 +2,45 @@
   %nav.mypage-side__nav
     %ul.mypage-side__nav__list
       %li.mypage-side__nav__list__name
+        /= link_to "マイページ", _path
         マイページ
         %p.mypage-side__nav__list__name__icon
           >
       %li.mypage-side__nav__list__name
+        /= link_to "お知らせ", _path
         お知らせ
         %p.mypage-side__nav__list__name__icon
           >
       %li.mypage-side__nav__list__name
+        /= link_to "やることリスト", _path
         やることリスト
         %p.mypage-side__nav__list__name__icon
           >
       %li.mypage-side__nav__list__name
+        /= link_to "いいね！一覧", _path
         いいね！一覧
         %p.mypage-side__nav__list__name__icon
           >
       %li.mypage-side__nav__list__name
+        /= link_to "出品する", _path
         出品する
         %p.mypage-side__nav__list__name__icon
           >
       %li.mypage-side__nav__list__name
-        出品した商品 - 出品中
-        %p.mypage-side__nav__list__name__icon
-          >
+        = link_to "listing" do
+          出品した商品 - 出品中
+          %p.mypage-side__nav__list__name__icon
+            >
       %li.mypage-side__nav__list__name
-        出品した商品 - 取引中
-        %p.mypage-side__nav__list__name__icon
-          >
+        = link_to "progress" do
+          出品した商品 - 取引中
+          %p.mypage-side__nav__list__name__icon
+            >
       %li.mypage-side__nav__list__name
-        出品した商品 - 売却済み
-        %p.mypage-side__nav__list__name__icon
-          >
+        = link_to "completed" do
+          出品した商品 - 売却済み
+          %p.mypage-side__nav__list__name__icon
+            >
       %li.mypage-side__nav__list__name
         購入した商品 - 取引中
         %p.mypage-side__nav__list__name__icon
@@ -42,60 +50,72 @@
         %p.mypage-side__nav__list__name__icon
           >
       %li.mypage-side__nav__list__name
+        /= link_to "ニュース一覧", _path
         ニュース一覧
         %p.mypage-side__nav__list__name__icon
           >
       %li.mypage-side__nav__list__name
+        /= link_to "評価一覧", _path
         評価一覧
         %p.mypage-side__nav__list__name__icon
           >
       %li.mypage-side__nav__list__name
+        /= link_to "ガイド", _path
         ガイド
         %p.mypage-side__nav__list__name__icon
           >
       %li.mypage-side__nav__list__name
+        /= link_to "お問い合わせ", _path
         お問い合わせ
         %p.mypage-side__nav__list__name__icon
           >
       %h3.mypage-side__nav__head
+        /= link_to "メルペイ", _path
         メルペイ
       %ul.mypage-side__nav__list
         %li.mypage-side__nav__list__name
+          /= link_to "売上・振込申請", _path
           売上・振込申請
           %p.mypage-side__nav__list__name__icon
             >
         %li.mypage-side__nav__list__name
+          /= link_to "ポイント", _path
           ポイント
           %p.mypage-side__nav__list__name__icon
             >
       %h3.mypage-side__nav__head
+        /= link_to "設定", _path
         設定
       %ul.mypage-side__nav__list
         %li.mypage-side__nav__list__name
+          /= link_to "プロフィール", _path
           プロフィール
           %p.mypage-side__nav__list__name__icon
             >
         %li.mypage-side__nav__list__name
+          /= link_to "発送元・お届け先住所変更", _path
           発送元・お届け先住所変更
           %p.mypage-side__nav__list__name__icon
             >
         %li.mypage-side__nav__list__name
-          支払い方法
+          = link_to "支払い方法", users_cardlist_first_path
           %p.mypage-side__nav__list__name__icon
             >
         %li.mypage-side__nav__list__name
+          /= link_to "メール/パスワード", _path
           メール/パスワード
           %p.mypage-side__nav__list__name__icon
             >
         %li.mypage-side__nav__list__name
-          本人情報
+          = link_to "本人情報", users_identification_path
           %p.mypage-side__nav__list__name__icon
             >
         %li.mypage-side__nav__list__name
+          /= link_to "電話番号の確認", _path
           電話番号の確認
           %p.mypage-side__nav__list__name__icon
             >
         %li.mypage-side__nav__list__name
-          ログアウト
+          = link_to "ログアウト", users_logout_path
           %p.mypage-side__nav__list__name__icon
             >

@@ -5,6 +5,7 @@ class User < ApplicationRecord
         :recoverable, :rememberable, :validatable,
         :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   has_one :user_detail
+
   has_one :card
   belongs_to :user, optional: true
   has_many :sns_credentials
@@ -70,4 +71,7 @@ class User < ApplicationRecord
     end
     return { user: user ,sns: sns}
   end
+
+  validates :nickname, presence: true
+  accepts_nested_attributes_for :user_detail
 end
