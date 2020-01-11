@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get 'users/completed', to: "users#completed"
 
   get 'users/cardlist_first', to: "users#cardlist_first"
+  post 'users/cardlist_second', to: "users#cardlist_second"
   get 'users/cardlist', to: "users#cardlist"
 
   resources :products, only: [:index, :new, :create, :show] do
