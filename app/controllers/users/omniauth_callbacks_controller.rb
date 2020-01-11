@@ -21,11 +21,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else 
       @user = info[:user]
       @sns = info[:sns]
-      # render template: "devise/registrations/step1" 
-      # binding.pry
       @user.build_user_detail
       render template: "signup/step1"
-      # redirect_to step1_signup_index_path
     end
   end
 
