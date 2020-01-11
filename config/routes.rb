@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   }
   
   devise_scope :user do
-    get 'step1', to: 'users/registrations#new_step1'
+    get 'step1', to: 'users/registrations#step1'
     post 'step1',  to: 'users/registrations#create_step1'
   end
   root 'users#index'

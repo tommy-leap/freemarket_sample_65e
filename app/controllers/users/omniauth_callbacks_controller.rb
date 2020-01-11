@@ -17,13 +17,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = info[:user]
     if @user.persisted?
       sign_in_and_redirect @user, event: :authentication
-      binding.pry
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
     else 
+      @user = info[:user]
       @sns = info[:sns]
-      # render template: "devise/registrations/step1" 
-      # render template: "signup/step1"
-      redirect_to step1_signup_index_path
+      @user.build_user_detail
+      render template: "signup/step1"
     end
   end
 

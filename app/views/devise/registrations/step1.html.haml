@@ -1,228 +1,228 @@
-%html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title FreemarketSample65e
-    = csrf_meta_tags
-    = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
+-# %html
+-#   %head
+-#     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+-#     %title FreemarketSample65e
+-#     = csrf_meta_tags
+-#     = csp_meta_tag
+-#     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+-#     %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
+-#     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+-#     %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
 
-%body
-  .regist-header
-    %h1
-      = link_to "#" do
-        = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '49px', width: '185px', class:'top-logo'
+-# %body
+.regist-header
+  %h1
+    = link_to "#" do
+      = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '49px', width: '185px', class:'top-logo'
 
-    %nav.signup-bar.progress-bar
-      %ol.step-bar
-        %li.active
-          会員情報  
-          .progress-status-step1-1
-        %li
-          住所入力
-          .progress-status-step2-1
-        %li
-          お支払い方法
-          .progress-status-step3
-        %li
-          完了
-          .progress-status-step4
-
-
+  %nav.signup-bar.progress-bar
+    %ol.step-bar
+      %li.active
+        会員情報  
+        .progress-status-step1-1
+      %li
+        住所入力
+        .progress-status-step2-1
+      %li
+        お支払い方法
+        .progress-status-step3
+      %li
+        完了
+        .progress-status-step4
 
 
-  .l-regist-wholeform
-    .l-regist-wholeform__mainform
-      .l-regist-wholeform__mainform__head
-        %h2 会員情報登録
-      
+
+
+.l-regist-wholeform
+  .l-regist-wholeform__mainform
+    .l-regist-wholeform__mainform__head
+      %h2 会員情報登録
     
-      .l-regist-wholeform__mainform__input
-        = form_for @user, url: step2_signup_index_path do |f| 
-          .l-regist-wholeform__mainform__input__info
-            = f.fields_for :user_detail do |p|
-              .l-regist-wholeform__mainform__input__info__nickname
-                = f.label :nickname, "ニックネーム"
-                %span.form-require 必須
-                %p
-                  = f.text_field :nickname, placeholder:"例）メルカリ太郎", class:"field"
+  
+    .l-regist-wholeform__mainform__input
+      = form_for @user, url: step2_signup_index_path do |f| 
+        .l-regist-wholeform__mainform__input__info
+          = f.fields_for :user_detail do |p|
+            .l-regist-wholeform__mainform__input__info__nickname
+              = f.label :nickname, "ニックネーム"
+              %span.form-require 必須
+              %p
+                = f.text_field :nickname, placeholder:"例）メルカリ太郎", class:"field"
 
-              .l-regist-wholeform__mainform__input__info__address
-                = f.label :email, "メールアドレス"
-                %span.form-require 必須
-                %p
-                  = f.text_field :email, placeholder:"PC・携帯どちらでも可", class:"field"
+            .l-regist-wholeform__mainform__input__info__address
+              = f.label :email, "メールアドレス"
+              %span.form-require 必須
+              %p
+                = f.text_field :email, placeholder:"PC・携帯どちらでも可", class:"field"
 
-              .l-regist-wholeform__mainform__input__info__password
-                = f.label :password, "パスワード"
+            .l-regist-wholeform__mainform__input__info__password
+              = f.label :password, "パスワード"
+              %span.form-require 必須
+              %p
+                = f.password_field :password, placeholder:"７文字以上の半角英数字", class:"field"
+              %p.l-regist-wholeform__mainform__input__info__password__text
+              %ul.has-error-text
+              %li#password-error.l-regist-wholeform__mainform__input__info__password__error
+                ※ 英字と数字の両方を含めて設定してください
+              .l-regist-wholeform__mainform__input__info__password__confirm
+                .checkbox-default
+                  %input#reveal_password{type: "checkbox"}/
+                  %i.icon-check
+                  %label{for: "reveal_password"} パスワードを表示する
+                .l-regist-wholeform__mainform__input__info__confirm__show{style: "display: none;"}
+                  %span.form-password-revelation-revealed-password
+            
+            .l-regist-wholeform__mainform__input__info__text
+              %h3.l-confirm-letter
+                本人確認
+              %p.l-conform-text
+                安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+            .l-regist-wholeform__mainform__input__info__kanji
+              %div
+                = p.label :first_name, "お名前（全角）"
                 %span.form-require 必須
-                %p
-                  = f.password_field :password, placeholder:"７文字以上の半角英数字", class:"field"
-                %p.l-regist-wholeform__mainform__input__info__password__text
-                %ul.has-error-text
-                %li#password-error.l-regist-wholeform__mainform__input__info__password__error
-                  ※ 英字と数字の両方を含めて設定してください
-                .l-regist-wholeform__mainform__input__info__password__confirm
-                  .checkbox-default
-                    %input#reveal_password{type: "checkbox"}/
-                    %i.icon-check
-                    %label{for: "reveal_password"} パスワードを表示する
-                  .l-regist-wholeform__mainform__input__info__confirm__show{style: "display: none;"}
-                    %span.form-password-revelation-revealed-password
+              = p.text_field :first_name, placeholder: "例）山田", id:"left"
+              = p.text_field :last_name, placeholder: "例）彩", id:"right"
+
+
+            .l-regist-wholeform__mainform__input__info__kana
+              %div
+                = p.label :first_kana, "お名前カナ（全角）"
+                %span.form-require 必須
+              = p.text_field :first_kana, placeholder: "例）ヤマダ", id:"left"
+              = p.text_field :last_kana, placeholder: "例）アヤ", id:"right"
               
-              .l-regist-wholeform__mainform__input__info__text
-                %h3.l-confirm-letter
-                  本人確認
-                %p.l-conform-text
-                  安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-
-              .l-regist-wholeform__mainform__input__info__kanji
-                %div
-                  = p.label :first_name, "お名前（全角）"
-                  %span.form-require 必須
-                = p.text_field :first_name, placeholder: "例）山田", id:"left"
-                = p.text_field :last_name, placeholder: "例）彩", id:"right"
-
-
-              .l-regist-wholeform__mainform__input__info__kana
-                %div
-                  = p.label :first_kana, "お名前カナ（全角）"
-                  %span.form-require 必須
-                = p.text_field :first_kana, placeholder: "例）ヤマダ", id:"left"
-                = p.text_field :last_kana, placeholder: "例）アヤ", id:"right"
-                
-              .l-regist-wholeform__mainform__input__info__birthday
-                = p.label :birthday, "生年月日"
-                %span.form-require 必須
-                %br/
-                .l-regist-wholeform__mainform__input__info__birthday__select
-                  .l-regist-wholeform__mainform__input__info__birthday__select__year
-                    = p.select :year,[["--", ""],
-                                      ["2012", 2012],
-                                      ["2011", 2011],
-                                      ["2010", 2010],
-                                      ["2009", 2009],
-                                      ["2008", 2008],
-                                      ["2007", 2007],
-                                      ["2006", 2006],
-                                      ["2005", 2005],
-                                      ["2004", 2004],
-                                      ["2003", 2003],
-                                      ["2002", 2002],
-                                      ["2001", 2001],
-                                      ["2000", 2000],
-                                      ["1999", 1999],
-                                      ["1998", 1998],
-                                      ["1997", 1997],
-                                      ["1996", 1996],
-                                      ["1995", 1995],
-                                      ["1994", 1994],
-                                      ["1993", 1993],
-                                      ["1992", 1992],
-                                      ["1991", 1991],
-                                      ["1990", 1990],
-                                      ["1989", 1989],
-                                      ["1988", 1988],
-                                      ]
-                    %span 
-                    年
-                  .l-regist-wholeform__mainform__input__info__birthday__select__month
-                    = p.select :month,[["--", ""],
-                                    ["1", 1],
-                                    ["2", 2],
-                                    ["3", 3],
-                                    ["4", 4],
-                                    ["5", 5],
-                                    ["6", 6],
-                                    ["7", 7],
-                                    ["8", 8],
-                                    ["9", 9],
-                                    ["10", 10],
-                                    ["11", 11],
-                                    ["12", 12],
+            .l-regist-wholeform__mainform__input__info__birthday
+              = p.label :birthday, "生年月日"
+              %span.form-require 必須
+              %br/
+              .l-regist-wholeform__mainform__input__info__birthday__select
+                .l-regist-wholeform__mainform__input__info__birthday__select__year
+                  = p.select :year,[["--", ""],
+                                    ["2012", 2012],
+                                    ["2011", 2011],
+                                    ["2010", 2010],
+                                    ["2009", 2009],
+                                    ["2008", 2008],
+                                    ["2007", 2007],
+                                    ["2006", 2006],
+                                    ["2005", 2005],
+                                    ["2004", 2004],
+                                    ["2003", 2003],
+                                    ["2002", 2002],
+                                    ["2001", 2001],
+                                    ["2000", 2000],
+                                    ["1999", 1999],
+                                    ["1998", 1998],
+                                    ["1997", 1997],
+                                    ["1996", 1996],
+                                    ["1995", 1995],
+                                    ["1994", 1994],
+                                    ["1993", 1993],
+                                    ["1992", 1992],
+                                    ["1991", 1991],
+                                    ["1990", 1990],
+                                    ["1989", 1989],
+                                    ["1988", 1988],
                                     ]
-                    %span
-                    月
-                  .l-regist-wholeform__mainform__input__info__birthday__select__day
-                    = p.select :day,[["--", ""],
-                                    ["1", 1],
-                                    ["2", 2],
-                                    ["3", 3],
-                                    ["4", 4],
-                                    ["5", 5],
-                                    ["6", 6],
-                                    ["7", 7],
-                                    ["8", 8],
-                                    ["9", 9],
-                                    ["10", 10],
-                                    ["11", 11],
-                                    ["12", 12],
-                                    ["13", 13],
-                                    ["14", 14],
-                                    ["15", 15],
-                                    ["16", 16],
-                                    ["17", 17],
-                                    ["18", 18],
-                                    ["19", 19],
-                                    ["20", 20],
-                                    ["21", 21],
-                                    ["22", 22],
-                                    ["23", 23],
-                                    ["24", 24],
-                                    ["25", 25],
-                                    ["26", 26],
-                                    ["27", 27],
-                                    ["28", 28],
-                                    ["29", 29],
-                                    ["30", 30],
-                                    ["31", 31],
-                                    ]
-                    %span
-                    日
-                %input{:name => "birthday", :type => "hidden", :value => ""}/
-                .clearfix
-              %p.l-regist-wholeform__mainform__input__info__attention
-                ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+                  %span 
+                  年
+                .l-regist-wholeform__mainform__input__info__birthday__select__month
+                  = p.select :month,[["--", ""],
+                                  ["1", 1],
+                                  ["2", 2],
+                                  ["3", 3],
+                                  ["4", 4],
+                                  ["5", 5],
+                                  ["6", 6],
+                                  ["7", 7],
+                                  ["8", 8],
+                                  ["9", 9],
+                                  ["10", 10],
+                                  ["11", 11],
+                                  ["12", 12],
+                                  ]
+                  %span
+                  月
+                .l-regist-wholeform__mainform__input__info__birthday__select__day
+                  = p.select :day,[["--", ""],
+                                  ["1", 1],
+                                  ["2", 2],
+                                  ["3", 3],
+                                  ["4", 4],
+                                  ["5", 5],
+                                  ["6", 6],
+                                  ["7", 7],
+                                  ["8", 8],
+                                  ["9", 9],
+                                  ["10", 10],
+                                  ["11", 11],
+                                  ["12", 12],
+                                  ["13", 13],
+                                  ["14", 14],
+                                  ["15", 15],
+                                  ["16", 16],
+                                  ["17", 17],
+                                  ["18", 18],
+                                  ["19", 19],
+                                  ["20", 20],
+                                  ["21", 21],
+                                  ["22", 22],
+                                  ["23", 23],
+                                  ["24", 24],
+                                  ["25", 25],
+                                  ["26", 26],
+                                  ["27", 27],
+                                  ["28", 28],
+                                  ["29", 29],
+                                  ["30", 30],
+                                  ["31", 31],
+                                  ]
+                  %span
+                  日
+              %input{:name => "birthday", :type => "hidden", :value => ""}/
+              .clearfix
+            %p.l-regist-wholeform__mainform__input__info__attention
+              ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 
-          .l-regist-wholeform__mainform__input__next
-            %p.l-regist-wholeform__mainform__input__next__agree
-              「次へ進む」のボタンを押すことにより、
-              %a{:href => "/jp/tos_list/", :target => "_blank"}> 利用規約
-              に同意したものとみなします
-            .l-regist-wholeform__mainform__input__next__btn
-              = f.submit "次へ進む", class:"submit"
-            -# %button.btn-default.btn-red{:type => "submit"} 次へ進む
-            .l-regist-wholeform__mainform__input__next__gonext
-              %p
-                %a{:href => "/jp/help_center/article/423/", :target => "_blank"}
-                  本人情報の登録について
-                  %i.icon-arrow-right
-            .l-regist-wholeform__mainform__input__next__policy
-              %p
-                This site is protected by reCAPTCHA and the Google
-                %a{:href => "https://policies.google.com/privacy", :target => "_blank"} Privacy Policy
-                and
-                %a{:href => "https://policies.google.com/terms", :target => "_blank"} Terms of Service
-                apply.
+        .l-regist-wholeform__mainform__input__next
+          %p.l-regist-wholeform__mainform__input__next__agree
+            「次へ進む」のボタンを押すことにより、
+            %a{:href => "/jp/tos_list/", :target => "_blank"}> 利用規約
+            に同意したものとみなします
+          .l-regist-wholeform__mainform__input__next__btn
+            = f.submit "次へ進む", class:"submit"
+          -# %button.btn-default.btn-red{:type => "submit"} 次へ進む
+          .l-regist-wholeform__mainform__input__next__gonext
+            %p
+              %a{:href => "/jp/help_center/article/423/", :target => "_blank"}
+                本人情報の登録について
+                %i.icon-arrow-right
+          .l-regist-wholeform__mainform__input__next__policy
+            %p
+              This site is protected by reCAPTCHA and the Google
+              %a{:href => "https://policies.google.com/privacy", :target => "_blank"} Privacy Policy
+              and
+              %a{:href => "https://policies.google.com/terms", :target => "_blank"} Terms of Service
+              apply.
 
-    .buy-result__footer
-      %nav
-        %ul
-          %li
-            = link_to "#", class: "menu" do
-              プライバシーポリシー
-          %li
-            = link_to "#", class: "menu" do
-              メルカリ利用規約
-          %li
-            = link_to "#", class: "menu" do
-              特定商取引に関する表記
-      .buy-result__footer__logo
-        = link_to "#" do
-          = image_tag 'logo_gray.svg', alt: ''
-      %p
-        %span
-          ©︎ Fmarket,lnc.
-      
+  .buy-result__footer
+    %nav
+      %ul
+        %li
+          = link_to "#", class: "menu" do
+            プライバシーポリシー
+        %li
+          = link_to "#", class: "menu" do
+            メルカリ利用規約
+        %li
+          = link_to "#", class: "menu" do
+            特定商取引に関する表記
+    .buy-result__footer__logo
+      = link_to "#" do
+        = image_tag 'logo_gray.svg', alt: ''
+    %p
+      %span
+        ©︎ Fmarket,lnc.
+    
