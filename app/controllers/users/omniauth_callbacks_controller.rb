@@ -2,7 +2,6 @@
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
-
     callback_for(:facebook)
     
   end
@@ -16,13 +15,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @omniauth = request.env['omniauth.auth']
     info = User.find_oauth(@omniauth)
     @user = info[:user]
-    if @user.persisted? 
+    if @user.persisted?
       sign_in_and_redirect @user, event: :authentication
+      binding.pry
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
     else 
       @sns = info[:sns]
-      render template: "devise/registrations/step1" 
-      # redirect_to new_user_registration_url
+      # render template: "devise/registrations/step1" 
+      redirect_to new_user_registration_path
     end
   end
 

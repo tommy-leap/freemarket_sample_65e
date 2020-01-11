@@ -11,12 +11,14 @@ class SignupController < ApplicationController
   def step1
     @user = User.new
     @user.build_user_detail
+    # @user.build_sns_credential
     render layout: false
   end
 
   def save_step1_to_session
     session[:user_params] = user_params
     session[:user_detail_attributes_after_step1] = user_params[:user_detail_attributes]
+
     @user = User.new(session[:user_params])
     @user.build_user_detail(session[:user_detail_attributes_after_step1])
     render '/signup/step1e' unless @user.valid?
@@ -25,6 +27,7 @@ class SignupController < ApplicationController
   def step2
     @user = User.new
     @user.build_user_detail
+    @user.build_sns_credential
     render layout: false
   end
 
@@ -40,6 +43,7 @@ class SignupController < ApplicationController
   def step3
     @user = User.new
     @user.build_user_detail
+    @user.build_sns_credential
     render layout: false
   end
 
@@ -69,7 +73,8 @@ class SignupController < ApplicationController
       :password,
       :image,
       :evaluation,
-      user_detail_attributes: [:id, :user_id, :first_name, :first_kana, :last_name, :last_kana, :year, :month, :day, :post_num, :prefecture, :municipalities, :address, :bulid_name, :phone_num, :comment, :credit_num, :payjp_id]
+      user_detail_attributes: [:id, :user_id, :first_name, :first_kana, :last_name, :last_kana, :year, :month, :day, :post_num, :prefecture, :municipalities, :address, :bulid_name, :phone_num, :comment, :credit_num, :payjp_id],
+      # sns_credential_attributes: [:provider, :uid, :user]
     )
   end
 end
