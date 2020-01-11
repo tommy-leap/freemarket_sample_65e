@@ -22,7 +22,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else 
       @sns = info[:sns]
       # render template: "devise/registrations/step1" 
-      redirect_to new_user_registration_path
+      # render template: "signup/step1"
+      redirect_to step1_signup_index_path
     end
   end
 
