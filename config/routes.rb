@@ -26,6 +26,16 @@ Rails.application.routes.draw do
   post 'users/cardlist_second', to: "users#cardlist_second"
   get 'users/cardlist', to: "users#cardlist"
 
+  resources :card, only: [:create, :show, :edit] do
+    collection do
+      post 'delete', to: 'card#delete'
+      post 'show'
+    end
+    member do
+      get 'add'
+    end
+  end 
+
   resources :products, only: [:index, :new, :create, :show] do
   collection do
     get 'get_category_children', defaults: { format: 'json' }
