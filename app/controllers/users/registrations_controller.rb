@@ -1,12 +1,33 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  prepend_before_action :check_captcha, only: [:create]
+  prepend_before_action :customize_sign_up_params, only: [:create]
+
+  password = Devise.friendly_token.first(7)
+  if session[:provider].present? && session[:uid].present?
+    @user = User.create(nickname:session[:nickname], email: session[:email], password: "password", first_kana: session[:first_kana],last_kana: session[:last_kana], first_name: session[:first_name], last_name: session[:last_name], year: session[:year], month: session[:month], day: session[:day], phone_num: params[:user][:phone_num])
+    sns = SnsCredential.create(user_id: @user.id,uid: session[:uid], provider: session[:provider])
+  else
+    @user = User.create(nickname:session[:nickname], email: session[:email], password: session[:password], password_confirmation: session[:password_confirmation], first_kana: session[:first_kana],last_kana: session[:last_kana], first_name: session[:first_name], last_name: session[:last_name], year: session[:year], month: session[:month], day: session[:day], phone_num: params[:user][:phone_num])
+  end
+
+  def create
+    if verify_recaptcha
+      super
+    else
+      self.resource = resource_class.new
+      respond_with_navigational(resource) { render :new }
+    end
+  end
+
   # if session[:provider].present? && session[:uid].present?
   #   @user = User.create(nickname:session[:nickname], email: session[:email], password: "password", first_kana: session[:first_kana],last_kana: session[:last_kana], first_name: session[:first_name], last_name: session[:last_name], year: session[:year], month: session[:month], day: session[:day], phone_num: params[:user][:phone_num])
   #   sns = SnsCredential.create(user_id: @user.id,uid: session[:uid], provider: session[:provider])
   # else
   #   @user = User.create(nickname:session[:nickname], email: session[:email], password: session[:password], password_confirmation: session[:password_confirmation], first_kana: session[:first_kana],last_kana: session[:last_kana], first_name: session[:first_name], last_name: session[:last_name], year: session[:year], month: session[:month], day: session[:day], phone_num: params[:user][:phone_num])
   # end
+
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -62,7 +83,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # #   super
   # # end
 
-  # protected
+  private
+  def customize_sign_up_params
+    devise_parameter_sanitizer.permit :sign_up, keys: [:nickname, :email, :password, :password_confirmation, :remember_me]
+  end
+
+  def check_captcha
+    self.resource = resource_class.new sign_up_params
+    resource.validate
+    unless verify_recaptcha(model: resource)
+      respond_with_navigational(resource) { render :new }
+    end
+  end
 
   # # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
