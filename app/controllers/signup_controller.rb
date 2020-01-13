@@ -70,7 +70,7 @@ class SignupController < ApplicationController
       :password,
       :image,
       :evaluation,
-      user_detail_attributes: [:id, :user_id, :first_name, :first_kana, :last_name, :last_kana, :year, :month, :day, :post_num, :prefecture, :municipalities, :address, :bulid_name, :phone_num, :comment, :credit_num, :payjp_id],
+      user_detail_attributes: [:id, :user_id, :first_name, :first_kana, :last_name, :last_kana, :year, :month, :day, :post_num, :prefecture_id, :municipalities, :address, :bulid_name, :phone_num, :comment, :credit_num, :payjp_id],
       sns_credential_attributes: [:provider, :uid, :user]
     )
   end
