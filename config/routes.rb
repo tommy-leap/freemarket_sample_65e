@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'step1', to: 'users/registrations#step1'
     post 'step1',  to: 'users/registrations#create_step1'
+    get 'users/sign_in', to: 'users/sessions#new'
   end
   root 'users#index'
   get "users/logout", to: "users#logout"
@@ -31,7 +32,6 @@ Rails.application.routes.draw do
       get 'add'
     end
   end 
-
   resources :products, only: [:index, :new, :create, :show] do
   collection do
     get 'get_category_children', defaults: { format: 'json' }
