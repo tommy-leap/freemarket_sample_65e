@@ -9,9 +9,10 @@ body {
   background: #f5f5f5;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
-
-
-#regist-header-login{
+.login-container{
+  padding-bottom: 220px;
+  position: relative;
+.regist-header-login{
   width: 100%;
   height: 128px;
   display: block;
@@ -27,171 +28,150 @@ body {
   }
 }
 
-
-#log-in-main__boxes__noaccount p {
-  font: 14px;
-}
-
-#log-in-main__boxes__noaccount a {
-  display: block;
-  margin: 8px 0 0;
-  border: 1px solid #0099e8;
-  background: #0099e8;
-  color: #fff;
-  line-height: 40px;
-  text-decoration: none;
-}
-
-#log-in-main {
-  &__boxes {
-    width: 456px;
-    &__SNS {
-      display: block;
-      width: 100%;
-      line-height: 48px;
-      font-size: 14px;
-      border: 1px solid transparent;
-      transition: all ease-out .3s;
-      cursor: pointer;
-      text-align: center;
-      position: relative;
-      margin: 0;
-
-      &__facebook {
-        background: #385185;
-        color: #fff;
-        text-decoration: none;
-      
-        &__icon-fbook {
-          height: 26px;
-          width:26px;
-          display: inline-block;
-          font-family: 'icon-font';
-          position: absolute;
-
+  .log-in-main-boxes{
+      max-width: none;
+      width: 456px;
+      background: #fff;
+      margin: 0 auto;
+      &__new{
+        padding: 40px 60px;
+        background-color: #fff;
+        p {
+          font-size: 14px;
+          color: #333333;
+          text-align: center;
+        }
+        a {
+          display: block;
+          margin: 8px 0 0;
+          border: 1px solid #0099e8;
+          background: #0099e8;
+          color: #fff;
+          line-height: 40px;
+          text-decoration: none;
+          text-align: center;
         }
       }
-
-      &__google {
-        border: #979797 solid 1px;
-        color: #333;
-        margin: 16px 0 0;
-        background: #fff;
-        text-decoration: none;
-
-        &__icon-google {
-          position: absolute;
-          height: 26px;
-          width:26px;
-          display: inline-block;
-          font-family: 'icon-font';
+      &__sns{
+        padding: 32px 64px;
+        border-top: 1px solid #eee;
+        .facebook-btn {
+          height: 50px;
+          width: 328px;
+          display: block;
+          text-align: center;
+          background: #385185;
+          cursor: pointer;
+          position: relative;
+          span{
+            color: #fff;
+            font-size: 14px;
+            line-height: 50px;
+            display: inline;
+          }
+          .facebook-icon{
+            color: #fff;
+            font-size: 30px;
+            line-height: 50px;
+            left: 15px;
+            position: absolute;
+          }
+        }
+        
+        .google-btn {
+          height: 50px;
+          width: 328px;
+          display: block;
+          text-align: center;
+          border: #979797 solid 1px;
+          margin: 16px 0 0;
+          background: #fff;
+          cursor: pointer;
+          position: relative;
+          span{
+            color: #333;
+            font-size: 14px;
+            line-height: 50px;
+          }
+          .google-icon{
+            left: 15px;
+            top: 15px;
+            position: absolute;
+          }
         } 
+        
       }
-    }
-  }  
-}
-
-#log-in-main {
-  display: block;
-
-  &__boxes {
-    max-width: none;
-    width: 456px;
-    background: #fff;
-    margin: 0 auto;
-
-    &__noaccount {
-      padding: 40px 64px;
-      text-align: center;
-    }
-
-    &__SNS {
-      padding: 32px 64px;
-      border-top: 1px solid #eee;
-    }
-
-    &__info {
-      padding: 24px 64px 32px;
-      border: 0;
-
-
-      
+      &__register {
+        padding: 24px 64px 32px;
+        border: 0;
+        box-sizing: border-box;
+      .register-email{
+        height: 48px;
+        background-color: #fff;
+        padding: 10px 16px 8px;
+        display: inline-block;
+        width: 100%;
+        margin: 0;
+      }
+      .register-pass{
+        height: 48px;
+        background-color: #fff;
+        padding: 10px 16px 8px;
+        display: inline-block;
+        width: 100%;
+        margin-top: 24px;
+      }
+      .register-btn{
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          width: 100%;
+          height: 50px;
+          font-size: 14px;
+          cursor: pointer;
+          margin: 24px 0 0;
+        }
+      .recaptcha{
+        margin-top: 24px;
+      }
+        a{
+          text-decoration: none;
+          display: block;
+          margin: 40px 0 0;
+        }
     }
   }
 }
-
-#log-in-main__boxes__login button {
-  background: #ea352d;
-  border: 1px solid #ea352d;
-  color: #fff;
-  display: block;
-  width: 100%;
-  line-height: 48px;
-  font-size: 14px;
-  cursor: pointer;
-  text-align: center;
-  margin: 24px 0 0;
-}
-
-#log-in-main__boxes__info a {
-  color: #0099e8;
-  text-decoration: none;
-  display: block;
-  margin: 40px 0 0;
-}
-
-#input-default {
-  height: 28px;
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  line-height: 1.5;
-  font-size: 16px;
-  width: 100%;
-  margin: 8px 0 0;
-}
-
-
-
-#regist-footer {
+.regist-footer {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1;
   height: 140px;
   padding: 40px 0;
   text-align: center;
   width: 456px;
   margin: 0 auto;
-
-  &__footer-logo {
+  &__info{
+    height: 12px;
+    line-height: 12px;
+    color: #333;
+    font-size: 12px;
+      .rule2{
+        margin-left: 16px;
+        }
+      .rule3{
+        margin-left: 16px;
+        }
+    }
+  &__logo {
     width: 80px;
     height: 65px;
     margin: 40px auto 0;
   }
-}
-
-#regist-footer ul {
-  list-style: none;
-}
-
-#regist-footer li {
-  margin: 0;
-  display: inline-block;
-  font-size: 12px;
-
-}
-
-#regist-footer a {
-  text-decoration: none;
-  touch-action: manipulation;
-  display: block;
-  color: #333;
-}
-
-#regist-footer p {
-  margin: 8px 0 0;
-  font-size: 13px;
+  small{
+    display: inline-block;
+    color:#333;
+    margin-top: 8px;
+  }
 }
