@@ -10,9 +10,8 @@
     %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
 
 
-
-
   %body
+
   .regist-header
     %h1.signup
       = link_to "#" do
@@ -28,15 +27,14 @@
           = icon('far', 'envelope',class:"contents-sns__main__btn__link__email__icon-mail")
           %span
             メールアドレスで登録する
-        = link_to "https://www.facebook.com/", class: "contents-sns__main__btn__link__facebook" do
+        = link_to user_facebook_omniauth_authorize_path,method: :post, class: "contents-sns__main__btn__link__facebook" do
           = icon('fab', 'facebook-square',class:"contents-sns__main__btn__link__facebook__icon-fbook")
           %span
             facebookで登録する
-        = link_to "https://accounts.google.com/signin", class: "contents-sns__main__btn__link__google" do
+        = link_to user_google_oauth2_omniauth_authorize_path,method: :post, class: "contents-sns__main__btn__link__google" do
           = icon('fab', 'google',class:"contents-sns__main__btn__link__google__icon-google")
           %span
             googleで登録する
-
 
   .regist-footer
     %nav

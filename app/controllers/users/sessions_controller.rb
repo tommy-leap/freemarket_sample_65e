@@ -24,4 +24,18 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  def new
+    @user = User.new
+    render layout: false
+  end
+
+  # def create
+  #   @user = User.find_by(email: params[:email], password: params[:password])
+  #   if @user
+  #     flash[:notice] = "ログインしました"
+  #     redirect_to root_path
+  #   else
+  #     render signup_index_path
+  #   end
+  # end
 end
