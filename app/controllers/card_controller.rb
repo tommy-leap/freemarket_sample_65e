@@ -1,6 +1,6 @@
 class CardController < ApplicationController
 
-  before_action :get_user_params, only: [:edit, :confirmation, :show]
+  before_action :get_user_params, only: [:edit, :add, :show]
   before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
 
   def edit
@@ -31,7 +31,7 @@ class CardController < ApplicationController
       customer.delete
       card.delete
     end
-      redirect_to action: "confirmation", id: current_user.id
+      redirect_to action: "add", id: current_user.id
   end
 
   def show
@@ -40,13 +40,13 @@ class CardController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     else
-      redirect_to action: "confirmation", id: current_user.id
+      redirect_to action: "add", id: current_user.id
     end
   end
 
   def add
-    # card = current_user.cards
-    # redirect_to action: "show" if card.exists?
+    card = current_user.cards
+    redirect_to action: "show" if card.exists?
   end
 
   private
