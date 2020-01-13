@@ -10,7 +10,6 @@
     %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
     %script{src: "https://www.google.com/recaptcha/api.js"}
 
-
 %body
 .login-container
   .regist-header-login
@@ -44,7 +43,6 @@
             = recaptcha_tags
 
           = f.submit "ログイン", class: "register-btn"
-          
           
           %a
             - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
