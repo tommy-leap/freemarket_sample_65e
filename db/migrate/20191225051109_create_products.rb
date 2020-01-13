@@ -11,7 +11,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :day, null: false
       t.integer :brand_id, foreign_key: true
       t.integer :category_id, foreign_key: true
-      t.integer :user_id, foreign_key: true
+      t.integer :user_id,  null: false, foreign_key: true
       t.timestamps
     end
   end
