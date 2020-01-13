@@ -8,5 +8,6 @@
         .lcontent__wrapper
           %form.lbox{novalidate: 'novalidate'}
             .lbox__content
-              %button.lbox__content__btn{type: 'submit'} ログアウト
-              /%input.lbox__content__logout{name: logout}
+              = link_to destroy_user_session_path, method: :delete, class:"lbox__content__btn" do
+                ログアウト
+
