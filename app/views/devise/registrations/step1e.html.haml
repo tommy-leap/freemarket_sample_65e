@@ -1,35 +1,38 @@
--# %html
--#   %head
--#     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
--#     %title FreemarketSample65e
--#     = csrf_meta_tags
--#     = csp_meta_tag
--#     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
--#     %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
--#     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
--#     %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title FreemarketSample65e
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
 
--# %body
-.regist-header
-  %h1
-    = link_to "#" do
-      = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '49px', width: '185px', class:'top-logo'
 
-  %nav.signup-bar.progress-bar
-    %ol.step-bar
-      %li.active
-        会員情報  
-        .progress-status-step1-1
-      %li
-        住所入力
-        .progress-status-step2-1
-      %li
-        お支払い方法
-        .progress-status-step3
-      %li
-        完了
-        .progress-status-step4
+%body
+  .regist-header
+    %h1
+      = link_to "#" do
+        = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '49px', width: '185px', class:'top-logo'
 
+    %nav.signup-bar.progress-bar
+      %ol.step-bar
+        %li.active
+          会員情報  
+          .progress-status-step1.active
+        %li
+          電話番号認証
+          .progress-status-step2
+        %li
+          お届け先住所入力
+          .progress-status-step3
+        %li
+          お支払い住所
+          .progress-status-step4
+        %li
+          完了
+          .progress-status-step5
 
 
 
@@ -37,6 +40,7 @@
   .l-regist-wholeform__mainform
     .l-regist-wholeform__mainform__head
       %h2 会員情報登録
+      %p.error_message 【入力情報に誤りがあります】
     
   
     .l-regist-wholeform__mainform__input
@@ -207,22 +211,22 @@
               %a{:href => "https://policies.google.com/terms", :target => "_blank"} Terms of Service
               apply.
 
-  .buy-result__footer
-    %nav
-      %ul
-        %li
-          = link_to "#", class: "menu" do
-            プライバシーポリシー
-        %li
-          = link_to "#", class: "menu" do
-            メルカリ利用規約
-        %li
-          = link_to "#", class: "menu" do
-            特定商取引に関する表記
-    .buy-result__footer__logo
-      = link_to "#" do
-        = image_tag 'logo_gray.svg', alt: ''
-    %p
-      %span
-        ©︎ Fmarket,lnc.
-    
+    .buy-result__footer
+      %nav
+        %ul
+          %li
+            = link_to "#", class: "menu" do
+              プライバシーポリシー
+          %li
+            = link_to "#", class: "menu" do
+              メルカリ利用規約
+          %li
+            = link_to "#", class: "menu" do
+              特定商取引に関する表記
+      .buy-result__footer__logo
+        = link_to "#" do
+          = image_tag 'logo_gray.svg', alt: ''
+      %p
+        %span
+          ©︎ Fmarket,lnc.
+          

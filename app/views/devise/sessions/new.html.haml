@@ -10,7 +10,6 @@
     %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
     %script{src: "https://www.google.com/recaptcha/api.js"}
 
-
 %body
 .login-container
   .regist-header-login
@@ -42,9 +41,6 @@
           .recaptcha
             = flash[:recaptcha_error]
             = recaptcha_tags
-            .recaptcha__check-box
-
-            .recaptcha__content
 
           = f.submit "ログイン", class: "register-btn"
           

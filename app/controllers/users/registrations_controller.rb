@@ -11,6 +11,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
   else
     @user = User.create(nickname:session[:nickname], email: session[:email], password: session[:password], password_confirmation: session[:password_confirmation], first_kana: session[:first_kana],last_kana: session[:last_kana], first_name: session[:first_name], last_name: session[:last_name], year: session[:year], month: session[:month], day: session[:day], phone_num: params[:user][:phone_num])
   end
+
+  def create
+    if verify_recaptcha
+      super
+    else
+      self.resource = resource_class.new
+      respond_with_navigational(resource) { render :new }
+    end
+  end
+
+  # if session[:provider].present? && session[:uid].present?
+  #   @user = User.create(nickname:session[:nickname], email: session[:email], password: "password", first_kana: session[:first_kana],last_kana: session[:last_kana], first_name: session[:first_name], last_name: session[:last_name], year: session[:year], month: session[:month], day: session[:day], phone_num: params[:user][:phone_num])
+  #   sns = SnsCredential.create(user_id: @user.id,uid: session[:uid], provider: session[:provider])
+  # else
+  #   @user = User.create(nickname:session[:nickname], email: session[:email], password: session[:password], password_confirmation: session[:password_confirmation], first_kana: session[:first_kana],last_kana: session[:last_kana], first_name: session[:first_name], last_name: session[:last_name], year: session[:year], month: session[:month], day: session[:day], phone_num: params[:user][:phone_num])
+  # end
+
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
