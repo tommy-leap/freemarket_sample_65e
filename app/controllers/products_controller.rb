@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  layout false  
+  layout false, only: [:new, :show] 
   before_action :set_categories, only: %w[edit new create index ]
   def new
     @product = Product.new

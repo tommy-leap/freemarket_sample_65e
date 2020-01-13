@@ -67,15 +67,15 @@
           
 
     -# ログイン状態
-    %li.header__inner__nav__right__menu
-      = link_to "#", class: "header__inner__nav__right__menu__icon" do
+    %li.header__inner__nav__right__in-menu
+      = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
         = icon('far', 'heart fa-lg', class: "icon")
-        %span.header__inner__nav__right__menu__icon--title
+        %span.header__inner__nav__right__in-menu__icon--title
           いいね！一覧
-    %li.header__inner__nav__right__menu
-      = link_to "#", class: "header__inner__nav__right__menu__icon" do
+    %li.header__inner__nav__right__in-menu
+      = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
         = icon('far', 'bell fa-lg', class: "icon")
-        %span.header__inner__nav__right__menu__icon--title
+        %span.header__inner__nav__right__in-menu__icon--title
           お知らせ
         %ul
           %li.news
@@ -102,10 +102,10 @@
                 = icon('fas', 'chevron-right')
             
 
-    %li.header__inner__nav__right__menu
-      = link_to "#", class: "header__inner__nav__right__menu__icon" do
+    %li.header__inner__nav__right__in-menu
+      = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
         = icon('fas', 'check fa-lg', class: "icon")
-        %span.header__inner__nav__right__menu__icon--title
+        %span.header__inner__nav__right__in-menu__icon--title
           やることリスト
         %ul
           %li.news
@@ -119,9 +119,9 @@
                   19時間前
               %div.icon
                 = icon('fas', 'chevron-right')
-    %li.header__inner__nav__right__menu--mypage
-      = link_to "#", class: "header__inner__nav__right__menu__icon" do
+    %li.header__inner__nav__right__in-menu--mypage
+      = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
         = icon('far', 'user fa-2x')
-        %span.header__inner__nav__right__menu__icon--title
+        %span.header__inner__nav__right__in-menu__icon--title
           マイページ
           -# ログイン状態

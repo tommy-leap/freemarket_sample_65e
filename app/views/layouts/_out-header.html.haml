@@ -68,11 +68,13 @@
           
           -# ログアウト状態
     %li.header__inner__nav__right
-      %ul.header__inner__nav__right__menu
-        %li.header__inner__nav__right__menu
-          = link_to new_signup_path, class: "header__inner__nav__right__menu__signup" do
+      %ul.header__inner__nav__right__out-menu
+        %li.header__inner__nav__right__out-menu
+          = link_to new_signup_path, class: "header__inner__nav__right__out-menu__signup" do
             新規会員登録
+
         %li.header__inner__nav__right__menu
           = link_to new_user_session_path, class: "header__inner__nav__right__menu__login" do
+
             ログイン
           -# ログアウト状態

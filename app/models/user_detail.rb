@@ -1,4 +1,8 @@
 class UserDetail < ApplicationRecord
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
+
   belongs_to :user
   validates :first_name, presence: true
   validates :first_kana, presence: true
