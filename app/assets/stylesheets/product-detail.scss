@@ -33,19 +33,22 @@
           .thumbnail{
             width: 300px;
             height: 300px;
-            overflow: hidden;
+            // overflow: hidden;
           }
           .thumbnail-thumb{
+            height: 60px;
             width: 300px;
             max-height: 120px;
             display: flex;
             margin: 0;
             overflow: hidden;
             background-color: #fafafa;
+            z-index: 100;
             .thumb{
-            filter:alpha(opacity=50);
-            -moz-opacity: 0.5;
-            opacity: 0.5;
+              filter:alpha(opacity=50);
+              -moz-opacity: 0.5;
+              opacity: 0.5;
+              z-index: 100;
             }
             .thumb:hover {
               filter:alpha(opacity=100);
