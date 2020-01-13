@@ -12,7 +12,6 @@ class SignupController < ApplicationController
     @user = User.new
     @user.build_user_detail
     render layout: false
-  
   end
 
   def save_step1_to_session

@@ -23,11 +23,6 @@ Rails.application.routes.draw do
   get 'users/progress', to: "users#progress"
   get 'users/completed', to: "users#completed"
 
-  get 'users/cardlist_first', to: "users#cardlist_first"
-  post 'users/cardlist_second', to: "users#cardlist_second"
-  get 'users/cardlist', to: "users#cardlist"
-  
-
   resources :card, only: [:create, :show, :edit] do
     collection do
       post 'delete', to: 'card#delete'

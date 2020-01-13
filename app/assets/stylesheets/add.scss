@@ -1,0 +1,104 @@
+.main__content {
+  float: right;
+  width: 700px;
+  .chapter {
+    background: #fff;
+    &__head {
+      border-bottom: 1px solid #f5f5f5;
+      text-align: center;
+      font-size: 24px;
+      padding: 10px 24px;
+      display: block;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+    }
+    &__inner {
+      padding-right: 40px;
+      padding-bottom: 64px;
+      padding-left: 40px;
+      &__form {
+        max-width: 320px;
+        margin: 0 auto;
+        &__content {
+          max-width: 320px;
+          margin: 32px 0 0;
+          &__payment {
+            font-weight: 600;
+          }
+          &__require {
+            background: #ea352d;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+          }
+          .select-box {
+            display: flex;
+            &__half {
+              display: flex;
+              width: calc(50% - 2px);
+              &__default {
+                width: calc(100% - 38px);
+              }
+              &__unit {
+                line-height:65px;
+                margin-left: 10px;
+              }
+            }
+          }
+          &__deafult {
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+        }
+        .single-code {
+          margin: 8px -20px 0;
+          text-align: right;
+          color: #0099e8;
+          &__question {
+            text-align: right;
+            color: #0099e8;
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #0099e8;
+            color: #fff;
+            line-height: 14px;
+            font-size: 12px;
+            text-align: center;
+          }
+        }
+        .card-form__btn {
+          width: 340px;
+          height: 50px;
+          cursor: pointer;
+          background: #e62017;
+          color: white;
+          font-size: 14px;
+          margin-top: 32px;
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
