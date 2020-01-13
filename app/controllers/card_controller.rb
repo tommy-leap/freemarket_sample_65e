@@ -45,8 +45,8 @@ class CardController < ApplicationController
   end
 
   def add
-    card = current_user.cards
-    redirect_to action: "show" if card.exists?
+    # card = current_user.cards
+    # redirect_to action: "show" if card.exists?
   end
 
   private
