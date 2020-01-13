@@ -17,7 +17,6 @@ class SignupController < ApplicationController
   def save_step1_to_session
     session[:user_params] = user_params
     session[:user_detail_attributes_after_step1] = user_params[:user_detail_attributes]
-
     @user = User.new(session[:user_params])
     @user.build_user_detail(session[:user_detail_attributes_after_step1])
     render '/signup/step1e' unless @user.valid?
@@ -40,8 +39,16 @@ class SignupController < ApplicationController
   
   def step3
     @user = User.new
-    @user.build_user_detail
+    @user.build_card
     render layout: false
+  end
+
+  def save_step3_to_session
+    session[:user_detail_attributes_after_step3] = user_params[:user_detail_attributes]
+    session[:user_detail_attributes_after_step3] = user_params[:card_attributes]
+    session[:user_detail_attributes_after_step3].merge!(session[:user_detail_attributes_after_step2])
+    @user = User.new
+    @user.build_user_detail(session[:user_detail_attributes_after_step3])
   end
 
   def step4
@@ -51,7 +58,8 @@ class SignupController < ApplicationController
   def create
     @user = User.new(session[:user_params])
     @user.build_user_detail(user_params[:user_detail_attributes])
-    @user.build_user_detail(session[:user_detail_attributes_after_step2])
+    @user.build_card(user_params[:card_attributes])
+    @user.build_user_detail(session[:user_detail_attributes_after_step3])
 
     if @user.save
       session[:id] = @user.id
@@ -70,8 +78,9 @@ class SignupController < ApplicationController
       :password,
       :image,
       :evaluation,
-      user_detail_attributes: [:id, :user_id, :first_name, :first_kana, :last_name, :last_kana, :year, :month, :day, :post_num, :prefecture_id, :municipalities, :address, :bulid_name, :phone_num, :comment, :credit_num, :payjp_id],
-      sns_credential_attributes: [:provider, :uid, :user]
+      user_detail_attributes: [:id, :user_id, :first_name, :first_kana, :last_name, :last_kana, :year, :month, :day, :post_num, :prefecture_id, :municipalities, :address, :bulid_name, :phone_num, :comment],
+      sns_credential_attributes: [:provider, :uid, :user],
+      card_attributes: [:user_id, :customer_id, :card_id]
     )
   end
 end

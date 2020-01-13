@@ -1,6 +1,6 @@
 class CardController < ApplicationController
 
-  before_action :get_user_params, only: [:edit, :add, :show]
+  # before_action :get_user_params, only: [:edit, :add, :show]
   before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
 
   def edit

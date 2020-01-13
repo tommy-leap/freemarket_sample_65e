@@ -133,8 +133,6 @@ ActiveRecord::Schema.define(version: 2020_01_09_070750) do
     t.integer "address", null: false
     t.string "bulid_name"
     t.text "comment"
-    t.integer "credit_num"
-    t.integer "payjp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
