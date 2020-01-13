@@ -122,7 +122,7 @@
                 %div.icon
                   = icon('fas', 'chevron-right')
       %li.header__inner__nav__right__in-menu--mypage
-        = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
+        = link_to user_path(current_user.id), class: "header__inner__nav__right__in-menu__icon" do
           = icon('far', 'user fa-2x')
           %span.header__inner__nav__right__in-menu__icon--title
             マイページ
