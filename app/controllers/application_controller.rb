@@ -2,6 +2,9 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
   protect_from_forgery with: :exception
 
+  def after_sign_in_path_for(resource) 
+    root_path
+  end
 
   private
 
