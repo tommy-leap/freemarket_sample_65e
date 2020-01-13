@@ -8,13 +8,11 @@
     %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
-
 %body
   .regist-header
     %h1
       = link_to "#" do
         = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '49px', width: '185px', class:'top-logo'
-
     %nav.signup-bar.progress-bar
       %ol.step-bar
         %li.active
@@ -29,16 +27,17 @@
         %li
           完了
           .progress-status-step4
-
-  .main__content
-    %section.chapter
-      %h2.chapter__head クレジットカード情報入力
-      = form_tag(/signup/step4, method: :post, action: "create", id: 'charge-form',  name: "inputForm", class: "chapter__inner") do
-        .chapter__inner__form
-          .chapter__inner__form__content
-            %label.chapter__inner__form__content__payment カード番号
-            %span.chapter__inner__form__content__require 必須
-            = text_field_tag "number", "", class: "chapter__inner__form__content__deafult", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+  .card-registration
+    = form_for @user, url: signup_index_path, method: :post do |f|
+      = f.fields_for :user_detail do |p|
+        .card-registration-head
+          %h2 支払い方法
+        .card-registration-box
+          .card-number-upper-form
+            = p.label :credit_num, "カード番号"
+            %span.form-required
+              必須
+            = p.text_field :credit_num, placeholder: "半角数字のみ"
             %ul.available
               %li      
                 = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1714804574", size: "49x20", class: "visa"
@@ -54,56 +53,57 @@
                 = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?1714804574", size:"32x20", class:"diners"
               %li
                 = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?1714804574", size:"32x20", class:"discover"
-            .card__list
-              .card__list__picture
-          .chapter__inner__form__content
-            %label.chapter__inner__form__content__payment 有効期限
-            %span.chapter__inner__form__content__require 必須
-            .select-box
-              .select-box__half
-                %select.select-box__half__default#exp_month{name: "exp_month", type: "text"}
-                  %option{value: ""} --
-                  %option{value: "1"}01
-                  %option{value: "2"}02
-                  %option{value: "3"}03
-                  %option{value: "4"}04
-                  %option{value: "5"}05
-                  %option{value: "6"}06
-                  %option{value: "7"}07
-                  %option{value: "8"}08
-                  %option{value: "9"}09
-                  %option{value: "10"}10
-                  %option{value: "11"}11
-                  %option{value: "12"}12
-                %i
-                %span.select-box__half__unit 月
-              .select-box__half
-                .icon
-                %select.select-box__half__default#exp_year{name: "exp_year", type: "text"}
-                  %option{value: ""} --
-                  %option{value: "2019"}19
-                  %option{value: "2020"}20
-                  %option{value: "2021"}21
-                  %option{value: "2022"}22
-                  %option{value: "2023"}23
-                  %option{value: "2024"}24
-                  %option{value: "2025"}25
-                  %option{value: "2026"}26
-                  %option{value: "2027"}27
-                  %option{value: "2028"}28
-                  %option{value: "2029"}29
-                %i
-                %span.select-box__half__unit  年
-          .chapter__inner__form__content
-            %label.chapter__inner__form__content__payment セキュリティーコード
-            %span.chapter__inner__form__content__require 必須
-            = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
-          .single-code
-            %span.single-code__question ? 
-            %span.single-code__info カードの裏面の番号とは？
-          #card_token
-          = submit_tag "追加する", id: "token_submit", class: "card-form__btn"
-
+            .card-expiration-form
+              = p.label :payjp_id, "有効期限"
+              %span.form-required
+                必須
+              .select-year-month
+                .select-year-month-form
+                  = p.select :payjp_id,[["--", ""],
+                                        ["01", "01"],
+                                        ["03", "03"],
+                                        ["04", "04"],
+                                        ["05", "05"],
+                                        ["06", "06"],
+                                        ["07", "07"],
+                                        ["08", "08"],
+                                        ["09", "09"],
+                                        ["10", "10"],
+                                        ["11", "11"],
+                                        ["12", "12"],
+                                        ]
+                %span
+                  月
+                .select-year-month-form
+                  = p.select :payjp_id,[["--", ""],
+                                        ["19", "19"],
+                                        ["20", "20"],
+                                        ["21", "21"],
+                                        ["22", "22"],
+                                        ["23", "23"],
+                                        ["24", "24"],
+                                        ["25", "25"],
+                                        ["26", "26"],
+                                        ["27", "27"],
+                                        ["28", "28"],
+                                        ["29", "29"],
+                                        ]
+                %span
+                  年
+              .card-security-number-form3
+                %label.card-security-code
+                  セキュリティーコード
+                %span.form-required
+                  必須
+                %input.card-number-form{placeholder:"カード背面４桁もしくは３桁の番号"}
+                .signup-security-code
+                  .signup-security-code-text
+                    = link_to "#", class: "signup-security-code-text__btn" do
+                      %span.question
+                        ？
+                      カード裏面番号とは
+                .card-registration-form__btn
+                  = f.submit '追加する', class:"card-registration-form__btn2"
 .buy-result__footer3-3
   %nav
     %ul
@@ -122,4 +122,3 @@
   %p
     %span
       ©︎ Fmarket,lnc.
-  
