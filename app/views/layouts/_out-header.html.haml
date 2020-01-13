@@ -66,15 +66,75 @@
           = link_to "#", class: "big" do
             ルイ ヴィトン
           
-          -# ログアウト状態
-    %li.header__inner__nav__right
-      %ul.header__inner__nav__right__out-menu
-        %li.header__inner__nav__right__out-menu
-          = link_to new_signup_path, class: "header__inner__nav__right__out-menu__signup" do
-            新規会員登録
 
-        %li.header__inner__nav__right__menu
-          = link_to new_user_session_path, class: "header__inner__nav__right__menu__login" do
 
-            ログイン
-          -# ログアウト状態
+    - if user_signed_in?
+      %li.header__inner__nav__right__in-menu
+        = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
+          = icon('far', 'heart fa-lg', class: "icon")
+          %span.header__inner__nav__right__in-menu__icon--title
+            いいね！一覧
+      %li.header__inner__nav__right__in-menu
+        = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
+          = icon('far', 'bell fa-lg', class: "icon")
+          %span.header__inner__nav__right__in-menu__icon--title
+            お知らせ
+          %ul
+            %li.news
+              = link_to "#", class: "mylist" do
+                = image_tag 'logo_red.svg', alt: '', height: '50px', width: '50px', class: 'top-logo'
+                %div.text
+                  %div.text__title
+                    お知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせ
+                  %time.text__time
+                    = icon('far', 'clock')
+                    19時間前
+                %div.icon
+                  = icon('fas', 'chevron-right')
+            %li.news
+              = link_to "#", class: "mylist" do
+                = image_tag 'logo_red.svg', alt: '', height: '50px', width: '50px', class: 'top-logo'
+                %div.text
+                  %div.text__title
+                    お知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせ
+                  %time.text__time
+                    = icon('far', 'clock')
+                    19時間前
+                %div.icon
+                  = icon('fas', 'chevron-right')
+              
+
+      %li.header__inner__nav__right__in-menu
+        = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
+          = icon('fas', 'check fa-lg', class: "icon")
+          %span.header__inner__nav__right__in-menu__icon--title
+            やることリスト
+          %ul
+            %li.news
+              = link_to "#", class: "mylist" do
+                = image_tag 'logo_red.svg', alt: '', height: '50px', width: '50px', class: 'top-logo'
+                %div.text
+                  %div.text__title
+                    お知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせ
+                  %time.text__time
+                    = icon('far', 'clock')
+                    19時間前
+                %div.icon
+                  = icon('fas', 'chevron-right')
+      %li.header__inner__nav__right__in-menu--mypage
+        = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
+          = icon('far', 'user fa-2x')
+          %span.header__inner__nav__right__in-menu__icon--title
+            マイページ
+            -# ログイン状態
+    - else
+      %li.header__inner__nav__right
+        %ul.header__inner__nav__right__out-menu
+          %li.header__inner__nav__right__out-menu
+            = link_to new_signup_path, class: "header__inner__nav__right__out-menu__signup" do
+              新規会員登録
+
+          %li.header__inner__nav__right__out-menu
+            = link_to new_user_session_path, class: "header__inner__nav__right__out-menu__login" do
+              ログイン
+            -# ログアウト状態
