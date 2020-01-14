@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  layout false, only: [:index, :new,] 
+  layout false, without: [:detail] 
   # before_action :set_categories, only: %w[edit new create index ]
   def new
     @product = Product.new
@@ -60,7 +60,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit( :title, :info, :status, :postage, :prefecture_id, :shipping, :day, :price, :category_id)
+    params.require(:product).permit( :title, :info, :status, :postage, :prefecture_id, :shipping, :day, :price, :category_id, :brand_id)
     # images_attributes: [:image]
   end
 
