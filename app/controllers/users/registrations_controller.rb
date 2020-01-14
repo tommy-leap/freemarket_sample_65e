@@ -4,15 +4,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
   prepend_before_action :check_captcha, only: [:create]
   prepend_before_action :customize_sign_up_params, only: [:create]
 
-  password = Devise.friendly_token.first(7)
-  if session[:provider].present? && session[:uid].present?
-    @user = User.create(nickname:session[:nickname], email: session[:email], password: "password", first_kana: session[:first_kana],last_kana: session[:last_kana], first_name: session[:first_name], last_name: session[:last_name], year: session[:year], month: session[:month], day: session[:day], phone_num: params[:user][:phone_num])
-    sns = SnsCredential.create(user_id: @user.id,uid: session[:uid], provider: session[:provider])
-  else
-    @user = User.create(nickname:session[:nickname], email: session[:email], password: session[:password], password_confirmation: session[:password_confirmation], first_kana: session[:first_kana],last_kana: session[:last_kana], first_name: session[:first_name], last_name: session[:last_name], year: session[:year], month: session[:month], day: session[:day], phone_num: params[:user][:phone_num])
-  end
+  # password = Devise.friendly_token.first(7)
+  # if session[:provider].present? && session[:uid].present?
+  #   @user = User.create(nickname:session[:nickname], email: session[:email], password: "password", first_kana: session[:first_kana],last_kana: session[:last_kana], first_name: session[:first_name], last_name: session[:last_name], year: session[:year], month: session[:month], day: session[:day], phone_num: params[:user][:phone_num])
+  #   sns = SnsCredential.create(user_id: @user.id,uid: session[:uid], provider: session[:provider])
+  # else
+  #   @user = User.create(nickname:session[:nickname], email: session[:email], password: session[:password], password_confirmation: session[:password_confirmation], first_kana: session[:first_kana],last_kana: session[:last_kana], first_name: session[:first_name], last_name: session[:last_name], year: session[:year], month: session[:month], day: session[:day], phone_num: params[:user][:phone_num])
+  # end
 
   def create
+    password = Devise.friendly_token.first(7)
+    if session[:provider].present? && session[:uid].present?
+      @user = User.create(nickname:session[:nickname], email: session[:email], password: "password", first_kana: session[:first_kana],last_kana: session[:last_kana], first_name: session[:first_name], last_name: session[:last_name], year: session[:year], month: session[:month], day: session[:day], phone_num: params[:user][:phone_num])
+      sns = SnsCredential.create(user_id: @user.id,uid: session[:uid], provider: session[:provider])
+    else
+      @user = User.create(nickname:session[:nickname], email: session[:email], password: session[:password], password_confirmation: session[:password_confirmation], first_kana: session[:first_kana],last_kana: session[:last_kana], first_name: session[:first_name], last_name: session[:last_name], year: session[:year], month: session[:month], day: session[:day], phone_num: params[:user][:phone_num])
+    end  
     if verify_recaptcha
       super
     else
