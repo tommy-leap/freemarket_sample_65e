@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   get "users/edit", to: "users#edit"
   get "signup", to: "signup#index"
   get 'products/error'
-
   get 'users/listing', to: "users#listing"
   get 'users/progress', to: "users#progress"
   get 'users/completed', to: "users#completed"
@@ -32,7 +31,7 @@ Rails.application.routes.draw do
       get 'add'
     end
   end 
-  resources :products, only: [:index, :new, :create, :show] do
+  resources :products, only: [:index, :new, :create, :show, :edit] do
   collection do
     get 'get_category_children', defaults: { format: 'json' }
     get 'get_category_grandchildren', defaults: { format: 'json' }

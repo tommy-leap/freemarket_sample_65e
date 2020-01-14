@@ -13,7 +13,8 @@
 .product
   .item-area
     .item-area__title
-      = @product.title
+      = link_to edit_product_path do
+        = @product.title
     .item-status
       .thumbnail
         -# - @product.images.each_with_index do |x, i|
@@ -73,7 +74,7 @@
           %tr
             %th 配送元地域
             %td 
-              = link_to @product.prefecture, '#'
+              = link_to @product.prefecture.name, '#'
           %tr
             %th 発送日の目安
             %td

@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   layout false, only: [:index, :new, :show] 
-  before_action :set_categories, only: %w[edit new create index ]
+  # before_action :set_categories, only: %w[edit new create index ]
   def new
     @product = Product.new
     @address = Prefecture.all
@@ -24,8 +24,13 @@ class ProductsController < ApplicationController
   end
   
   def show
-
+    @product = Product.find(params[:id])
   end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
 
   def detail
     @product = Product.find(params[:id])
