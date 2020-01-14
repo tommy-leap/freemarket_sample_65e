@@ -1,294 +1,194 @@
-.product-edit
-  .item-area
-    .item-area__title
-      = @product.title
-    .item-status
-      .thumbnail
-        -# - @product.images.each_with_index do |x, i|
-        - @product.images.each do |i|
-          =image_tag i.image, size: "300x300", alt: "image", class: "mainImage"
-          %ul.thumbnail-thumb
-            %li.thumbnail-thumb__img
-              =image_tag i.image, size: "60x60", alt: "image", class: "thumb"
 
-      .item-teble
-        %table
-          %tr
-            %th 出品者
-            %td.user-name
-              = link_to @product.user.nickname, users_profile_path
-              
-              .evaluation
-                .evaluation__good
-                  = icon('fas', 'laugh', class: "icon")
-                  %span 0
-                .evaluation__usually
-                  = icon('fas', 'meh', class: "icon")
-                  %span 0
-                .evaluation__bad
-                  = icon('fas', 'frown', class: "icon")
-                  %span 0
-          %tr
-            %th カテゴリー
-            %td
-              .category
-                .category__1
-                  = link_to @product.category.parent.parent.name, '#'
-                .category__2
-                  = link_to "＞" + @product.category.parent.name, '#' 
-                .category__3
-                  = link_to "＞" + @product.category.name, '#' 
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title FreemarketSample65e
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
 
-          %tr
-            %th ブランド
-            %td 
-              = link_to @product.brand.brand, '#' 
-          %tr
-            %th 商品のサイズ
-            %td M
-          %tr
-            %th 商品の状態
-            %td 未使用に近い
-          %tr
-            %th 配送料の負担
-            %td 
-              = @product.postage
-          %tr
-            %th 配送の方法
-            %td
-              = @product.shipping
-          %tr
-            %th 配送元地域
-            %td 
-              = link_to @product.prefecture.name, '#'
-          %tr
-            %th 発送日の目安
-            %td
-              = @product.day
-    .price-box
-      %span.price-box__price
-        ¥
-        = @product.price.to_s(:delimited)
-      %sapn.price-box__tax
-        (税込)
-      %span.price-box__posteger
-        送料込み
-    .attention-message
-      = @product.info
+  %body.body-products-new
+    %header.header-products-new
+      %h1
+        = link_to root_path do
+          = image_tag "fmarket_logo_red.svg", class: "logo-red", height: "49px", width: "185px"
 
-  .control-container
-    = link_to "#", class: "control-container__edit" do
-      商品の編集
-    .control-container__space
-      %span or
-    = link_to "#", class: "control-container__stop" do
-      出品を一旦停止する 
-    = link_to "#", class: "control-container__delete" do
-      この商品を削除する
+    = form_for @product do |f|
+      .exhibition
+        .exhibition-head
+          %h2 商品の情報を編集
+        .exhibition-form
+          .exhibition-form-image
+            %label.exhibition-image
+              出品画像
+            %span.form-required
+              必須
+            %P
+              最大１０枚までアップロードできます
+            %label.image-box
+              .exhibition-form-image-box
+              = f.fields_for :images do |i|
+                = i.file_field :image, class:"exhibition-form-image-box__file"
+                - if @product.errors.messages[:images].any?
+                  %span.error= @product.errors.messages[:images][0]
+                %p.exhibition-form-image-box__comment
+                %p
+                ドラッグアンドドロップ
+                %p
+                またはクリックしてファイルをアップロード  
+          .product-text-form
+            .product-text-form__box
+              %label.form-user-kana
+                商品名
+              %span.form-required
+                必須
+              = f.text_field:title, class:"input-form-product-name", placeholder:"商品名（必須40文字まで)"
+              - if @product.errors.messages[:title].any?
+                %span.error= @product.errors.messages[:title][0]
+            .product-text-form__info
+              %label.form-user-kana
+                商品の説明
+              %span.form-required
+                必須
+              = f.text_area:info, class:"product-textarea",placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
+              - if @product.errors.messages[:info].any?
+                %span.error= @product.errors.messages[:info][0]
+          .product-details-form
+            .product-details-form__info
+              %p
+                商品の詳細
+            .product-details-form__info    
+              .product-text-form__info-box
+                %label.form-user-kana
+                  カテゴリー
+                %span.form-required
+                  必須            
+                .select-categories-form
+              .actions
+                #parent_category
+                = f.select :category_id, [["---", 1], ["新品、未使用", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れあり", 4], ["傷や汚れあり", 5], ["全体的に状態悪い", 6]]
 
-  .comment-container
-    %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    %textarea.comment-container__box
-    .comment-container__btn 
-      %button.comment-container__btn--submit{type:"button"}
-        %span コメントする
+                -#   - @parent_categories.each do |c|
+                -#     %option{:value => "#{c.id}"}= c.name
+                -# %select#product_category_ids{:name => "product[category_ids]"}
+                -#   - @default_child_categories.each do |c|
+                -#     %option= c.name
+                -# :javascript
+                -#   $(function() {
+                -#     $('#parent_category').change(function() {
+                -#       $.ajax({
+                -#         url: "#{dynamic_select_category_path}",
+                -#         type: 'GET',
+                -#         data: { category_id: $('#parent_category').has('option:selected').val() }
+                -#       });
+                -#     });
+                -#   });
+              .product-details-form__info__low
+                %label.form-user-kana
+                  商品の状態
+                %span.form-required
+                  必須              
+                .select-year-month-form
+                = f.select :status, [["---"], ["新品、未使用"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態悪い"]]
+                - if @product.errors.messages[:status].any?
+                  %p.error= @product.errors.messages[:status][0]
+          .product-delivery-form
+            .product-delivery-form__info
+              %p
+                配送について
+            .product-delivery-form__info-box
+              .product-text-form__box
+                %label.form-user-kana
+                  送料の負担
+                %span.form-required
+                  必須        
+                .select-year-month-form
+                  = f.select :postage, [["---"], ["送料込み(出品者負担)"], ["着払い(購入者負担)"]]
+                  - if @product.errors.messages[:postage].any?
+                    %span.error= @product.errors.messages[:postage][0]
+              .product-text-form__box
+                %label.form-user-kana
+                  発送の方法
+                %span.form-required
+                  必須        
+                .select-year-month-form
+                  = f.select :shipping, [["---"], ["らくらくメルカリ便"], ["ゆうメール"]]
+                  - if @product.errors.messages[:shipping].any?
+                    %span.error= @product.errors.messages[:shipping][0]
+              .product-text-form__box
+                %label.form-user-kana
+                  発送元の地域
+                %span.form-required
+                  必須    
+                .select-year-month-form       
+                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+                  - if @product.errors.messages[:prefecture_id].any?
+                    %span.error= @product.errors.messages[:prefecture_id][0]
+              .product-text-form__box
+                %label.form-user-kana
+                  発送までの日数
+                %span.form-required
+                  必須        
+                .select-year-month-form
+                  = f.select :day, [["---"], ["１〜２日で発送"], ["２〜３日で発送"], ["４〜７日で発送"]]
+                  - if @product.errors.messages[:day].any?
+                    %span.error= @product.errors.messages[:day][0]
+          .product-price
+            %h3.sell-sub-head 販売価格(300~9,999,999)
+            .product-price__group
+              .product-price-about
+                .product_price-form__left
+                  .product_header
+                    価格
+                  .product_require
+                    必須 
+                .product_price-form__right
+                  .money-mark ¥
+                  =f.number_field :price, placeholder: "例) 300", type: "number", id: "price_calc", class:"price_form-box"
+                  - if @product.errors.messages[:price].any?
+                    %span.error= @product.errors.messages[:price][0]
+              .product_price-fee
+                .text-commission
+                販売手数料(10%)
+                .right_bar
+              .product_profit
+                .text-profit
+                販売利益
+                %input#price{style: "display: none"}/
+                .right_bar_2
+          
+          .product-btn-form
+            .product-btn-form__box
+              %p 
+                =link_to "禁止されている出品"
+                ,
+                =link_to "行為"
+                を必ずご確認ください。
+              %p
+                またブランド品でシリアルナンバー等がある場合はご記載ください。
+                =link_to "偽ブランドの販売"
+                は犯罪であり処罰される可能性があります。
+              %p
+                また、出品を持ちまして
+                =link_to "加盟店規約"
+                に同意したことになります。
+            .user-detail-form__btn
+              = f.submit '編集する', class:"form-product__btn--red" 
+            .product-back-btn
+              %button.form-registration__btn--gray{type:"button"}
+                戻る
+    %footer.footer-products-new
+      %nav.nav-products-new
+        %ul
+          %li 
+            %a(href="#") プライバシーポリシー
+          %li 
+            %a(href="#") メルカリ利用規約
+          %li 
+            %a(href="#") 取引商取引に関する表記
+      %a(href="#" class="goto-top")
+        = image_tag "logo_gray.svg", class: "footer-logo", height: "65px", width: "80px"
 
-  -# %ul.link-item
-  -#   %li.link-item__back
-  -#     = link_to "＜NIKE AIRMAX", '#'
-  -#   %li.link-item__next
-  -#     = link_to "adidas superstar＞", '#'
-  -# .item-sns-container
-  -#   .item-sns-container-box
-  -#     %ul.sns-list
-  -#       %li.sns-list__fecebook
-  -#         =link_to "https://www.facebook.com/" do
-  -#           = icon('fab', 'facebook-square', class: "icon")
-  -#       %li.sns-list__twitter
-  -#         =link_to "https://twitter.com/login?lang=ja" do
-  -#           = icon('fab', 'twitter', class: "icon")
-  -#       %li.sns-list__pinterest
-  -#         =link_to "https://www.pinterest.jp/" do
-  -#           = icon('fab', 'pinterest', class: "icon")
-
-  -# %h2.etc-item 
-  -#   = link_to '#' do
-  -#     %span user
-  -#     %span さんのその他の出品
-  -# .item-list
-  -#   %ul.item-box
-  -#     %li.item-box__image
-  -#       = link_to '#' do
-  -#         =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
-  -#         .item-box__comment
-  -#           .item-title
-  -#             %span トラックジャケット
-  -#           .item-pofile
-  -#             .item-pofile__price
-  -#               %span ¥
-  -#               %span 13,000
-  -#             .item-pofile__evaluation
-  -#               = icon('far', 'heart fa-lg', class: "icon")
-  -#               %span 10
-
-  -#     %li.item-box__image
-  -#       = link_to '#' do
-  -#         =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
-  -#         .item-box__comment
-  -#           .item-title
-  -#             %span トラックジャケット
-  -#           .item-pofile
-  -#             .item-pofile__price
-  -#               %span ¥
-  -#               %span 13,000
-  -#             .item-pofile__evaluation
-  -#               = icon('far', 'heart fa-lg', class: "icon")
-  -#               %span 10
-
-  -#     %li.item-box__image
-  -#       = link_to '#' do
-  -#         =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
-  -#         .item-box__comment
-  -#           .item-title
-  -#             %span トラックジャケット
-  -#           .item-pofile
-  -#             .item-pofile__price
-  -#               %span ¥
-  -#               %span 13,000
-  -#             .item-pofile__evaluation
-  -#               = icon('far', 'heart fa-lg', class: "icon")
-  -#               %span 10
-
-  -#     %li.item-box__image
-  -#       = link_to '#' do
-  -#         =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
-  -#         .item-box__comment
-  -#           .item-title
-  -#             %span トラックジャケット
-  -#           .item-pofile
-  -#             .item-pofile__price
-  -#               %span ¥
-  -#               %span 13,000
-  -#             .item-pofile__evaluation
-  -#               = icon('far', 'heart fa-lg', class: "icon")
-  -#               %span 10 
-
-  -#     %li.item-box__image
-  -#       = link_to '#' do
-  -#         =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
-  -#         .item-box__comment
-  -#           .item-title
-  -#             %span トラックジャケット
-  -#           .item-pofile
-  -#             .item-pofile__price
-  -#               %span ¥
-  -#               %span 13,000
-  -#             .item-pofile__evaluation
-  -#               = icon('far', 'heart fa-lg', class: "icon")
-  -#               %span 10 
-
-  -#     %li.item-box__image
-  -#       = link_to '#' do
-  -#         =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
-  -#         .item-box__comment
-  -#           .item-title
-  -#             %span トラックジャケット
-  -#           .item-pofile
-  -#             .item-pofile__price
-  -#               %span ¥
-  -#               %span 13,000
-  -#             .item-pofile__evaluation
-  -#               = icon('far', 'heart fa-lg', class: "icon")
-  -#               %span 10  
-
-  -#   %h2.etc-item 
-  -#     = link_to '#' do 
-  -#       %span ザ ノースフェイス
-  -#       %span その他の出品  
-  -#   .item-list__category
-  -#     %li.item-box__image
-  -#       = link_to '#' do
-  -#         =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
-  -#         .item-box__comment
-  -#           .item-title
-  -#             %span トラックジャケット
-  -#           .item-pofile
-  -#             .item-pofile__price
-  -#               %span ¥
-  -#               %span 13,000
-  -#             .item-pofile__evaluation
-  -#               = icon('far', 'heart fa-lg', class: "icon")
-  -#               %span 10
-
-  -#     %li.item-box__image
-  -#       = link_to '#' do
-  -#         =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
-  -#         .item-box__comment
-  -#           .item-title
-  -#             %span トラックジャケット
-  -#           .item-pofile
-  -#             .item-pofile__price
-  -#               %span ¥
-  -#               %span 13,000
-  -#             .item-pofile__evaluation
-  -#               = icon('far', 'heart fa-lg', class: "icon")
-  -#               %span 10
-
-  -#     %li.item-box__image
-  -#       = link_to '#' do
-  -#         =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
-  -#         .item-box__comment
-  -#           .item-title
-  -#             %span トラックジャケット
-  -#           .item-pofile
-  -#             .item-pofile__price
-  -#               %span ¥
-  -#               %span 13,000
-  -#             .item-pofile__evaluation
-  -#               = icon('far', 'heart fa-lg', class: "icon")
-  -#               %span 10
-
-  -#     %li.item-box__image
-  -#       = link_to '#' do
-  -#         =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
-  -#         .item-box__comment
-  -#           .item-title
-  -#             %span トラックジャケット
-  -#           .item-pofile
-  -#             .item-pofile__price
-  -#               %span ¥
-  -#               %span 13,000
-  -#             .item-pofile__evaluation
-  -#               = icon('far', 'heart fa-lg', class: "icon")
-  -#               %span 10 
-
-  -#     %li.item-box__image
-  -#       = link_to '#' do
-  -#         =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
-  -#         .item-box__comment
-  -#           .item-title
-  -#             %span トラックジャケット
-  -#           .item-pofile
-  -#             .item-pofile__price
-  -#               %span ¥
-  -#               %span 13,000
-  -#             .item-pofile__evaluation
-  -#               = icon('far', 'heart fa-lg', class: "icon")
-  -#               %span 10 
-
-  -#     %li.item-box__image
-  -#       = link_to '#' do
-  -#         =image_tag 'm92425895119_1.jpg', size: "220x220", alt: "image"
-  -#         .item-box__comment
-  -#           .item-title
-  -#             %span トラックジャケット
-  -#           .item-pofile
-  -#             .item-pofile__price
-  -#               %span ¥
-  -#               %span 13,000
-  -#             .item-pofile__evaluation
-  -#               = icon('far', 'heart fa-lg', class: "icon")
-  -#               %span 10
-
-
-  
