@@ -70,12 +70,11 @@ ActiveRecord::Schema.define(version: 2020_01_09_070750) do
     t.string "status", null: false
     t.string "postage", null: false
     t.string "shipping", null: false
-
     t.integer "prefecture_id", null: false
     t.string "day", null: false
     t.integer "brand_id"
     t.integer "category_id"
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

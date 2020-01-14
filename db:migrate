@@ -1,0 +1,6 @@
+Dropped database 'freemarket_sample_65e_development'
+Dropped database 'freemarket_sample_65e_test'
+Created database 'freemarket_sample_65e_development'
+Created database 'freemarket_sample_65e_test'
+== 20191225051109 CreateProducts: migrating ===================================
+-- create_table(:products)
