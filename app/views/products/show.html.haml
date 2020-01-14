@@ -33,7 +33,7 @@
             %td
               .category
                 .category__1
-                  = link_to @product.category.parent.parent.name, '#'
+                  = link_to @product.category.parent.name, '#'
                 .category__2
                   = link_to "＞" + @product.category.parent.name, '#' 
                 .category__3

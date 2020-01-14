@@ -9,11 +9,11 @@ class Product < ApplicationRecord
   validates :prefecture_id, presence: true, numericality: { only_integer: true, greater_than: 0, message: '選択してください'}
 
 
-  has_one :brand
+  belongs_to :brand
   has_many :images
   has_many :messages
   has_many :likes
-  has_one :category
+  belongs_to :category
   belongs_to :user
 
   accepts_nested_attributes_for :images, allow_destroy: true

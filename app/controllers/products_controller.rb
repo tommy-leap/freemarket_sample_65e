@@ -1,12 +1,13 @@
 class ProductsController < ApplicationController
 
-  layout false, without: [:detail] 
+  layout false, except: [:detail, :show] 
   # before_action :set_categories, only: %w[edit new create index ]
   def new
     @product = Product.new
     @prefecture = Prefecture.all
     @brand = Brand.all
     @category = Category.all
+    render layout: false
   end
   def create
     @product = Product.new(product_params)
@@ -28,6 +29,7 @@ class ProductsController < ApplicationController
   
   def show
     @product = Product.find(params[:id])
+    @category = Category.all
   end
 
   def edit
