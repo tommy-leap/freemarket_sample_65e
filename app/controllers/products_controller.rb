@@ -35,10 +35,18 @@ class ProductsController < ApplicationController
   def detail
     @product = Product.find(params[:id])
   end
+
   def dynamic_select_category
     @category = Category.find(params[:category_id])
   end
 
+  def destroy
+    product = Product.find(params[:id])
+    if product.user.id == current_user.id
+      product.delete
+    end
+    redirect_to root_path
+  end
 
 
 
