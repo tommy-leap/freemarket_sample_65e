@@ -1,92 +1,95 @@
-%html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title FreemarketSample65e
-    = csrf_meta_tags
-    = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
+.product-edit
+  .item-area
+    .item-area__title
+      = @product.title
+    .item-status
+      .thumbnail
+        -# - @product.images.each_with_index do |x, i|
+        - @product.images.each do |i|
+          =image_tag i.image, size: "300x300", alt: "image", class: "mainImage"
+          %ul.thumbnail-thumb
+            %li.thumbnail-thumb__img
+              =image_tag i.image, size: "60x60", alt: "image", class: "thumb"
 
-  %body
-    .buy-result
-      %header
-        .buy-result__header
-          %h1
-          .buy-result__header__logo
-            = link_to "#" do
-              = image_tag 'fmarket_logo_red.svg', alt: ''
+      .item-teble
+        %table
+          %tr
+            %th 出品者
+            %td.user-name
+              = link_to @product.user.nickname, users_profile_path
+              
+              .evaluation
+                .evaluation__good
+                  = icon('fas', 'laugh', class: "icon")
+                  %span 0
+                .evaluation__usually
+                  = icon('fas', 'meh', class: "icon")
+                  %span 0
+                .evaluation__bad
+                  = icon('fas', 'frown', class: "icon")
+                  %span 0
+          %tr
+            %th カテゴリー
+            %td
+              .category
+                .category__1
+                  = link_to @product.category.parent.parent.name, '#'
+                .category__2
+                  = link_to "＞" + @product.category.parent.name, '#' 
+                .category__3
+                  = link_to "＞" + @product.category.name, '#' 
 
-        .buy-result__main
-          .buy-result__main__title
-            購入内容の確認
-          %section
-          .buy-result__main__item
-            .buy-result__main__item__inner
-              .buy-result__main__item__inner__box
-                %h3
-                .buy-result__main__item__inner__box__image
-                  = image_tag 'ciecle2P-kawaii-pink.jpg', height: '95px', width: '80px'
-                .buy-result__main__item__inner__box__detail
-                  %p
-                    COACH ショルダーバッグ
-                  %p
-                    %span
-                      ¥2,550
-                    %span
-                      (税込) 送料込み
-          .buy-result__main__data
-            %form
-            .buy-result__main__data__form
-              %ul.buy-result__main__data__form__price-table
-                %li.buy-result__main__data__form__price-table__list
-                  %div.buy-result__main__data__form__price-table__list__title
-                    支払い金額
-                  %div.buy-result__main__data__form__price-table__list__price
-                    ¥2,550
-              %ul.buy-result__main__data__form__point
-                %li.buy-result__main__data__form__point__have
-                  ポイントを使用(所持ポイント:P0)
-              %section.buy-result__main__data__form__user-info
-                .buy-result__main__data__form__user-info__inner
-                  %h3
-                    支払い方法
-                  = link_to "#", class: "pay-btn" do
-                    +登録してください
-              %section.buy-result__main__data__form__user-info
-                .buy-result__main__data__form__user-info__inner
-                  .buy-result__main__data__form__user-info__inner__address
-                    配送先
-                    = link_to "#", class: "edit" do
-                      変更する
-                  .buy-result__main__data__form__user-info__inner__text
-                    〒xxx-xxxx
-                    %p
-                      東京都〇〇区XXXXXXXX
-                    %p
-                      長木 佑樹
-              %section.buy-result__main__data__form__btn
-                %span
-                  購入する
+          %tr
+            %th ブランド
+            %td 
+              = link_to @product.brand.brand, '#' 
+          %tr
+            %th 商品のサイズ
+            %td M
+          %tr
+            %th 商品の状態
+            %td 
+              = @product.status
+          %tr
+            %th 配送料の負担
+            %td 
+              = @product.postage
+          %tr
+            %th 配送の方法
+            %td
+              = @product.shipping
+          %tr
+            %th 配送元地域
+            %td 
+              = link_to @product.prefecture.name, '#'
+          %tr
+            %th 発送日の目安
+            %td
+              = @product.day
+    .price-box
+      %span.price-box__price
+        ¥
+        = @product.price.to_s(:delimited)
+      %sapn.price-box__tax
+        (税込)
+      %span.price-box__posteger
+        送料込み
+    .attention-message
+      = @product.info
 
-        .buy-result__footer
-          %nav
-            %ul
-              %li
-                = link_to "#", class: "menu" do
-                  プライバシーポリシー
-              %li
-                = link_to "#", class: "menu" do
-                  メルカリ利用規約
-              %li
-                = link_to "#", class: "menu" do
-                  特定商取引に関する表記
-          .buy-result__footer__logo
-            = link_to "#" do
-              = image_tag 'logo_gray.svg', alt: ''
-          %p
-            %span
-              ©︎ Fmarket,lnc.
+  .control-container
+    = link_to edit_product_path, class: "control-container__edit" do
+      商品の編集
+    .control-container__space
+      %span or
+    = link_to "#", class: "control-container__stop" do
+      出品を一旦停止する 
+    = link_to "#", class: "control-container__delete" do
+      この商品を削除する
 
-
+  .comment-container
+    %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    %textarea.comment-container__box
+    .comment-container__btn 
+      %button.comment-container__btn--submit{type:"button"}
+        %span コメントする
