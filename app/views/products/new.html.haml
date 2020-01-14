@@ -30,15 +30,15 @@
               最大１０枚までアップロードできます
             %label.image-box
               .exhibition-form-image-box
-              = f.fields_for :images do |i|
-                = i.file_field :image, class:"exhibition-form-image-box__file"
-                - if @product.errors.messages[:images].any?
-                  %span.error= @product.errors.messages[:images][0]
-                %p.exhibition-form-image-box__comment
-                %p
-                ドラッグアンドドロップ
-                %p
-                またはクリックしてファイルをアップロード  
+                = f.fields_for :images do |i|
+                  = i.file_field :image, class:"exhibition-form-image-box__file"
+                  - if @product.errors.messages[:images].any?
+                    %span.error= @product.errors.messages[:images][0]
+                  %p.exhibition-form-image-box__comment
+                  %p
+                  ドラッグアンドドロップ
+                  %p
+                  またはクリックしてファイルをアップロード  
           .product-text-form
             .product-text-form__box
               %label.form-user-kana
@@ -68,22 +68,33 @@
                   必須            
                 .select-categories-form
               .actions
-                %select#parent_category
-                  - @parent_categories.each do |c|
-                    %option{:value => "#{c.id}"}= c.name
-                %select#product_category_ids{:name => "product[category_ids]"}
-                  - @default_child_categories.each do |c|
-                    %option= c.name
-                :javascript
-                  $(function() {
-                    $('#parent_category').change(function() {
-                      $.ajax({
-                        url: "#{dynamic_select_category_path}",
-                        type: 'GET',
-                        data: { category_id: $('#parent_category').has('option:selected').val() }
-                      });
-                    });
-                  });
+                = f.collection_select :category_id, @parent_categories, :id, :name, id:"parent_category"
+                -# 余力があれば2,3段実装するため残している
+                -# = f.select :category, @parent_categories.map{|c| [c.name{c.id}, c.id]}, id: "parent_category"
+                -# = f.select :category, options_for_select(@parent_categories.map{|c|[:name], c[:id]}), {}, {id: 'parent_category'}
+                -# %select#parent_category
+                -#   - @parent_categories.each do |c|
+                -#     %option{:value => "#{c.id}"}= c.name
+                -# = f.collection_select :category, @default_child_categories,:id, :name, id:"product_category_ids"
+                -# %select#product_category_ids{:name => "product[category_ids]"}
+                -#   - @default_child_categories.each do |c|
+                -#     %option= c.name
+                -# :javascript
+                -#   $(function() {
+                -#     $('#parent_category').change(function() {
+                -#       $.ajax({
+                -#         url: "#{dynamic_select_category_path}",
+                -#         type: 'GET',
+                -#         data: { category_id: $('#parent_category').has('option:selected').val() }
+                -#       });
+                -#     });
+                -#   });
+              .brand-text-form__box
+                %label.form-brand
+                  ブランド名
+                %span.form-arbitrary
+                  任意
+                = f.collection_select :brand_id, Brand.all, :id, :brand
               .product-details-form__info__low
                 %label.form-user-kana
                   商品の状態

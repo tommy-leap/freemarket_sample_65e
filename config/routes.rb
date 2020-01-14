@@ -31,7 +31,7 @@ Rails.application.routes.draw do
     get 'get_category_grandchildren', defaults: { format: 'json' }
   end
 end
-get :dynamic_select_category, to: 'products#dynamic_select_category'
+  get :dynamic_select_category, to: 'products#dynamic_select_category'
   resources :users, only: [:index, :show, :edit, :update, :new]
   resources :signup do
     collection do

@@ -6,11 +6,12 @@ class Product < ApplicationRecord
   validates :info, presence: true, length: { maximum: 1000, message: '1000文字以内で入力してください'}
   validates :prefecture, presence: true, numericality: { only_integer: true, greater_than: 0, message: '選択してください'}
 
-  has_one :category
+
   has_one :brand
   has_many :images
   has_many :messages
   has_many :likes
+  has_one :category
   accepts_nested_attributes_for :images, allow_destroy: true
 
 end
