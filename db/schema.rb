@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_01_09_070750) do
     t.string "status", null: false
     t.string "postage", null: false
     t.string "shipping", null: false
+
     t.integer "prefecture_id", null: false
     t.string "day", null: false
     t.integer "brand_id"
