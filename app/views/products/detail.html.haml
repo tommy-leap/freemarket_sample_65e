@@ -13,7 +13,7 @@
 .product
   .item-area
     .item-area__title
-      = link_to edit_product_path do
+      = link_to product_path do
         = @product.title
     .item-status
       .thumbnail
@@ -23,7 +23,6 @@
           %ul.thumbnail-thumb
             %li.thumbnail-thumb__img
               =image_tag i.image, size: "60x60", alt: "image", class: "thumb"
-         
 
       .item-teble
         %table
@@ -62,7 +61,8 @@
             %td M
           %tr
             %th 商品の状態
-            %td 未使用に近い
+            %td 
+              =@product.status
           %tr
             %th 配送料の負担
             %td 

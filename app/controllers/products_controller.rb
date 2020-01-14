@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  layout false, only: [:index, :new, :show] 
+  layout false, only: [:index, :new,] 
   # before_action :set_categories, only: %w[edit new create index ]
   def new
     @product = Product.new
@@ -34,6 +34,13 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def update
+    @product = Product.find(params[:id])
+      if @product.user_id == current_user.id
+    @product.update(product_params)
+    end
+    redirect_to edit_product_path(@product)
+  end
 
   def detail
     @product = Product.find(params[:id])
@@ -51,15 +58,10 @@ class ProductsController < ApplicationController
     redirect_to root_path
   end
 
-
-
   private
   def product_params
-
-
-    params.require(:product).permit( :title, :info, :status, :postage, :category_id, :brand_id, :prefecture_id, :shipping, :day, :price, images_attributes: [:image])
-
-
+    params.require(:product).permit( :title, :info, :status, :postage, :prefecture_id, :shipping, :day, :price, :category_id)
+    # images_attributes: [:image]
   end
 
   def set_product
