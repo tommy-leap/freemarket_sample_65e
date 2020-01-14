@@ -10,9 +10,9 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :prefecture_id, null: false
       t.string :day, null: false
 
-      t.references :brand_id, foreign_key: true
-      t.references :category_id, foreign_key: true
-      t.references :user_id, foreign_key: true
+      t.integer :brand_id, foreign_key: true
+      t.integer  :category_id, foreign_key: true
+      t.integer  :user_id, foreign_key: true
 
       t.timestamps
     end

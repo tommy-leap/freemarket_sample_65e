@@ -4,11 +4,13 @@ class ProductsController < ApplicationController
   # before_action :set_categories, only: %w[edit new create index ]
   def new
     @product = Product.new
-    @address = Prefecture.all
+    @prefecture = Prefecture.all
     @brand = Brand.all
+    @category = Category.all
   end
   def create
     @product = Product.new(product_params)
+    @product.user_id = current_user.id
     if @product.save
       redirect_to root_path
     else
@@ -56,16 +58,10 @@ class ProductsController < ApplicationController
     redirect_to root_path
   end
 
-
-
   private
   def product_params
-
-
     params.require(:product).permit( :title, :info, :status, :postage, :prefecture_id, :shipping, :day, :price, :category_id)
     # images_attributes: [:image]
-
-    
   end
 
   def set_product
