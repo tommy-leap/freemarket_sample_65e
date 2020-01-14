@@ -30,6 +30,11 @@ crumb :edit do
   parent :mypage
 end
 
+crumb :show do
+  link "支払い方法", card_index_path
+  parent :mypage
+end
+
 crumb :identification do
   link "本人情報", users_identification_path
   parent :mypage

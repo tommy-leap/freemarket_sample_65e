@@ -35,18 +35,19 @@ class CardController < ApplicationController
   end
 
   def show
-    card = current_user.credit_cards.first
-    if card.present?
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+    @card = current_user.cards.first
+
+    if @card.present?
+      @customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = @customer.cards.retrieve(@card.card_id)
     else
       redirect_to action: "add", id: current_user.id
     end
   end
 
   def add
-    card = current_user.cards
-    redirect_to action: "show" if card.exists?
+    # card = current_user.cards
+    # redirect_to action: "show" if card.exists?
   end
 
   private

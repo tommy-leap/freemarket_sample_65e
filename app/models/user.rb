@@ -6,13 +6,13 @@ class User < ApplicationRecord
         :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   has_one :user_detail
   has_many :products
-  has_one :card
+  has_many :cards
   belongs_to :user, optional: true
   has_many :sns_credentials
   # has_one :step1
   # has_one :step2
   # has_many :step4
-  accepts_nested_attributes_for :user_detail, :card
+  
 
   def self.find_oauth(auth)
     uid = auth.uid

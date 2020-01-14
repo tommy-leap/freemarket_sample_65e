@@ -5,7 +5,7 @@
   .main__content
     %section.chapter
       %h2.chapter__head クレジットカード情報入力
-      = form_tag('/credit_card', method: :post, action: "create", id: 'charge-form',  name: "inputForm", class: "chapter__inner") do
+      = form_tag('/card', method: :post, action: "create", id: 'charge-form',  name: "inputForm", class: "chapter__inner") do
         .chapter__inner__form
           .chapter__inner__form__content
             %label.chapter__inner__form__content__payment カード番号
