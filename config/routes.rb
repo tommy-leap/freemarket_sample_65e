@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   }
   
   devise_scope :user do
-    get 'step1', to: 'users/registrations#new_step1'
+    get 'step1', to: 'users/registrations#step1'
     post 'step1',  to: 'users/registrations#create_step1'
+    get 'users/sign_in', to: 'users/sessions#new'
   end
   root 'users#index'
   get "users/logout", to: "users#logout"
@@ -17,15 +18,20 @@ Rails.application.routes.draw do
   get "users/edit", to: "users#edit"
   get "signup", to: "signup#index"
   get 'products/error'
-
   get 'users/listing', to: "users#listing"
   get 'users/progress', to: "users#progress"
   get 'users/completed', to: "users#completed"
 
-  get 'users/cardlist_first', to: "users#cardlist_first"
-  get 'users/cardlist', to: "users#cardlist"
-
-  resources :products, only: [:index, :new, :create, :show] do
+  resources :card, only: [:create, :show, :edit] do
+    collection do
+      post 'delete', to: 'card#delete'
+      post 'show', to: 'card#show'
+    end
+    member do
+      get 'add'
+    end
+  end 
+  resources :products do
   collection do
     get 'get_category_children', defaults: { format: 'json' }
     get 'get_category_grandchildren', defaults: { format: 'json' }

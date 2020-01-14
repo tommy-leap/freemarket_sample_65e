@@ -20,13 +20,18 @@ crumb :detail do
   link "商品詳細", products_detail_path
 end
 
-crumb :cardlist_first do
-  link "支払い方法", users_cardlist_first_path
+crumb :add do
+  link "支払い方法", add_card_path
   parent :mypage
 end
 
-crumb :cardlist do
-  link "支払い方法", users_cardlist_first_path
+crumb :edit do
+  link "支払い方法", edit_card_path
+  parent :mypage
+end
+
+crumb :show do
+  link "支払い方法", card_index_path
   parent :mypage
 end
 

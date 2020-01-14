@@ -1,23 +1,37 @@
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title FreemarketSample65e
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
+
+
 .product
   .item-area
     .item-area__title
-      = @product.title
+      = link_to edit_product_path do
+        = @product.title
     .item-status
       .thumbnail
-        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m74988235969_1.jpg?1573955136', size: "300x300", alt: "image", class: "mainImage"
-      .thumbnail-thumb
-        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m74988235969_1.jpg?1573955136', size: "60x60", alt: "image", class: "thumb"
-        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m60743030705_1.jpg?1570714986', size: "60x60", alt: "image", class: "thumb"
-        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m64027879172_1.jpg?1549124096', size: "60x60", alt: "image", class: "thumb"
-        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m37646039727_1.jpg?1575463668', size: "60x60", alt: "image", class: "thumb"
-        =image_tag 'https://static.mercdn.net/item/detail/orig/photos/m42582829655_1.jpg?1576851227', size: "60x60", alt: "image", class: "thumb"
+        -# - @product.images.each_with_index do |x, i|
+        - @product.images.each do |i|
+          =image_tag i.image, size: "300x300", alt: "image", class: "mainImage"
+          %ul.thumbnail-thumb
+            %li.thumbnail-thumb__img
+              =image_tag i.image, size: "60x60", alt: "image", class: "thumb"
+         
 
       .item-teble
         %table
           %tr
             %th 出品者
             %td.user-name
-              = link_to @product.user.nickname, '#'
+              = link_to @product.user.nickname, users_profile_path
+                
               .evaluation
                 .evaluation__good
                   = icon('fas', 'laugh', class: "icon")
@@ -60,7 +74,7 @@
           %tr
             %th 配送元地域
             %td 
-              = link_to @product.from, '#'
+              = link_to @product.prefecture.name, '#'
           %tr
             %th 発送日の目安
             %td
@@ -77,14 +91,7 @@
       %button.buy-btn--submit{type:"button"}
         %span 購入画面に進む
     .attention-message
-      ザ ノースフェイスのトラックジャケットです。
-      毛足の長いニットにチェックが
-      マッチしてとても可愛いです。
-      ブルゾンタイプですので
-      インナーとしてもアウターとしても
-      ご利用いただける商品です。
-      タグ付きの未使用品になります。
-      肩幅42cm,身幅49cm,袖丈63cm,着丈62cm
+      = @product.info
     .btn-container
       .left-container
         %button.left-container__like{type:"button"}

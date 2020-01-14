@@ -1,0 +1,29 @@
+-breadcrumb :add
+=render 'layouts/breadcrumbs'
+%main
+  =render 'shared/side_bar'
+  .card-content
+    %h2.card-content-head 支払い方法
+    .card-list
+      .card-list-content
+        %h3.card-list-content_text クレジットカード一覧
+    .add__card
+      .payment__list__content
+        = link_to edit_card_path(current_user), class: "red__btn", data: {"turbolinks" => false} do
+          %i  
+          = icon('fas', 'credit-card', class: "card__icon")
+          クレジットカードを追加する
+      
+      
+      
+      
+      
+      
+      
+      -# %ul.payment-list
+      -#   %li
+      -#     %form
+      -#       .add-card
+      -#         =link_to " クレジットカードを追加する",edit_card_path, class:"add-card_btn" 
+      -# .payment-description
+      -#   = link_to "支払い方法について ＞","https://www.mercari.com/jp/help_center/category/6/"

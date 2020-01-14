@@ -1,127 +1,127 @@
-%header
-.header__inner
-  .header__inner__top
-    .header__inner__top__logo
-      = link_to "#" do
-        = image_tag 'fmarket_logo_red.svg', alt: '', height: '36px', width: '150px', class: 'top-logo'
-    = form_for to_s do |f|
-      = f.search_field :title, placeholder:"何かお探しですか？", id:"field"
-      = f.button icon("fa", "search", class:"icon"), class:"btn"
-  %ul.header__inner__nav
-    %li.header__inner__nav__category
-      = link_to "#", class: "header__inner__nav__category__icon" do
-        = icon('fas', 'list-ul')
-        %span.header__inner__nav__category__icon--name
-          カテゴリーから探す
-      %ul.header__inner__nav__category__title
-        %li
-          = link_to "#", class: "big" do
-            レディース
-          %ul.header__inner__nav__category__title
-            %li
-              = link_to "#", class: "big" do
-                トップス
-              %ul.header__inner__nav__category__title
-                %li
-                  = link_to "#", class: "big" do
-                    ポロシャツ
-                %li
-                  = link_to "#", class: "big" do
-                    キャミソール
-                %li
-                  = link_to "#", class: "big" do
-                    タンクトップ
+-# %header
+-# .header__inner
+-#   .header__inner__top
+-#     .header__inner__top__logo
+-#       = link_to "#" do
+-#         = image_tag 'fmarket_logo_red.svg', alt: '', height: '36px', width: '150px', class: 'top-logo'
+-#     = form_for to_s do |f|
+-#       = f.search_field :title, placeholder:"何かお探しですか？", id:"field"
+-#       = f.button icon("fa", "search", class:"icon"), class:"btn"
+-#   %ul.header__inner__nav
+-#     %li.header__inner__nav__category
+-#       = link_to "#", class: "header__inner__nav__category__icon" do
+-#         = icon('fas', 'list-ul')
+-#         %span.header__inner__nav__category__icon--name
+-#           カテゴリーから探す
+-#       %ul.header__inner__nav__category__title
+-#         %li
+-#           = link_to "#", class: "big" do
+-#             レディース
+-#           %ul.header__inner__nav__category__title
+-#             %li
+-#               = link_to "#", class: "big" do
+-#                 トップス
+-#               %ul.header__inner__nav__category__title
+-#                 %li
+-#                   = link_to "#", class: "big" do
+-#                     ポロシャツ
+-#                 %li
+-#                   = link_to "#", class: "big" do
+-#                     キャミソール
+-#                 %li
+-#                   = link_to "#", class: "big" do
+-#                     タンクトップ
                 
 
-            %li
-              = link_to "#", class: "big" do
-                アウター/ジャケット
-            %li
-              = link_to "#", class: "big" do
-                パンツ
-        %li
-          = link_to "#", class: "big" do
-            メンズ
-        %li
-          = link_to "#", class: "big" do
-            ベビー・キッズ
+-#             %li
+-#               = link_to "#", class: "big" do
+-#                 アウター/ジャケット
+-#             %li
+-#               = link_to "#", class: "big" do
+-#                 パンツ
+-#         %li
+-#           = link_to "#", class: "big" do
+-#             メンズ
+-#         %li
+-#           = link_to "#", class: "big" do
+-#             ベビー・キッズ
         
                 
               
                 
-    %li.header__inner__nav__brand
-      = link_to "#", class: "header__inner__nav__brand__icon" do
-        = icon('fab', 'searchengin')
-        %span.header__inner__nav__brand__icon--name
-          ブランドから探す
-      %ul
-        %li
-          = link_to "#", class: "big" do
-            ナイキ
-        %li
-          = link_to "#", class: "big" do
-            シャネル
-        %li
-          = link_to "#", class: "big" do
-            ルイ ヴィトン
+-#     %li.header__inner__nav__brand
+-#       = link_to "#", class: "header__inner__nav__brand__icon" do
+-#         = icon('fab', 'searchengin')
+-#         %span.header__inner__nav__brand__icon--name
+-#           ブランドから探す
+-#       %ul
+-#         %li
+-#           = link_to "#", class: "big" do
+-#             ナイキ
+-#         %li
+-#           = link_to "#", class: "big" do
+-#             シャネル
+-#         %li
+-#           = link_to "#", class: "big" do
+-#             ルイ ヴィトン
           
 
-    -# ログイン状態
-    %li.header__inner__nav__right__menu
-      = link_to "#", class: "header__inner__nav__right__menu__icon" do
-        = icon('far', 'heart fa-lg', class: "icon")
-        %span.header__inner__nav__right__menu__icon--title
-          いいね！一覧
-    %li.header__inner__nav__right__menu
-      = link_to "#", class: "header__inner__nav__right__menu__icon" do
-        = icon('far', 'bell fa-lg', class: "icon")
-        %span.header__inner__nav__right__menu__icon--title
-          お知らせ
-        %ul
-          %li.news
-            = link_to "#", class: "mylist" do
-              = image_tag 'logo_red.svg', alt: '', height: '50px', width: '50px', class: 'top-logo'
-              %div.text
-                %div.text__title
-                  お知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせ
-                %time.text__time
-                  = icon('far', 'clock')
-                  19時間前
-              %div.icon
-                = icon('fas', 'chevron-right')
-          %li.news
-            = link_to "#", class: "mylist" do
-              = image_tag 'logo_red.svg', alt: '', height: '50px', width: '50px', class: 'top-logo'
-              %div.text
-                %div.text__title
-                  お知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせ
-                %time.text__time
-                  = icon('far', 'clock')
-                  19時間前
-              %div.icon
-                = icon('fas', 'chevron-right')
+-#     -# ログイン状態
+-#     %li.header__inner__nav__right__in-menu
+-#       = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
+-#         = icon('far', 'heart fa-lg', class: "icon")
+-#         %span.header__inner__nav__right__in-menu__icon--title
+-#           いいね！一覧
+-#     %li.header__inner__nav__right__in-menu
+-#       = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
+-#         = icon('far', 'bell fa-lg', class: "icon")
+-#         %span.header__inner__nav__right__in-menu__icon--title
+-#           お知らせ
+-#         %ul
+-#           %li.news
+-#             = link_to "#", class: "mylist" do
+-#               = image_tag 'logo_red.svg', alt: '', height: '50px', width: '50px', class: 'top-logo'
+-#               %div.text
+-#                 %div.text__title
+-#                   お知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせ
+-#                 %time.text__time
+-#                   = icon('far', 'clock')
+-#                   19時間前
+-#               %div.icon
+-#                 = icon('fas', 'chevron-right')
+-#           %li.news
+-#             = link_to "#", class: "mylist" do
+-#               = image_tag 'logo_red.svg', alt: '', height: '50px', width: '50px', class: 'top-logo'
+-#               %div.text
+-#                 %div.text__title
+-#                   お知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせ
+-#                 %time.text__time
+-#                   = icon('far', 'clock')
+-#                   19時間前
+-#               %div.icon
+-#                 = icon('fas', 'chevron-right')
             
 
-    %li.header__inner__nav__right__menu
-      = link_to "#", class: "header__inner__nav__right__menu__icon" do
-        = icon('fas', 'check fa-lg', class: "icon")
-        %span.header__inner__nav__right__menu__icon--title
-          やることリスト
-        %ul
-          %li.news
-            = link_to "#", class: "mylist" do
-              = image_tag 'logo_red.svg', alt: '', height: '50px', width: '50px', class: 'top-logo'
-              %div.text
-                %div.text__title
-                  お知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせ
-                %time.text__time
-                  = icon('far', 'clock')
-                  19時間前
-              %div.icon
-                = icon('fas', 'chevron-right')
-    %li.header__inner__nav__right__menu--mypage
-      = link_to "#", class: "header__inner__nav__right__menu__icon" do
-        = icon('far', 'user fa-2x')
-        %span.header__inner__nav__right__menu__icon--title
-          マイページ
-          -# ログイン状態
+-#     %li.header__inner__nav__right__in-menu
+-#       = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
+-#         = icon('fas', 'check fa-lg', class: "icon")
+-#         %span.header__inner__nav__right__in-menu__icon--title
+-#           やることリスト
+-#         %ul
+-#           %li.news
+-#             = link_to "#", class: "mylist" do
+-#               = image_tag 'logo_red.svg', alt: '', height: '50px', width: '50px', class: 'top-logo'
+-#               %div.text
+-#                 %div.text__title
+-#                   お知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせお知らせ
+-#                 %time.text__time
+-#                   = icon('far', 'clock')
+-#                   19時間前
+-#               %div.icon
+-#                 = icon('fas', 'chevron-right')
+-#     %li.header__inner__nav__right__in-menu--mypage
+-#       = link_to "#", class: "header__inner__nav__right__in-menu__icon" do
+-#         = icon('far', 'user fa-2x')
+-#         %span.header__inner__nav__right__in-menu__icon--title
+-#           マイページ
+-#           -# ログイン状態

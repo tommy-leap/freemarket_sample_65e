@@ -29,8 +29,10 @@ class UsersController < ApplicationController
 
   def completed
   end
-  def cardlist_first
-    @cardnew
+
+  private
+  def identification_params
+    params.require(:identification).permit(:first_name, :last_name, :first_kana, :last_kana, :year, :month, :day, :post_num, :prefecture, :municipalities, :address, :bulid_name)
   end
 
 end

@@ -1,0 +1,96 @@
+.product-edit
+  .item-area
+    .item-area__title
+      = @product.title
+    .item-status
+      .thumbnail
+        -# - @product.images.each_with_index do |x, i|
+        - @product.images.each do |i|
+          =image_tag i.image, size: "300x300", alt: "image", class: "mainImage"
+          %ul.thumbnail-thumb
+            %li.thumbnail-thumb__img
+              =image_tag i.image, size: "60x60", alt: "image", class: "thumb"
+
+      .item-teble
+        %table
+          %tr
+            %th 出品者
+            %td.user-name
+              = link_to @product.user.nickname, users_profile_path
+              
+              .evaluation
+                .evaluation__good
+                  = icon('fas', 'laugh', class: "icon")
+                  %span 0
+                .evaluation__usually
+                  = icon('fas', 'meh', class: "icon")
+                  %span 0
+                .evaluation__bad
+                  = icon('fas', 'frown', class: "icon")
+                  %span 0
+          %tr
+            %th カテゴリー
+            %td
+              .category
+                .category__1
+                  = link_to @product.category.parent.parent.name, '#'
+                .category__2
+                  = link_to "＞" + @product.category.parent.name, '#' 
+                .category__3
+                  = link_to "＞" + @product.category.name, '#' 
+
+          %tr
+            %th ブランド
+            %td 
+              = link_to @product.brand.brand, '#' 
+          %tr
+            %th 商品のサイズ
+            %td M
+          %tr
+            %th 商品の状態
+            %td 未使用に近い
+          %tr
+            %th 配送料の負担
+            %td 
+              = @product.postage
+          %tr
+            %th 配送の方法
+            %td
+              = @product.shipping
+          %tr
+            %th 配送元地域
+            %td 
+              = link_to @product.prefecture.name, '#'
+          %tr
+            %th 発送日の目安
+            %td
+              = @product.day
+    .price-box
+      %span.price-box__price
+        ¥
+        = @product.price.to_s(:delimited)
+      %sapn.price-box__tax
+        (税込)
+      %span.price-box__posteger
+        送料込み
+    .attention-message
+      = @product.info
+
+  .control-container
+    = link_to "#", class: "control-container__edit" do
+      商品の編集
+    .control-container__space
+      %span or
+    = link_to "#", class: "control-container__stop" do
+      出品を一旦停止する 
+    = link_to product_path, method: :delete, class: "control-container__delete" do
+      この商品を削除する
+
+  .comment-container
+    %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    %textarea.comment-container__box
+    .comment-container__btn 
+      %button.comment-container__btn--submit{type:"button"}
+        %span コメントする
+
+  
