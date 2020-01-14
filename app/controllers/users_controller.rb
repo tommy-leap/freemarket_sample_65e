@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
 
   def listing
+    @product = Product.all
   end
 
   def progress
