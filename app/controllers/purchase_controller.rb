@@ -1,4 +1,5 @@
 class PurchaseController < ApplicationController
+  layout false, only: [:index]
   require 'payjp'        #Payjpの読み込み
   before_action :set_card, :set_product
 

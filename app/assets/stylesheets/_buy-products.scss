@@ -4,15 +4,12 @@
 
 
 html {
-  // height: 100%;
   width: 100%;
 
   body {
-    // height: 100%;
     width: 100%;
     .buy-result {
       background-color: #f5f5f5;
-      // height: 100%;
       width: 100%;
       &__header {
         height: 128px;
@@ -25,7 +22,6 @@ html {
       }
       
       &__main {
-        height: 760px;
         width:700px;
         margin: 0 auto;
         &__title {
@@ -72,9 +68,7 @@ html {
           padding: 32px 16px 48px;
           margin-top: 1px;
           background-color: white;
-          height: calc(100% - 352px);
           &__form {
-            height: 100%;
             width: 340px;
             margin: 0 auto;
             background-color: white;
@@ -164,6 +158,14 @@ html {
                 background-color: gray;
                 line-height: 50px;
               }
+              .buy__centerbox__buyinfo__buybutton__red {
+                display: block;
+                height: 50px;
+                width: 100%;
+                color: white;
+                background-color: gray;
+                line-height: 50px;
+              }
             }
           }
         }
@@ -217,7 +219,7 @@ html {
 .buy-result__footer3 {
   height: 140px;
   width: 456px;
-  margin: 5px auto;
+  margin: 30px auto;
   padding: 40px 0;
   background-color: #f5f5f5;
   nav {
