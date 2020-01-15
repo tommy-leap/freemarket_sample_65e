@@ -6,10 +6,10 @@
       .thumbnail
         -# - @product.images.each_with_index do |x, i|
         - @product.images.each do |i|
-          =image_tag i.image, size: "300x300", alt: "image", class: "mainImage"
+          =image_tag i.image.url, size: "300x300", alt: "image", class: "mainImage"
           %ul.thumbnail-thumb
             %li.thumbnail-thumb__img
-              =image_tag i.image, size: "60x60", alt: "image", class: "thumb"
+              =image_tag i.image.url, size: "60x60", alt: "image", class: "thumb"
 
       .item-teble
         %table
@@ -84,7 +84,7 @@
       %span or
     = link_to "#", class: "control-container__stop" do
       出品を一旦停止する 
-    = link_to "#", class: "control-container__delete" do
+    = link_to product_path, method: :delete, class: "control-container__delete" do
       この商品を削除する
 
   .comment-container
