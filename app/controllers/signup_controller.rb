@@ -28,7 +28,7 @@ class SignupController < ApplicationController
     @user = User.new
     @user.build_user_detail(session[:user_detail_attributes_after_step2])
     # binding.pry
-    render '/step/step3' unless @user.build_user_detail.valid?
+    # render '/step/step3' unless @user.build_user_detail.valid?
   end
 
 
@@ -42,6 +42,9 @@ class SignupController < ApplicationController
       redirect_to new_card_signup_path(current_user.id)
     else
       render '/signup/step1'
+    end
+
+    def step4
     end
 
   end
