@@ -19,10 +19,10 @@
       .thumbnail
         -# - @product.images.each_with_index do |x, i|
         - @product.images.each do |i|
-          =image_tag i.image, size: "300x300", alt: "image", class: "mainImage"
+          =image_tag i.image.url, size: "300x300", alt: "image", class: "mainImage"
           %ul.thumbnail-thumb
             %li.thumbnail-thumb__img
-              =image_tag i.image, size: "60x60", alt: "image", class: "thumb"
+              =image_tag i.image.url, size: "60x60", alt: "image", class: "thumb"
 
       .item-teble
         %table
