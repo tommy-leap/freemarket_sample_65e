@@ -1,5 +1,8 @@
 class StepController < ApplicationController
-  before_action :get_payjp_info, only: [:create]
+  before_action :get_payjp_info, only: [:new, :create]
+  def new
+  end
+
   def step3
   end
   
