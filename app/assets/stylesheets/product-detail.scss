@@ -182,16 +182,13 @@
           margin-top: 16px;
           text-align: center;
           display: inline-block;
-          &--submit{
-            background-color: #EA352D;
-            width: 620px;
-            height: 60px;
-          }
-          span{
+          background-color: #EA352D;
+          width: 620px;
+          height: 60px;
           color: #FFF;
+          line-height: 60px;
           font-size: 24px;
           font-weight: bold;
-          }
         }
         .btn-container{
           width: 620px;

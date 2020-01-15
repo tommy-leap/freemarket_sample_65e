@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  post "products/:id/purchase/pay", to: "purchase#pay", as: :pay_product_purchase_index
+  get "purchase/index/:id", to: "purchase#index", as: :purchase_index
+  get "purchase/done/:id", to: "purchase#done", as: :purchase_done
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: "users/registrations",
@@ -32,11 +35,17 @@ Rails.application.routes.draw do
     end
   end 
   resources :products do
-  collection do
-    get 'get_category_children', defaults: { format: 'json' }
-    get 'get_category_grandchildren', defaults: { format: 'json' }
+    resources :purchase, only: [:index] do
+      collection do
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
+      end
+    end
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
   end
-end
   get :dynamic_select_category, to: 'products#dynamic_select_category'
   resources :users, only: [:index, :show, :edit, :update, :new]
   resources :signup do

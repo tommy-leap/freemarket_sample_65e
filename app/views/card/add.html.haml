@@ -3,16 +3,19 @@
 %main
   =render 'shared/side_bar'
   .card-content
-    %h2.card-content-head 支払い方法
-    .card-list
-      .card-list-content
-        %h3.card-list-content_text クレジットカード一覧
-    .add__card
-      .payment__list__content
-        = link_to edit_card_path(current_user), class: "red__btn", data: {"turbolinks" => false} do
-          %i  
-          = icon('fas', 'credit-card', class: "card__icon")
-          クレジットカードを追加する
+    .card-content__head 支払い方法
+    .card-content__main
+      .card-content__main__list
+        .card-content__main__list__show
+          %h3.card-content__main__list__show__text クレジットカード一覧
+      .card-content__main__add
+        .card-content__main__add__payment
+          = link_to edit_card_path(current_user), class: "red__btn", data: {"turbolinks" => false} do
+            %i  
+            = icon('fas', 'credit-card', class: "card__icon")
+            クレジットカードを追加する
+      .single-code
+        %span.single-code__info 支払い方法について >
       
       
       

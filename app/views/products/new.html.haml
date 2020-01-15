@@ -109,8 +109,8 @@
                   必須            
                 .select-categories-form
               .actions
-                = f.collection_select :category_id, Category.all, :id, :name, id:"parent_category"
-
+              
+        = f.collection_select :category_id, Category.roots, :id, :name, id:"parent_category"
 
               .brand-text-form__box
                 %label.form-brand
@@ -160,7 +160,7 @@
                   = f.collection_select :prefecture_id, Prefecture.all, :id, :name
                   - if @product.errors.messages[:prefecture_id].any?
                     %span.error= @product.errors.messages[:prefecture_id][0]
-              .product-text-form__box
+              .product-text-form__box--last
                 %label.form-user-kana
                   発送までの日数
                 %span.form-required
