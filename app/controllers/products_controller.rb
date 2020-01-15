@@ -41,7 +41,7 @@ class ProductsController < ApplicationController
       if @product.user_id == current_user.id
     @product.update(product_params)
     end
-    redirect_to edit_product_path(@product)
+    redirect_to product_path(@product)
   end
 
   def detail
@@ -62,8 +62,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit( :title, :info, :status, :postage, :prefecture_id, :shipping, :day, :price, :category_id, :brand_id)
-    # images_attributes: [:image]
+    params.require(:product).permit( :title, :info, :status, :postage, :prefecture_id, :shipping, :day, :price, :category_id, :brand_id, images_attributes: [:image, :_destroy, :id])
   end
 
   def set_product
@@ -76,3 +75,4 @@ def set_categories
   @parent_categories = Category.roots
   @default_child_categories = @parent_categories.first.children
 end
+
