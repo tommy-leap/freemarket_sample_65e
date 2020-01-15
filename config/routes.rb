@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get 'users/progress', to: "users#progress"
   get 'users/completed', to: "users#completed"
 
+  resources :card_signup, only: [:new, :create]
+
   resources :card, only: [:create, :show, :edit] do
     collection do
       post 'delete', to: 'card#delete'
