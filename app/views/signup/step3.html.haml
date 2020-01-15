@@ -1,76 +1,88 @@
 
--# .regist-header
--#   %h1
--#     = link_to "#" do
--#       = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '49px', width: '185px', class:'top-logo'
--#   %nav.signup-bar.progress-bar
--#     %ol.step-bar
--#       %li.active
--#         会員情報  
--#         .progress-status-step1-3
--#       %li.step2-3
--#         住所入力
--#         .progress-status-step2-3
--#       %li.step3-3
--#         お支払い方法
--#         .progress-status-step3-3
--#       %li
--#         完了
-%h2.card-registration-head 支払い方法
-= form_with url: signup_index_path, name: "inputForm", id: 'charge-form', method: :post, html:{class: 'session__main__container__box'} do |f|
-  .session__main__container__formGroup
-    %label{for: "nickname"}
-      カード番号
-      %span.form__require 必須
-    = f.text_field "number", class: "input__default", placeholder: "半角数字のみ", type: "text", id: "card_number", maxlength: "16"
-    .session__main__container__formGroup__sub
-      %i.fab.fa-cc-visa
-      %i.fab.fa-cc-mastercard
-      %i.fab.fa-cc-jcb
-      %i.fab.fa-cc-discover
-      %i.fab.fa-cc-amex
-  .session__main__container__formGroup
-    %label{for: "nickname"}
-      有効期限
-      %span.form__require 必須
-    .session__main__container__formGroup__sub
-      %select.select__wap#exp_month{name: "exp_month", id:"exp_month", type: "text"}
-        %option{value: ""} --
-        %option{value: "01"} 01
-        %option{value: "02"} 02
-        %option{value: "03"} 03
-        %option{value: "04"} 04
-        %option{value: "05"} 05
-        %option{value: "06"} 06
-        %option{value: "07"} 07
-        %option{value: "08"} 08
-        %option{value: "09"} 09
-        %option{value: "10"} 10
-        %option{value: "11"} 11
-        %option{value: "12"} 12
-      %i.fas.fa-chevron-down.select_arrow
-      %p 月
-      %select.select__wap#exp_year{name: "exp_year", id:"exp_year", type: "text"}
-        %option{value: ""} --
-        %option{value: "2019"} 19
-        %option{value: "2020"} 20
-        %option{value: "2021"} 21
-        %option{value: "2022"} 22
-        %option{value: "2023"} 23
-        %option{value: "2024"} 24
-        %option{value: "2025"} 25
-      %i.fas.fa-chevron-down.select_arrow
-      %p 年
-    .session__main__container__formGroup
-      %label{for: "nickname"}
-        セキュリティーコード
-        %span.form__require 必須
-        = f.text_field "cvc", class: "input__default cvc", placeholder: "カード背面4桁もしくは3桁の番号", type: "text"
-      .session__main__container__formGroup__link
-        = link_to root_path do
-          %i.fas.fa-question-circle
-          %p セキュリティーコードとは
-      .session__main__container__formGroup#card_token
+.regist-header
+  %h1
+    = link_to "#" do
+      = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '49px', width: '185px', class:'top-logo'
+  %nav.signup-bar.progress-bar
+    %ol.step-bar
+      %li.active
+        会員情報  
+        .progress-status-step1-3
+      %li.step2-3
+        住所入力
+        .progress-status-step2-3
+      %li.step3-3
+        お支払い方法
+        .progress-status-step3-3
+      %li
+        完了
+.card-registration-body        
+  %h2.card-registration-head 支払い方法
+  = form_with url: signup_index_path, name: "inputForm", id: 'charge-form', method: :post, html:{class: 'session__main__container__box'} do |f|
+    .session__main__container__elements
+      .session__main__container__elements__formGroup
+        %label{for: "nickname"}
+          カード番号
+          %span.form__require 必須
+        = f.text_field "number", class: "input__default", placeholder: "半角数字のみ", type: "text", id: "card_number", maxlength: "16"
+        .session__main__container__elements__formGroup__sub
+          %ul.available
+            %li      
+              = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1714804574", size: "49x20", class: "visa"
+            %li
+              = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?1714804574", size:"34x20", class:"master"
+            %li
+              = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?1714804574", size:"30x20", class:"saison"
+            %li
+              = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?1714804574", size:"32x20", class:"jcb"
+            %li
+              = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?1714804574", size:"21x20", class:"americanexpress"
+            %li
+              = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?1714804574", size:"32x20", class:"diners"
+            %li
+              = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?1714804574", size:"32x20", class:"discover"
+      .session__main__container__elements__expire
+        %label{for: "nickname"}
+          有効期限
+          %span.form__require 必須
+        .session__main__container__elements__expire__sub
+          %select.select__wap#exp_month{name: "exp_month", id:"exp_month", type: "text"}
+            %option{value: ""} --
+            %option{value: "01"} 01
+            %option{value: "02"} 02
+            %option{value: "03"} 03
+            %option{value: "04"} 04
+            %option{value: "05"} 05
+            %option{value: "06"} 06
+            %option{value: "07"} 07
+            %option{value: "08"} 08
+            %option{value: "09"} 09
+            %option{value: "10"} 10
+            %option{value: "11"} 11
+            %option{value: "12"} 12
+          -# %i.fas.fa-chevron-down.select_arrow
+          %p 月
+
+          %select.select__wap#exp_year{name: "exp_year", id:"exp_year", type: "text"}
+            %option{value: ""} --
+            %option{value: "2019"} 19
+            %option{value: "2020"} 20
+            %option{value: "2021"} 21
+            %option{value: "2022"} 22
+            %option{value: "2023"} 23
+            %option{value: "2024"} 24
+            %option{value: "2025"} 25
+          -# %i.fas.fa-chevron-down.select_arrow
+          %p 年
+      .session__main__container__elements__secure
+        %label{for: "nickname"}
+          セキュリティーコード
+          %span.form__require 必須
+          = f.text_field "cvc", class: "input__default", placeholder: "カード背面4桁もしくは3桁の番号", type: "text"
+      .session__main__container__elements__secure__link
+        %span.session__main__container__elements__secure__link__question ?
+        %span.session__main__container__elements__secure__link__info カード裏面の番号とは
+      .session__main__container__elements__formGroup
         = f.submit "次へ進む", class: "card-form__btn", id: "token_submit"
 
 
@@ -78,99 +90,113 @@
 
 
 
-  -# .card-registration
-  -#   = form_for @user, url: step4_signup_index_path, id: 'charge-form', :name => "inputForm", method: :post do |f|
-  -#     = f.fields_for :user_detail do |p|
-  -#       .card-registration-head
-  -#         %h2 支払い方法
-  -#       .card-registration-box
-  -#         .card-number-upper-form
-  -#           = p.label :credit_num, "カード番号"
-  -#           %span.form-required
-  -#             必須
-  -#           = p.text_field :credit_num, id: "card_number", placeholder: "半角数字のみ"
-  -#           %ul.available
-  -#             %li      
-  -#               = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1714804574", size: "49x20", class: "visa"
-  -#             %li
-  -#               = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?1714804574", size:"34x20", class:"master"
-  -#             %li
-  -#               = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?1714804574", size:"30x20", class:"saison"
-  -#             %li
-  -#               = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?1714804574", size:"32x20", class:"jcb"
-  -#             %li
-  -#               = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?1714804574", size:"21x20", class:"americanexpress"
-  -#             %li
-  -#               = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?1714804574", size:"32x20", class:"diners"
-  -#             %li
-  -#               = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?1714804574", size:"32x20", class:"discover"
-  -#           .card-expiration-form
-  -#             = p.label :payjp_id, "有効期限"
-  -#             %span.form-required
-  -#               必須
-  -#             .select-year-month
-  -#               .select-year-month-form
-  -#                 = p.select :payjp_id,[["--", ""],
-  -#                                       ["01", "01"],
-  -#                                       ["02", "02"],
-  -#                                       ["03", "03"],
-  -#                                       ["04", "04"],
-  -#                                       ["05", "05"],
-  -#                                       ["06", "06"],
-  -#                                       ["07", "07"],
-  -#                                       ["08", "08"],
-  -#                                       ["09", "09"],
-  -#                                       ["10", "10"],
-  -#                                       ["11", "11"],
-  -#                                       ["12", "12"],
-  -#                                       ]
-  -#               %span
-  -#                 月
-  -#               .select-year-month-form
-  -#                 = p.select :payjp_id,[["--", ""],
-  -#                                       ["19", "19"],
-  -#                                       ["20", "20"],
-  -#                                       ["21", "21"],
-  -#                                       ["22", "22"],
-  -#                                       ["23", "23"],
-  -#                                       ["24", "24"],
-  -#                                       ["25", "25"],
-  -#                                       ["26", "26"],
-  -#                                       ["27", "27"],
-  -#                                       ["28", "28"],
-  -#                                       ["29", "29"],
-  -#                                       ]
-  -#               %span
-  -#                 年
-  -#             .card-security-number-form3
-  -#               %label.card-security-code
-  -#                 セキュリティーコード
-  -#               %span.form-required
-  -#                 必須
-  -#               %input.card-number-form{placeholder:"カード背面４桁もしくは３桁の番号", id: "cvc"}
-  -#               .signup-security-code
-  -#                 .signup-security-code-text
-  -#                   = link_to "#", class: "signup-security-code-text__btn" do
-  -#                     %span.question
-  -#                       ？
-  -#                     カード裏面番号とは
-  -#               .card-registration-form__btn
-  -#                 = f.submit '追加する', class:"card-registration-form__btn2", id: "token_submit"
--# -# .buy-result__footer3-3
--# %nav
--#   %ul
--#     %li
--#       = link_to "#", class: "menu" do
--#         プライバシーポリシー
--#     %li
--#       = link_to "#", class: "menu" do
--#         メルカリ利用規約
--#     %li
--#       = link_to "#", class: "menu" do
--#         特定商取引に関する表記
--# .buy-result__footer__logo
--#   = link_to "#" do
--#     = image_tag 'logo_gray.svg', alt: ''
--# %p
--#   %span
--#     ©︎ Fmarket,lnc.
+    -# .card-registration
+    -#   = form_for @user, url: step4_signup_index_path, id: 'charge-form', :name => "inputForm", method: :post do |f|
+    -#     = f.fields_for :user_detail do |p|
+    -#       .card-registration-head
+    -#         %h2 支払い方法
+    -#       .card-registration-box
+    -#         .card-number-upper-form
+    -#           = p.label :credit_num, "カード番号"
+    -#           %span.form-required
+    -#             必須
+    -#           = p.text_field :credit_num, id: "card_number", placeholder: "半角数字のみ"
+    -#           %ul.available
+    -#             %li      
+    -#               = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1714804574", size: "49x20", class: "visa"
+    -#             %li
+    -#               = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?1714804574", size:"34x20", class:"master"
+    -#             %li
+    -#               = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?1714804574", size:"30x20", class:"saison"
+    -#             %li
+    -#               = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?1714804574", size:"32x20", class:"jcb"
+    -#             %li
+    -#               = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?1714804574", size:"21x20", class:"americanexpress"
+    -#             %li
+    -#               = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?1714804574", size:"32x20", class:"diners"
+    -#             %li
+    -#               = image_tag"//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?1714804574", size:"32x20", class:"discover"
+    -#           .card-expiration-form
+    -#             = p.label :payjp_id, "有効期限"
+    -#             %span.form-required
+    -#               必須
+    -#             .select-year-month
+    -#               .select-year-month-form
+    -#                 = p.select :payjp_id,[["--", ""],
+    -#                                       ["01", "01"],
+    -#                                       ["02", "02"],
+    -#                                       ["03", "03"],
+    -#                                       ["04", "04"],
+    -#                                       ["05", "05"],
+    -#                                       ["06", "06"],
+    -#                                       ["07", "07"],
+    -#                                       ["08", "08"],
+    -#                                       ["09", "09"],
+    -#                                       ["10", "10"],
+    -#                                       ["11", "11"],
+    -#                                       ["12", "12"],
+    -#                                       ]
+    -#               %span
+    -#                 月
+    -#               .select-year-month-form
+    -#                 = p.select :payjp_id,[["--", ""],
+    -#                                       ["19", "19"],
+    -#                                       ["20", "20"],
+    -#                                       ["21", "21"],
+    -#                                       ["22", "22"],
+    -#                                       ["23", "23"],
+    -#                                       ["24", "24"],
+    -#                                       ["25", "25"],
+    -#                                       ["26", "26"],
+    -#                                       ["27", "27"],
+    -#                                       ["28", "28"],
+    -#                                       ["29", "29"],
+    -#                                       ]
+    -#               %span
+    -#                 年
+    -#             .card-security-number-form3
+    -#               %label.card-security-code
+    -#                 セキュリティーコード
+    -#               %span.form-required
+    -#                 必須
+    -#               %input.card-number-form{placeholder:"カード背面４桁もしくは３桁の番号", id: "cvc"}
+    -#               .signup-security-code
+    -#                 .signup-security-code-text
+    -#                   = link_to "#", class: "signup-security-code-text__btn" do
+    -#                     %span.question
+    -#                       ？
+    -#                     カード裏面番号とは
+    -#               .card-registration-form__btn
+    -#                 = f.submit '追加する', class:"card-registration-form__btn2", id: "token_submit"
+  -# .buy-result__footer3-3
+  -# %nav
+  -#   %ul
+  -#     %li
+  -#       = link_to "#", class: "menu" do
+  -#         プライバシーポリシー
+  -#     %li
+  -#       = link_to "#", class: "menu" do
+  -#         メルカリ利用規約
+  -#     %li
+  -#       = link_to "#", class: "menu" do
+  -#         特定商取引に関する表記
+  -# .buy-result__footer__logo
+  -#   = link_to "#" do
+  -#     = image_tag 'logo_gray.svg', alt: ''
+  -# %p
+  -#   %span
+  -#     ©︎ Fmarket,lnc.
+.regist-footer
+  .regist-footer__regist-rules
+    %ul.footer-list
+      %li.single-list-first
+        %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+      %li.single-list
+        %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+      %li.single-list
+        %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+  =link_to "#" do
+    =image_tag "fmarket_logo_white.svg" ,alt: '' , height: '36px', width: '150px',class:'footer-logo'
+  
+  %p
+    %small © Mercari, Inc.
