@@ -7,12 +7,17 @@ class ProductsController < ApplicationController
     @prefecture = Prefecture.all
     @brand = Brand.all
     @category = Category.all
-    render layout: false
+
+    @product.images.new
+   
   end
   def create
     @product = Product.new(product_params)
     @product.user_id = current_user.id
+
+
     if @product.save!
+
       redirect_to root_path
     else
       render 'new'
@@ -62,7 +67,10 @@ class ProductsController < ApplicationController
 
   private
   def product_params
+
+
     params.require(:product).permit( :title, :info, :status, :postage, :prefecture_id, :shipping, :day, :price, :category_id, :brand_id, images_attributes: [:image, :_destroy, :id])
+
   end
 
   def set_product

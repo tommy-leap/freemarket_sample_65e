@@ -33,7 +33,7 @@
             - product.images.each do |image|
               %li.contents_box__image
                 = link_to products_detail_path(product.id) do
-                  - if image.image.empty?
+                  - if image.image.url.empty?
                     =image_tag "no-image.png", size: "188x188", alt: "image"
                     .contents_box__comment
                       %span 
@@ -43,7 +43,7 @@
                       %span
                         = product.price.to_s(:delimited)
                   - else
-                    =image_tag image.image, size: "188x188", alt: "image"
+                    =image_tag image.image.url, size: "188x188", alt: "image"
                     .contents_box__comment
                       %span 
                         = product.title
@@ -63,7 +63,7 @@
               - product.images.each do |image|
                 %li.contents_box__image
                   = link_to "#" do
-                    - if image.image.empty?
+                    - if image.image.url.empty?
                       =image_tag "no-image.png", size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
@@ -73,7 +73,7 @@
                         %span
                           = product.price
                     - else
-                      =image_tag image.image, size: "188x188", alt: "image"
+                      =image_tag image.image.url, size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
                           = product.title
@@ -93,7 +93,7 @@
               - product.images.each do |image|
                 %li.contents_box__image
                   = link_to "#" do
-                    - if image.image.empty?
+                    - if image.image.url.empty?
                       =image_tag "no-image.png", size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
@@ -103,7 +103,7 @@
                         %span
                           = product.price
                     - else
-                      =image_tag image.image, size: "188x188", alt: "image"
+                      =image_tag image.image.url, size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
                           = product.title
@@ -123,7 +123,7 @@
               - product.images.each do |image|
                 %li.contents_box__image
                   = link_to "#" do
-                    - if image.image.empty?
+                    - if image.image.url.empty?
                       =image_tag "no-image.png", size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
@@ -133,7 +133,7 @@
                         %span
                           = product.price
                     - else
-                      =image_tag image.image, size: "188x188", alt: "image"
+                      =image_tag image.image.url, size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
                           = product.title
@@ -166,7 +166,7 @@
             - product.images.each do |image|
               %li.contents_box__image
                 = link_to "#" do
-                  - if image.image.empty?
+                  - if image.image.url.empty?
                     =image_tag "no-image.png", size: "188x188", alt: "image"
                     .contents_box__comment
                       %span 
@@ -176,7 +176,7 @@
                       %span
                         = product.price
                   - else
-                    =image_tag image.image, size: "188x188", alt: "image"
+                    =image_tag image.image.url, size: "188x188", alt: "image"
                     .contents_box__comment
                       %span 
                         = product.title
@@ -196,7 +196,7 @@
               - product.images.each do |image|
                 %li.contents_box__image
                   = link_to "#" do
-                    - if image.image.empty?
+                    - if image.image.url.empty?
                       =image_tag "no-image.png", size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
@@ -206,7 +206,7 @@
                         %span
                           = product.price
                     - else
-                      =image_tag image.image, size: "188x188", alt: "image"
+                      =image_tag image.image.url, size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
                           = product.title
@@ -226,7 +226,7 @@
               - product.images.each do |image|
                 %li.contents_box__image
                   = link_to "#" do
-                    - if image.image.empty?
+                    - if image.image.url.empty?
                       =image_tag "no-image.png", size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
@@ -236,7 +236,7 @@
                         %span
                           = product.price
                     - else
-                      =image_tag image.image, size: "188x188", alt: "image"
+                      =image_tag image.image.url, size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
                           = product.title
@@ -256,7 +256,7 @@
               - product.images.each do |image|
                 %li.contents_box__image
                   = link_to "#" do
-                    - if image.image.empty?
+                    - if image.image.url.empty?
                       =image_tag "no-image.png", size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
@@ -266,7 +266,7 @@
                         %span
                           = product.price
                     - else
-                      =image_tag image.image, size: "188x188", alt: "image"
+                      =image_tag image.image.url, size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
                           = product.title
