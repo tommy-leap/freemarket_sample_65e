@@ -191,7 +191,7 @@
           position: absolute;
           top: 16px;
         }
-        .product_require {
+        .product_required {
           float: left;
           margin-left: 8px;
           padding: 2px 4px;
@@ -378,7 +378,15 @@
   display: flex;
 
 }
-
+.form-required {
+  margin-left: 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  background-color: #EA3520;
+}
 
 
 
