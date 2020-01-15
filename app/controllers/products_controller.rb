@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   layout false, except: [:detail, :show] 
-  # before_action :set_categories, only: %w[edit new create index ]
+  before_action :set_categories, only: %w[edit new create index ]
   def new
     @product = Product.new
     @prefecture = Prefecture.all
@@ -82,5 +82,7 @@ private
 def set_categories
   @parent_categories = Category.roots
   @default_child_categories = @parent_categories.first.children
+  @default_child_child_childcategories = @default_child_categories.first.children
+
 end
 
