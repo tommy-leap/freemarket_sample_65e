@@ -1,10 +1,9 @@
 class SignupController < ApplicationController
-  require 'payjp'
   def new
     # render layout: false
   end
   before_action :save_step1_to_session, only: :step2
-  before_action :save_step2_to_session, only: :step3
+  before_action :save_step2_to_session, only: :create
   def step1
     @user = User.new
     @user.build_user_detail
@@ -44,36 +43,12 @@ class SignupController < ApplicationController
     @user.build_user_detail(user_params[:user_detail_attributes])
     @user.build_user_detail(session[:user_detail_attributes_after_step2])
     # binding.pry
-    if @user.save
+    if @user.save!
       session[:id] = @user.id
       sign_in User.find(session[:id]) unless user_signed_in?
-      # redirect_to step4_signup_index_path
+      redirect_to new_card_signup_path(current_user.id)
     else
       render '/signup/step1'
-    end
-
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    if params['payjp_token'].blank?
-      render '/signup/step3'
-    else
-      customer = Payjp::Customer.create(
-      
-        description: 'test',
-        email: current_user.email,
-        card: params['payjp_token'],
-        metadata: {user_id: current_user.id}
-      )
-      @card = Card.new(
-        user_id: current_user.id,
-        customer_id: customer.id,
-        card_id: customer.default_card
-      )
-      # binding.pry
-      if @card.save
-        redirect_to step4_signup_index_path
-      else
-        redirect_to action: "create"
-      end
     end
   end
   
