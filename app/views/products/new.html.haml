@@ -68,7 +68,11 @@
                   必須            
                 .select-categories-form
               .actions
-                = f.collection_select :category_id, Category.roots, :id, :name, id:"parent_category"
+                = f.collection_select :category_id, @parent_categories, :id, :name, id:"parent_category"
+              .actions
+                = f.collection_select :category_id, @default_child_categories, :id, :name, id:"parent_category"
+              .actions
+                = f.collection_select :category_id, @default_child_child_childcategories, :id, :name, id:"parent_category"
               .brand-text-form__box
                 %label.form-brand
                   ブランド名
