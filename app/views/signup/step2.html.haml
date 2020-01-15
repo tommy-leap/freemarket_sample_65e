@@ -33,6 +33,7 @@
 
     .user-datail
       = form_for @user, url: signup_index_path, method: :post do |f|
+
         = f.fields_for :user_detail do |p|
           .user-datail-head
             %h2 住所入力

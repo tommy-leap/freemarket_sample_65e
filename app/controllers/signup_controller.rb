@@ -27,29 +27,23 @@ class SignupController < ApplicationController
     session[:user_detail_attributes_after_step2].merge!(session[:user_detail_attributes_after_step1])
     @user = User.new
     @user.build_user_detail(session[:user_detail_attributes_after_step2])
-    # render '/signup/step2' unless @user.build_user_detail.valid?
+    # binding.pry
+    render '/step/step3' unless @user.build_user_detail.valid?
   end
-  
-  def step3
-    @user = User.new
-    @user.build_user_detail
-    # render layout: false
-  end
-  def step4
-    # render layout: false
-  end
+
+
   def create
     @user = User.new(session[:user_params])
     @user.build_user_detail(user_params[:user_detail_attributes])
     @user.build_user_detail(session[:user_detail_attributes_after_step2])
-    # binding.pry
-    if @user.save!
+    if @user.save
       session[:id] = @user.id
       sign_in User.find(session[:id]) unless user_signed_in?
       redirect_to new_card_signup_path(current_user.id)
     else
       render '/signup/step1'
     end
+
   end
   
   private

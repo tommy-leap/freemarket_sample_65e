@@ -29,41 +29,65 @@
             %P
               最大１０枚までアップロードできます
             %label.image-box
-              .photo_form
+            .post__drop__box__container
+              .prev-content
+
+                //JSで挿入したhtmlと同じ形 each文でのプレビュー表示
+                - @product.images.each do |image|
+                  .preview-box
+                    .upper-box
+                      = image_tag image.image.url, width: "112", height: "112", alt: "preview",class:"preimage"
+                    .lower-box
+                      .update-box
+                        %label.edit-btn 編集
+                      .delete-box
+                        .delete-btn
+                          %span 削除
+              .label-content
+                = f.label :"images_attributes_#{@product.images.length}_image", class: "label-box", id: "label-box--#{@product.images.length}" do
+                  %pre.label-box__text-visible クリックしてファイルをアップロード
+              .hidden-content
                 = f.fields_for :images do |i|
-                  .img_box_boxs
-                    .img_box1
-                    .img_box2
-                    .img_box3
-                    .img_box4
-                    .img_box5
-                    .img_box6
-                  .photo_form_box
-                    .photo_display1                    
-                      = i.file_field :image, class: "file_field1", id: "image"
+
+                  //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
+                  = i.file_field :image, class: "hidden-field"
+                  = i.check_box:_destroy, class: "hidden-checkbox"
+
+              -# .photo_form
+              -#   = f.fields_for :images do |i|
+              -#     .img_box_boxs
+              -#       .img_box1
+              -#       .img_box2
+              -#       .img_box3
+              -#       .img_box4
+              -#       .img_box5
+              -#       .img_box6
+              -#     .photo_form_box
+              -#       .photo_display1                    
+              -#         = i.file_field :image, class: "file_field1", id: "image"
                       
-                      .remove_btn1
-                        削除
-                    .photo_display2                    
-                      = i.file_field :image, class: "file_field2", id: "image2"
+              -#         .remove_btn1
+              -#           削除
+              -#       .photo_display2                    
+              -#         = i.file_field :image, class: "file_field2", id: "image2"
                       
-                      .remove_btn2
-                        削除
-                    .photo_display3                   
-                      = i.file_field :image, class: "file_field3", id: "image3"
+              -#         .remove_btn2
+              -#           削除
+              -#       .photo_display3                   
+              -#         = i.file_field :image, class: "file_field3", id: "image3"
                       
-                      .remove_btn3
-                        削除
-                    .photo_display4                    
-                      = i.file_field :image, class: "file_field4", id: "image4"
+              -#         .remove_btn3
+              -#           削除
+              -#       .photo_display4                    
+              -#         = i.file_field :image, class: "file_field4", id: "image4"
                       
-                      .remove_btn4
-                        削除
-                    .photo_display5
-                      = i.file_field :image, class: "file_field5", id: "image5"
+              -#         .remove_btn4
+              -#           削除
+              -#       .photo_display5
+              -#         = i.file_field :image, class: "file_field5", id: "image5"
                       
-                      .remove_btn5
-                        削除
+              -#         .remove_btn5
+              -#           削除
                 
           .product-text-form
             .product-text-form__box
@@ -96,7 +120,7 @@
               .actions
                 #parent_category
                 = f.select :category_id, [["---", 1], ["新品、未使用", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れあり", 4], ["傷や汚れあり", 5], ["全体的に状態悪い", 6]]
-
+                
                 -#   - @parent_categories.each do |c|
                 -#     %option{:value => "#{c.id}"}= c.name
                 -# %select#product_category_ids{:name => "product[category_ids]"}

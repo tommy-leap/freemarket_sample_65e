@@ -31,11 +31,20 @@ Rails.application.routes.draw do
     collection do
       post 'delete', to: 'card#delete'
       post 'show', to: 'card#show'
+      post 'step3', to: 'card#step3'
+      post 'step4', to: 'card#step4'
     end
     member do
       get 'add'
     end
   end 
+
+  resources :step, only: [:create] do
+    member do
+      get 'step3'
+    end
+  end
+
   resources :products do
     resources :purchase, only: [:index] do
       collection do
