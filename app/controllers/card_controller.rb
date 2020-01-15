@@ -1,10 +1,11 @@
 class CardController < ApplicationController
 
   # before_action :get_user_params, only: [:edit, :add, :show]
-  before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
+  before_action :get_payjp_info, only: [:new_create, :create, :delete, :show, :step3]
 
   def edit
   end
+
 
   def create
     if params['payjp-token'].blank?
@@ -48,6 +49,28 @@ class CardController < ApplicationController
   def add
     # card = current_user.cards
     # redirect_to action: "show" if card.exists?
+  end
+
+  # def step3
+  #   binding.pry
+  #   if params['payjp-token'].blank?
+  #     redirect_to action: "edit", id: current_user.id
+  #   else
+  #     customer = Payjp::Customer.create(
+  #     email: current_user.email,
+  #     card: params['payjp-token'],
+  #     metadata: {user_id: current_user.id}
+  #     )
+  #     @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+  #     if @card.save
+  #       redirect_to action: "step4"
+  #     else
+  #       redirect_to action: "step3", id: current_user.id
+  #     end
+  #   end
+  # end
+
+  def step4
   end
 
   private
