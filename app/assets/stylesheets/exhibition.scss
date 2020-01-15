@@ -61,7 +61,7 @@
   border: dotted 1px;
   text-align: center;
   &__file {
-    display: none;
+    // display: none;
   }
 }
 .product-text-form {
@@ -348,7 +348,7 @@
   display: inline-block;
 }
 .field_with_errors {
-  diplay: inline;
+  display: inline;
 }
 .form-arbitrary {
   margin-left: 8px;
@@ -359,6 +359,35 @@
   background-color: #ccc;
   vertical-align: top;
 }
+
+//出品画像
+// .image-upload-list {
+//   img{
+//     width: 100px;
+//     height: 100px;
+//   }
+// }
+
+
+.photo_form_box {
+  display: flex;
+  
+}
+.img_box_boxs {
+  width: 100px;
+    display: flex;
+}
+
+.photo_img {
+  width: 100px;
+  height: 80px;
+  display: flex;
+
+}
+
+
+
+
 *{
   margin:0;
   padding:0;
