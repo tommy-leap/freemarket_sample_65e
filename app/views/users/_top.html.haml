@@ -30,20 +30,11 @@
       .contents_continer
         %ul.contents_box
           - @product.each do |product|
-            - product.images.each do |image|
-              %li.contents_box__image
-                = link_to products_detail_path(product.id) do
-                  - if image.image.url.empty?
-                    =image_tag "no-image.png", size: "188x188", alt: "image"
-                    .contents_box__comment
-                      %span 
-                        = product.title
-                    .contents_box__price
-                      %span  ¥
-                      %span
-                        = product.price.to_s(:delimited)
-                  - else
-                    =image_tag image.image.url, size: "188x188", alt: "image"
+            - product.images.each_with_index do |i, x|
+              - if x == 0
+                %li.contents_box__image
+                  = link_to products_detail_path(product.id) do
+                    =image_tag i.image.url, size: "188x188", alt: "image"
                     .contents_box__comment
                       %span 
                         = product.title
@@ -59,28 +50,19 @@
             = link_to "もっと見る ＞", '#'
         .contents_continer
           %ul.contents_box
-            - @product.each do |product| 
-              - product.images.each do |image|
-                %li.contents_box__image
-                  = link_to "#" do
-                    - if image.image.url.empty?
-                      =image_tag "no-image.png", size: "188x188", alt: "image"
+            - @product.each do |product|
+              - product.images.each_with_index do |i, x|
+                - if x == 0
+                  %li.contents_box__image
+                    = link_to products_detail_path(product.id) do
+                      =image_tag i.image.url, size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
                           = product.title
                       .contents_box__price
                         %span  ¥
                         %span
-                          = product.price
-                    - else
-                      =image_tag image.image.url, size: "188x188", alt: "image"
-                      .contents_box__comment
-                        %span 
-                          = product.title
-                      .contents_box__price
-                        %span  ¥
-                        %span
-                          = product.price
+                          = product.price.to_s(:delimited)
     .contents_span
       .contents
         .contents_title
@@ -89,28 +71,19 @@
             = link_to "もっと見る ＞", '#'
         .contents_continer
           %ul.contents_box
-            - @product.each do |product| 
-              - product.images.each do |image|
-                %li.contents_box__image
-                  = link_to "#" do
-                    - if image.image.url.empty?
-                      =image_tag "no-image.png", size: "188x188", alt: "image"
+            - @product.each do |product|
+              - product.images.each_with_index do |i, x|
+                - if x == 0
+                  %li.contents_box__image
+                    = link_to products_detail_path(product.id) do
+                      =image_tag i.image.url, size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
                           = product.title
                       .contents_box__price
                         %span  ¥
                         %span
-                          = product.price
-                    - else
-                      =image_tag image.image.url, size: "188x188", alt: "image"
-                      .contents_box__comment
-                        %span 
-                          = product.title
-                      .contents_box__price
-                        %span  ¥
-                        %span
-                          = product.price
+                          = product.price.to_s(:delimited)
     .contents_span
       .contents
         .contents_title
@@ -119,28 +92,19 @@
             = link_to "もっと見る ＞", '#'
         .contents_continer
           %ul.contents_box
-            - @product.each do |product| 
-              - product.images.each do |image|
-                %li.contents_box__image
-                  = link_to "#" do
-                    - if image.image.url.empty?
-                      =image_tag "no-image.png", size: "188x188", alt: "image"
+            - @product.each do |product|
+              - product.images.each_with_index do |i, x|
+                - if x == 0
+                  %li.contents_box__image
+                    = link_to products_detail_path(product.id) do
+                      =image_tag i.image.url, size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
                           = product.title
                       .contents_box__price
                         %span  ¥
                         %span
-                          = product.price
-                    - else
-                      =image_tag image.image.url, size: "188x188", alt: "image"
-                      .contents_box__comment
-                        %span 
-                          = product.title
-                      .contents_box__price
-                        %span  ¥
-                        %span
-                          = product.price
+                          = product.price.to_s(:delimited)
 .section_header
   .section_title
     %h2 人気のブランド
@@ -162,28 +126,19 @@
           = link_to "もっと見る ＞", '#'
       .contents_continer
         %ul.contents_box
-          - @product.each do |product| 
-            - product.images.each do |image|
-              %li.contents_box__image
-                = link_to "#" do
-                  - if image.image.url.empty?
-                    =image_tag "no-image.png", size: "188x188", alt: "image"
+          - @product.each do |product|
+            - product.images.each_with_index do |i, x|
+              - if x == 0
+                %li.contents_box__image
+                  = link_to products_detail_path(product.id) do
+                    =image_tag i.image.url, size: "188x188", alt: "image"
                     .contents_box__comment
                       %span 
                         = product.title
                     .contents_box__price
                       %span  ¥
                       %span
-                        = product.price
-                  - else
-                    =image_tag image.image.url, size: "188x188", alt: "image"
-                    .contents_box__comment
-                      %span 
-                        = product.title
-                    .contents_box__price
-                      %span  ¥
-                      %span
-                        = product.price
+                        = product.price.to_s(:delimited)
     .contents_span
       .contents
         .contents_title
@@ -192,28 +147,19 @@
             = link_to "もっと見る ＞", '#'
         .contents_continer
           %ul.contents_box
-            - @product.each do |product| 
-              - product.images.each do |image|
-                %li.contents_box__image
-                  = link_to "#" do
-                    - if image.image.url.empty?
-                      =image_tag "no-image.png", size: "188x188", alt: "image"
+            - @product.each do |product|
+              - product.images.each_with_index do |i, x|
+                - if x == 0
+                  %li.contents_box__image
+                    = link_to products_detail_path(product.id) do
+                      =image_tag i.image.url, size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
                           = product.title
                       .contents_box__price
                         %span  ¥
                         %span
-                          = product.price
-                    - else
-                      =image_tag image.image.url, size: "188x188", alt: "image"
-                      .contents_box__comment
-                        %span 
-                          = product.title
-                      .contents_box__price
-                        %span  ¥
-                        %span
-                          = product.price
+                          = product.price.to_s(:delimited)
     .contents_span
       .contents
         .contents_title
@@ -222,28 +168,19 @@
             = link_to "もっと見る ＞", '#'
         .contents_continer
           %ul.contents_box
-            - @product.each do |product| 
-              - product.images.each do |image|
-                %li.contents_box__image
-                  = link_to "#" do
-                    - if image.image.url.empty?
-                      =image_tag "no-image.png", size: "188x188", alt: "image"
+            - @product.each do |product|
+              - product.images.each_with_index do |i, x|
+                - if x == 0
+                  %li.contents_box__image
+                    = link_to products_detail_path(product.id) do
+                      =image_tag i.image.url, size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
                           = product.title
                       .contents_box__price
                         %span  ¥
                         %span
-                          = product.price
-                    - else
-                      =image_tag image.image.url, size: "188x188", alt: "image"
-                      .contents_box__comment
-                        %span 
-                          = product.title
-                      .contents_box__price
-                        %span  ¥
-                        %span
-                          = product.price
+                          = product.price.to_s(:delimited)
     .contents_span
       .contents
         .contents_title
@@ -252,26 +189,16 @@
             = link_to "もっと見る ＞", '#'
         .contents_continer
           %ul.contents_box
-            - @product.each do |product| 
-              - product.images.each do |image|
-                %li.contents_box__image
-                  = link_to "#" do
-                    - if image.image.url.empty?
-                      =image_tag "no-image.png", size: "188x188", alt: "image"
+            - @product.each do |product|
+              - product.images.each_with_index do |i, x|
+                - if x == 0
+                  %li.contents_box__image
+                    = link_to products_detail_path(product.id) do
+                      =image_tag i.image.url, size: "188x188", alt: "image"
                       .contents_box__comment
                         %span 
                           = product.title
                       .contents_box__price
                         %span  ¥
                         %span
-                          = product.price
-                    - else
-                      =image_tag image.image.url, size: "188x188", alt: "image"
-                      .contents_box__comment
-                        %span 
-                          = product.title
-                      .contents_box__price
-                        %span  ¥
-                        %span
-                          = product.price
-                          
+                          = product.price.to_s(:delimited)

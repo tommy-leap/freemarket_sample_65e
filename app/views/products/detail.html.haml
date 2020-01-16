@@ -17,13 +17,13 @@
         = @product.title
     .item-status
       .thumbnail
-        -# - @product.images.each_with_index do |x, i|
-        - @product.images.each do |i|
-          =image_tag i.image.url, size: "300x300", alt: "image", class: "mainImage"
-          %ul.thumbnail-thumb
-            %li.thumbnail-thumb__img
-              =image_tag i.image.url, size: "60x60", alt: "image", class: "thumb"
-
+        - @product.images.each_with_index do |i, x|
+          - if x == 0
+            =image_tag i.image.url, size: "300x300", alt: "image", class: "mainImage"
+            %ul.thumbnail-thumb
+              - @product.images.each do |i|
+                %li.thumbnail-thumb__img
+                  =image_tag i.image.url, size: "60x60", alt: "image", class: "thumb"
 
       .item-teble
         %table
