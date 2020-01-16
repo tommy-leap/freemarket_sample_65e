@@ -1,10 +1,22 @@
 -# %h1 Purchase#done
 -# %p Find me in app/views/purchase/done.html.haml
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %script{src: "https://js.pay.jp/", type: "text/javascript"}
+    %title FreemarketSample65e
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
+    %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
+    %script{src: "https://js.pay.jp/", type: "text/javascript"}
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
 .buy
   .buy__header
     = link_to root_path do
-      = image_tag "/fmarket_logo_red.svg", size: "185x49", class: "single_header__img"
+      = image_tag 'fmarket_logo_red.svg', size: "185x49", class: "single_header__img"
   .buy__alert
     .buy__alert__top
       %i.far.fa-clock.alert__icon
@@ -18,12 +30,14 @@
     .buy__centerbox__item
       .buy__centerbox__item__bx
         .buy__centerbox__item__bx__image
-          = image_tag "/fmarket_logo_red.svg"
+          - @product.images.each do |i|
+            =image_tag i.image.url, size: "300x300", alt: "image", class: "mainImage"
+          -# = image_tag'gucci-logo.jpg'
         .buy__centerbox__item__bx__right
           .buy__centerbox__item__bx__right__name
             = @product.title
           .buy__centerbox__item__bx__right__detail
-            - i_price = @product.price.to_s
+            - i_price = @product.price.to_s(:delimited)
             = "¥" + i_price + " (税込) 送料込み"
     .buy__centerbox__buyinfo
       .buy__centerbox__buyinfo__price
@@ -33,14 +47,16 @@
           .buy__centerbox__buyinfo__vprice__upper__price
             = "¥" + i_price
       .buy__centerbox__buyinfo__buybutton
-        = link_to root_path do
-          %button.btn{type:"submit",class:"buy__centerbox__buyinfo__buybutton__red"} 戻る
+        = link_to "#", class: "buy__centerbox__buyinfo__buybutton-red" do
+          戻る
   .buy__footer
     .buy__footer__box
       %ul#ul
         =link_to "プライバシーポリシー","#",class:"buy__footer__box__atag"
-        = link_to "メルカリ利用規約","#",class:"buy__footer__box__atag"
-        = link_to "特定商取引に関する表記","#",class:"buy__footer__box__atag"
+        = link_to "メルカリ利用規約","#",class:"buy__footer__box__atag2"
+        = link_to "特定商取引に関する表記","#",class:"buy__footer__box__atag3"
         = link_to '', "/", id: "buy__footer__box__atag"
-        = image_tag "/logo_gray.svg", size: "100x85", class: "single_header__img"
+      .single_header__img
+        = link_to root_path do
+          = image_tag 'logo_gray.svg', size: "100x85", class: "single_header__img"
       %p#p ©Meruari,Inc
