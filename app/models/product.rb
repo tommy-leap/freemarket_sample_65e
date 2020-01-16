@@ -7,7 +7,8 @@ class Product < ApplicationRecord
       exclusion: { in: %w(---), message: "選択してください" }
   validates :info, presence: true, length: { maximum: 1000, message: '1000文字以内で入力してください'}
   validates :prefecture_id, presence: true, numericality: { only_integer: true, greater_than: 0, message: '選択してください'}
-
+  validates_associated :images
+  validates :images, presence: true
 
   belongs_to :brand
   has_many :images
