@@ -15,7 +15,9 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      redirect_to new_product_path
+      @brand = Brand.all
+      5.times { @product.images.new }
+      render 'new'
     end
   end
 

@@ -90,7 +90,7 @@
                   ブランド名
                 %span.form-arbitrary
                   任意
-                = f.collection_select :brand_id, Brand.all, :id, :brand
+                = f.collection_select :brand_id, @brand, :id, :brand
 
               .product-details-form__info__low
                 %label.form-user-kana
