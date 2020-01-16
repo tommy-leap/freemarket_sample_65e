@@ -35,7 +35,7 @@
                   %pre.label-box__text-visible クリックしてファイルをアップロード
               .hidden-content
                 = f.fields_for :images do |i|
-                  = i.file_field :image, required: true, class: "hidden-field"
+                  = i.file_field :image, class: "hidden-field"
 
               -# = f.fields_for :images do |i|
               -#   = i.file_field :image, class:"exhibition-form-image-box__file"
