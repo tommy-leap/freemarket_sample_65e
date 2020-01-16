@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
     @prefecture = Prefecture.all
     @brand = Brand.all
     @category = Category.all
-    5.times {@product.images.new} 
+    5.times { @product.images.new } 
   end
   def create
     @product = Product.new(product_params)
