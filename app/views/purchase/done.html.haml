@@ -30,9 +30,9 @@
     .buy__centerbox__item
       .buy__centerbox__item__bx
         .buy__centerbox__item__bx__image
-          - @product.images.each do |i|
-            =image_tag i.image.url, size: "300x300", alt: "image", class: "mainImage"
-          -# = image_tag'gucci-logo.jpg'
+          - @product.images.each_with_index do |i, x|
+            - if x == 0
+              =image_tag i.image.url, size: "300x300", alt: "image", class: "mainImage"
         .buy__centerbox__item__bx__right
           .buy__centerbox__item__bx__right__name
             = @product.title
