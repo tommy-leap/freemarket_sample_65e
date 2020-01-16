@@ -1,13 +1,14 @@
 class SignupController < ApplicationController
+  # render layout: false
   def new
-    # render layout: false
+    render layout: false
   end
   before_action :save_step1_to_session, only: :step2
   before_action :save_step2_to_session, only: :create
   def step1
     @user = User.new
     @user.build_user_detail
-    # render layout: false
+    render layout: false
   end
   def save_step1_to_session
     session[:user_params] = user_params
@@ -20,7 +21,7 @@ class SignupController < ApplicationController
   def step2
     @user = User.new
     @user.build_user_detail
-    # render layout: false
+    render layout: false
   end
   def save_step2_to_session
     session[:user_detail_attributes_after_step2] = user_params[:user_detail_attributes]
@@ -49,11 +50,12 @@ class SignupController < ApplicationController
     else
       render '/signup/step1'
     end
-
-    def step4
-    end
-
   end
+
+  def step4
+    render layout: false
+  end
+
   
   private
   def user_params

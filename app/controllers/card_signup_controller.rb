@@ -1,6 +1,7 @@
 class CardSignupController < ApplicationController
   before_action :get_payjp_info, only: [:new, :create]
   def new
+    render layout: false
   end
 
 
