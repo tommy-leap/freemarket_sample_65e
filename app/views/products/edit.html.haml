@@ -32,7 +32,6 @@
             .post__drop__box__container
               .prev-content
 
-                //JSで挿入したhtmlと同じ形 each文でのプレビュー表示
                 - @product.images.each do |image|
                   .preview-box
                     .upper-box
@@ -48,47 +47,9 @@
                   %pre.label-box__text-visible クリックしてファイルをアップロード
               .hidden-content
                 = f.fields_for :images do |i|
-
                   //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
                   = i.file_field :image, class: "hidden-field"
-                  = i.check_box:_destroy, class: "hidden-checkbox"
-
-              -# .photo_form
-              -#   = f.fields_for :images do |i|
-              -#     .img_box_boxs
-              -#       .img_box1
-              -#       .img_box2
-              -#       .img_box3
-              -#       .img_box4
-              -#       .img_box5
-              -#       .img_box6
-              -#     .photo_form_box
-              -#       .photo_display1                    
-              -#         = i.file_field :image, class: "file_field1", id: "image"
-                      
-              -#         .remove_btn1
-              -#           削除
-              -#       .photo_display2                    
-              -#         = i.file_field :image, class: "file_field2", id: "image2"
-                      
-              -#         .remove_btn2
-              -#           削除
-              -#       .photo_display3                   
-              -#         = i.file_field :image, class: "file_field3", id: "image3"
-                      
-              -#         .remove_btn3
-              -#           削除
-              -#       .photo_display4                    
-              -#         = i.file_field :image, class: "file_field4", id: "image4"
-                      
-              -#         .remove_btn4
-              -#           削除
-              -#       .photo_display5
-              -#         = i.file_field :image, class: "file_field5", id: "image5"
-                      
-              -#         .remove_btn5
-              -#           削除
-                
+                  = i.check_box :_destroy, class: "hidden-checkbox"              
           .product-text-form
             .product-text-form__box
               %label.form-user-kana

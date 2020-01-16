@@ -36,11 +36,19 @@
               .hidden-content
                 = f.fields_for :images do |i|
                   = i.file_field :image, required: true, class: "hidden-field"
-                  %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
-                  %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
-                  %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
-                  %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
 
+              -# = f.fields_for :images do |i|
+              -#   = i.file_field :image, class:"exhibition-form-image-box__file"
+              -#   - if @product.errors.messages[:images].any?
+              -#     %span.error= @product.errors.messages[:images][0]
+                %p.exhibition-form-image-box__comment
+                %p
+                ドラッグアンドドロップ
+                %p
+                  またはクリックしてファイルをアップロード    
+                  %ul.image-upload-list 
+                    %li
+                    
           .product-text-form
             .product-text-form__box
               %label.form-user-kana
