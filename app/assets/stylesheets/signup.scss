@@ -1,11 +1,11 @@
-body.signup {
+.signup {
   margin: 0;
   padding: 0;
   font-size: inherit;
   line-height: inherit;
   border-style: solid;
   border-width: 0;
-  // height: 120%;
+  height: 800px;
   position: relative;
   background: #f5f5f5;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
@@ -20,11 +20,13 @@ body.signup {
 
 
 
-.regist-header{
-  // text-align: center;
+.regist-header-s{
+  text-align: center;
   height: 128px;
-  .signup {
-    margin: 40px auto 0 270px;
+  .signup-h1 {
+    .top-logo-s {
+      margin-top: 40px;
+    }
   }
 
   &__top-logo {
