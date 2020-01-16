@@ -3,19 +3,22 @@ class SignupController < ApplicationController
   def new
     render layout: false
   end
+
   before_action :save_step1_to_session, only: :step2
   before_action :save_step2_to_session, only: :create
+
   def step1
     @user = User.new
     @user.build_user_detail
     render layout: false
   end
+
   def save_step1_to_session
     session[:user_params] = user_params
     session[:user_detail_attributes_after_step1] = user_params[:user_detail_attributes]
     @user = User.new(session[:user_params])
     @user.build_user_detail(session[:user_detail_attributes_after_step1])
-    render '/signup/step1e' unless @user.valid?
+    render step1_signup_index_path, layout: false unless @user.valid?
   end
   
   def step2
