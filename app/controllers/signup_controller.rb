@@ -37,6 +37,12 @@ class SignupController < ApplicationController
     @user.build_user_detail(user_params[:user_detail_attributes])
     @user.build_user_detail(session[:user_detail_attributes_after_step2])
     if @user.save
+      # sessionの値を使ってSnsCredentialのレコードを取得する
+      sns = SnsCredential.find(session[:sns_id])
+      # @userのidをsnsのuser_idにいれる
+      sns.user_id = @user.id
+      # snsをDBに保存(更新)する
+      sns.save
       session[:id] = @user.id
       sign_in User.find(session[:id]) unless user_signed_in?
       redirect_to new_card_signup_path(current_user.id)

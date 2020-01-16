@@ -32,7 +32,7 @@ class User < ApplicationRecord
     else 
       user = User.where(email: auth.info.email).first
       if user.present? 
-        sns = SnsCredential.new(
+        sns = SnsCredential.create(
           uid: uid,
           provider: provider,
           user_id: user.id
