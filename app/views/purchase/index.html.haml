@@ -27,12 +27,13 @@
               .buy-result__main__item__inner__box
                 %h3
                 .buy-result__main__item__inner__box__image
-                - @product.images.each do |i|
-                  = image_tag i.image.url, height: '95px', width: '80px'
+                  - @product.images.each_with_index do |i, x|
+                    - if x == 0
+                      = image_tag i.image.url, height: '95px', width: '80px'
                 .buy-result__main__item__inner__box__detail
                   = @product.title
                 .buy-result__main__item__inner__box__price
-                  - i_price = @product.price.to_s
+                  - i_price = @product.price.to_s(:delimited)
                   = "¥" + i_price
           .buy-result__main__data
             %form
