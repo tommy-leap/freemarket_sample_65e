@@ -12,7 +12,7 @@
 %body
   .regist-header
     %h1
-      = link_to "#" do
+      = link_to root_path, data: {"turbolinks" => false} do
         = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '49px', width: '185px', class:'top-logo'
 
     %nav.signup-bar.progress-bar
@@ -220,7 +220,7 @@
             = link_to "#", class: "menu" do
               特定商取引に関する表記
       .buy-result__footer__logo
-        = link_to "#" do
+        = link_to root_path, data: {"turbolinks" => false} do
           = image_tag 'logo_gray.svg', alt: ''
       %p
         %span

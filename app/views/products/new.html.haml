@@ -13,7 +13,7 @@
   %body.body-products-new
     %header.header-products-new
       %h1
-        %a(href="https://prog-8.com/languages/rails5")
+        = link_to root_path, data: {"turbolinks" => false} do
           = image_tag "fmarket_logo_red.svg", class: "logo-red", height: "49px", width: "185px"
     = form_for(@product) do |f|
       .exhibition
@@ -236,6 +236,6 @@
             %a(href="#") メルカリ利用規約
           %li 
             %a(href="#") 取引商取引に関する表記
-      %a(href="#" class="goto-top")
+      =link_to root_path, data: {"turbolinks" => false} do
         = image_tag "logo_gray.svg", class: "footer-logo", height: "65px", width: "80px"
 

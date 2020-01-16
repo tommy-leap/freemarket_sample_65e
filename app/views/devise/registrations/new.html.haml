@@ -2,7 +2,7 @@
 .regist-body  
   .regist-container
     .regist-header
-      = link_to "#" do
+      = link_to root_path, data: {"turbolinks" => false} do
         = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '36px', width: '150px', class:'top-logo'
 
       
@@ -300,7 +300,7 @@
             %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
           %li.single-list
             %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
-      =link_to "#" do
+      = link_to root_path, data: {"turbolinks" => false} do
         =image_tag "fmarket_logo_white.svg" ,alt: '' , height: '36px', width: '150px',class:'footer-logo'
       
       %p

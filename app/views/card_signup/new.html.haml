@@ -12,6 +12,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
 
+
 %main.main__content-s
   .regist-header-s
     .regist-header-s-logo
@@ -104,21 +105,21 @@
           #card_token
           = submit_tag "登録する", id: "token_submit", class: "card-form__btn"
 
-    .buy-result__footer-s
-      %nav
-        %ul
-          %li
-            = link_to "#", class: "menu" do
-              プライバシーポリシー
-          %li
-            = link_to "#", class: "menu" do
-              メルカリ利用規約
-          %li
-            = link_to "#", class: "menu" do
-              特定商取引に関する表記
-        .buy-result__footer-s__logo
-          = link_to root_path do
-            = image_tag 'logo_gray.svg', alt: ''
-        %p
-          %span
-            ©︎ Fmarket,lnc.
+  .buy-result__footer-s
+    %nav
+      %ul
+        %li
+          = link_to "#", class: "menu" do
+            プライバシーポリシー
+        %li
+          = link_to "#", class: "menu" do
+            メルカリ利用規約
+        %li
+          = link_to "#", class: "menu" do
+            特定商取引に関する表記
+      .buy-result__footer-s__logo
+        = link_to root_path do
+          = image_tag 'logo_gray.svg', alt: ''
+      %p
+        %span
+          ©︎ Fmarket,lnc.

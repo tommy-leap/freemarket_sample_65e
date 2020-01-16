@@ -15,9 +15,8 @@
 %body.signup
   .regist-header
     %h1.signup
-      = link_to root_path do
+      = link_to root_path, data: {"turbolinks" => false} do
         = image_tag "fmarket_logo_red.svg" ,alt: '' , height: '49px', width: '185px', class:'top-logo'
-
   .contents-sns
     .contents-sns__main
       .contents-sns__main__title
