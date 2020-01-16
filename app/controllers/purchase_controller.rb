@@ -29,6 +29,7 @@ class PurchaseController < ApplicationController
   def done
     @product_parchaser = Product.find(params[:id])
     @product_parchaser.update(parchaser_id: current_user.id)
+    render layout: false
   end
 
   private

@@ -1,0 +1,134 @@
+.buy-done{
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  background: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+}
+.buy__header{
+  height: 130px;
+  width: 100%;
+  background-color: #F5F5F5;
+  text-align: center;
+  .single_header__img{
+    margin-top: 40px;
+
+  }
+}
+.buy__alert{
+  height: 130px;
+  width: 700px;
+  margin: 0 auto;
+  background-color: rgb(248, 239, 198);
+    &__top{
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      padding-top: 40px;
+      i{
+        display: block;
+        font-size: 25px;
+        color: red;
+        right: auto;
+        letter-spacing:0.5em;
+        display: inline-flex;
+        vertical-align: middle;
+      }
+      &__text{
+          color: red;
+          font-weight: bold;
+          font-size: 20px;
+          top: 100px;
+        }
+      }
+    &__bottom{
+      top: 10px;
+      color : #333;
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      
+      } 
+}
+  .buy__centerbox{
+    background-color: white;
+    width: 700px;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    &__head{
+      margin: 40px 0 60px;
+      text-align: center;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 25px;
+    }
+    &__item__bx__image{
+      margin-top: 20px;
+      margin: 20px auto;
+      display: inline;
+    }
+    &__item__bx__right__name{
+      font-size: 25px;
+      margin-top: 15px;
+    }
+    &__item__bx__right{
+      margin-top: 10px;
+    }
+    &__item__bx__right__detail{
+      font-size: 25px;
+      margin-top: 10px;
+    }
+  }
+  .buy__centerbox__buyinfo{
+    font-size: 15px;
+    &__buyinfo__price{
+      font-size: 15px;
+    }
+
+  .buy__centerbox__buyinfo__price__upper__detail{
+    margin-top: 50px; 
+    font-size: 25px;
+  }
+
+  &__vprice__upper__price{
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+  .buy__centerbox__buyinfo__buybutton-red{
+    background-color: red;
+    display: block;
+    color: #ffffff;
+    width: 300px;
+    height: 40px;
+    margin: 0 auto;
+    line-height: 40px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+  }
+}
+
+  .buy__footer{
+    height: 230px;
+    text-align: center;
+    .buy__footer__box__atag2{
+      margin-left: 16px;
+    }
+    .buy__footer__box__atag3{
+      margin-left: 16px;
+    }
+    .single_header__img{
+        margin-top: 25px;
+      }
+    ul{
+      margin-top: 15px;
+      }
+    p{
+      margin-top: 15px;
+      text-align: center;
+    }
+  }
+
+
