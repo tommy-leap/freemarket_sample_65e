@@ -1,7 +1,6 @@
 .identification {
-  height: 100vw;
   background: #f5f5f5;
-  padding: 0 210px 180px;
+  // padding: 0 210px 180px;
   &__user {
     background-color: #f5f5f5;
     float: right;
@@ -19,7 +18,7 @@
     &__text {
       padding: 64px;
       width: 572px;
-      height: 1395px;
+      height: auto;
       background-color: white;
       font-size: 14px;
       &__box {
@@ -78,7 +77,8 @@
         font-size: 16px;
       }
       .birthday {
-        width: 70px;
+        width: auto;
+        display: flex;
       }
       &__info {
         margin: 8px 0 0;
@@ -193,7 +193,7 @@
 }
 
 
-* {margin: 0; padding: 0;}
+// * {margin: 0; padding: 0;}
 
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
