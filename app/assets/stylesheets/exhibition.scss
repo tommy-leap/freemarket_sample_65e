@@ -13,7 +13,6 @@
       height: 49px;
       line-height: 49px;
     }
-
   }
 }
 .exhibition {
@@ -74,8 +73,6 @@
     height: 48px;
   }
 }
-
-
 .product-textarea {
   padding: 10px;
   width: 598px;
@@ -83,7 +80,6 @@
   font-size: 16px;
   margin-top: 8px;
 }
-
 .input-form-product-name {
   border: solid 1px #ccc;
     border-radius: 3px;
@@ -353,30 +349,17 @@
   background-color: #ccc;
   vertical-align: top;
 }
-
-//出品画像
-// .image-upload-list {
-//   img{
-//     width: 100px;
-//     height: 100px;
-//   }
-// }
-
-
 .photo_form_box {
   display: flex;
-  
 }
 .img_box_boxs {
   width: 100px;
-    display: flex;
+  display: flex;
 }
-
 .photo_img {
   width: 100px;
   height: 80px;
   display: flex;
-
 }
 // スプリントレビュー後
 .post__drop__box__container{
@@ -454,27 +437,11 @@
       }
     }
   }
-
-  //file_fieldのcss
-  
-    
+//jqueryで使用
   .hidden-checkbox {
-    display: none;
+    // display: none;
   }
 }
-
-// .upper-box {
-//   height: 112px;
-//   width: 100%;
-//   img{
-//     width: 112px;
-//     height: 112px;
-//   }
-// }
-// .prev-content{
-//   display: flex;
-// }
-
 .form-required {
   margin-left: 8px;
   padding: 2px 4px;
@@ -484,10 +451,6 @@
   vertical-align: top;
   background-color: #EA3520;
 }
-
-
-
-
 *{
   margin:0;
   padding:0;

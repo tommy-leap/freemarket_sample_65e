@@ -7,14 +7,11 @@ class ProductsController < ApplicationController
     @prefecture = Prefecture.all
     @brand = Brand.all
     @category = Category.all
-
-    @product.images.new
+    5.times {@product.images.new} 
   end
   def create
     @product = Product.new(product_params)
     @product.user_id = current_user.id
-
-
     if @product.save
       redirect_to root_path
     else
@@ -23,11 +20,9 @@ class ProductsController < ApplicationController
   end
 
   def index
-
     @products = Product.includes(:images)
     @product = Product.find[:id]
     @image = Image.all
-
   end
   
   def show
@@ -38,12 +33,11 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     @images = Image.all
-    
   end
 
   def update
     @product = Product.find(params[:id])
-      if @product.user_id == current_user.id
+    if @product.user_id == current_user.id
     @product.update(product_params)
     end
     redirect_to product_path(@product)
@@ -67,10 +61,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-
-
     params.require(:product).permit( :title, :info, :status, :postage, :prefecture_id, :shipping, :day, :price, :category_id, :brand_id, images_attributes: [:image, :_destroy, :id])
-
   end
 
   def set_product
@@ -83,6 +74,5 @@ def set_categories
   @parent_categories = Category.roots
   @default_child_categories = @parent_categories.first.children
   @default_child_child_childcategories = @default_child_categories.first.children
-
 end
 
