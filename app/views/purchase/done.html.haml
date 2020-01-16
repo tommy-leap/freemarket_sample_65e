@@ -15,7 +15,7 @@
 
 .buy
   .buy__header
-    = link_to root_path do
+    = link_to root_path, data: {"turbolinks" => false} do
       = image_tag 'fmarket_logo_red.svg', size: "185x49", class: "single_header__img"
   .buy__alert
     .buy__alert__top
@@ -47,7 +47,7 @@
           .buy__centerbox__buyinfo__vprice__upper__price
             = "¥" + i_price
       .buy__centerbox__buyinfo__buybutton
-        = link_to "#", class: "buy__centerbox__buyinfo__buybutton-red" do
+        = link_to root_path, data: {"turbolinks" => false}, class: "buy__centerbox__buyinfo__buybutton-red" do
           戻る
   .buy__footer
     .buy__footer__box
@@ -57,6 +57,6 @@
         = link_to "特定商取引に関する表記","#",class:"buy__footer__box__atag3"
         = link_to '', "/", id: "buy__footer__box__atag"
       .single_header__img
-        = link_to root_path do
+        = link_to root_path, data: {"turbolinks" => false} do
           = image_tag 'logo_gray.svg', size: "100x85", class: "single_header__img"
       %p#p ©Meruari,Inc
