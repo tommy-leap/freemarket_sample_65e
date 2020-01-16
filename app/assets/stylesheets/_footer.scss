@@ -1,13 +1,12 @@
 aside{
-  height: 260px;
   width: 100%;
   position: relative;
+  display: inline-block;
   .fmarket-banner-easy{
     position: absolute;
     color: white;
     top: 40px;
     left: 355px;
-    z-index: 1;
     font-weight: bold;
     font-size: 24px;
   }
@@ -16,7 +15,6 @@ aside{
     color: white;
     top: 80px;
     left: 355px;
-    z-index: 1;
     font-weight: bold;
     font-size: 36px;
   }
