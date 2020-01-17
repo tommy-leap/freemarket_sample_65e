@@ -1,11 +1,9 @@
 class CardController < ApplicationController
 
-  # before_action :get_user_params, only: [:edit, :add, :show]
   before_action :get_payjp_info, only: [:new_create, :create, :delete, :show, :step3]
 
   def edit
   end
-
 
   def create
     if params['payjp-token'].blank?
@@ -37,18 +35,30 @@ class CardController < ApplicationController
 
   def show
     @card = current_user.cards.first
-
     if @card.present?
       @customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = @customer.cards.retrieve(@card.card_id)
+      @card_brand = @default_card_information.brand      
+      case @card_brand
+      when "Visa"
+        @card_src = "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1714804574"
+      when "JCB"
+        @card_src = "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?1714804574"
+      when "MasterCard"
+        @card_src = "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?1714804574"
+      when "American Express"
+        @card_src = "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?1714804574"
+      when "Diners Club"
+        @card_src = "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?1714804574"
+      when "Discover"
+        @card_src = "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?1714804574"
+      end
     else
       redirect_to action: "add", id: current_user.id
     end
   end
 
   def add
-    # card = current_user.cards
-    # redirect_to action: "show" if card.exists?
   end
 
   def step4
