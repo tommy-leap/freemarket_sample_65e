@@ -25,6 +25,8 @@ Things you may want to cover:
 
 # freemarket_sample_65e DB設計
 
+![ER図](https://i.imgur.com/e9GuKDB.jpg)
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
