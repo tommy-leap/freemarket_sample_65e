@@ -126,3 +126,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :product
 - belongs_to :user
+
+
+![エビフライトライアングル](https://i.imgur.com/mzBOWul.jpg)
