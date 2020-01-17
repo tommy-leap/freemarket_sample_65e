@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
   layout false, except: [:detail, :show] 
   before_action :set_categories, only: %w[edit new create index ]
+  
   def new
     @product = Product.new
     @prefecture = Prefecture.all
@@ -9,6 +10,7 @@ class ProductsController < ApplicationController
     @category = Category.all
     5.times { @product.images.new } 
   end
+
   def create
     @product = Product.new(product_params)
     @product.user_id = current_user.id

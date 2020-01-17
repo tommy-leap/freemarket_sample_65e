@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @product = Product.all
+    @product = Product.all.order(id: "DESC")
   end
 
   def show
