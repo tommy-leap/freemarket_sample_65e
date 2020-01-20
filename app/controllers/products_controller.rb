@@ -1,19 +1,29 @@
 class ProductsController < ApplicationController
 
   layout false, except: [:detail, :show] 
-  before_action :set_categories, only: %w[edit new create index ]
+  before_action :set_categories, only: %w[create]
   
   def new
+    @parents = Category.all.order("id DESC").limit(13)
     @product = Product.new
     @prefecture = Prefecture.all
     @brand = Brand.all
-    @category = Category.all
     5.times { @product.images.new } 
+  end
+
+  def category_children
+    @category_children = Category.find(params[:productcategory]).children 
+  end
+  # Ajax通信で送られてきたデータをparamsで受け取り､childrenで子を取得
+ 
+  def category_grandchildren
+    @category_grandchildren = Category.find(params[:productcategory]).children
   end
 
   def create
     @product = Product.new(product_params)
     @product.user_id = current_user.id
+    # binding.pry
     if @product.save
       redirect_to root_path
     else
@@ -62,6 +72,16 @@ class ProductsController < ApplicationController
     end
     redirect_to root_path
   end
+
+  # def search
+  #   respond_to do |format|
+  #     format.html
+  #     format.json do
+  #      @children = Category.find(params[:parent_id]).children
+  #      #親ボックスのidから子ボックスのidの配列を作成してインスタンス変数で定義
+  #     end
+  #   end
+  # end
 
   private
   def product_params
