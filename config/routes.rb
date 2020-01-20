@@ -46,6 +46,11 @@ Rails.application.routes.draw do
   end
 
   resources :products do
+    collection do
+      get 'category_children' 
+      get 'category_grandchildren'
+    end
+    
     resources :purchase, only: [:index] do
       collection do
         post 'pay', to: 'purchase#pay'

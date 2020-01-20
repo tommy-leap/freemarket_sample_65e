@@ -70,20 +70,16 @@
             .product-details-form__info
               %p
                 商品の詳細
-            .product-details-form__info    
+            .product-details-form__info#product-details-form__info  
               .product-text-form__info-box
                 %label.form-user-kana
                   カテゴリー
                 %span.form-required
                   必須            
                 .select-categories-form
-              .actions
-
-                = f.collection_select :category_id, @parent_categories, :id, :name, id:"parent_category"
-              .actions
-                = f.collection_select :category_id, @default_child_categories, :id, :name, id:"child_category"
-              .actions
-                = f.collection_select :category_id, @default_child_child_childcategories, :id, :name, id:"child_child_category"
+              .product-text-form__category
+                .actions
+                  = f.collection_select :category_id, @parents, :id, :name, { prompt: "---" }, { id:"product_category_id", class: 'category_select_id' }
 
               .brand-text-form__box
                 %label.form-brand
